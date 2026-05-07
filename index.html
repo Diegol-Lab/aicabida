@@ -1,0 +1,1461 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>AiCabida</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#840016">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+<!-- Leaflet -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
+
+<!-- Turf.js -->
+<script src="https://unpkg.com/@turf/turf@6/turf.min.js"></script>
+
+<style>
+/* ============================================================
+   VARIABLES + RESET
+============================================================ */
+:root {
+  --rojo:       #840016;
+  --rojo-light: rgba(132,0,22,0.12);
+  --rojo-glow:  rgba(132,0,22,0.35);
+  --bg:         #f5f2ee;
+  --bg-map:     #e8e4dc;
+  --surface:    #ffffff;
+  --texto:      #111111;
+  --muted:      #888888;
+  --borde:      #e0dbd4;
+  --syne:       'Syne', sans-serif;
+  --inter:      'Inter', sans-serif;
+  --nav-h:      72px;
+  --top-h:      56px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; overflow: hidden; background: var(--bg); }
+body { font-family: var(--inter); color: var(--texto); touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+button { cursor: pointer; border: none; background: none; font-family: var(--inter); -webkit-tap-highlight-color: transparent; }
+
+/* ============================================================
+   SCREENS
+============================================================ */
+.screen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--bg);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 10;
+}
+.screen.active { opacity: 1; pointer-events: all; z-index: 20; }
+
+/* ============================================================
+   BUTTONS
+============================================================ */
+.btn-primary {
+  width: 100%; padding: 16px;
+  background: var(--rojo); color: white;
+  font-family: var(--inter); font-size: 16px; font-weight: 600;
+  border-radius: 14px; border: none; min-height: 52px;
+  transition: opacity 0.15s, transform 0.1s;
+}
+.btn-primary:active { opacity: 0.85; transform: scale(0.98); }
+.btn-primary:disabled { background: var(--borde); color: var(--muted); transform: none; }
+
+.btn-outline {
+  width: 100%; padding: 15px;
+  background: transparent; color: var(--rojo);
+  font-family: var(--inter); font-size: 16px; font-weight: 600;
+  border-radius: 14px; border: 1.5px solid var(--rojo);
+  min-height: 52px; transition: all 0.15s;
+}
+.btn-outline:active { background: var(--rojo-light); }
+
+.btn-ghost {
+  width: 100%; padding: 14px;
+  background: transparent; color: var(--muted);
+  font-family: var(--inter); font-size: 15px; font-weight: 400;
+  border-radius: 14px; border: none; min-height: 48px;
+}
+
+/* ============================================================
+   SPLASH SCREEN
+============================================================ */
+#s-splash { overflow-y: auto; -webkit-overflow-scrolling: touch; }
+
+.splash-inner {
+  padding: 52px 24px 36px;
+  display: flex; flex-direction: column;
+  min-height: 100%;
+}
+
+.logo-wrap {
+  display: flex; align-items: center;
+  gap: 14px; margin-bottom: 36px;
+}
+
+.logo-svg { width: 54px; height: 54px; flex-shrink: 0; }
+
+.logo-title {
+  font-family: var(--syne);
+  font-size: 30px; font-weight: 800;
+  color: var(--texto); line-height: 1;
+}
+.logo-title span { color: var(--rojo); }
+
+.tagline {
+  font-family: var(--syne);
+  font-size: 22px; font-weight: 800;
+  line-height: 1.25; color: var(--texto);
+  margin-bottom: 12px;
+}
+
+.subtitle {
+  font-size: 15px; font-weight: 400;
+  color: var(--muted); line-height: 1.65;
+  margin-bottom: 32px;
+}
+
+.stat-cards {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 10px; margin-bottom: 36px;
+}
+
+.stat-card {
+  background: var(--surface);
+  border: 1px solid var(--borde);
+  border-radius: 14px; padding: 18px 8px;
+  text-align: center;
+}
+
+.stat-num {
+  display: block;
+  font-family: var(--syne); font-size: 24px; font-weight: 800;
+  color: var(--texto); line-height: 1;
+}
+.stat-num.rojo { color: var(--rojo); }
+
+.stat-label {
+  display: block; font-size: 11px; color: var(--muted);
+  margin-top: 5px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+
+.splash-btns {
+  display: flex; flex-direction: column;
+  gap: 12px; margin-top: auto; padding-top: 8px;
+}
+
+/* ============================================================
+   MAPA SCREEN
+============================================================ */
+#s-mapa { background: var(--bg-map); }
+
+#map {
+  position: absolute; inset: 0; z-index: 1;
+}
+
+/* Top bar */
+.map-topbar {
+  position: absolute; top: 0; left: 0; right: 0;
+  height: var(--top-h);
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 500;
+  display: flex; align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  border-bottom: 1px solid var(--borde);
+}
+
+.topbar-left { display: flex; align-items: center; gap: 10px; }
+.topbar-back {
+  width: 34px; height: 34px; border-radius: 50%;
+  background: var(--bg); border: 1px solid var(--borde);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 17px;
+}
+
+.topbar-title { font-size: 14px; font-weight: 600; color: var(--texto); }
+
+.badge {
+  font-size: 10px; font-weight: 700; font-family: var(--inter);
+  padding: 4px 10px; border-radius: 20px;
+  letter-spacing: 0.8px; text-transform: uppercase;
+}
+.badge-rojo { background: var(--rojo); color: white; }
+.badge-verde { background: #1a7a34; color: white; }
+.badge-gris  { background: var(--borde); color: var(--muted); }
+
+/* Onboarding hint */
+.onboarding-hint {
+  position: absolute;
+  bottom: calc(var(--nav-h) + 76px);
+  left: 16px; right: 16px;
+  background: white; border-radius: 18px;
+  padding: 18px 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  z-index: 500;
+  display: flex; align-items: flex-start; gap: 14px;
+}
+.onboarding-hint.hidden { display: none !important; }
+
+.hint-emoji { font-size: 30px; flex-shrink: 0; line-height: 1; }
+.hint-body { flex: 1; }
+.hint-title {
+  font-family: var(--syne); font-size: 15px; font-weight: 800;
+  color: var(--texto); margin-bottom: 4px;
+}
+.hint-sub { font-size: 13px; color: var(--muted); line-height: 1.55; }
+.hint-close { font-size: 20px; color: var(--muted); padding: 0 4px; flex-shrink: 0; line-height: 1; }
+
+/* FABs */
+.fab-geo {
+  position: absolute;
+  bottom: calc(var(--nav-h) + 80px);
+  right: 16px;
+  width: 46px; height: 46px; border-radius: 50%;
+  background: white;
+  border: 1px solid var(--borde);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  z-index: 500;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--texto);
+}
+.fab-geo:active { transform: scale(0.94); }
+
+.fab-redibujar {
+  position: absolute;
+  bottom: calc(var(--nav-h) + 80px);
+  left: 16px;
+  padding: 9px 16px;
+  background: white; color: var(--rojo);
+  font-family: var(--inter); font-size: 13px; font-weight: 600;
+  border-radius: 20px;
+  border: 1.5px solid var(--rojo);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 500;
+  display: none;
+}
+
+.fab-calcular {
+  position: absolute;
+  bottom: calc(var(--nav-h) + 12px);
+  left: 16px; right: 16px;
+  padding: 16px;
+  background: var(--rojo); color: white;
+  font-family: var(--inter); font-size: 16px; font-weight: 600;
+  border-radius: 14px; border: none;
+  box-shadow: 0 6px 24px var(--rojo-glow);
+  z-index: 500;
+  display: none;
+  transition: transform 0.1s;
+}
+.fab-calcular:active { transform: scale(0.98); }
+
+/* Dimension labels */
+.dim-label {
+  background: rgba(255,255,255,0.92);
+  border: 1px solid var(--borde);
+  border-radius: 8px; padding: 2px 7px;
+  font-size: 11px; font-weight: 600;
+  color: var(--texto); white-space: nowrap;
+  pointer-events: none;
+}
+
+/* ============================================================
+   BOTTOM NAV
+============================================================ */
+.bottom-nav {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: var(--nav-h);
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid var(--borde);
+  display: flex; align-items: center; justify-content: space-around;
+  z-index: 400;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.nav-btn {
+  display: flex; flex-direction: column;
+  align-items: center; gap: 3px;
+  padding: 8px 28px; border-radius: 12px;
+  transition: all 0.15s;
+}
+
+.nav-icon { width: 24px; height: 24px; opacity: 0.35; transition: opacity 0.15s; }
+.nav-label { font-size: 10px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+.nav-btn.active .nav-icon { opacity: 1; color: var(--rojo); stroke: var(--rojo); }
+.nav-btn.active .nav-label { color: var(--rojo); }
+
+/* ============================================================
+   BOTTOM SHEETS
+============================================================ */
+.sheet-overlay {
+  position: fixed; inset: 0; z-index: 890;
+  background: rgba(0,0,0,0.28);
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.sheet-overlay.active { opacity: 1; pointer-events: all; }
+
+.bottom-sheet {
+  position: fixed; left: 0; right: 0; bottom: 0;
+  z-index: 900;
+  background: var(--surface);
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 -8px 48px rgba(0,0,0,0.22);
+  transform: translateY(100%);
+  transition: transform 0.38s cubic-bezier(0.32,0.72,0,1);
+  max-height: 93vh;
+  display: flex; flex-direction: column;
+  overflow: hidden;
+}
+.bottom-sheet.open { transform: translateY(0); }
+
+.sheet-handle {
+  width: 40px; height: 4px;
+  background: var(--borde); border-radius: 2px;
+  margin: 12px auto 0; flex-shrink: 0;
+}
+
+.sheet-scroll {
+  overflow-y: auto; -webkit-overflow-scrolling: touch;
+  flex: 1; padding: 8px 20px 40px;
+}
+
+/* Mini map inside sheet */
+.mini-map-wrap {
+  height: 130px; width: 100%;
+  background: var(--bg-map);
+  border-radius: 14px; overflow: hidden;
+  margin-bottom: 14px; flex-shrink: 0;
+}
+.mini-map-wrap > div { height: 130px !important; }
+
+/* Zona tag */
+.zona-pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--bg); border: 1px solid var(--borde);
+  border-radius: 20px; padding: 6px 14px;
+  font-size: 13px; color: var(--muted); font-weight: 600;
+  margin-bottom: 18px;
+}
+.zona-pill .zc { color: var(--rojo); }
+
+/* KPI row */
+.kpi-row {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 10px; margin-bottom: 20px;
+}
+
+.kpi-rojo {
+  background: var(--rojo); border-radius: 14px;
+  padding: 18px 16px; color: white;
+}
+
+.kpi-gris {
+  background: var(--bg); border: 1px solid var(--borde);
+  border-radius: 14px; padding: 18px 16px;
+}
+
+.kpi-lbl {
+  font-size: 10px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.5px;
+  margin-bottom: 8px; opacity: 0.65;
+}
+.kpi-rojo .kpi-lbl { color: white; }
+.kpi-gris .kpi-lbl { color: var(--muted); }
+
+.kpi-val {
+  font-family: var(--syne); font-size: 26px;
+  font-weight: 800; line-height: 1; margin-bottom: 4px;
+}
+.kpi-rojo .kpi-val { color: white; }
+.kpi-gris .kpi-val { color: var(--texto); }
+
+.kpi-unit { font-size: 12px; opacity: 0.6; }
+
+.section-hdr {
+  font-size: 11px; font-weight: 600; color: var(--muted);
+  text-transform: uppercase; letter-spacing: 0.8px;
+  margin-bottom: 10px;
+}
+
+/* Technical grid */
+.kpi-grid4 {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 8px; margin-bottom: 20px;
+}
+
+.kpi-sm {
+  background: var(--bg); border: 1px solid var(--borde);
+  border-radius: 10px; padding: 12px 14px;
+}
+.kpi-sm .kpi-lbl { color: var(--muted); font-size: 10px; margin-bottom: 4px; opacity: 1; }
+.kpi-sm .kpi-val { font-size: 18px; font-family: var(--syne); font-weight: 800; color: var(--texto); }
+
+.sheet-btns { display: flex; flex-direction: column; gap: 10px; padding-top: 4px; }
+
+/* ============================================================
+   SIN DATOS SHEET
+============================================================ */
+.sindatos-body { padding: 4px 0 40px; text-align: center; }
+.sindatos-icon { font-size: 44px; opacity: 0.22; margin-bottom: 14px; }
+.sindatos-title {
+  font-family: var(--syne); font-size: 22px; font-weight: 800;
+  color: var(--texto); margin-bottom: 10px;
+}
+.sindatos-desc {
+  font-size: 14px; color: var(--muted);
+  line-height: 1.65; margin-bottom: 20px;
+}
+
+.info-card {
+  background: var(--bg); border: 1px solid var(--borde);
+  border-radius: 12px; padding: 14px 16px;
+  text-align: left; margin-bottom: 10px;
+  font-size: 13px; font-weight: 600; color: var(--muted);
+}
+.info-card-dashed {
+  border-style: dashed; margin-bottom: 20px;
+  font-size: 13px; color: var(--muted);
+}
+
+/* ============================================================
+   PROSPECTOS SCREEN
+============================================================ */
+#s-prospectos { background: var(--bg); }
+
+.prosp-header {
+  position: relative; height: 180px; flex-shrink: 0;
+  overflow: hidden;
+}
+#mini-map-prospectos {
+  position: absolute; inset: 0; z-index: 1;
+}
+.prosp-overlay {
+  position: absolute; inset: 0; z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(to bottom, transparent 40%, rgba(245,242,238,0.94) 100%);
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 14px 18px;
+}
+.prosp-count {
+  font-family: var(--syne); font-size: 28px; font-weight: 800;
+  color: var(--texto); line-height: 1;
+}
+.prosp-comunas { font-size: 13px; color: var(--muted); margin-top: 3px; }
+
+/* Top bar for prospectos */
+.prosp-topbar {
+  position: absolute; top: 0; left: 0; right: 0;
+  height: var(--top-h); z-index: 3;
+  display: flex; align-items: center; padding: 0 16px;
+  gap: 12px;
+}
+.prosp-back {
+  width: 34px; height: 34px; border-radius: 50%;
+  background: rgba(255,255,255,0.9);
+  border: 1px solid var(--borde);
+  display: flex; align-items: center; justify-content: center; font-size: 17px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.prosp-lista {
+  flex: 1; overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 12px 16px 4px;
+}
+
+.prosp-card {
+  background: var(--surface); border: 1px solid var(--borde);
+  border-radius: 14px; padding: 14px 16px;
+  margin-bottom: 10px;
+  display: flex; align-items: center; gap: 12px;
+  position: relative; overflow: hidden;
+  transition: transform 0.15s;
+}
+.prosp-dot {
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--rojo); flex-shrink: 0;
+}
+.prosp-info { flex: 1; min-width: 0; }
+.prosp-zona {
+  font-size: 13px; font-weight: 600; color: var(--texto);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.prosp-meta { font-size: 12px; color: var(--muted); margin-top: 2px; }
+.prosp-val {
+  font-family: var(--syne); font-size: 18px; font-weight: 800;
+  color: var(--rojo); text-align: right; flex-shrink: 0;
+}
+.prosp-val-unit { font-size: 11px; color: var(--muted); text-align: right; }
+
+/* Delete reveal */
+.prosp-del {
+  position: absolute; right: 0; top: 0; bottom: 0;
+  width: 0; overflow: hidden;
+  background: #c82020; border-radius: 0 14px 14px 0;
+  display: flex; align-items: center; justify-content: center;
+  transition: width 0.22s ease;
+}
+.prosp-del.show { width: 68px; }
+.prosp-del button { color: white; font-size: 22px; padding: 0 10px; }
+
+/* Total card */
+.card-total-wrap { padding: 0 16px 8px; }
+.card-total {
+  background: var(--rojo); border-radius: 16px; padding: 22px 20px;
+}
+.ct-label {
+  font-size: 11px; color: rgba(255,255,255,0.65);
+  font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.5px; margin-bottom: 8px;
+}
+.ct-value {
+  font-family: var(--syne); font-size: 38px; font-weight: 800;
+  color: white; line-height: 1; margin-bottom: 6px;
+}
+.ct-sub { font-size: 13px; color: rgba(255,255,255,0.65); }
+
+/* Empty prospectos */
+.empty-state {
+  display: flex; flex-direction: column;
+  align-items: center; padding: 40px 32px;
+  text-align: center; gap: 10px;
+}
+.empty-icon { font-size: 40px; opacity: 0.25; }
+.empty-title { font-family: var(--syne); font-size: 18px; font-weight: 800; color: var(--texto); }
+.empty-sub { font-size: 14px; color: var(--muted); line-height: 1.65; }
+
+/* ============================================================
+   TOAST
+============================================================ */
+.toast {
+  position: fixed;
+  bottom: calc(var(--nav-h) + 14px);
+  left: 50%; transform: translateX(-50%);
+  background: #111; color: white;
+  padding: 10px 20px; border-radius: 20px;
+  font-size: 14px; font-weight: 600; z-index: 9999;
+  white-space: nowrap; pointer-events: none;
+  animation: toastIn 0.2s ease, toastOut 0.3s ease 1.7s forwards;
+}
+
+@keyframes toastIn  { from { opacity:0; transform:translateX(-50%) translateY(8px); } to { opacity:1; transform:translateX(-50%) translateY(0); } }
+@keyframes toastOut { from { opacity:1; } to { opacity:0; } }
+
+/* ============================================================
+   LEAFLET OVERRIDES
+============================================================ */
+.leaflet-container { background: var(--bg-map); font-family: var(--inter); }
+.leaflet-control-zoom { display: none !important; }
+.leaflet-draw-toolbar { display: none !important; }
+.leaflet-draw-guide-dash { border-color: var(--rojo) !important; }
+.leaflet-draw-tooltip {
+  background: white !important; color: var(--texto) !important;
+  border: 1px solid var(--borde) !important; border-radius: 8px !important;
+  padding: 6px 10px !important; font-family: var(--inter) !important; font-size: 12px !important;
+}
+.leaflet-div-icon { background: none !important; border: none !important; }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     SCREEN 01: SPLASH
+============================================================ -->
+<div id="s-splash" class="screen active">
+  <div class="splash-inner">
+    <!-- Logo -->
+    <div class="logo-wrap">
+      <svg class="logo-svg" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="60" height="60" rx="10" fill="#840016"/>
+        <polygon points="12,43 11,21 30,11 48,18 49,39 30,49"
+          fill="rgba(255,255,255,0.14)" stroke="white" stroke-width="2.5"
+          stroke-linejoin="round" stroke-linecap="round"/>
+        <circle cx="30" cy="29" r="4.5" stroke="white" stroke-width="2.2"/>
+        <circle cx="30" cy="29" r="1.8" fill="white"/>
+        <line x1="30" y1="34" x2="30" y2="43" stroke="white" stroke-width="1.5"
+          stroke-dasharray="2.5,2.5" stroke-linecap="round" opacity="0.75"/>
+      </svg>
+      <div class="logo-title">Ai<span>Cabida</span></div>
+    </div>
+
+    <p class="tagline">Prospección urbana en terreno.</p>
+    <p class="subtitle">Traza cualquier predio y calcula su potencial constructivo al instante.</p>
+
+    <div class="stat-cards">
+      <div class="stat-card">
+        <span class="stat-num" id="stat-comunas">8</span>
+        <span class="stat-label">comunas</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-num" id="stat-zonas">252</span>
+        <span class="stat-label">zonas PRC</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-num rojo" id="stat-cabidas">0</span>
+        <span class="stat-label">cabidas</span>
+      </div>
+    </div>
+
+    <div class="splash-btns">
+      <button class="btn-primary" onclick="navigate('mapa')">Explorar mapa</button>
+      <button class="btn-outline" onclick="navigate('prospectos')">Ver prospectos</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SCREEN 02: MAPA
+============================================================ -->
+<div id="s-mapa" class="screen">
+  <!-- Map fills entire screen -->
+  <div id="map"></div>
+
+  <!-- Top bar -->
+  <div class="map-topbar">
+    <div class="topbar-left">
+      <button class="topbar-back" onclick="navigate('splash')">&#8592;</button>
+      <span class="topbar-title" id="topbar-txt">Dibujando predio&hellip;</span>
+    </div>
+    <span class="badge badge-rojo" id="topbar-badge">MODO TRAZAR</span>
+  </div>
+
+  <!-- Onboarding hint -->
+  <div class="onboarding-hint hidden" id="onboarding-hint">
+    <div class="hint-emoji">&#9757;&#65039;</div>
+    <div class="hint-body">
+      <div class="hint-title">Toca para marcar esquinas</div>
+      <div class="hint-sub">Recorre el per&iacute;metro del predio. Toca dos veces para cerrar el pol&iacute;gono.</div>
+    </div>
+    <button class="hint-close" onclick="closeOnboarding()">&#215;</button>
+  </div>
+
+  <!-- FAB: geo -->
+  <button class="fab-geo" id="btn-geo" onclick="centerOnUser()" title="Mi ubicaci&oacute;n">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+      <circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="6"/>
+      <line x1="12" y1="18" x2="12" y2="22"/><line x1="2" y1="12" x2="6" y2="12"/>
+      <line x1="18" y1="12" x2="22" y2="12"/>
+    </svg>
+  </button>
+
+  <!-- FAB: Redibujar -->
+  <button class="fab-redibujar" id="btn-redibujar" onclick="reiniciarDibujo()">&#8635; Redibujar</button>
+
+  <!-- FAB: Calcular -->
+  <button class="fab-calcular" id="btn-calcular" onclick="calcularCabida()">
+    Listo &mdash; calcular
+  </button>
+
+  <!-- Bottom nav -->
+  <nav class="bottom-nav">
+    <button class="nav-btn active" onclick="navigate('mapa')">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="3,6 9,3 15,6 21,3 21,18 15,21 9,18 3,21"/>
+        <line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/>
+      </svg>
+      <span class="nav-label">Mapa</span>
+    </button>
+    <button class="nav-btn" onclick="navigate('prospectos')">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+      </svg>
+      <span class="nav-label">Guardados</span>
+    </button>
+    <button class="nav-btn" onclick="openConfig()">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="3"/>
+        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+      </svg>
+      <span class="nav-label">Config</span>
+    </button>
+  </nav>
+</div>
+
+<!-- Sheet overlay -->
+<div class="sheet-overlay" id="sheet-overlay" onclick="closeSheets()"></div>
+
+<!-- ============================================================
+     SHEET: RESULTADOS
+============================================================ -->
+<div id="sheet-resultados" class="bottom-sheet">
+  <div class="sheet-handle"></div>
+  <div class="sheet-scroll">
+    <!-- Mini map -->
+    <div class="mini-map-wrap">
+      <div id="mm-result"></div>
+    </div>
+
+    <!-- Zona tag -->
+    <div class="zona-pill">
+      <span class="zc" id="r-zona-code">ZX</span>
+      <span id="r-zona-info">&mdash;</span>
+    </div>
+
+    <!-- Primary KPIs -->
+    <div class="kpi-row">
+      <div class="kpi-rojo">
+        <div class="kpi-lbl">Sup. construible</div>
+        <div class="kpi-val" id="r-sup-c">&mdash;</div>
+        <div class="kpi-unit">m&sup2; construibles</div>
+      </div>
+      <div class="kpi-gris">
+        <div class="kpi-lbl">Pisos m&aacute;x.</div>
+        <div class="kpi-val" id="r-pisos">&mdash;</div>
+        <div class="kpi-unit" id="r-alt-est">&mdash;</div>
+      </div>
+    </div>
+
+    <!-- Datos t&eacute;cnicos -->
+    <div class="section-hdr">Datos t&eacute;cnicos</div>
+    <div class="kpi-grid4">
+      <div class="kpi-sm"><div class="kpi-lbl">CC</div><div class="kpi-val" id="r-cc">&mdash;</div></div>
+      <div class="kpi-sm"><div class="kpi-lbl">COS</div><div class="kpi-val" id="r-cos">&mdash;</div></div>
+      <div class="kpi-sm"><div class="kpi-lbl">Ocup. 1&ordm;p</div><div class="kpi-val" id="r-ocup">&mdash;</div></div>
+      <div class="kpi-sm"><div class="kpi-lbl">Densidad</div><div class="kpi-val" id="r-dens">&mdash;</div></div>
+    </div>
+
+    <!-- Terreno -->
+    <div class="section-hdr">Terreno trazado</div>
+    <div class="kpi-grid4" style="margin-bottom:24px;">
+      <div class="kpi-sm"><div class="kpi-lbl">Superficie</div><div class="kpi-val" id="r-sup-m2">&mdash;</div></div>
+      <div class="kpi-sm"><div class="kpi-lbl">Per&iacute;metro</div><div class="kpi-val" id="r-per">&mdash;</div></div>
+    </div>
+
+    <div class="sheet-btns">
+      <button class="btn-primary" onclick="guardarCabida()">Guardar cabida</button>
+      <button class="btn-outline" onclick="descartarCabida()">Descartar</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SHEET: SIN DATOS
+============================================================ -->
+<div id="sheet-sindatos" class="bottom-sheet">
+  <div class="sheet-handle"></div>
+  <div class="sheet-scroll">
+    <!-- Mini map -->
+    <div class="mini-map-wrap">
+      <div id="mm-sindatos"></div>
+    </div>
+
+    <div class="sindatos-body">
+      <div class="sindatos-icon">&#9470;</div>
+      <div class="sindatos-title">Sin normas cargadas</div>
+      <div class="sindatos-desc">Esta zona a&uacute;n no tiene datos en AiCabida. Puedes ver el predio en el mapa, pero el c&aacute;lculo no est&aacute; disponible.</div>
+
+      <div class="info-card" id="sd-zona">Zona detectada: &mdash;</div>
+      <div class="info-card info-card-dashed" id="sd-cobertura">&mdash; / &mdash; zonas &middot; Ordenanza no ingresada a&uacute;n</div>
+
+      <div class="sheet-btns">
+        <button class="btn-outline" id="btn-dom" onclick="irADOM()">Ir a la DOM</button>
+        <button class="btn-ghost" onclick="descartarCabida()">Volver al mapa</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SCREEN 04: PROSPECTOS
+============================================================ -->
+<div id="s-prospectos" class="screen">
+  <!-- Map header -->
+  <div class="prosp-header">
+    <div id="mini-map-prospectos"></div>
+    <div class="prosp-topbar">
+      <button class="prosp-back" onclick="navigate('mapa')">&#8592;</button>
+    </div>
+    <div class="prosp-overlay">
+      <div class="prosp-count" id="p-count">0 cabidas</div>
+      <div class="prosp-comunas" id="p-comunas"></div>
+    </div>
+  </div>
+
+  <!-- Lista -->
+  <div class="prosp-lista" id="prosp-lista"></div>
+
+  <!-- Total card -->
+  <div class="card-total-wrap" id="card-total-wrap" style="display:none;">
+    <div class="card-total">
+      <div class="ct-label">Total potencial acumulado</div>
+      <div class="ct-value" id="p-total">0 m&sup2;</div>
+      <div class="ct-sub" id="p-total-sub">construibles</div>
+    </div>
+  </div>
+
+  <!-- Bottom nav -->
+  <nav class="bottom-nav">
+    <button class="nav-btn" onclick="navigate('mapa')">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="3,6 9,3 15,6 21,3 21,18 15,21 9,18 3,21"/>
+        <line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/>
+      </svg>
+      <span class="nav-label">Mapa</span>
+    </button>
+    <button class="nav-btn active" onclick="navigate('prospectos')">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+      </svg>
+      <span class="nav-label">Guardados</span>
+    </button>
+    <button class="nav-btn" onclick="openConfig()">
+      <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="3"/>
+        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+      </svg>
+      <span class="nav-label">Config</span>
+    </button>
+  </nav>
+</div>
+
+<!-- ============================================================
+     JAVASCRIPT
+============================================================ -->
+<script>
+'use strict';
+
+// ============================================================
+// STATE
+// ============================================================
+const APP = {
+  normas:       {},
+  geoFeatures:  [],
+  cobertura:    {},
+  prospectos:   [],
+  currentPolygon:  null,
+  currentZona:     null,
+  map:             null,
+  mapReady:        false,
+  miniMapResult:   null,
+  miniMapSindatos: null,
+  miniMapProspectos: null,
+  drawnLayer:      null,
+  drawControl:     null,
+  userMarker:      null,
+  userHalo:        null,
+  dimMarkers:      []
+};
+
+const GEO_FILES = ['Bulnes','ElCarmen','Laja','Lebu','Penco','Tome','Yumbel','Yungay'];
+
+const DOM_URLS = {
+  Penco:    'https://www.penco.cl',
+  Bulnes:   'https://www.munibulnes.cl',
+  Tome:     'https://www.tome.cl',
+  ElCarmen: 'https://www.munielcarmen.cl',
+  Laja:     'https://www.laja.cl',
+  Lebu:     'https://www.lebu.cl',
+  Yumbel:   'https://www.yumbel.cl',
+  Yungay:   'https://www.yungay.cl'
+};
+
+// ============================================================
+// INIT
+// ============================================================
+async function initApp() {
+  cargarProspectos();
+  await loadNormas();
+  await loadGeoJSON();
+  calcularCobertura();
+  updateSplash();
+  registrarSW();
+}
+
+async function loadNormas() {
+  try {
+    const r = await fetch('data/normas_prc.json');
+    if (r.ok) APP.normas = await r.json();
+  } catch(e) { console.warn('normas no disponibles', e); }
+}
+
+async function loadGeoJSON() {
+  const results = await Promise.allSettled(
+    GEO_FILES.map(name =>
+      fetch(`data/PRC_${name}.geojson`)
+        .then(r => r.ok ? r.json() : null)
+        .then(d => d && d.features ? d.features : [])
+        .catch(() => [])
+    )
+  );
+  results.forEach(r => {
+    if (r.status === 'fulfilled' && r.value.length) {
+      APP.geoFeatures.push(...r.value);
+    }
+  });
+  console.log(`GeoJSON: ${APP.geoFeatures.length} zonas cargadas`);
+}
+
+function calcularCobertura() {
+  for (const [comuna, zonas] of Object.entries(APP.normas)) {
+    const total = zonas.length;
+    const conDatos = zonas.filter(z =>
+      Object.entries(z.normas_urbanisticas || {}).some(([k,v]) =>
+        !['notas','agrupamiento','adosamiento'].includes(k) && v !== null
+      )
+    ).length;
+    APP.cobertura[comuna] = { total, conDatos };
+  }
+}
+
+function updateSplash() {
+  const nc = Object.keys(APP.normas).length || 8;
+  const nz = Object.values(APP.normas).reduce((s,z) => s + z.length, 0) || 252;
+  document.getElementById('stat-comunas').textContent = nc;
+  document.getElementById('stat-zonas').textContent   = nz;
+  document.getElementById('stat-cabidas').textContent = APP.prospectos.length;
+}
+
+function registrarSW() {
+  if (!('serviceWorker' in navigator)) return;
+  // Auto-reload when a new service worker takes control (cache updated)
+  let reloading = false;
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    if (!reloading) { reloading = true; window.location.reload(); }
+  });
+  navigator.serviceWorker.register('sw.js').catch(() => {});
+}
+
+// ============================================================
+// NAVIGATION
+// ============================================================
+function navigate(screen) {
+  closeSheets();
+  ['splash','mapa','prospectos'].forEach(s => {
+    document.getElementById(`s-${s}`).classList.toggle('active', s === screen);
+  });
+  if (screen === 'mapa')       initMap();
+  if (screen === 'prospectos') initProspectos();
+}
+
+// ============================================================
+// MAP
+// ============================================================
+function initMap() {
+  if (APP.mapReady) return;
+  APP.mapReady = true;
+
+  APP.map = L.map('map', {
+    zoomControl: false,
+    attributionControl: false,
+    tap: true, tapTolerance: 20
+  }).setView([-36.9, -72.5], 14);
+
+  addSatTiles(APP.map);
+
+  APP.drawnLayer = new L.FeatureGroup().addTo(APP.map);
+
+  centerOnUser();
+
+  // Onboarding
+  if (!localStorage.getItem('onboarding_seen')) {
+    document.getElementById('onboarding-hint').classList.remove('hidden');
+  }
+
+  startDrawing();
+}
+
+function centerOnUser() {
+  if (!navigator.geolocation || !APP.map) return;
+  navigator.geolocation.getCurrentPosition(pos => {
+    const { latitude: lat, longitude: lng } = pos.coords;
+    APP.map.setView([lat, lng], 17);
+    // Halo
+    if (APP.userHalo) APP.userHalo.remove();
+    APP.userHalo = L.circleMarker([lat, lng], {
+      radius: 20, color: '#840016', fillColor: '#840016',
+      fillOpacity: 0.12, weight: 0, interactive: false
+    }).addTo(APP.map);
+    // Dot
+    if (APP.userMarker) APP.userMarker.remove();
+    APP.userMarker = L.circleMarker([lat, lng], {
+      radius: 7, color: '#840016', fillColor: 'white',
+      fillOpacity: 1, weight: 2.5, interactive: false
+    }).addTo(APP.map);
+  }, () => {});
+}
+
+// ============================================================
+// DRAWING
+// ============================================================
+function startDrawing() {
+  APP.drawnLayer.clearLayers();
+  clearDimLabels();
+  APP.currentPolygon = null;
+
+  setTopbar('Dibujando predio…', 'rojo', 'MODO TRAZAR');
+  document.getElementById('btn-calcular').style.display  = 'none';
+  document.getElementById('btn-redibujar').style.display = 'none';
+
+  const dotIcon = L.divIcon({
+    className: '', iconSize: [20,20], iconAnchor: [10,10],
+    html: '<div style="width:18px;height:18px;border-radius:50%;background:#840016;border:2.5px solid white;box-shadow:0 2px 8px rgba(0,0,0,.3);"></div>'
+  });
+  const smallIcon = L.divIcon({
+    className: '', iconSize: [10,10], iconAnchor: [5,5],
+    html: '<div style="width:10px;height:10px;border-radius:50%;background:#840016;border:2px solid white;"></div>'
+  });
+
+  APP.drawControl = new L.Draw.Polygon(APP.map, {
+    shapeOptions: {
+      color: '#840016', fillColor: '#840016',
+      fillOpacity: 0.12, weight: 2.5
+    },
+    allowIntersection: false,
+    showArea: false, showLength: false,
+    touchIcon: dotIcon, icon: smallIcon
+  });
+  APP.drawControl.enable();
+
+  APP.map.once(L.Draw.Event.CREATED, onPolygonDone);
+}
+
+function onPolygonDone(e) {
+  APP.drawnLayer.addLayer(e.layer);
+  APP.currentPolygon = e.layer.toGeoJSON();
+
+  setTopbar('Predio listo', 'verde', 'LISTO');
+  document.getElementById('btn-calcular').style.display  = 'block';
+  document.getElementById('btn-redibujar').style.display = 'flex';
+
+  // Dimension labels
+  addDimLabels(APP.currentPolygon.geometry.coordinates[0]);
+}
+
+function addDimLabels(coords) {
+  clearDimLabels();
+  if (!coords || coords.length < 3) return;
+  const ring = coords.length > 1 && coords[0][0] === coords[coords.length-1][0]
+    ? coords.slice(0, -1) : coords;
+
+  for (let i = 0; i < ring.length; i++) {
+    const p1 = ring[i], p2 = ring[(i+1) % ring.length];
+    const dist = turf.distance(turf.point(p1), turf.point(p2), { units: 'meters' });
+    const mid  = [(p1[1]+p2[1])/2, (p1[0]+p2[0])/2];
+    const m = L.marker(mid, {
+      icon: L.divIcon({
+        className: '', html: `<div class="dim-label">${dist.toFixed(1)}m</div>`,
+        iconAnchor: [22, 10]
+      }),
+      interactive: false
+    }).addTo(APP.map);
+    APP.dimMarkers.push(m);
+  }
+}
+
+function clearDimLabels() {
+  APP.dimMarkers.forEach(m => APP.map && APP.map.removeLayer(m));
+  APP.dimMarkers = [];
+}
+
+function reiniciarDibujo() {
+  APP.drawnLayer.clearLayers();
+  clearDimLabels();
+  startDrawing();
+}
+
+function closeOnboarding() {
+  document.getElementById('onboarding-hint').classList.add('hidden');
+  localStorage.setItem('onboarding_seen', '1');
+}
+
+function setTopbar(txt, color, badge) {
+  document.getElementById('topbar-txt').textContent = txt;
+  const b = document.getElementById('topbar-badge');
+  b.textContent = badge;
+  b.className = `badge badge-${color}`;
+}
+
+// ============================================================
+// ZONE DETECTION
+// ============================================================
+function detectarZona(polygon) {
+  if (!APP.geoFeatures.length) return null;
+  const centroid = turf.centroid(polygon);
+
+  // Exact
+  for (const f of APP.geoFeatures) {
+    try { if (turf.booleanPointInPolygon(centroid, f)) return f.properties; } catch {}
+  }
+  // Largest intersection fallback
+  let best = null, bestArea = 0;
+  for (const f of APP.geoFeatures) {
+    try {
+      const inter = turf.intersect(polygon, f);
+      if (inter) {
+        const a = turf.area(inter);
+        if (a > bestArea) { bestArea = a; best = f.properties; }
+      }
+    } catch {}
+  }
+  return best;
+}
+
+function buscarNormas(props) {
+  if (!props) return null;
+  const { zona_code, zona, comuna } = props;
+  const rows = APP.normas[comuna];
+  if (!rows) return null;
+  const code = zona_code || (zona ? zona.split(/[\s\-]/)[0] : null);
+  return rows.find(z => z.zona === code || z.zona === zona) || null;
+}
+
+function tieneNormas(z) {
+  if (!z) return false;
+  return Object.entries(z.normas_urbanisticas || {}).some(
+    ([k,v]) => !['notas','agrupamiento','adosamiento'].includes(k) && v !== null
+  );
+}
+
+// ============================================================
+// CALCULATE
+// ============================================================
+function calcularCabida() {
+  if (!APP.currentPolygon) return;
+
+  const zonaProps = detectarZona(APP.currentPolygon);
+  const zonaData  = buscarNormas(zonaProps);
+  const supM2 = turf.area(APP.currentPolygon);
+  const perM  = turf.length(APP.currentPolygon, { units: 'kilometers' }) * 1000;
+
+  APP.currentZona = { props: zonaProps, data: zonaData, supM2, perM };
+
+  if (zonaData && tieneNormas(zonaData)) {
+    mostrarResultados(zonaData, zonaProps, supM2, perM);
+  } else {
+    mostrarSinDatos(zonaProps, supM2);
+  }
+}
+
+// ============================================================
+// RESULTS SHEET
+// ============================================================
+function mostrarResultados(z, props, sup, per) {
+  const n   = z.normas_urbanisticas || {};
+  const cc  = n.coeficiente_constructibilidad;
+  const cos = n.coeficiente_ocupacion_suelo;
+  const pisos  = n.altura_maxima_pisos;
+  const metros = n.altura_maxima_metros;
+  const dens   = n.densidad_maxima_vivha || n.densidad_maxima_habha;
+
+  const supC = cc  ? Math.round(cc  * sup) : null;
+  const ocup = cos ? Math.round(cos * sup) : null;
+  const alt  = pisos ? +(pisos * 2.8).toFixed(1) : metros;
+
+  const zona  = props ? (props.zona_code || props.zona || '—') : '—';
+  const comuna = props ? (props.comuna || '—') : '—';
+
+  document.getElementById('r-zona-code').textContent = zona;
+  document.getElementById('r-zona-info').textContent = `${comuna} · ${z.prc_decreto || 'PRC'}`;
+  document.getElementById('r-sup-c').textContent  = supC ? supC.toLocaleString('es-CL') : '—';
+  document.getElementById('r-pisos').textContent  = pisos ? pisos : (metros ? `${metros}m` : '—');
+  document.getElementById('r-alt-est').textContent = alt  ? `~${alt} m estimados` : 'Altura libre';
+  document.getElementById('r-cc').textContent   = cc  ? cc  : '—';
+  document.getElementById('r-cos').textContent  = cos ? cos : '—';
+  document.getElementById('r-ocup').textContent = ocup ? `${ocup}m²` : '—';
+  document.getElementById('r-dens').textContent = dens ? `${dens}` : '—';
+  document.getElementById('r-sup-m2').textContent = `${Math.round(sup)}m²`;
+  document.getElementById('r-per').textContent    = `${per.toFixed(0)}m`;
+
+  abrirSheet('sheet-resultados');
+  setTimeout(() => initMiniMap('mm-result', 'miniMapResult', APP.currentPolygon), 420);
+}
+
+// ============================================================
+// SIN DATOS SHEET
+// ============================================================
+function mostrarSinDatos(props, sup) {
+  const zona  = props ? (props.zona_code || props.zona || 'Zona desconocida') : 'Sin zona detectada';
+  const comuna = props ? (props.comuna || '') : '';
+
+  document.getElementById('sd-zona').textContent = `Zona: ${zona}${comuna ? ' · ' + comuna : ''}`;
+
+  if (comuna && APP.cobertura[comuna]) {
+    const cob = APP.cobertura[comuna];
+    document.getElementById('sd-cobertura').textContent =
+      `${cob.conDatos} / ${cob.total} zonas · ${cob.conDatos === 0 ? 'Ordenanza no ingresada aún' : 'Cobertura parcial'}`;
+  } else {
+    document.getElementById('sd-cobertura').textContent = 'Datos no disponibles para esta área';
+  }
+
+  const btnDOM = document.getElementById('btn-dom');
+  const url = DOM_URLS[comuna];
+  if (url) {
+    btnDOM.textContent = `Ir a la DOM de ${comuna}`;
+    btnDOM.style.display = '';
+  } else {
+    btnDOM.style.display = 'none';
+  }
+
+  abrirSheet('sheet-sindatos');
+  setTimeout(() => initMiniMap('mm-sindatos', 'miniMapSindatos', APP.currentPolygon, true), 420);
+}
+
+// ============================================================
+// MINI MAPS
+// ============================================================
+function initMiniMap(containerId, key, polygon, dashed) {
+  if (APP[key]) { try { APP[key].remove(); } catch {} APP[key] = null; }
+  const el = document.getElementById(containerId);
+  if (!el) return;
+
+  const m = L.map(containerId, {
+    zoomControl: false, attributionControl: false,
+    dragging: false, touchZoom: false, scrollWheelZoom: false,
+    doubleClickZoom: false, boxZoom: false, keyboard: false
+  });
+
+  addSatTiles(m);
+
+  if (polygon) {
+    const style = dashed
+      ? { color: '#888', fillColor: '#888', fillOpacity: 0.08, weight: 2, dashArray: '6,4' }
+      : { color: '#840016', fillColor: '#840016', fillOpacity: 0.14, weight: 2.5 };
+    const layer = L.geoJSON(polygon, { style }).addTo(m);
+    m.fitBounds(layer.getBounds(), { padding: [22, 22] });
+    m.invalidateSize();
+  }
+  APP[key] = m;
+}
+
+// ============================================================
+// SHEETS
+// ============================================================
+function abrirSheet(id) {
+  document.getElementById('sheet-overlay').classList.add('active');
+  document.getElementById(id).classList.add('open');
+}
+
+function closeSheets() {
+  document.getElementById('sheet-overlay').classList.remove('active');
+  document.querySelectorAll('.bottom-sheet').forEach(s => s.classList.remove('open'));
+}
+
+// ============================================================
+// GUARDAR / DESCARTAR
+// ============================================================
+function guardarCabida() {
+  if (!APP.currentPolygon || !APP.currentZona) return;
+  const { data: z, props, supM2, perM } = APP.currentZona;
+  const n = (z && z.normas_urbanisticas) || {};
+  const cc  = n.coeficiente_constructibilidad;
+  const cos = n.coeficiente_ocupacion_suelo;
+  const pisos = n.altura_maxima_pisos;
+  const metros = n.altura_maxima_metros;
+
+  const uid = (typeof crypto !== 'undefined' && crypto.randomUUID)
+    ? crypto.randomUUID()
+    : `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+
+  const prospecto = {
+    id: uid,
+    fecha: new Date().toISOString(),
+    coordenadas: turf.centroid(APP.currentPolygon).geometry.coordinates,
+    poligono: APP.currentPolygon,
+    superficie_predio: Math.round(supM2),
+    comuna:     props ? props.comuna : '—',
+    zona:       props ? (props.zona_code || props.zona) : '—',
+    nombre_zona: z ? z.nombre : '—',
+    normas: { CC: cc, COS: cos, pisos, metros },
+    resultados: {
+      sup_construible: cc  ? Math.round(cc  * supM2) : null,
+      ocupacion_piso1: cos ? Math.round(cos * supM2) : null,
+      altura_estimada: pisos ? +(pisos * 2.8).toFixed(1) : metros
+    }
+  };
+
+  APP.prospectos.unshift(prospecto);
+  localStorage.setItem('prospectos', JSON.stringify(APP.prospectos));
+  document.getElementById('stat-cabidas').textContent = APP.prospectos.length;
+
+  closeSheets();
+  reiniciarDibujo();
+  toast('Cabida guardada');
+}
+
+function descartarCabida() {
+  closeSheets();
+  reiniciarDibujo();
+}
+
+function cargarProspectos() {
+  try { APP.prospectos = JSON.parse(localStorage.getItem('prospectos') || '[]'); }
+  catch { APP.prospectos = []; }
+}
+
+// ============================================================
+// PROSPECTOS SCREEN
+// ============================================================
+function initProspectos() {
+  const lista = document.getElementById('prosp-lista');
+  lista.innerHTML = '';
+
+  document.getElementById('p-count').textContent = `${APP.prospectos.length} cabida${APP.prospectos.length !== 1 ? 's' : ''}`;
+
+  if (APP.prospectos.length === 0) {
+    lista.innerHTML = `
+      <div class="empty-state">
+        <div class="empty-icon">&#9734;</div>
+        <div class="empty-title">Sin cabidas guardadas</div>
+        <div class="empty-sub">Traza un predio en el mapa y guarda los resultados para verlos aquí.</div>
+        <button class="btn-primary" style="margin-top:20px;max-width:260px;" onclick="navigate('mapa')">Explorar mapa</button>
+      </div>`;
+    document.getElementById('p-comunas').textContent = '';
+    document.getElementById('card-total-wrap').style.display = 'none';
+    initProspectosMap([]);
+    return;
+  }
+
+  const comunas = [...new Set(APP.prospectos.map(p => p.comuna).filter(Boolean))];
+  document.getElementById('p-comunas').textContent = comunas.join(' · ');
+
+  const total = APP.prospectos.reduce((s,p) => s + (p.resultados.sup_construible || 0), 0);
+  document.getElementById('p-total').textContent     = `${total.toLocaleString('es-CL')} m²`;
+  document.getElementById('p-total-sub').textContent = `construibles entre ${APP.prospectos.length} cabida${APP.prospectos.length !== 1 ? 's' : ''}`;
+  document.getElementById('card-total-wrap').style.display = 'block';
+
+  APP.prospectos.forEach(p => {
+    const card = document.createElement('div');
+    card.className = 'prosp-card';
+    const sc = p.resultados.sup_construible;
+    card.innerHTML = `
+      <div class="prosp-dot"></div>
+      <div class="prosp-info">
+        <div class="prosp-zona">${p.nombre_zona || p.zona} · ${p.comuna}</div>
+        <div class="prosp-meta">${p.superficie_predio} m² predio · ${fmtFecha(p.fecha)}</div>
+      </div>
+      <div>
+        <div class="prosp-val">${sc ? sc.toLocaleString('es-CL') : '—'}</div>
+        <div class="prosp-val-unit">m² const.</div>
+      </div>
+      <div class="prosp-del" id="del-${p.id}">
+        <button onclick="eliminarProspecto('${p.id}')">🗑</button>
+      </div>`;
+
+    // Long-press to reveal delete
+    let timer;
+    card.addEventListener('touchstart', () => {
+      timer = setTimeout(() => document.getElementById(`del-${p.id}`).classList.toggle('show'), 600);
+    }, { passive: true });
+    card.addEventListener('touchend', () => clearTimeout(timer));
+
+    lista.appendChild(card);
+  });
+
+  initProspectosMap(APP.prospectos);
+}
+
+function initProspectosMap(prospectos) {
+  if (APP.miniMapProspectos) { try { APP.miniMapProspectos.remove(); } catch {} APP.miniMapProspectos = null; }
+
+  const m = L.map('mini-map-prospectos', {
+    zoomControl: false, attributionControl: false,
+    dragging: false, touchZoom: false, scrollWheelZoom: false,
+    doubleClickZoom: false
+  }).setView([-36.9, -72.5], 9);
+
+  addSatTiles(m);
+
+  if (prospectos.length > 0) {
+    const bounds = L.latLngBounds();
+    prospectos.forEach(p => {
+      if (!p.poligono) return;
+      const layer = L.geoJSON(p.poligono, {
+        style: { color: '#840016', fillColor: '#840016', fillOpacity: 0.16, weight: 2 }
+      }).addTo(m);
+      try { bounds.extend(layer.getBounds()); } catch {}
+
+      if (p.resultados.sup_construible && p.coordenadas) {
+        L.marker([p.coordenadas[1], p.coordenadas[0]], {
+          icon: L.divIcon({
+            className: '',
+            html: `<div style="background:#840016;color:#fff;font-size:10px;font-weight:700;border-radius:10px;padding:2px 8px;white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,.25);">${(p.resultados.sup_construible/1000).toFixed(1)}k m²</div>`,
+            iconAnchor: [24, -4]
+          })
+        }).addTo(m);
+      }
+    });
+    if (bounds.isValid()) { m.fitBounds(bounds, { padding: [24, 24] }); m.invalidateSize(); }
+  }
+  APP.miniMapProspectos = m;
+}
+
+function eliminarProspecto(id) {
+  APP.prospectos = APP.prospectos.filter(p => p.id !== id);
+  localStorage.setItem('prospectos', JSON.stringify(APP.prospectos));
+  document.getElementById('stat-cabidas').textContent = APP.prospectos.length;
+  initProspectos();
+}
+
+// ============================================================
+// UTILS
+// ============================================================
+function irADOM() {
+  const url = APP.currentZona && APP.currentZona.props && DOM_URLS[APP.currentZona.props.comuna];
+  if (url) window.open(url, '_blank');
+}
+
+function openConfig() {
+  toast('Configuración próximamente');
+}
+
+function fmtFecha(iso) {
+  try { return new Date(iso).toLocaleDateString('es-CL', { day:'2-digit', month:'short', year:'numeric' }); }
+  catch { return iso; }
+}
+
+function toast(msg) {
+  document.querySelectorAll('.toast').forEach(t => t.remove());
+  const t = document.createElement('div');
+  t.className = 'toast';
+  t.textContent = msg;
+  document.body.appendChild(t);
+  setTimeout(() => t.remove(), 2200);
+}
+
+// ============================================================
+// TILES — ESRI World Imagery (satellite) + labels overlay
+// ============================================================
+function addSatTiles(map) {
+  L.tileLayer(
+    'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+    { maxZoom: 20, attribution: 'Tiles &copy; Esri &mdash; Source: Esri, USGS, NOAA' }
+  ).addTo(map);
+
+  // Street names + boundaries overlay
+  L.tileLayer(
+    'https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}',
+    { maxZoom: 20, opacity: 0.85, pane: 'shadowPane' }
+  ).addTo(map);
+}
+
+// ============================================================
+// START
+// ============================================================
+initApp();
+</script>
+</body>
+</html>
