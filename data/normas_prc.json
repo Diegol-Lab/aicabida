@@ -4472,7 +4472,7 @@
         "coeficiente_ocupacion_suelo": 0.2,
         "coeficiente_ocupacion_suelo_total": null,
         "altura_maxima_pisos": null,
-        "altura_maxima_metros": null,
+        "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
         "densidad_maxima_habha": null,
         "superficie_predial_minima_m2": 2500,
@@ -4484,7 +4484,7 @@
         "subdivision_minima_m2": 2500,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "Norms según Zona ZE-2 (zona condicionada). CC=0.3. COS=0.2. Agrup=Aislado",
+        "notas": "Norms según Zona ZE-2 (zona condicionada). CC=0.3. COS=0.2. Alt.máx=S.R.. Agrup=Aislado",
         "adosamiento": false
       }
     },
@@ -6208,13 +6208,14 @@
         "frente_minimo_m": null,
         "antejardín_minimo_m": null,
         "rasante_grados": null,
-        "agrupamiento": "No aplica",
+        "agrupamiento": null,
         "distancia_deslinde_m": null,
         "subdivision_minima_m2": null,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "Agrup=No aplica",
-        "adosamiento": false
+        "notas": "Zona no edificable. Ver ordenanza Tomé para ZPD.",
+        "adosamiento": null,
+        "_force_clear": true
       }
     },
     {
@@ -6663,7 +6664,7 @@
         "subdivision_minima_m2": null,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "ZRes 2 Zona de restriccion por deslizamiento en masa 2",
+        "notas": "Zona no edificable. Ver ordenanza Tomé para ZRes 2.",
         "adosamiento": null,
         "_force_clear": true
       }
@@ -6808,7 +6809,7 @@
     },
     {
       "comuna": "Tome",
-      "prc_decreto": "PRC Tomé. Ordenanza Local. Decreto aprobatorio MINVU.",
+      "prc_decreto": "Plan Seccional Sector Costero de Tomé. Ordenanza Local MINVU.",
       "zona": "H1",
       "nombre": "H1 Zona habitacional",
       "usos_permitidos": [
@@ -6824,28 +6825,29 @@
         "Todos los usos de suelo no mencionados como permitidos."
       ],
       "normas_urbanisticas": {
-        "coeficiente_constructibilidad": null,
-        "coeficiente_ocupacion_suelo": null,
+        "coeficiente_constructibilidad": 4.0,
+        "coeficiente_ocupacion_suelo": 0.5,
         "coeficiente_ocupacion_suelo_total": null,
         "altura_maxima_pisos": null,
-        "altura_maxima_metros": null,
+        "altura_maxima_metros": 28.0,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
-        "superficie_predial_minima_m2": null,
+        "densidad_maxima_habha": 1200,
+        "superficie_predial_minima_m2": 500,
         "frente_minimo_m": null,
-        "antejardín_minimo_m": null,
+        "antejardín_minimo_m": "N.E.",
         "rasante_grados": null,
-        "agrupamiento": null,
-        "distancia_deslinde_m": null,
-        "subdivision_minima_m2": null,
+        "agrupamiento": "Aislado",
+        "distancia_deslinde_m": 3.0,
+        "subdivision_minima_m2": 500,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": null
+        "notas": "CC=4.0. COS=0.5. Alt.máx=28.0m. Dens=1200hab/há. Agrup=Aislado",
+        "adosamiento": true
       }
     },
     {
       "comuna": "Tome",
-      "prc_decreto": "PRC Tomé. Ordenanza Local. Decreto aprobatorio MINVU.",
+      "prc_decreto": "Plan Seccional Sector Costero de Tomé. Ordenanza Local MINVU.",
       "zona": "IP",
       "nombre": "IP Zona de infraestructura portuaria",
       "usos_permitidos": [
@@ -6859,28 +6861,29 @@
         "Todos los usos de suelo no mencionados como permitidos."
       ],
       "normas_urbanisticas": {
-        "coeficiente_constructibilidad": null,
-        "coeficiente_ocupacion_suelo": null,
+        "coeficiente_constructibilidad": 4.0,
+        "coeficiente_ocupacion_suelo": 0.5,
         "coeficiente_ocupacion_suelo_total": null,
         "altura_maxima_pisos": null,
-        "altura_maxima_metros": null,
+        "altura_maxima_metros": 28.0,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
-        "superficie_predial_minima_m2": null,
+        "densidad_maxima_habha": 1200,
+        "superficie_predial_minima_m2": 500,
         "frente_minimo_m": null,
-        "antejardín_minimo_m": null,
+        "antejardín_minimo_m": "N.E.",
         "rasante_grados": null,
-        "agrupamiento": null,
-        "distancia_deslinde_m": null,
-        "subdivision_minima_m2": null,
+        "agrupamiento": "Aislado",
+        "distancia_deslinde_m": 3.0,
+        "subdivision_minima_m2": 500,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": null
+        "notas": "CC=4.0. COS=0.5. Alt.máx=28.0m. Dens=1200hab/há. Agrup=Aislado",
+        "adosamiento": true
       }
     },
     {
       "comuna": "Tome",
-      "prc_decreto": "PRC Tomé. Ordenanza Local. Decreto aprobatorio MINVU.",
+      "prc_decreto": "Plan Seccional Sector Costero de Tomé. Ordenanza Local MINVU.",
       "zona": "D3",
       "nombre": "D3 Zona de desarrollo 3",
       "usos_permitidos": [
@@ -6894,23 +6897,24 @@
         "Todos los usos de suelo no mencionados como permitidos."
       ],
       "normas_urbanisticas": {
-        "coeficiente_constructibilidad": null,
-        "coeficiente_ocupacion_suelo": null,
+        "coeficiente_constructibilidad": 5.0,
+        "coeficiente_ocupacion_suelo": 0.5,
         "coeficiente_ocupacion_suelo_total": null,
         "altura_maxima_pisos": null,
-        "altura_maxima_metros": null,
+        "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
         "densidad_maxima_habha": null,
-        "superficie_predial_minima_m2": null,
+        "superficie_predial_minima_m2": 1200,
         "frente_minimo_m": null,
-        "antejardín_minimo_m": null,
+        "antejardín_minimo_m": 3.0,
         "rasante_grados": null,
-        "agrupamiento": null,
-        "distancia_deslinde_m": null,
-        "subdivision_minima_m2": null,
+        "agrupamiento": "Aislado",
+        "distancia_deslinde_m": 5.0,
+        "subdivision_minima_m2": 1200,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": null
+        "notas": "CC=5.0. COS=0.5. Alt.máx=S.R.. Agrup=Aislado",
+        "adosamiento": false
       }
     },
     {
@@ -6943,7 +6947,9 @@
         "subdivision_minima_m2": null,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": null
+        "notas": "Zona no edificable. Ver ordenanza Tomé para ZRD.",
+        "adosamiento": null,
+        "_force_clear": true
       }
     },
     {
@@ -6975,14 +6981,14 @@
         "subdivision_minima_m2": null,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "ZP Zona de playa",
+        "notas": "Zona no edificable. Ver ordenanza Tomé para ZP.",
         "adosamiento": null,
         "_force_clear": true
       }
     },
     {
       "comuna": "Tome",
-      "prc_decreto": "PRC Tomé. Ordenanza Local. Decreto aprobatorio MINVU.",
+      "prc_decreto": "Plan Seccional Sector Costero de Tomé. Ordenanza Local MINVU.",
       "zona": "H2",
       "nombre": "H2 Zona habitacional",
       "usos_permitidos": [
@@ -7000,28 +7006,29 @@
         "Todos los usos de suelo no mencionados como permitidos."
       ],
       "normas_urbanisticas": {
-        "coeficiente_constructibilidad": null,
-        "coeficiente_ocupacion_suelo": null,
+        "coeficiente_constructibilidad": 4.5,
+        "coeficiente_ocupacion_suelo": 0.8,
         "coeficiente_ocupacion_suelo_total": null,
         "altura_maxima_pisos": null,
-        "altura_maxima_metros": null,
+        "altura_maxima_metros": 14.0,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
-        "superficie_predial_minima_m2": null,
+        "densidad_maxima_habha": 2100,
+        "superficie_predial_minima_m2": 500,
         "frente_minimo_m": null,
-        "antejardín_minimo_m": null,
+        "antejardín_minimo_m": "N.E.",
         "rasante_grados": null,
-        "agrupamiento": null,
+        "agrupamiento": "Aislado, Pareado y Continuo",
         "distancia_deslinde_m": null,
-        "subdivision_minima_m2": null,
+        "subdivision_minima_m2": 500,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": null
+        "notas": "CC=4.5. COS=0.8. Alt.máx=14.0m. Dens=2100hab/há. Agrup=Aislado, Pareado y Continuo",
+        "adosamiento": true
       }
     },
     {
       "comuna": "Tome",
-      "prc_decreto": "PRC Tomé. Ordenanza Local. Decreto aprobatorio MINVU.",
+      "prc_decreto": "Plan Seccional Sector Costero de Tomé. Ordenanza Local MINVU.",
       "zona": "H5",
       "nombre": "H5 Zona habitacional",
       "usos_permitidos": [
@@ -7036,28 +7043,29 @@
         "Todos los usos de suelo no mencionados como permitidos."
       ],
       "normas_urbanisticas": {
-        "coeficiente_constructibilidad": null,
-        "coeficiente_ocupacion_suelo": null,
+        "coeficiente_constructibilidad": 6.0,
+        "coeficiente_ocupacion_suelo": 1.0,
         "coeficiente_ocupacion_suelo_total": null,
         "altura_maxima_pisos": null,
-        "altura_maxima_metros": null,
+        "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
-        "superficie_predial_minima_m2": null,
+        "densidad_maxima_habha": 1200,
+        "superficie_predial_minima_m2": 300,
         "frente_minimo_m": null,
-        "antejardín_minimo_m": null,
+        "antejardín_minimo_m": "N.E.",
         "rasante_grados": null,
-        "agrupamiento": null,
-        "distancia_deslinde_m": null,
-        "subdivision_minima_m2": null,
+        "agrupamiento": "Aislado, Pareado y Continuo",
+        "distancia_deslinde_m": "S.R.",
+        "subdivision_minima_m2": 300,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": null
+        "notas": "CC=6.0. COS=1.0. Alt.máx=S.R.. Dens=1200hab/há. Agrup=Aislado, Pareado y Continuo",
+        "adosamiento": true
       }
     },
     {
       "comuna": "Tome",
-      "prc_decreto": "PRC Tomé. Ordenanza Local. Decreto aprobatorio MINVU.",
+      "prc_decreto": "Plan Seccional Sector Costero de Tomé. Ordenanza Local MINVU.",
       "zona": "H4",
       "nombre": "H4 Zona habitacional",
       "usos_permitidos": [
@@ -7074,28 +7082,29 @@
         "Todos los usos de suelo no mencionados como permitidos."
       ],
       "normas_urbanisticas": {
-        "coeficiente_constructibilidad": null,
-        "coeficiente_ocupacion_suelo": null,
+        "coeficiente_constructibilidad": 6.0,
+        "coeficiente_ocupacion_suelo": 0.8,
         "coeficiente_ocupacion_suelo_total": null,
         "altura_maxima_pisos": null,
-        "altura_maxima_metros": null,
+        "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
-        "superficie_predial_minima_m2": null,
+        "densidad_maxima_habha": 2400,
+        "superficie_predial_minima_m2": 600,
         "frente_minimo_m": null,
-        "antejardín_minimo_m": null,
+        "antejardín_minimo_m": "N.E.",
         "rasante_grados": null,
-        "agrupamiento": null,
-        "distancia_deslinde_m": null,
-        "subdivision_minima_m2": null,
+        "agrupamiento": "Aislado, Pareado y Continuo",
+        "distancia_deslinde_m": "S.R.",
+        "subdivision_minima_m2": 600,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": null
+        "notas": "CC=6.0. COS=0.8. Alt.máx=S.R.. Dens=2400hab/há. Agrup=Aislado, Pareado y Continuo",
+        "adosamiento": true
       }
     },
     {
       "comuna": "Tome",
-      "prc_decreto": "PRC Tomé. Ordenanza Local. Decreto aprobatorio MINVU.",
+      "prc_decreto": "Plan Seccional Sector Costero de Tomé. Ordenanza Local MINVU.",
       "zona": "D2",
       "nombre": "D2 Zona de desarrollo 2",
       "usos_permitidos": [
@@ -7112,28 +7121,29 @@
         "Todos los usos de suelo no mencionados como permitidos."
       ],
       "normas_urbanisticas": {
-        "coeficiente_constructibilidad": null,
-        "coeficiente_ocupacion_suelo": null,
+        "coeficiente_constructibilidad": 4.0,
+        "coeficiente_ocupacion_suelo": 0.7,
         "coeficiente_ocupacion_suelo_total": null,
         "altura_maxima_pisos": null,
-        "altura_maxima_metros": null,
+        "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
-        "superficie_predial_minima_m2": null,
+        "densidad_maxima_habha": 2000,
+        "superficie_predial_minima_m2": 500,
         "frente_minimo_m": null,
-        "antejardín_minimo_m": null,
+        "antejardín_minimo_m": "N.E.",
         "rasante_grados": null,
-        "agrupamiento": null,
-        "distancia_deslinde_m": null,
-        "subdivision_minima_m2": null,
+        "agrupamiento": "Aislado",
+        "distancia_deslinde_m": 3.0,
+        "subdivision_minima_m2": 500,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": null
+        "notas": "CC=4.0. COS=0.7. Alt.máx=S.R.. Dens=2000hab/há. Agrup=Aislado",
+        "adosamiento": false
       }
     },
     {
       "comuna": "Tome",
-      "prc_decreto": "PRC Tomé. Ordenanza Local. Decreto aprobatorio MINVU.",
+      "prc_decreto": "Plan Seccional Sector Costero de Tomé. Ordenanza Local MINVU.",
       "zona": "H6",
       "nombre": "H6 Zona habitacional",
       "usos_permitidos": [
@@ -7148,28 +7158,29 @@
         "Todos los usos de suelo no mencionados como permitidos."
       ],
       "normas_urbanisticas": {
-        "coeficiente_constructibilidad": null,
-        "coeficiente_ocupacion_suelo": null,
+        "coeficiente_constructibilidad": 2.0,
+        "coeficiente_ocupacion_suelo": 0.8,
         "coeficiente_ocupacion_suelo_total": null,
         "altura_maxima_pisos": null,
-        "altura_maxima_metros": null,
+        "altura_maxima_metros": 7.0,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
-        "superficie_predial_minima_m2": null,
+        "densidad_maxima_habha": "N.E.",
+        "superficie_predial_minima_m2": 180,
         "frente_minimo_m": null,
-        "antejardín_minimo_m": null,
+        "antejardín_minimo_m": "N.E.",
         "rasante_grados": null,
-        "agrupamiento": null,
-        "distancia_deslinde_m": null,
-        "subdivision_minima_m2": null,
+        "agrupamiento": "Aislado, Pareado y Continuo",
+        "distancia_deslinde_m": "S.R.",
+        "subdivision_minima_m2": 180,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": null
+        "notas": "CC=2.0. COS=0.8. Alt.máx=7.0m. Dens=N.E.. Agrup=Aislado, Pareado y Continuo",
+        "adosamiento": true
       }
     },
     {
       "comuna": "Tome",
-      "prc_decreto": "PRC Tomé. Ordenanza Local. Decreto aprobatorio MINVU.",
+      "prc_decreto": "Plan Seccional Sector Costero de Tomé. Ordenanza Local MINVU.",
       "zona": "H7",
       "nombre": "H7 Zona habitacional",
       "usos_permitidos": [
@@ -7184,28 +7195,29 @@
         "Todos los usos de suelo no mencionados como permitidos."
       ],
       "normas_urbanisticas": {
-        "coeficiente_constructibilidad": null,
-        "coeficiente_ocupacion_suelo": null,
+        "coeficiente_constructibilidad": 2.0,
+        "coeficiente_ocupacion_suelo": 0.8,
         "coeficiente_ocupacion_suelo_total": null,
         "altura_maxima_pisos": null,
-        "altura_maxima_metros": null,
+        "altura_maxima_metros": 10.5,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
-        "superficie_predial_minima_m2": null,
+        "densidad_maxima_habha": "N.E.",
+        "superficie_predial_minima_m2": 220,
         "frente_minimo_m": null,
-        "antejardín_minimo_m": null,
+        "antejardín_minimo_m": "N.E.",
         "rasante_grados": null,
-        "agrupamiento": null,
-        "distancia_deslinde_m": null,
-        "subdivision_minima_m2": null,
+        "agrupamiento": "Aislado, Pareado y Continuo",
+        "distancia_deslinde_m": "S.R.",
+        "subdivision_minima_m2": 220,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": null
+        "notas": "CC=2.0. COS=0.8. Alt.máx=10.5m. Dens=N.E.. Agrup=Aislado, Pareado y Continuo",
+        "adosamiento": true
       }
     },
     {
       "comuna": "Tome",
-      "prc_decreto": "PRC Tomé. Ordenanza Local. Decreto aprobatorio MINVU.",
+      "prc_decreto": "Plan Seccional Sector Costero de Tomé. Ordenanza Local MINVU.",
       "zona": "D1",
       "nombre": "D1 Zona de desarrollo 1",
       "usos_permitidos": [
@@ -7219,28 +7231,29 @@
         "Todos los usos de suelo no mencionados como permitidos."
       ],
       "normas_urbanisticas": {
-        "coeficiente_constructibilidad": null,
-        "coeficiente_ocupacion_suelo": null,
+        "coeficiente_constructibilidad": 3.5,
+        "coeficiente_ocupacion_suelo": 0.7,
         "coeficiente_ocupacion_suelo_total": null,
         "altura_maxima_pisos": null,
-        "altura_maxima_metros": null,
+        "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
-        "superficie_predial_minima_m2": null,
+        "densidad_maxima_habha": 1800,
+        "superficie_predial_minima_m2": 600,
         "frente_minimo_m": null,
-        "antejardín_minimo_m": null,
+        "antejardín_minimo_m": 3.0,
         "rasante_grados": null,
-        "agrupamiento": null,
-        "distancia_deslinde_m": null,
-        "subdivision_minima_m2": null,
+        "agrupamiento": "Aislado",
+        "distancia_deslinde_m": 5.0,
+        "subdivision_minima_m2": 600,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": null
+        "notas": "CC=3.5. COS=0.7. Alt.máx=S.R.. Dens=1800hab/há. Agrup=Aislado",
+        "adosamiento": false
       }
     },
     {
       "comuna": "Tome",
-      "prc_decreto": "PRC Tomé. Ordenanza Local. Decreto aprobatorio MINVU.",
+      "prc_decreto": "Plan Seccional Sector Costero de Tomé. Ordenanza Local MINVU.",
       "zona": "H8",
       "nombre": "H8 Zona habitacional",
       "usos_permitidos": [
@@ -7252,23 +7265,24 @@
         "Todos los usos de suelo no mencionados como permitidos."
       ],
       "normas_urbanisticas": {
-        "coeficiente_constructibilidad": null,
-        "coeficiente_ocupacion_suelo": null,
+        "coeficiente_constructibilidad": 4.0,
+        "coeficiente_ocupacion_suelo": 0.6,
         "coeficiente_ocupacion_suelo_total": null,
         "altura_maxima_pisos": null,
-        "altura_maxima_metros": null,
+        "altura_maxima_metros": 24.0,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
-        "superficie_predial_minima_m2": null,
+        "densidad_maxima_habha": 1500,
+        "superficie_predial_minima_m2": 500,
         "frente_minimo_m": null,
-        "antejardín_minimo_m": null,
+        "antejardín_minimo_m": "N.E.",
         "rasante_grados": null,
-        "agrupamiento": null,
-        "distancia_deslinde_m": null,
-        "subdivision_minima_m2": null,
+        "agrupamiento": "Aislado, Pareado y Continuo",
+        "distancia_deslinde_m": "S.R.",
+        "subdivision_minima_m2": 500,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": null
+        "notas": "CC=4.0. COS=0.6. Alt.máx=24.0m. Dens=1500hab/há. Agrup=Aislado, Pareado y Continuo",
+        "adosamiento": true
       }
     },
     {
@@ -7355,7 +7369,7 @@
     },
     {
       "comuna": "Tome",
-      "prc_decreto": "PRC Tomé. Ordenanza Local. Decreto aprobatorio MINVU.",
+      "prc_decreto": "Plan Seccional Sector Costero de Tomé. Ordenanza Local MINVU.",
       "zona": "H3",
       "nombre": "H3 Zona habitacional",
       "usos_permitidos": [
@@ -7370,23 +7384,24 @@
         "Todos los usos de suelo no mencionados como permitidos."
       ],
       "normas_urbanisticas": {
-        "coeficiente_constructibilidad": null,
-        "coeficiente_ocupacion_suelo": null,
+        "coeficiente_constructibilidad": 1.0,
+        "coeficiente_ocupacion_suelo": 0.7,
         "coeficiente_ocupacion_suelo_total": null,
         "altura_maxima_pisos": null,
-        "altura_maxima_metros": null,
+        "altura_maxima_metros": 7.0,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
-        "superficie_predial_minima_m2": null,
+        "densidad_maxima_habha": 300,
+        "superficie_predial_minima_m2": 300,
         "frente_minimo_m": null,
-        "antejardín_minimo_m": null,
+        "antejardín_minimo_m": "N.E.",
         "rasante_grados": null,
-        "agrupamiento": null,
-        "distancia_deslinde_m": null,
-        "subdivision_minima_m2": null,
+        "agrupamiento": "Aislado, Pareado y Continuo",
+        "distancia_deslinde_m": "S.R.",
+        "subdivision_minima_m2": 300,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": null
+        "notas": "CC=1.0. COS=0.7. Alt.máx=7.0m. Dens=300hab/há. Agrup=Aislado, Pareado y Continuo",
+        "adosamiento": true
       }
     },
     {
@@ -7523,7 +7538,9 @@
         "subdivision_minima_m2": null,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": null
+        "notas": "Zona no edificable. Ver ordenanza Tomé para PP.",
+        "adosamiento": null,
+        "_force_clear": true
       }
     },
     {
@@ -7554,7 +7571,9 @@
         "subdivision_minima_m2": null,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": null
+        "notas": "Zona no edificable. Ver ordenanza Tomé para AVC.",
+        "adosamiento": null,
+        "_force_clear": true
       }
     },
     {
@@ -7585,7 +7604,9 @@
         "subdivision_minima_m2": null,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": null
+        "notas": "Zona no edificable. Ver ordenanza Tomé para AAL.",
+        "adosamiento": null,
+        "_force_clear": true
       }
     },
     {
