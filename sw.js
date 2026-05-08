@@ -1,5 +1,5 @@
 // AiCabida Service Worker — Cache First strategy
-const CACHE = 'aicabida-v5';
+const CACHE = 'aicabida-v6';
 
 const PRECACHE = [
   '/',

@@ -490,6 +490,20 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
 }
 .kpi-sm .kpi-lbl { color: var(--muted); font-size: 10px; margin-bottom: 4px; opacity: 1; }
 .kpi-sm .kpi-val { font-size: 18px; font-family: var(--syne); font-weight: 800; color: var(--texto); }
+.kpi-sm .kpi-val.sr { font-size: 15px; color: #c07000; }
+.kpi-sm .kpi-val.ne { font-size: 15px; color: var(--muted); }
+
+/* Full-width norm row */
+.norm-row {
+  background: var(--bg); border: 1px solid var(--borde);
+  border-radius: 10px; padding: 11px 14px;
+  margin-bottom: 8px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.norm-row-lbl { font-size: 12px; color: var(--muted); font-weight: 600; }
+.norm-row-val { font-family: var(--syne); font-size: 16px; font-weight: 800; color: var(--texto); }
+.norm-row-val.sr { color: #c07000; font-size: 14px; }
+.norm-row-val.ne { color: var(--muted); font-size: 14px; }
 
 .sheet-btns { display: flex; flex-direction: column; gap: 10px; padding-top: 4px; }
 
@@ -819,20 +833,36 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
         <div class="kpi-unit">m&sup2; construibles</div>
       </div>
       <div class="kpi-gris">
-        <div class="kpi-lbl">Pisos m&aacute;x.</div>
-        <div class="kpi-val" id="r-pisos">&mdash;</div>
+        <div class="kpi-lbl">Altura m&aacute;x.</div>
+        <div class="kpi-val" id="r-pisos" style="font-size:22px">&mdash;</div>
         <div class="kpi-unit" id="r-alt-est">&mdash;</div>
       </div>
     </div>
 
-    <!-- Datos t&eacute;cnicos -->
-    <div class="section-hdr">Datos t&eacute;cnicos</div>
+    <!-- Coeficientes -->
+    <div class="section-hdr">Coeficientes</div>
     <div class="kpi-grid4">
-      <div class="kpi-sm"><div class="kpi-lbl">CC</div><div class="kpi-val" id="r-cc">&mdash;</div></div>
-      <div class="kpi-sm"><div class="kpi-lbl">COS</div><div class="kpi-val" id="r-cos">&mdash;</div></div>
-      <div class="kpi-sm"><div class="kpi-lbl">Ocup. 1&ordm;p</div><div class="kpi-val" id="r-ocup">&mdash;</div></div>
-      <div class="kpi-sm"><div class="kpi-lbl">Densidad</div><div class="kpi-val" id="r-dens">&mdash;</div></div>
+      <div class="kpi-sm">
+        <div class="kpi-lbl">Constructibilidad (CC)</div>
+        <div class="kpi-val" id="r-cc">&mdash;</div>
+      </div>
+      <div class="kpi-sm">
+        <div class="kpi-lbl">Ocupaci&oacute;n suelo (COS)</div>
+        <div class="kpi-val" id="r-cos">&mdash;</div>
+      </div>
+      <div class="kpi-sm">
+        <div class="kpi-lbl">Ocup. 1&ordm; piso</div>
+        <div class="kpi-val" id="r-ocup">&mdash;</div>
+      </div>
+      <div class="kpi-sm">
+        <div class="kpi-lbl">Densidad m&aacute;x.</div>
+        <div class="kpi-val" id="r-dens">&mdash;</div>
+      </div>
     </div>
+
+    <!-- Edificaci&oacute;n -->
+    <div class="section-hdr">Normas de edificaci&oacute;n</div>
+    <div id="r-normas-extra"></div>
 
     <!-- Terreno -->
     <div class="section-hdr">Terreno trazado</div>
@@ -1381,27 +1411,81 @@ function mostrarResultados(z, props, sup, per) {
   const cc  = n.coeficiente_constructibilidad;
   const cos = n.coeficiente_ocupacion_suelo;
   const pisos  = n.altura_maxima_pisos;
-  const metros = n.altura_maxima_metros;
-  const dens   = n.densidad_maxima_vivha || n.densidad_maxima_habha;
+  const metros = n.altura_maxima_metros;  // number | "S.R." | "N.E." | null
+  const dens   = n.densidad_maxima_habha;
+  const frente = n.frente_minimo_m;
+  const antej  = n.antejardín_minimo_m;
+  const subdiv = n.subdivision_minima_m2 || n.superficie_predial_minima_m2;
+  const agrup  = n.agrupamiento;
+  const rasante= n.rasante_grados;
+  const dist   = n.distancia_deslinde_m;
 
-  const supC = cc  ? Math.round(cc  * sup) : null;
-  const ocup = cos ? Math.round(cos * sup) : null;
-  const alt  = pisos ? +(pisos * 2.8).toFixed(1) : metros;
+  // Helper: format any norm value (number / "S.R." / "N.E." / null)
+  function fv(v, suffix='') {
+    if (v === null || v === undefined) return { text: '—', cls: '' };
+    if (v === 'S.R.') return { text: 'S.R.', cls: 'sr', title: 'Según Rasante (Art. 2.6.3 OGUC – 70° Biobío)' };
+    if (v === 'N.E.') return { text: 'N.E.', cls: 'ne', title: 'No se exige' };
+    return { text: `${v}${suffix}`, cls: '' };
+  }
 
-  const zona  = props ? (props.zona_code || props.zona || '—') : '—';
+  const supC = (cc && typeof cc === 'number') ? Math.round(cc  * sup) : null;
+  const ocup = (cos && typeof cos === 'number') ? Math.round(cos * sup) : null;
+
+  // Altura display in primary KPI
+  let altTxt = '—', altSub = '', altCls = '';
+  if (metros === 'S.R.') {
+    altTxt = 'S.R.'; altSub = 'Según Rasante'; altCls = 'sr';
+  } else if (metros === 'N.E.') {
+    altTxt = 'N.E.'; altSub = 'No se exige'; altCls = 'ne';
+  } else if (pisos) {
+    altTxt = `${pisos} pisos`; altSub = `~${+(pisos*2.8).toFixed(1)} m est.`;
+  } else if (metros) {
+    altTxt = `${metros} m`; altSub = 'altura máx.';
+  }
+
+  const zona   = props ? (props.zona_code || props.zona || '—') : '—';
   const comuna = props ? (props.comuna || '—') : '—';
 
   document.getElementById('r-zona-code').textContent = zona;
   document.getElementById('r-zona-info').textContent = `${comuna} · ${z.prc_decreto || 'PRC'}`;
-  document.getElementById('r-sup-c').textContent  = supC ? supC.toLocaleString('es-CL') : '—';
-  document.getElementById('r-pisos').textContent  = pisos ? pisos : (metros ? `${metros}m` : '—');
-  document.getElementById('r-alt-est').textContent = alt  ? `~${alt} m estimados` : 'Altura libre';
-  document.getElementById('r-cc').textContent   = cc  ? cc  : '—';
-  document.getElementById('r-cos').textContent  = cos ? cos : '—';
-  document.getElementById('r-ocup').textContent = ocup ? `${ocup}m²` : '—';
-  document.getElementById('r-dens').textContent = dens ? `${dens}` : '—';
-  document.getElementById('r-sup-m2').textContent = `${Math.round(sup)}m²`;
-  document.getElementById('r-per').textContent    = `${per.toFixed(0)}m`;
+  document.getElementById('r-sup-c').textContent = supC ? supC.toLocaleString('es-CL') : '—';
+
+  const rPisos = document.getElementById('r-pisos');
+  rPisos.textContent = altTxt;
+  rPisos.className = `kpi-val${altCls ? ' kpi-val-' + altCls : ''}`;
+  rPisos.style.fontSize = (altTxt.length > 6) ? '16px' : '22px';
+  rPisos.style.color = altCls === 'sr' ? '#c07000' : altCls === 'ne' ? 'var(--muted)' : '';
+  document.getElementById('r-alt-est').textContent = altSub || '—';
+
+  document.getElementById('r-cc').textContent  = cc  != null ? cc  : '—';
+  document.getElementById('r-cos').textContent = cos != null ? cos : '—';
+  document.getElementById('r-ocup').textContent = ocup ? `${ocup.toLocaleString('es-CL')} m²` : '—';
+  const fvDens = fv(dens, ' hab/há');
+  document.getElementById('r-dens').textContent = dens != null ? fvDens.text : '—';
+
+  // Extra normas rows (dynamic)
+  const normasExtra = document.getElementById('r-normas-extra');
+  normasExtra.innerHTML = '';
+  const rows = [
+    { lbl: 'Agrupamiento',         val: agrup,   suffix: '',   display: agrup },
+    { lbl: 'Frente m&iacute;nimo', val: frente,  suffix: ' m', display: fv(frente,' m') },
+    { lbl: 'Antejard&iacute;n',    val: antej,   suffix: ' m', display: fv(antej,' m') },
+    { lbl: 'Subdiv. m&iacute;n.',  val: subdiv,  suffix: ' m²',display: fv(subdiv,' m²') },
+    { lbl: 'Rasante',              val: rasante, suffix: '°',  display: fv(rasante,'°') },
+    { lbl: 'Dist. deslinde',       val: dist,    suffix: ' m', display: fv(dist,' m') },
+  ];
+  rows.forEach(row => {
+    if (row.val === null || row.val === undefined) return;  // skip if no data
+    const d = typeof row.display === 'object' ? row.display : { text: row.display || '—', cls: '', title: '' };
+    const div = document.createElement('div');
+    div.className = 'norm-row';
+    div.innerHTML = `<span class="norm-row-lbl">${row.lbl}</span>
+      <span class="norm-row-val${d.cls ? ' ' + d.cls : ''}"${d.title ? ` title="${d.title}"` : ''}>${d.text}</span>`;
+    normasExtra.appendChild(div);
+  });
+
+  document.getElementById('r-sup-m2').textContent = `${Math.round(sup).toLocaleString('es-CL')} m²`;
+  document.getElementById('r-per').textContent    = `${per.toFixed(0)} m`;
 
   abrirSheet('sheet-resultados');
   setTimeout(() => initMiniMap('mm-result', 'miniMapResult', APP.currentPolygon), 420);
