@@ -470,7 +470,9 @@
         "subdivision_minima_m2": null,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": null
+        "notas": "Zona no edificable. Ver ordenanza Bulnes para AV.",
+        "adosamiento": null,
+        "_force_clear": true
       }
     },
     {
@@ -485,24 +487,25 @@
         "Todos los no indicados como permitidos. Detalles en Ordenanza"
       ],
       "normas_urbanisticas": {
-        "coeficiente_constructibilidad": "N.E.",
-        "coeficiente_ocupacion_suelo": 0.3,
+        "coeficiente_constructibilidad": null,
+        "coeficiente_ocupacion_suelo": null,
         "coeficiente_ocupacion_suelo_total": null,
         "altura_maxima_pisos": null,
-        "altura_maxima_metros": "S.R.",
+        "altura_maxima_metros": null,
         "densidad_maxima_vivha": null,
         "densidad_maxima_habha": null,
-        "superficie_predial_minima_m2": 2500,
+        "superficie_predial_minima_m2": null,
         "frente_minimo_m": null,
-        "antejardín_minimo_m": 5.0,
+        "antejardín_minimo_m": null,
         "rasante_grados": null,
-        "agrupamiento": "Aislado",
-        "distancia_deslinde_m": 5.0,
-        "subdivision_minima_m2": 2500,
+        "agrupamiento": null,
+        "distancia_deslinde_m": null,
+        "subdivision_minima_m2": null,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=N.E.. COS=0.3. Alt.máx=S.R.. Agrup=Aislado",
-        "adosamiento": true
+        "notas": "Zona no edificable. Ver ordenanza Bulnes para ZIS.",
+        "adosamiento": null,
+        "_force_clear": true
       }
     },
     {
@@ -971,7 +974,7 @@
         "subdivision_minima_m2": null,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "Solo espacio público. Sin construcciones. Protección de arborización y mobiliario urbano.",
+        "notas": "Zona no edificable. Ver ordenanza El Carmen para ZEP.",
         "adosamiento": null,
         "_force_clear": true
       }
@@ -1260,7 +1263,7 @@
         "subdivision_minima_m2": null,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "Zona protección drenaje. Solo espacio público, sin construcciones. Art. 24 Ordenanza Local.",
+        "notas": "Zona no edificable. Ver ordenanza El Carmen para ZPD.",
         "adosamiento": null,
         "_force_clear": true
       }
@@ -1681,20 +1684,21 @@
         "coeficiente_ocupacion_suelo": null,
         "coeficiente_ocupacion_suelo_total": null,
         "altura_maxima_pisos": null,
-        "altura_maxima_metros": 3.5,
+        "altura_maxima_metros": null,
         "densidad_maxima_vivha": null,
         "densidad_maxima_habha": null,
         "superficie_predial_minima_m2": null,
         "frente_minimo_m": null,
         "antejardín_minimo_m": null,
         "rasante_grados": null,
-        "agrupamiento": "Aislado",
+        "agrupamiento": null,
         "distancia_deslinde_m": null,
         "subdivision_minima_m2": null,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "Alt.máx=3.5m. Agrup=Aislado",
-        "adosamiento": false
+        "notas": "Zona no edificable. Ver ordenanza Yungay para Área Verde.",
+        "adosamiento": null,
+        "_force_clear": true
       }
     }
   ],
@@ -8479,7 +8483,8 @@
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
         "notas": "ZED Zona de equipamiento deportivo",
-        "adosamiento": false
+        "adosamiento": null,
+        "_force_clear": true
       }
     },
     {
@@ -8634,7 +8639,8 @@
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
         "notas": "ZEH-2(c) Zona de extensión habitacional 2 condicionada por riesgos naturales",
-        "adosamiento": false
+        "adosamiento": null,
+        "_force_clear": true
       }
     },
     {
@@ -8715,7 +8721,8 @@
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
         "notas": "ZEH-2 Zona de extensión habitacional 2",
-        "adosamiento": false
+        "adosamiento": null,
+        "_force_clear": true
       }
     },
     {
@@ -8756,7 +8763,8 @@
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
         "notas": "ZESE Zona de equipamiento de seguridad",
-        "adosamiento": false
+        "adosamiento": null,
+        "_force_clear": true
       }
     },
     {
@@ -8796,7 +8804,8 @@
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
         "notas": "ZESA Zona de equipamiento de salud",
-        "adosamiento": false
+        "adosamiento": null,
+        "_force_clear": true
       }
     },
     {
@@ -8919,7 +8928,8 @@
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
         "notas": "ZEH-1 Zona de extensión habitacional 1",
-        "adosamiento": false
+        "adosamiento": null,
+        "_force_clear": true
       }
     },
     {
@@ -8950,7 +8960,9 @@
         "subdivision_minima_m2": null,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": null
+        "notas": "Zona no edificable. Ver ordenanza Yumbel para AV.",
+        "adosamiento": null,
+        "_force_clear": true
       }
     },
     {
@@ -8985,7 +8997,8 @@
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
         "notas": "ZEE Zona de equipamiento de esparcimiento",
-        "adosamiento": false
+        "adosamiento": null,
+        "_force_clear": true
       }
     },
     {
@@ -9016,7 +9029,9 @@
         "subdivision_minima_m2": null,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": null
+        "notas": "Zona no edificable. Ver ordenanza Yumbel para BNUP.",
+        "adosamiento": null,
+        "_force_clear": true
       }
     },
     {
@@ -9048,8 +9063,9 @@
         "subdivision_minima_m2": null,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "ZESC Zona de equipamiento de salud de cementerio",
-        "adosamiento": false
+        "notas": "Zona no edificable. Ver ordenanza Yumbel para ZESC.",
+        "adosamiento": null,
+        "_force_clear": true
       }
     },
     {
@@ -9080,7 +9096,7 @@
         "subdivision_minima_m2": null,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "ZPD Zona de protección de drenajes",
+        "notas": "Zona no edificable. Ver ordenanza Yumbel para ZPD.",
         "adosamiento": null,
         "_force_clear": true
       }
@@ -9113,8 +9129,9 @@
         "subdivision_minima_m2": null,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "Zona Agua",
-        "adosamiento": false
+        "notas": "Zona no edificable. Ver ordenanza Yumbel para Agua.",
+        "adosamiento": null,
+        "_force_clear": true
       }
     },
     {
@@ -9225,7 +9242,7 @@
         "subdivision_minima_m2": null,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "ZRI Zona de restriccion por inundación",
+        "notas": "Zona no edificable. Ver ordenanza Yumbel para ZRI.",
         "adosamiento": null,
         "_force_clear": true
       }

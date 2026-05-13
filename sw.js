@@ -1,5 +1,5 @@
 // AiCabida Service Worker — Cache First strategy
-const CACHE = 'aicabida-v7';
+const CACHE = 'aicabida-v9';
 
 const PRECACHE = [
   '/',
@@ -22,7 +22,7 @@ const PRECACHE = [
   // CDN: Turf
   'https://unpkg.com/@turf/turf@6/turf.min.js',
   // Fonts
-  'https://fonts.googleapis.com/css2?family=Syne:wght@800&family=Inter:wght@400;600&display=swap'
+  'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap'
 ];
 
 // Install: pre-cache app shell + data

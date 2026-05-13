@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <title>AiCabida</title>
 <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#840016">
+<meta name="theme-color" content="#0ECBA1">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="apple-touch-icon" href="icons/icon-192.png">
 
 <!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <!-- Leaflet -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
@@ -28,19 +28,20 @@
    VARIABLES + RESET
 ============================================================ */
 :root {
-  --rojo:       #840016;
-  --rojo-light: rgba(132,0,22,0.12);
-  --rojo-glow:  rgba(132,0,22,0.35);
-  --bg:         #f5f2ee;
-  --bg-map:     #e8e4dc;
-  --surface:    #ffffff;
-  --texto:      #111111;
-  --muted:      #888888;
-  --borde:      #e0dbd4;
-  --syne:       'Syne', sans-serif;
-  --inter:      'Inter', sans-serif;
-  --nav-h:      72px;
-  --top-h:      56px;
+  --accent:       #0ECBA1;
+  --accent-light: rgba(14,203,161,0.12);
+  --accent-glow:  rgba(14,203,161,0.28);
+  --bg:           #F3F6FA;
+  --bg-map:       #DDE5EE;
+  --surface:      #ffffff;
+  --texto:        #0F172A;
+  --muted:        #94A3B8;
+  --borde:        #E4EAF2;
+  --shadow-sm:    0 2px 10px rgba(15,23,42,0.07);
+  --shadow-md:    0 4px 24px rgba(15,23,42,0.10);
+  --inter:        'Inter', sans-serif;
+  --nav-h:        72px;
+  --top-h:        56px;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -52,16 +53,11 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
    SCREENS
 ============================================================ */
 .screen {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  background: var(--bg);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s ease;
-  z-index: 10;
+  position: fixed; inset: 0;
+  display: flex; flex-direction: column;
+  overflow: hidden; background: var(--bg);
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.2s ease; z-index: 10;
 }
 .screen.active { opacity: 1; pointer-events: all; z-index: 20; }
 
@@ -70,28 +66,29 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
 ============================================================ */
 .btn-primary {
   width: 100%; padding: 16px;
-  background: var(--rojo); color: white;
+  background: var(--accent); color: white;
   font-family: var(--inter); font-size: 16px; font-weight: 600;
-  border-radius: 14px; border: none; min-height: 52px;
+  border-radius: 16px; border: none; min-height: 52px;
+  box-shadow: 0 4px 16px var(--accent-glow);
   transition: opacity 0.15s, transform 0.1s;
 }
 .btn-primary:active { opacity: 0.85; transform: scale(0.98); }
-.btn-primary:disabled { background: var(--borde); color: var(--muted); transform: none; }
+.btn-primary:disabled { background: var(--borde); color: var(--muted); transform: none; box-shadow: none; }
 
 .btn-outline {
   width: 100%; padding: 15px;
-  background: transparent; color: var(--rojo);
+  background: transparent; color: var(--accent);
   font-family: var(--inter); font-size: 16px; font-weight: 600;
-  border-radius: 14px; border: 1.5px solid var(--rojo);
+  border-radius: 16px; border: 1.5px solid var(--accent);
   min-height: 52px; transition: all 0.15s;
 }
-.btn-outline:active { background: var(--rojo-light); }
+.btn-outline:active { background: var(--accent-light); }
 
 .btn-ghost {
   width: 100%; padding: 14px;
   background: transparent; color: var(--muted);
   font-family: var(--inter); font-size: 15px; font-weight: 400;
-  border-radius: 14px; border: none; min-height: 48px;
+  border-radius: 16px; border: none; min-height: 48px;
 }
 
 /* ============================================================
@@ -101,35 +98,26 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
 
 .splash-inner {
   padding: 52px 24px 36px;
-  display: flex; flex-direction: column;
-  min-height: 100%;
+  display: flex; flex-direction: column; min-height: 100%;
 }
 
-.logo-wrap {
-  display: flex; align-items: center;
-  gap: 14px; margin-bottom: 36px;
-}
-
-.logo-svg { width: 54px; height: 54px; flex-shrink: 0; }
+.logo-wrap { display: flex; align-items: center; gap: 14px; margin-bottom: 36px; }
+.logo-svg  { width: 54px; height: 54px; flex-shrink: 0; }
 
 .logo-title {
-  font-family: var(--syne);
-  font-size: 30px; font-weight: 800;
+  font-family: var(--inter); font-size: 30px; font-weight: 800;
   color: var(--texto); line-height: 1;
 }
-.logo-title span { color: var(--rojo); }
+.logo-title span { color: var(--accent); }
 
 .tagline {
-  font-family: var(--syne);
-  font-size: 22px; font-weight: 800;
-  line-height: 1.25; color: var(--texto);
-  margin-bottom: 12px;
+  font-family: var(--inter); font-size: 22px; font-weight: 800;
+  line-height: 1.25; color: var(--texto); margin-bottom: 12px;
 }
 
 .subtitle {
   font-size: 15px; font-weight: 400;
-  color: var(--muted); line-height: 1.65;
-  margin-bottom: 32px;
+  color: var(--muted); line-height: 1.65; margin-bottom: 32px;
 }
 
 .stat-cards {
@@ -138,18 +126,15 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
 }
 
 .stat-card {
-  background: var(--surface);
-  border: 1px solid var(--borde);
-  border-radius: 14px; padding: 18px 8px;
-  text-align: center;
+  background: var(--surface); box-shadow: var(--shadow-sm);
+  border-radius: 16px; padding: 18px 8px; text-align: center;
 }
 
 .stat-num {
-  display: block;
-  font-family: var(--syne); font-size: 24px; font-weight: 800;
+  display: block; font-family: var(--inter); font-size: 24px; font-weight: 800;
   color: var(--texto); line-height: 1;
 }
-.stat-num.rojo { color: var(--rojo); }
+.stat-num.accent { color: var(--accent); }
 
 .stat-label {
   display: block; font-size: 11px; color: var(--muted);
@@ -157,42 +142,29 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
   text-transform: uppercase; letter-spacing: 0.5px;
 }
 
-.splash-btns {
-  display: flex; flex-direction: column;
-  gap: 12px; margin-top: auto; padding-top: 8px;
-}
+.splash-btns { display: flex; flex-direction: column; gap: 12px; margin-top: auto; padding-top: 8px; }
 
 /* ============================================================
    MAPA SCREEN
 ============================================================ */
 #s-mapa { background: var(--bg-map); }
-
-#map {
-  position: absolute; inset: 0; z-index: 1;
-}
+#map { position: absolute; inset: 0; z-index: 1; }
 
 /* Top bar */
 .map-topbar {
-  position: absolute; top: 0; left: 0; right: 0;
-  height: var(--top-h);
-  background: rgba(255,255,255,0.96);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  z-index: 500;
-  display: flex; align-items: center;
-  justify-content: space-between;
-  padding: 0 16px;
-  border-bottom: 1px solid var(--borde);
+  position: absolute; top: 0; left: 0; right: 0; height: var(--top-h);
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  z-index: 500; display: flex; align-items: center; justify-content: space-between;
+  padding: 0 16px; border-bottom: 1px solid var(--borde);
 }
 
 .topbar-left { display: flex; align-items: center; gap: 10px; }
 .topbar-back {
   width: 34px; height: 34px; border-radius: 50%;
   background: var(--bg); border: 1px solid var(--borde);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 17px;
+  display: flex; align-items: center; justify-content: center; font-size: 17px;
 }
-
 .topbar-title { font-size: 14px; font-weight: 600; color: var(--texto); }
 
 .badge {
@@ -200,218 +172,157 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
   padding: 4px 10px; border-radius: 20px;
   letter-spacing: 0.8px; text-transform: uppercase;
 }
-.badge-rojo { background: var(--rojo); color: white; }
-.badge-verde { background: #1a7a34; color: white; }
-.badge-gris  { background: var(--borde); color: var(--muted); }
+.badge-accent { background: var(--accent); color: white; }
+.badge-verde  { background: #22C55E; color: white; }
+.badge-gris   { background: var(--borde); color: var(--muted); }
 
 /* Onboarding hint */
 .onboarding-hint {
-  position: absolute;
-  bottom: calc(var(--nav-h) + 76px);
+  position: absolute; bottom: calc(var(--nav-h) + 76px);
   left: 16px; right: 16px;
-  background: white; border-radius: 18px;
-  padding: 18px 16px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
-  z-index: 500;
+  background: white; border-radius: 20px; padding: 18px 16px;
+  box-shadow: var(--shadow-md); z-index: 500;
   display: flex; align-items: flex-start; gap: 14px;
 }
 .onboarding-hint.hidden { display: none !important; }
-
 .hint-emoji { font-size: 30px; flex-shrink: 0; line-height: 1; }
-.hint-body { flex: 1; }
-.hint-title {
-  font-family: var(--syne); font-size: 15px; font-weight: 800;
-  color: var(--texto); margin-bottom: 4px;
-}
-.hint-sub { font-size: 13px; color: var(--muted); line-height: 1.55; }
+.hint-body  { flex: 1; }
+.hint-title { font-family: var(--inter); font-size: 15px; font-weight: 700; color: var(--texto); margin-bottom: 4px; }
+.hint-sub   { font-size: 13px; color: var(--muted); line-height: 1.55; }
 .hint-close { font-size: 20px; color: var(--muted); padding: 0 4px; flex-shrink: 0; line-height: 1; }
 
 /* FABs */
 .fab-geo {
-  position: absolute;
-  bottom: calc(var(--nav-h) + 80px);
-  right: 16px;
+  position: absolute; bottom: calc(var(--nav-h) + 80px); right: 16px;
   width: 46px; height: 46px; border-radius: 50%;
-  background: white;
-  border: 1px solid var(--borde);
-  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
-  z-index: 500;
-  display: flex; align-items: center; justify-content: center;
-  color: var(--texto);
+  background: white; box-shadow: var(--shadow-md); z-index: 500;
+  display: flex; align-items: center; justify-content: center; color: var(--texto);
 }
 .fab-geo:active { transform: scale(0.94); }
 
 .fab-redibujar {
-  position: absolute;
-  bottom: calc(var(--nav-h) + 80px);
-  left: 16px;
-  padding: 9px 16px;
-  background: white; color: var(--rojo);
+  position: absolute; bottom: calc(var(--nav-h) + 80px); left: 16px;
+  padding: 9px 16px; background: white; color: var(--accent);
   font-family: var(--inter); font-size: 13px; font-weight: 600;
-  border-radius: 20px;
-  border: 1.5px solid var(--rojo);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  z-index: 500;
-  display: none;
+  border-radius: 20px; border: 1.5px solid var(--accent);
+  box-shadow: var(--shadow-sm); z-index: 500; display: none;
 }
 
 .fab-calcular {
-  position: absolute;
-  bottom: calc(var(--nav-h) + 12px);
-  left: 16px; right: 16px;
-  padding: 16px;
-  background: var(--rojo); color: white;
+  position: absolute; bottom: calc(var(--nav-h) + 12px);
+  left: 16px; right: 16px; padding: 16px;
+  background: var(--accent); color: white;
   font-family: var(--inter); font-size: 16px; font-weight: 600;
-  border-radius: 14px; border: none;
-  box-shadow: 0 6px 24px var(--rojo-glow);
-  z-index: 500;
-  display: none;
-  transition: transform 0.1s;
+  border-radius: 16px; border: none;
+  box-shadow: 0 6px 24px var(--accent-glow);
+  z-index: 500; display: none; transition: transform 0.1s;
 }
 .fab-calcular:active { transform: scale(0.98); }
 
-/* ── City search ─────────────────────────────────── */
+/* City search */
 .map-search {
-  position: absolute;
-  top: calc(var(--top-h) + 8px);
-  left: 12px; right: 12px;
-  z-index: 600;
-  transition: opacity 0.2s;
+  position: absolute; top: calc(var(--top-h) + 8px);
+  left: 12px; right: 12px; z-index: 600; transition: opacity 0.2s;
 }
 .map-search.hidden { opacity: 0; pointer-events: none; }
 
 .search-input-wrap {
   display: flex; align-items: center; gap: 8px;
-  background: white;
-  border: 1px solid var(--borde);
-  border-radius: 12px;
-  padding: 0 12px;
-  height: 42px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  background: white; border-radius: 14px;
+  padding: 0 12px; height: 44px; box-shadow: var(--shadow-md);
 }
 .search-input-wrap svg { flex-shrink: 0; color: var(--muted); }
 .search-input {
   flex: 1; border: none; outline: none;
-  font-family: var(--inter); font-size: 14px; color: var(--texto);
-  background: transparent;
+  font-family: var(--inter); font-size: 14px; color: var(--texto); background: transparent;
 }
 .search-input::placeholder { color: var(--muted); }
-.search-clear {
-  background: none; border: none; padding: 4px;
-  color: var(--muted); font-size: 16px; line-height: 1;
-  display: none; cursor: pointer;
-}
+.search-clear { background: none; border: none; padding: 4px; color: var(--muted); font-size: 16px; line-height: 1; display: none; cursor: pointer; }
 
 .search-results {
-  margin-top: 6px;
-  background: white;
-  border: 1px solid var(--borde);
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.13);
-  display: none;
+  margin-top: 6px; background: white; border-radius: 14px;
+  overflow: hidden; box-shadow: var(--shadow-md); display: none;
 }
 .search-result {
   display: flex; align-items: flex-start; gap: 10px;
-  padding: 11px 14px;
-  border-bottom: 1px solid var(--borde);
+  padding: 11px 14px; border-bottom: 1px solid var(--borde);
   cursor: pointer; transition: background 0.12s;
 }
 .search-result:last-child { border-bottom: none; }
 .search-result:active { background: var(--bg); }
-.search-result-icon { flex-shrink: 0; margin-top: 1px; color: var(--rojo); }
+.search-result-icon { flex-shrink: 0; margin-top: 1px; color: var(--accent); }
 .search-result-main { font-size: 14px; font-weight: 600; color: var(--texto); }
 .search-result-sub  { font-size: 12px; color: var(--muted); margin-top: 1px; }
-.search-spinner {
-  padding: 12px 14px; font-size: 13px; color: var(--muted); text-align: center;
-}
+.search-spinner { padding: 12px 14px; font-size: 13px; color: var(--muted); text-align: center; }
 
 /* FAB: Trazar / Cancelar */
 .fab-trazar {
-  position: absolute;
-  bottom: calc(var(--nav-h) + 12px);
-  left: 16px; right: 16px;
-  padding: 16px;
-  background: var(--rojo); color: white;
+  position: absolute; bottom: calc(var(--nav-h) + 12px);
+  left: 16px; right: 16px; padding: 16px;
+  background: var(--accent); color: white;
   font-family: var(--inter); font-size: 16px; font-weight: 600;
-  border-radius: 14px; border: none;
-  box-shadow: 0 6px 24px var(--rojo-glow);
-  z-index: 500;
+  border-radius: 16px; border: none;
+  box-shadow: 0 6px 24px var(--accent-glow); z-index: 500;
   display: flex; align-items: center; justify-content: center; gap: 10px;
   transition: transform 0.1s, background 0.2s;
 }
 .fab-trazar:active { transform: scale(0.98); }
 .fab-trazar.cancelar {
-  background: white; color: var(--rojo);
-  border: 1.5px solid var(--rojo);
-  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  background: white; color: var(--accent);
+  border: 1.5px solid var(--accent);
+  box-shadow: var(--shadow-sm);
 }
 
 /* Dimension labels */
 .dim-label {
-  background: rgba(255,255,255,0.92);
-  border: 1px solid var(--borde);
-  border-radius: 8px; padding: 2px 7px;
-  font-size: 11px; font-weight: 600;
-  color: var(--texto); white-space: nowrap;
-  pointer-events: none;
+  background: rgba(255,255,255,0.96); border-radius: 8px; padding: 2px 7px;
+  font-size: 11px; font-weight: 600; color: var(--texto); white-space: nowrap;
+  pointer-events: none; box-shadow: 0 1px 5px rgba(0,0,0,0.13);
 }
 
 /* ============================================================
    BOTTOM NAV
 ============================================================ */
 .bottom-nav {
-  position: absolute; bottom: 0; left: 0; right: 0;
-  height: var(--nav-h);
+  position: absolute; bottom: 0; left: 0; right: 0; height: var(--nav-h);
   background: rgba(255,255,255,0.97);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
   border-top: 1px solid var(--borde);
   display: flex; align-items: center; justify-content: space-around;
-  z-index: 400;
-  padding-bottom: env(safe-area-inset-bottom, 0px);
+  z-index: 400; padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
 .nav-btn {
-  display: flex; flex-direction: column;
-  align-items: center; gap: 3px;
-  padding: 8px 28px; border-radius: 12px;
-  transition: all 0.15s;
+  display: flex; flex-direction: column; align-items: center; gap: 3px;
+  padding: 8px 28px; border-radius: 12px; transition: all 0.15s;
 }
-
-.nav-icon { width: 24px; height: 24px; opacity: 0.35; transition: opacity 0.15s; }
+.nav-icon  { width: 24px; height: 24px; opacity: 0.28; transition: opacity 0.15s; }
 .nav-label { font-size: 10px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
-.nav-btn.active .nav-icon { opacity: 1; color: var(--rojo); stroke: var(--rojo); }
-.nav-btn.active .nav-label { color: var(--rojo); }
+.nav-btn.active .nav-icon  { opacity: 1; color: var(--accent); stroke: var(--accent); }
+.nav-btn.active .nav-label { color: var(--accent); }
 
 /* ============================================================
    BOTTOM SHEETS
 ============================================================ */
 .sheet-overlay {
   position: fixed; inset: 0; z-index: 890;
-  background: rgba(0,0,0,0.28);
-  opacity: 0; pointer-events: none;
-  transition: opacity 0.3s ease;
+  background: rgba(15,23,42,0.30);
+  opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
 }
 .sheet-overlay.active { opacity: 1; pointer-events: all; }
 
 .bottom-sheet {
-  position: fixed; left: 0; right: 0; bottom: 0;
-  z-index: 900;
-  background: var(--surface);
-  border-radius: 20px 20px 0 0;
-  box-shadow: 0 -8px 48px rgba(0,0,0,0.22);
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 900;
+  background: var(--surface); border-radius: 24px 24px 0 0;
+  box-shadow: 0 -8px 48px rgba(15,23,42,0.14);
   transform: translateY(100%);
   transition: transform 0.38s cubic-bezier(0.32,0.72,0,1);
-  max-height: 93vh;
-  display: flex; flex-direction: column;
-  overflow: hidden;
+  max-height: 93vh; display: flex; flex-direction: column; overflow: hidden;
 }
 .bottom-sheet.open { transform: translateY(0); }
 
 .sheet-handle {
-  width: 40px; height: 4px;
-  background: var(--borde); border-radius: 2px;
+  width: 36px; height: 4px; background: var(--borde); border-radius: 2px;
   margin: 12px auto 0; flex-shrink: 0;
 }
 
@@ -422,10 +333,8 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
 
 /* Mini map inside sheet */
 .mini-map-wrap {
-  height: 130px; width: 100%;
-  background: var(--bg-map);
-  border-radius: 14px; overflow: hidden;
-  margin-bottom: 14px; flex-shrink: 0;
+  height: 130px; width: 100%; background: var(--bg-map);
+  border-radius: 16px; overflow: hidden; margin-bottom: 14px; flex-shrink: 0;
 }
 .mini-map-wrap > div { height: 130px !important; }
 
@@ -434,76 +343,65 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
   display: inline-flex; align-items: center; gap: 6px;
   background: var(--bg); border: 1px solid var(--borde);
   border-radius: 20px; padding: 6px 14px;
-  font-size: 13px; color: var(--muted); font-weight: 600;
-  margin-bottom: 18px;
+  font-size: 13px; color: var(--muted); font-weight: 600; margin-bottom: 18px;
 }
-.zona-pill .zc { color: var(--rojo); }
+.zona-pill .zc { color: var(--accent); }
 
 /* KPI row */
-.kpi-row {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 10px; margin-bottom: 20px;
-}
+.kpi-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
 
-.kpi-rojo {
-  background: var(--rojo); border-radius: 14px;
-  padding: 18px 16px; color: white;
+.kpi-accent {
+  background: var(--accent); border-radius: 16px; padding: 18px 16px; color: white;
 }
-
 .kpi-gris {
-  background: var(--bg); border: 1px solid var(--borde);
-  border-radius: 14px; padding: 18px 16px;
+  background: var(--bg); border-radius: 16px; padding: 18px 16px;
+  box-shadow: var(--shadow-sm);
 }
 
 .kpi-lbl {
-  font-size: 10px; font-weight: 600;
-  text-transform: uppercase; letter-spacing: 0.5px;
+  font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
   margin-bottom: 8px; opacity: 0.65;
 }
-.kpi-rojo .kpi-lbl { color: white; }
-.kpi-gris .kpi-lbl { color: var(--muted); }
+.kpi-accent .kpi-lbl { color: white; }
+.kpi-gris .kpi-lbl   { color: var(--muted); }
 
 .kpi-val {
-  font-family: var(--syne); font-size: 26px;
-  font-weight: 800; line-height: 1; margin-bottom: 4px;
+  font-family: var(--inter); font-size: 26px; font-weight: 800;
+  line-height: 1; margin-bottom: 4px;
 }
-.kpi-rojo .kpi-val { color: white; }
-.kpi-gris .kpi-val { color: var(--texto); }
+.kpi-accent .kpi-val { color: white; }
+.kpi-gris .kpi-val   { color: var(--texto); }
 
 .kpi-unit { font-size: 12px; opacity: 0.6; }
 
 .section-hdr {
   font-size: 11px; font-weight: 600; color: var(--muted);
-  text-transform: uppercase; letter-spacing: 0.8px;
-  margin-bottom: 10px;
+  text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 10px;
 }
 
 /* Technical grid */
-.kpi-grid4 {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 8px; margin-bottom: 20px;
-}
+.kpi-grid4 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 20px; }
 
 .kpi-sm {
-  background: var(--bg); border: 1px solid var(--borde);
-  border-radius: 10px; padding: 12px 14px;
+  background: var(--surface); box-shadow: var(--shadow-sm);
+  border-radius: 12px; padding: 12px 14px;
 }
 .kpi-sm .kpi-lbl { color: var(--muted); font-size: 10px; margin-bottom: 4px; opacity: 1; }
-.kpi-sm .kpi-val { font-size: 18px; font-family: var(--syne); font-weight: 800; color: var(--texto); }
-.kpi-sm .kpi-val.sr { font-size: 15px; color: #c07000; }
+.kpi-sm .kpi-val { font-size: 18px; font-family: var(--inter); font-weight: 800; color: var(--texto); }
+.kpi-sm .kpi-val.sr { font-size: 15px; color: #D97706; }
 .kpi-sm .kpi-val.ne { font-size: 15px; color: var(--muted); }
 
 /* Full-width norm row */
 .norm-row {
-  background: var(--bg); border: 1px solid var(--borde);
-  border-radius: 10px; padding: 11px 14px;
-  margin-bottom: 8px;
+  background: var(--surface); box-shadow: var(--shadow-sm);
+  border-radius: 12px; padding: 12px 14px; margin-bottom: 8px;
   display: flex; justify-content: space-between; align-items: center;
 }
 .norm-row-lbl { font-size: 12px; color: var(--muted); font-weight: 600; }
-.norm-row-val { font-family: var(--syne); font-size: 16px; font-weight: 800; color: var(--texto); }
-.norm-row-val.sr { color: #c07000; font-size: 14px; }
+.norm-row-val { font-family: var(--inter); font-size: 16px; font-weight: 800; color: var(--texto); }
+.norm-row-val.sr { color: #D97706; font-size: 14px; }
 .norm-row-val.ne { color: var(--muted); font-size: 14px; }
+.norm-row-val.accent { color: var(--accent); }
 
 .sheet-btns { display: flex; flex-direction: column; gap: 10px; padding-top: 4px; }
 
@@ -512,14 +410,8 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
 ============================================================ */
 .sindatos-body { padding: 4px 0 40px; text-align: center; }
 .sindatos-icon { font-size: 44px; opacity: 0.22; margin-bottom: 14px; }
-.sindatos-title {
-  font-family: var(--syne); font-size: 22px; font-weight: 800;
-  color: var(--texto); margin-bottom: 10px;
-}
-.sindatos-desc {
-  font-size: 14px; color: var(--muted);
-  line-height: 1.65; margin-bottom: 20px;
-}
+.sindatos-title { font-family: var(--inter); font-size: 22px; font-weight: 800; color: var(--texto); margin-bottom: 10px; }
+.sindatos-desc { font-size: 14px; color: var(--muted); line-height: 1.65; margin-bottom: 20px; }
 
 .info-card {
   background: var(--bg); border: 1px solid var(--borde);
@@ -527,86 +419,52 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
   text-align: left; margin-bottom: 10px;
   font-size: 13px; font-weight: 600; color: var(--muted);
 }
-.info-card-dashed {
-  border-style: dashed; margin-bottom: 20px;
-  font-size: 13px; color: var(--muted);
-}
+.info-card-dashed { border-style: dashed; margin-bottom: 20px; font-size: 13px; color: var(--muted); }
 
 /* ============================================================
    PROSPECTOS SCREEN
 ============================================================ */
 #s-prospectos { background: var(--bg); }
 
-.prosp-header {
-  position: relative; height: 180px; flex-shrink: 0;
-  overflow: hidden;
-}
-#mini-map-prospectos {
-  position: absolute; inset: 0; z-index: 1;
-}
+.prosp-header { position: relative; height: 180px; flex-shrink: 0; overflow: hidden; }
+#mini-map-prospectos { position: absolute; inset: 0; z-index: 1; }
 .prosp-overlay {
-  position: absolute; inset: 0; z-index: 2;
-  pointer-events: none;
-  background: linear-gradient(to bottom, transparent 40%, rgba(245,242,238,0.94) 100%);
-  display: flex; flex-direction: column; justify-content: flex-end;
-  padding: 14px 18px;
+  position: absolute; inset: 0; z-index: 2; pointer-events: none;
+  background: linear-gradient(to bottom, transparent 40%, rgba(243,246,250,0.96) 100%);
+  display: flex; flex-direction: column; justify-content: flex-end; padding: 14px 18px;
 }
-.prosp-count {
-  font-family: var(--syne); font-size: 28px; font-weight: 800;
-  color: var(--texto); line-height: 1;
-}
+.prosp-count { font-family: var(--inter); font-size: 28px; font-weight: 800; color: var(--texto); line-height: 1; }
 .prosp-comunas { font-size: 13px; color: var(--muted); margin-top: 3px; }
 
-/* Top bar for prospectos */
 .prosp-topbar {
-  position: absolute; top: 0; left: 0; right: 0;
-  height: var(--top-h); z-index: 3;
-  display: flex; align-items: center; padding: 0 16px;
-  gap: 12px;
+  position: absolute; top: 0; left: 0; right: 0; height: var(--top-h);
+  z-index: 3; display: flex; align-items: center; padding: 0 16px; gap: 12px;
 }
 .prosp-back {
   width: 34px; height: 34px; border-radius: 50%;
-  background: rgba(255,255,255,0.9);
-  border: 1px solid var(--borde);
+  background: rgba(255,255,255,0.92); box-shadow: var(--shadow-sm);
   display: flex; align-items: center; justify-content: center; font-size: 17px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
-.prosp-lista {
-  flex: 1; overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  padding: 12px 16px 4px;
-}
+.prosp-lista { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; padding: 12px 16px 4px; }
 
 .prosp-card {
-  background: var(--surface); border: 1px solid var(--borde);
-  border-radius: 14px; padding: 14px 16px;
-  margin-bottom: 10px;
+  background: var(--surface); box-shadow: var(--shadow-sm);
+  border-radius: 16px; padding: 14px 16px; margin-bottom: 10px;
   display: flex; align-items: center; gap: 12px;
-  position: relative; overflow: hidden;
-  transition: transform 0.15s;
+  position: relative; overflow: hidden; transition: transform 0.15s;
 }
-.prosp-dot {
-  width: 10px; height: 10px; border-radius: 50%;
-  background: var(--rojo); flex-shrink: 0;
-}
-.prosp-info { flex: 1; min-width: 0; }
-.prosp-zona {
-  font-size: 13px; font-weight: 600; color: var(--texto);
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-}
-.prosp-meta { font-size: 12px; color: var(--muted); margin-top: 2px; }
-.prosp-val {
-  font-family: var(--syne); font-size: 18px; font-weight: 800;
-  color: var(--rojo); text-align: right; flex-shrink: 0;
-}
+.prosp-dot   { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+.prosp-info  { flex: 1; min-width: 0; }
+.prosp-zona  { font-size: 13px; font-weight: 600; color: var(--texto); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.prosp-meta  { font-size: 12px; color: var(--muted); margin-top: 2px; }
+.prosp-val   { font-family: var(--inter); font-size: 18px; font-weight: 800; color: var(--accent); text-align: right; flex-shrink: 0; }
 .prosp-val-unit { font-size: 11px; color: var(--muted); text-align: right; }
 
-/* Delete reveal */
 .prosp-del {
   position: absolute; right: 0; top: 0; bottom: 0;
-  width: 0; overflow: hidden;
-  background: #c82020; border-radius: 0 14px 14px 0;
+  width: 0; overflow: hidden; background: #EF4444;
+  border-radius: 0 16px 16px 0;
   display: flex; align-items: center; justify-content: center;
   transition: width 0.22s ease;
 }
@@ -615,44 +473,29 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
 
 /* Total card */
 .card-total-wrap { padding: 0 16px 8px; }
-.card-total {
-  background: var(--rojo); border-radius: 16px; padding: 22px 20px;
-}
-.ct-label {
-  font-size: 11px; color: rgba(255,255,255,0.65);
-  font-weight: 600; text-transform: uppercase;
-  letter-spacing: 0.5px; margin-bottom: 8px;
-}
-.ct-value {
-  font-family: var(--syne); font-size: 38px; font-weight: 800;
-  color: white; line-height: 1; margin-bottom: 6px;
-}
-.ct-sub { font-size: 13px; color: rgba(255,255,255,0.65); }
+.card-total { background: var(--accent); border-radius: 18px; padding: 22px 20px; }
+.ct-label  { font-size: 11px; color: rgba(255,255,255,0.70); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+.ct-value  { font-family: var(--inter); font-size: 38px; font-weight: 800; color: white; line-height: 1; margin-bottom: 6px; }
+.ct-sub    { font-size: 13px; color: rgba(255,255,255,0.70); }
 
 /* Empty prospectos */
-.empty-state {
-  display: flex; flex-direction: column;
-  align-items: center; padding: 40px 32px;
-  text-align: center; gap: 10px;
-}
-.empty-icon { font-size: 40px; opacity: 0.25; }
-.empty-title { font-family: var(--syne); font-size: 18px; font-weight: 800; color: var(--texto); }
-.empty-sub { font-size: 14px; color: var(--muted); line-height: 1.65; }
+.empty-state { display: flex; flex-direction: column; align-items: center; padding: 40px 32px; text-align: center; gap: 10px; }
+.empty-icon  { font-size: 40px; opacity: 0.25; }
+.empty-title { font-family: var(--inter); font-size: 18px; font-weight: 800; color: var(--texto); }
+.empty-sub   { font-size: 14px; color: var(--muted); line-height: 1.65; }
 
 /* ============================================================
    TOAST
 ============================================================ */
 .toast {
-  position: fixed;
-  bottom: calc(var(--nav-h) + 14px);
+  position: fixed; bottom: calc(var(--nav-h) + 14px);
   left: 50%; transform: translateX(-50%);
-  background: #111; color: white;
+  background: var(--texto); color: white;
   padding: 10px 20px; border-radius: 20px;
   font-size: 14px; font-weight: 600; z-index: 9999;
   white-space: nowrap; pointer-events: none;
   animation: toastIn 0.2s ease, toastOut 0.3s ease 1.7s forwards;
 }
-
 @keyframes toastIn  { from { opacity:0; transform:translateX(-50%) translateY(8px); } to { opacity:1; transform:translateX(-50%) translateY(0); } }
 @keyframes toastOut { from { opacity:1; } to { opacity:0; } }
 
@@ -660,9 +503,9 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
    LEAFLET OVERRIDES
 ============================================================ */
 .leaflet-container { background: var(--bg-map); font-family: var(--inter); }
-.leaflet-control-zoom { display: none !important; }
-.leaflet-draw-toolbar { display: none !important; }
-.leaflet-draw-guide-dash { border-color: var(--rojo) !important; }
+.leaflet-control-zoom  { display: none !important; }
+.leaflet-draw-toolbar  { display: none !important; }
+.leaflet-draw-guide-dash { border-color: var(--accent) !important; }
 .leaflet-draw-tooltip {
   background: white !important; color: var(--texto) !important;
   border: 1px solid var(--borde) !important; border-radius: 8px !important;
@@ -681,14 +524,14 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
     <!-- Logo -->
     <div class="logo-wrap">
       <svg class="logo-svg" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="60" height="60" rx="10" fill="#840016"/>
+        <rect width="60" height="60" rx="14" fill="#0ECBA1"/>
         <polygon points="12,43 11,21 30,11 48,18 49,39 30,49"
-          fill="rgba(255,255,255,0.14)" stroke="white" stroke-width="2.5"
+          fill="rgba(255,255,255,0.15)" stroke="white" stroke-width="2.5"
           stroke-linejoin="round" stroke-linecap="round"/>
         <circle cx="30" cy="29" r="4.5" stroke="white" stroke-width="2.2"/>
         <circle cx="30" cy="29" r="1.8" fill="white"/>
         <line x1="30" y1="34" x2="30" y2="43" stroke="white" stroke-width="1.5"
-          stroke-dasharray="2.5,2.5" stroke-linecap="round" opacity="0.75"/>
+          stroke-dasharray="2.5,2.5" stroke-linecap="round" opacity="0.80"/>
       </svg>
       <div class="logo-title">Ai<span>Cabida</span></div>
     </div>
@@ -706,7 +549,7 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
         <span class="stat-label">zonas PRC</span>
       </div>
       <div class="stat-card">
-        <span class="stat-num rojo" id="stat-cabidas">0</span>
+        <span class="stat-num accent" id="stat-cabidas">0</span>
         <span class="stat-label">cabidas</span>
       </div>
     </div>
@@ -722,7 +565,6 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
      SCREEN 02: MAPA
 ============================================================ -->
 <div id="s-mapa" class="screen">
-  <!-- Map fills entire screen -->
   <div id="map"></div>
 
   <!-- Top bar -->
@@ -731,7 +573,7 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
       <button class="topbar-back" onclick="navigate('splash')">&#8592;</button>
       <span class="topbar-title" id="topbar-txt">Explorar mapa</span>
     </div>
-    <span class="badge badge-rojo" id="topbar-badge" style="display:none">MODO TRAZAR</span>
+    <span class="badge badge-accent" id="topbar-badge" style="display:none">MODO TRAZAR</span>
   </div>
 
   <!-- Search bar -->
@@ -815,9 +657,7 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
   <div class="sheet-handle"></div>
   <div class="sheet-scroll">
     <!-- Mini map -->
-    <div class="mini-map-wrap">
-      <div id="mm-result"></div>
-    </div>
+    <div class="mini-map-wrap"><div id="mm-result"></div></div>
 
     <!-- Zona tag -->
     <div class="zona-pill">
@@ -827,7 +667,7 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
 
     <!-- Primary KPIs -->
     <div class="kpi-row">
-      <div class="kpi-rojo">
+      <div class="kpi-accent">
         <div class="kpi-lbl">Sup. construible</div>
         <div class="kpi-val" id="r-sup-c">&mdash;</div>
         <div class="kpi-unit">m&sup2; construibles</div>
@@ -860,7 +700,7 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
       </div>
     </div>
 
-    <!-- Edificaci&oacute;n -->
+    <!-- Edificación -->
     <div class="section-hdr">Normas de edificaci&oacute;n</div>
     <div id="r-normas-extra"></div>
 
@@ -884,10 +724,7 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
 <div id="sheet-sindatos" class="bottom-sheet">
   <div class="sheet-handle"></div>
   <div class="sheet-scroll">
-    <!-- Mini map -->
-    <div class="mini-map-wrap">
-      <div id="mm-sindatos"></div>
-    </div>
+    <div class="mini-map-wrap"><div id="mm-sindatos"></div></div>
 
     <div class="sindatos-body">
       <div class="sindatos-icon">&#9470;</div>
@@ -909,7 +746,6 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
      SCREEN 04: PROSPECTOS
 ============================================================ -->
 <div id="s-prospectos" class="screen">
-  <!-- Map header -->
   <div class="prosp-header">
     <div id="mini-map-prospectos"></div>
     <div class="prosp-topbar">
@@ -921,10 +757,8 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
     </div>
   </div>
 
-  <!-- Lista -->
   <div class="prosp-lista" id="prosp-lista"></div>
 
-  <!-- Total card -->
   <div class="card-total-wrap" id="card-total-wrap" style="display:none;">
     <div class="card-total">
       <div class="ct-label">Total potencial acumulado</div>
@@ -933,7 +767,6 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
     </div>
   </div>
 
-  <!-- Bottom nav -->
   <nav class="bottom-nav">
     <button class="nav-btn" onclick="navigate('mapa')">
       <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -1028,9 +861,7 @@ async function loadGeoJSON() {
     )
   );
   results.forEach(r => {
-    if (r.status === 'fulfilled' && r.value.length) {
-      APP.geoFeatures.push(...r.value);
-    }
+    if (r.status === 'fulfilled' && r.value.length) APP.geoFeatures.push(...r.value);
   });
   console.log(`GeoJSON: ${APP.geoFeatures.length} zonas cargadas`);
 }
@@ -1057,7 +888,6 @@ function updateSplash() {
 
 function registrarSW() {
   if (!('serviceWorker' in navigator)) return;
-  // Auto-reload when a new service worker takes control (cache updated)
   let reloading = false;
   navigator.serviceWorker.addEventListener('controllerchange', () => {
     if (!reloading) { reloading = true; window.location.reload(); }
@@ -1085,18 +915,14 @@ function initMap() {
   APP.mapReady = true;
 
   APP.map = L.map('map', {
-    zoomControl: false,
-    attributionControl: false,
+    zoomControl: false, attributionControl: false,
     tap: true, tapTolerance: 20
   }).setView([-36.9, -72.5], 14);
 
   addSatTiles(APP.map);
-
   APP.drawnLayer = new L.FeatureGroup().addTo(APP.map);
-
   centerOnUser();
 
-  // Touch-move guard: cancels vertex if finger moved > 10 px (pan gesture)
   let _tmMoved = false, _tmX = 0, _tmY = 0;
   const _mc = APP.map.getContainer();
   _mc.addEventListener('touchstart', e => {
@@ -1110,7 +936,6 @@ function initMap() {
     if (_tmMoved) { _tmMoved = false; e.stopPropagation(); }
   }, true);
 
-  // Onboarding
   if (!localStorage.getItem('onboarding_seen')) {
     document.getElementById('onboarding-hint').classList.remove('hidden');
   }
@@ -1121,16 +946,14 @@ function centerOnUser() {
   navigator.geolocation.getCurrentPosition(pos => {
     const { latitude: lat, longitude: lng } = pos.coords;
     APP.map.setView([lat, lng], 17);
-    // Halo
     if (APP.userHalo) APP.userHalo.remove();
     APP.userHalo = L.circleMarker([lat, lng], {
-      radius: 20, color: '#840016', fillColor: '#840016',
-      fillOpacity: 0.12, weight: 0, interactive: false
+      radius: 20, color: '#0ECBA1', fillColor: '#0ECBA1',
+      fillOpacity: 0.15, weight: 0, interactive: false
     }).addTo(APP.map);
-    // Dot
     if (APP.userMarker) APP.userMarker.remove();
     APP.userMarker = L.circleMarker([lat, lng], {
-      radius: 7, color: '#840016', fillColor: 'white',
+      radius: 7, color: '#0ECBA1', fillColor: 'white',
       fillOpacity: 1, weight: 2.5, interactive: false
     }).addTo(APP.map);
   }, () => {});
@@ -1142,7 +965,6 @@ function centerOnUser() {
 function toggleDrawMode() {
   const btn = document.getElementById('btn-trazar');
   if (btn.classList.contains('cancelar')) {
-    // Cancel drawing → back to explore
     if (APP.drawControl) { APP.drawControl.disable(); APP.drawControl = null; }
     APP.map.off(L.Draw.Event.CREATED);
     APP.drawnLayer.clearLayers();
@@ -1169,20 +991,20 @@ function startDrawing() {
   document.getElementById('btn-redibujar').style.display = 'none';
   document.getElementById('map-search').classList.add('hidden');
 
-  setTopbar('Toca para marcar esquinas', 'rojo', 'TRAZANDO');
+  setTopbar('Toca para marcar esquinas', 'accent', 'TRAZANDO');
 
   const dotIcon = L.divIcon({
     className: '', iconSize: [32,32], iconAnchor: [16,16],
-    html: '<div style="width:28px;height:28px;border-radius:50%;background:#840016;border:3px solid white;box-shadow:0 2px 10px rgba(0,0,0,.35);margin:2px;"></div>'
+    html: '<div style="width:28px;height:28px;border-radius:50%;background:#0ECBA1;border:3px solid white;box-shadow:0 2px 10px rgba(0,0,0,.30);margin:2px;"></div>'
   });
   const smallIcon = L.divIcon({
     className: '', iconSize: [14,14], iconAnchor: [7,7],
-    html: '<div style="width:12px;height:12px;border-radius:50%;background:#840016;border:2px solid white;"></div>'
+    html: '<div style="width:12px;height:12px;border-radius:50%;background:#0ECBA1;border:2px solid white;"></div>'
   });
 
   APP.drawControl = new L.Draw.Polygon(APP.map, {
     shapeOptions: {
-      color: '#840016', fillColor: '#840016',
+      color: '#0ECBA1', fillColor: '#0ECBA1',
       fillOpacity: 0.12, weight: 2.5
     },
     allowIntersection: false,
@@ -1190,7 +1012,6 @@ function startDrawing() {
     touchIcon: dotIcon, icon: smallIcon
   });
   APP.drawControl.enable();
-
   APP.map.once(L.Draw.Event.CREATED, onPolygonDone);
 }
 
@@ -1198,7 +1019,6 @@ function onPolygonDone(e) {
   APP.drawnLayer.addLayer(e.layer);
   APP.currentPolygon = e.layer.toGeoJSON();
 
-  // Reset trazar FAB to idle (hidden while result buttons are shown)
   const btn = document.getElementById('btn-trazar');
   btn.classList.remove('cancelar');
   btn.style.display = 'none';
@@ -1208,7 +1028,6 @@ function onPolygonDone(e) {
   document.getElementById('btn-calcular').style.display  = 'block';
   document.getElementById('btn-redibujar').style.display = 'flex';
 
-  // Dimension labels
   addDimLabels(APP.currentPolygon.geometry.coordinates[0]);
 }
 
@@ -1239,7 +1058,6 @@ function clearDimLabels() {
 }
 
 function reiniciarDibujo() {
-  // Restore trazar FAB before starting draw
   const btn = document.getElementById('btn-trazar');
   btn.style.display = '';
   btn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg> Trazar predio`;
@@ -1249,7 +1067,7 @@ function reiniciarDibujo() {
 }
 
 // ============================================================
-// CITY SEARCH  (Nominatim / OSM, no API key)
+// CITY SEARCH
 // ============================================================
 (function initSearch() {
   const input   = document.getElementById('search-input');
@@ -1267,7 +1085,6 @@ function reiniciarDibujo() {
     debTimer = setTimeout(() => fetchCities(q), 380);
   });
 
-  // Close results when map is clicked
   document.getElementById('map').addEventListener('click', hideResults);
   document.getElementById('map').addEventListener('touchstart', hideResults, { passive: true });
 
@@ -1285,14 +1102,10 @@ function reiniciarDibujo() {
   }
 
   function renderResults(data) {
-    if (!data.length) {
-      results.innerHTML = '<div class="search-spinner">Sin resultados</div>';
-      return;
-    }
-    results.innerHTML = data.map((r, i) => {
+    if (!data.length) { results.innerHTML = '<div class="search-spinner">Sin resultados</div>'; return; }
+    results.innerHTML = data.map(r => {
       const addr = r.address || {};
-      const main = addr.city || addr.town || addr.village || addr.municipality
-                || addr.county || r.display_name.split(',')[0];
+      const main = addr.city || addr.town || addr.village || addr.municipality || addr.county || r.display_name.split(',')[0];
       const parts = r.display_name.split(',');
       const sub   = parts.slice(1, 3).join(',').trim();
       return `<div class="search-result" onclick="selectCity(${r.lat},${r.lon},'${main.replace(/'/g,"\\'")}')">
@@ -1303,9 +1116,7 @@ function reiniciarDibujo() {
     results.style.display = 'block';
   }
 
-  function hideResults() {
-    results.style.display = 'none';
-  }
+  function hideResults() { results.style.display = 'none'; }
 })();
 
 window.selectCity = function(lat, lon, name) {
@@ -1348,12 +1159,9 @@ function setTopbar(txt, color, badge) {
 function detectarZona(polygon) {
   if (!APP.geoFeatures.length) return null;
   const centroid = turf.centroid(polygon);
-
-  // Exact
   for (const f of APP.geoFeatures) {
     try { if (turf.booleanPointInPolygon(centroid, f)) return f.properties; } catch {}
   }
-  // Largest intersection fallback
   let best = null, bestArea = 0;
   for (const f of APP.geoFeatures) {
     try {
@@ -1407,11 +1215,11 @@ function calcularCabida() {
 // RESULTS SHEET
 // ============================================================
 function mostrarResultados(z, props, sup, per) {
-  const n   = z.normas_urbanisticas || {};
-  const cc  = n.coeficiente_constructibilidad;
-  const cos = n.coeficiente_ocupacion_suelo;
+  const n      = z.normas_urbanisticas || {};
+  const cc     = n.coeficiente_constructibilidad;
+  const cos    = n.coeficiente_ocupacion_suelo;
   const pisos  = n.altura_maxima_pisos;
-  const metros = n.altura_maxima_metros;  // number | "S.R." | "N.E." | null
+  const metros = n.altura_maxima_metros;
   const dens   = n.densidad_maxima_habha;
   const frente = n.frente_minimo_m;
   const antej  = n.antejardín_minimo_m;
@@ -1420,27 +1228,40 @@ function mostrarResultados(z, props, sup, per) {
   const rasante= n.rasante_grados;
   const dist   = n.distancia_deslinde_m;
 
-  // Helper: format any norm value (number / "S.R." / "N.E." / null)
-  function fv(v, suffix='') {
+  // ── Nuevas métricas derivadas ─────────────────────────────
+  // Pisos estimados = CC / COS (cada piso consume COS de superficie)
+  const pisosEst = (cc && cos && typeof cc === 'number' && typeof cos === 'number' && cos > 0)
+    ? Math.round(cc / cos) : null;
+  // Viviendas máx estimadas = (densidad hab/há / 3 hab·viv⁻¹) × há terreno
+  const vivMax = (typeof dens === 'number' && dens > 0 && sup > 0)
+    ? Math.max(1, Math.round((dens / 3.0) * (sup / 10000))) : null;
+
+  // Helper: format any value (number / "S.R." / "N.E." / null)
+  function fv(v, suffix = '') {
     if (v === null || v === undefined) return { text: '—', cls: '' };
     if (v === 'S.R.') return { text: 'S.R.', cls: 'sr', title: 'Según Rasante (Art. 2.6.3 OGUC – 70° Biobío)' };
     if (v === 'N.E.') return { text: 'N.E.', cls: 'ne', title: 'No se exige' };
     return { text: `${v}${suffix}`, cls: '' };
   }
 
-  const supC = (cc && typeof cc === 'number') ? Math.round(cc  * sup) : null;
+  const supC = (cc  && typeof cc  === 'number') ? Math.round(cc  * sup) : null;
   const ocup = (cos && typeof cos === 'number') ? Math.round(cos * sup) : null;
 
-  // Altura display in primary KPI
+  // Altura display
   let altTxt = '—', altSub = '', altCls = '';
   if (metros === 'S.R.') {
-    altTxt = 'S.R.'; altSub = 'Según Rasante'; altCls = 'sr';
+    altTxt = 'S.R.';
+    altSub = pisosEst ? `Según Rasante · ~${pisosEst} pisos` : 'Según Rasante';
+    altCls = 'sr';
   } else if (metros === 'N.E.') {
     altTxt = 'N.E.'; altSub = 'No se exige'; altCls = 'ne';
   } else if (pisos) {
-    altTxt = `${pisos} pisos`; altSub = `~${+(pisos*2.8).toFixed(1)} m est.`;
+    altTxt = `${pisos} pisos`; altSub = `~${+(pisos * 2.8).toFixed(1)} m est.`;
+  } else if (metros && typeof metros === 'number') {
+    altTxt = `${metros} m`;
+    altSub = pisosEst ? `~${pisosEst} pisos est.` : 'altura máx.';
   } else if (metros) {
-    altTxt = `${metros} m`; altSub = 'altura máx.';
+    altTxt = `${metros}`; altSub = pisosEst ? `~${pisosEst} pisos est.` : '';
   }
 
   const zona   = props ? (props.zona_code || props.zona || '—') : '—';
@@ -1448,13 +1269,12 @@ function mostrarResultados(z, props, sup, per) {
 
   document.getElementById('r-zona-code').textContent = zona;
   document.getElementById('r-zona-info').textContent = `${comuna} · ${z.prc_decreto || 'PRC'}`;
-  document.getElementById('r-sup-c').textContent = supC ? supC.toLocaleString('es-CL') : '—';
+  document.getElementById('r-sup-c').textContent     = supC ? supC.toLocaleString('es-CL') : '—';
 
   const rPisos = document.getElementById('r-pisos');
   rPisos.textContent = altTxt;
-  rPisos.className = `kpi-val${altCls ? ' kpi-val-' + altCls : ''}`;
-  rPisos.style.fontSize = (altTxt.length > 6) ? '16px' : '22px';
-  rPisos.style.color = altCls === 'sr' ? '#c07000' : altCls === 'ne' ? 'var(--muted)' : '';
+  rPisos.style.fontSize = altTxt.length > 6 ? '16px' : '22px';
+  rPisos.style.color = altCls === 'sr' ? '#D97706' : altCls === 'ne' ? 'var(--muted)' : '';
   document.getElementById('r-alt-est').textContent = altSub || '—';
 
   document.getElementById('r-cc').textContent  = cc  != null ? cc  : '—';
@@ -1466,17 +1286,21 @@ function mostrarResultados(z, props, sup, per) {
   // Extra normas rows (dynamic)
   const normasExtra = document.getElementById('r-normas-extra');
   normasExtra.innerHTML = '';
+
   const rows = [
-    { lbl: 'Agrupamiento',         val: agrup,   suffix: '',   display: agrup },
-    { lbl: 'Frente m&iacute;nimo', val: frente,  suffix: ' m', display: fv(frente,' m') },
-    { lbl: 'Antejard&iacute;n',    val: antej,   suffix: ' m', display: fv(antej,' m') },
-    { lbl: 'Subdiv. m&iacute;n.',  val: subdiv,  suffix: ' m²',display: fv(subdiv,' m²') },
-    { lbl: 'Rasante',              val: rasante, suffix: '°',  display: fv(rasante,'°') },
-    { lbl: 'Dist. deslinde',       val: dist,    suffix: ' m', display: fv(dist,' m') },
+    { lbl: 'Viviendas m&aacute;x.',  val: vivMax,  display: vivMax ? { text: `~${vivMax}`, cls: 'accent', title: `Estimado: ${dens} hab/há ÷ 3 × ${(sup/10000).toFixed(3)} há` } : null },
+    { lbl: 'Agrupamiento',           val: agrup,   display: agrup ? { text: agrup, cls: '' } : null },
+    { lbl: 'Frente m&iacute;nimo',   val: frente,  display: fv(frente,  ' m') },
+    { lbl: 'Antejard&iacute;n',      val: antej,   display: fv(antej,   ' m') },
+    { lbl: 'Subdiv. m&iacute;n.',    val: subdiv,  display: fv(subdiv,  ' m²') },
+    { lbl: 'Rasante',                val: rasante, display: fv(rasante, '°')  },
+    { lbl: 'Dist. deslinde',         val: dist,    display: fv(dist,    ' m') },
   ];
+
   rows.forEach(row => {
-    if (row.val === null || row.val === undefined) return;  // skip if no data
-    const d = typeof row.display === 'object' ? row.display : { text: row.display || '—', cls: '', title: '' };
+    if (row.val === null || row.val === undefined) return;
+    if (!row.display || row.display.text === '—') return;
+    const d = row.display;
     const div = document.createElement('div');
     div.className = 'norm-row';
     div.innerHTML = `<span class="norm-row-lbl">${row.lbl}</span>
@@ -1495,7 +1319,7 @@ function mostrarResultados(z, props, sup, per) {
 // SIN DATOS SHEET
 // ============================================================
 function mostrarSinDatos(props, sup) {
-  const zona  = props ? (props.zona_code || props.zona || 'Zona desconocida') : 'Sin zona detectada';
+  const zona   = props ? (props.zona_code || props.zona || 'Zona desconocida') : 'Sin zona detectada';
   const comuna = props ? (props.comuna || '') : '';
 
   document.getElementById('sd-zona').textContent = `Zona: ${zona}${comuna ? ' · ' + comuna : ''}`;
@@ -1539,8 +1363,8 @@ function initMiniMap(containerId, key, polygon, dashed) {
 
   if (polygon) {
     const style = dashed
-      ? { color: '#888', fillColor: '#888', fillOpacity: 0.08, weight: 2, dashArray: '6,4' }
-      : { color: '#840016', fillColor: '#840016', fillOpacity: 0.14, weight: 2.5 };
+      ? { color: '#94A3B8', fillColor: '#94A3B8', fillOpacity: 0.08, weight: 2, dashArray: '6,4' }
+      : { color: '#0ECBA1', fillColor: '#0ECBA1', fillOpacity: 0.16, weight: 2.5 };
     const layer = L.geoJSON(polygon, { style }).addTo(m);
     m.fitBounds(layer.getBounds(), { padding: [22, 22] });
     m.invalidateSize();
@@ -1559,7 +1383,6 @@ function abrirSheet(id) {
 function closeSheets() {
   document.getElementById('sheet-overlay').classList.remove('active');
   document.querySelectorAll('.bottom-sheet').forEach(s => s.classList.remove('open'));
-  // If polygon is done, keep result buttons; otherwise restore trazar FAB
   if (!APP.currentPolygon) {
     const btn = document.getElementById('btn-trazar');
     if (btn) { btn.style.display = ''; btn.classList.remove('cancelar'); }
@@ -1573,10 +1396,14 @@ function guardarCabida() {
   if (!APP.currentPolygon || !APP.currentZona) return;
   const { data: z, props, supM2, perM } = APP.currentZona;
   const n = (z && z.normas_urbanisticas) || {};
-  const cc  = n.coeficiente_constructibilidad;
-  const cos = n.coeficiente_ocupacion_suelo;
-  const pisos = n.altura_maxima_pisos;
+  const cc     = n.coeficiente_constructibilidad;
+  const cos    = n.coeficiente_ocupacion_suelo;
+  const pisos  = n.altura_maxima_pisos;
   const metros = n.altura_maxima_metros;
+  const dens   = n.densidad_maxima_habha;
+
+  const vivMax = (typeof dens === 'number' && dens > 0 && supM2 > 0)
+    ? Math.max(1, Math.round((dens / 3.0) * (supM2 / 10000))) : null;
 
   const uid = (typeof crypto !== 'undefined' && crypto.randomUUID)
     ? crypto.randomUUID()
@@ -1588,14 +1415,15 @@ function guardarCabida() {
     coordenadas: turf.centroid(APP.currentPolygon).geometry.coordinates,
     poligono: APP.currentPolygon,
     superficie_predio: Math.round(supM2),
-    comuna:     props ? props.comuna : '—',
-    zona:       props ? (props.zona_code || props.zona) : '—',
+    comuna:      props ? props.comuna : '—',
+    zona:        props ? (props.zona_code || props.zona) : '—',
     nombre_zona: z ? z.nombre : '—',
     normas: { CC: cc, COS: cos, pisos, metros },
     resultados: {
-      sup_construible: cc  ? Math.round(cc  * supM2) : null,
-      ocupacion_piso1: cos ? Math.round(cos * supM2) : null,
-      altura_estimada: pisos ? +(pisos * 2.8).toFixed(1) : metros
+      sup_construible:  cc  ? Math.round(cc  * supM2) : null,
+      ocupacion_piso1:  cos ? Math.round(cos * supM2) : null,
+      altura_estimada:  pisos ? +(pisos * 2.8).toFixed(1) : metros,
+      viviendas_max:    vivMax
     }
   };
 
@@ -1652,12 +1480,13 @@ function initProspectos() {
   APP.prospectos.forEach(p => {
     const card = document.createElement('div');
     card.className = 'prosp-card';
-    const sc = p.resultados.sup_construible;
+    const sc  = p.resultados.sup_construible;
+    const viv = p.resultados.viviendas_max;
     card.innerHTML = `
       <div class="prosp-dot"></div>
       <div class="prosp-info">
         <div class="prosp-zona">${p.nombre_zona || p.zona} · ${p.comuna}</div>
-        <div class="prosp-meta">${p.superficie_predio} m² predio · ${fmtFecha(p.fecha)}</div>
+        <div class="prosp-meta">${p.superficie_predio.toLocaleString('es-CL')} m² predio${viv ? ' · ~' + viv + ' viv.' : ''} · ${fmtFecha(p.fecha)}</div>
       </div>
       <div>
         <div class="prosp-val">${sc ? sc.toLocaleString('es-CL') : '—'}</div>
@@ -1667,7 +1496,6 @@ function initProspectos() {
         <button onclick="eliminarProspecto('${p.id}')">🗑</button>
       </div>`;
 
-    // Long-press to reveal delete
     let timer;
     card.addEventListener('touchstart', () => {
       timer = setTimeout(() => document.getElementById(`del-${p.id}`).classList.toggle('show'), 600);
@@ -1696,7 +1524,7 @@ function initProspectosMap(prospectos) {
     prospectos.forEach(p => {
       if (!p.poligono) return;
       const layer = L.geoJSON(p.poligono, {
-        style: { color: '#840016', fillColor: '#840016', fillOpacity: 0.16, weight: 2 }
+        style: { color: '#0ECBA1', fillColor: '#0ECBA1', fillOpacity: 0.18, weight: 2 }
       }).addTo(m);
       try { bounds.extend(layer.getBounds()); } catch {}
 
@@ -1704,7 +1532,7 @@ function initProspectosMap(prospectos) {
         L.marker([p.coordenadas[1], p.coordenadas[0]], {
           icon: L.divIcon({
             className: '',
-            html: `<div style="background:#840016;color:#fff;font-size:10px;font-weight:700;border-radius:10px;padding:2px 8px;white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,.25);">${(p.resultados.sup_construible/1000).toFixed(1)}k m²</div>`,
+            html: `<div style="background:#0ECBA1;color:#fff;font-size:10px;font-weight:700;border-radius:10px;padding:2px 8px;white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,.20);">${(p.resultados.sup_construible/1000).toFixed(1)}k m²</div>`,
             iconAnchor: [24, -4]
           })
         }).addTo(m);
@@ -1730,9 +1558,7 @@ function irADOM() {
   if (url) window.open(url, '_blank');
 }
 
-function openConfig() {
-  toast('Configuración próximamente');
-}
+function openConfig() { toast('Configuración próximamente'); }
 
 function fmtFecha(iso) {
   try { return new Date(iso).toLocaleDateString('es-CL', { day:'2-digit', month:'short', year:'numeric' }); }
@@ -1742,22 +1568,19 @@ function fmtFecha(iso) {
 function toast(msg) {
   document.querySelectorAll('.toast').forEach(t => t.remove());
   const t = document.createElement('div');
-  t.className = 'toast';
-  t.textContent = msg;
+  t.className = 'toast'; t.textContent = msg;
   document.body.appendChild(t);
   setTimeout(() => t.remove(), 2200);
 }
 
 // ============================================================
-// TILES — ESRI World Imagery (satellite) + labels overlay
+// TILES — ESRI World Imagery + labels overlay
 // ============================================================
 function addSatTiles(map) {
   L.tileLayer(
     'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
-    { maxZoom: 20, attribution: 'Tiles &copy; Esri &mdash; Source: Esri, USGS, NOAA' }
+    { maxZoom: 20, attribution: 'Tiles &copy; Esri' }
   ).addTo(map);
-
-  // Street names + boundaries overlay
   L.tileLayer(
     'https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}',
     { maxZoom: 20, opacity: 0.85, pane: 'shadowPane' }
