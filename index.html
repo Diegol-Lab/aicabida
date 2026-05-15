@@ -399,9 +399,12 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
 }
 .norm-row-lbl { font-size: 12px; color: var(--muted); font-weight: 600; }
 .norm-row-val { font-family: var(--inter); font-size: 16px; font-weight: 800; color: var(--texto); }
-.norm-row-val.sr { color: #D97706; font-size: 14px; }
-.norm-row-val.ne { color: var(--muted); font-size: 14px; }
-.norm-row-val.accent { color: var(--accent); }
+.norm-row-val.sr      { color: #D97706; font-size: 14px; }
+.norm-row-val.ne      { color: var(--muted); font-size: 13px; }
+.norm-row-val.missing { color: #F97316; font-size: 13px; font-weight: 600; }
+.norm-row-val.accent  { color: var(--accent); }
+.kpi-val.missing { color: #F97316 !important; font-size: 14px !important; font-weight: 700 !important; }
+.kpi-val.ne      { color: var(--muted) !important; font-size: 13px !important; }
 
 .sheet-btns { display: flex; flex-direction: column; gap: 10px; padding-top: 4px; }
 
@@ -1238,9 +1241,9 @@ function mostrarResultados(z, props, sup, per) {
 
   // Helper: format any value (number / "S.R." / "N.E." / null)
   function fv(v, suffix = '') {
-    if (v === null || v === undefined) return { text: '—', cls: '' };
+    if (v === null || v === undefined) return { text: 'Sin datos', cls: 'missing', title: 'No encontrado en la ordenanza — verificar fuente original' };
     if (v === 'S.R.') return { text: 'S.R.', cls: 'sr', title: 'Según Rasante (Art. 2.6.3 OGUC – 70° Biobío)' };
-    if (v === 'N.E.') return { text: 'N.E.', cls: 'ne', title: 'No se exige' };
+    if (v === 'N.E.') return { text: 'No se exige', cls: 'ne', title: 'La ordenanza no establece este requisito' };
     return { text: `${v}${suffix}`, cls: '' };
   }
 
@@ -1248,7 +1251,7 @@ function mostrarResultados(z, props, sup, per) {
   const ocup = (cos && typeof cos === 'number') ? Math.round(cos * sup) : null;
 
   // Altura display
-  let altTxt = '—', altSub = '', altCls = '';
+  let altTxt = 'Sin datos', altSub = 'No encontrado en ordenanza', altCls = 'missing';
   if (metros === 'S.R.') {
     altTxt = 'S.R.';
     altSub = pisosEst ? `Según Rasante · ~${pisosEst} pisos` : 'Según Rasante';
@@ -1256,12 +1259,13 @@ function mostrarResultados(z, props, sup, per) {
   } else if (metros === 'N.E.') {
     altTxt = 'N.E.'; altSub = 'No se exige'; altCls = 'ne';
   } else if (pisos) {
-    altTxt = `${pisos} pisos`; altSub = `~${+(pisos * 2.8).toFixed(1)} m est.`;
+    altTxt = `${pisos} pisos`; altSub = `~${+(pisos * 2.8).toFixed(1)} m est.`; altCls = '';
   } else if (metros && typeof metros === 'number') {
     altTxt = `${metros} m`;
     altSub = pisosEst ? `~${pisosEst} pisos est.` : 'altura máx.';
+    altCls = '';
   } else if (metros) {
-    altTxt = `${metros}`; altSub = pisosEst ? `~${pisosEst} pisos est.` : '';
+    altTxt = `${metros}`; altSub = pisosEst ? `~${pisosEst} pisos est.` : ''; altCls = '';
   }
 
   const zona   = props ? (props.zona_code || props.zona || '—') : '—';
@@ -1274,32 +1278,45 @@ function mostrarResultados(z, props, sup, per) {
   const rPisos = document.getElementById('r-pisos');
   rPisos.textContent = altTxt;
   rPisos.style.fontSize = altTxt.length > 6 ? '16px' : '22px';
-  rPisos.style.color = altCls === 'sr' ? '#D97706' : altCls === 'ne' ? 'var(--muted)' : '';
+  rPisos.style.color = altCls === 'sr' ? '#D97706' : altCls === 'ne' ? 'var(--muted)' : altCls === 'missing' ? '#F97316' : '';
   document.getElementById('r-alt-est').textContent = altSub || '—';
 
-  document.getElementById('r-cc').textContent  = cc  != null ? cc  : '—';
-  document.getElementById('r-cos').textContent = cos != null ? cos : '—';
+  const fvCC  = fv(cc);
+  const ccEl  = document.getElementById('r-cc');
+  ccEl.textContent = fvCC.text;
+  ccEl.className   = 'kpi-val' + (fvCC.cls ? ' ' + fvCC.cls : '');
+  if (fvCC.title) ccEl.title = fvCC.title; else ccEl.removeAttribute('title');
+
+  const fvCOS = fv(cos);
+  const cosEl = document.getElementById('r-cos');
+  cosEl.textContent = fvCOS.text;
+  cosEl.className   = 'kpi-val' + (fvCOS.cls ? ' ' + fvCOS.cls : '');
+  if (fvCOS.title) cosEl.title = fvCOS.title; else cosEl.removeAttribute('title');
+
   document.getElementById('r-ocup').textContent = ocup ? `${ocup.toLocaleString('es-CL')} m²` : '—';
+
   const fvDens = fv(dens, ' hab/há');
-  document.getElementById('r-dens').textContent = dens != null ? fvDens.text : '—';
+  const densEl = document.getElementById('r-dens');
+  densEl.textContent = fvDens.text;
+  densEl.className   = 'kpi-val' + (fvDens.cls ? ' ' + fvDens.cls : '');
+  if (fvDens.title) densEl.title = fvDens.title; else densEl.removeAttribute('title');
 
   // Extra normas rows (dynamic)
   const normasExtra = document.getElementById('r-normas-extra');
   normasExtra.innerHTML = '';
 
   const rows = [
-    { lbl: 'Viviendas m&aacute;x.',  val: vivMax,  display: vivMax ? { text: `~${vivMax}`, cls: 'accent', title: `Estimado: ${dens} hab/há ÷ 3 × ${(sup/10000).toFixed(3)} há` } : null },
-    { lbl: 'Agrupamiento',           val: agrup,   display: agrup ? { text: agrup, cls: '' } : null },
-    { lbl: 'Frente m&iacute;nimo',   val: frente,  display: fv(frente,  ' m') },
-    { lbl: 'Antejard&iacute;n',      val: antej,   display: fv(antej,   ' m') },
-    { lbl: 'Subdiv. m&iacute;n.',    val: subdiv,  display: fv(subdiv,  ' m²') },
-    { lbl: 'Rasante',                val: rasante, display: fv(rasante, '°')  },
-    { lbl: 'Dist. deslinde',         val: dist,    display: fv(dist,    ' m') },
+    { lbl: 'Viviendas m&aacute;x.',  display: vivMax ? { text: `~${vivMax}`, cls: 'accent', title: `Estimado: ${dens} hab/há ÷ 3 × ${(sup/10000).toFixed(3)} há` } : null },
+    { lbl: 'Agrupamiento',           display: fv(agrup) },
+    { lbl: 'Frente m&iacute;nimo',   display: fv(frente,  ' m') },
+    { lbl: 'Antejard&iacute;n',      display: fv(antej,   ' m') },
+    { lbl: 'Subdiv. m&iacute;n.',    display: fv(subdiv,  ' m²') },
+    { lbl: 'Rasante',                display: fv(rasante, '°')  },
+    { lbl: 'Dist. deslinde',         display: fv(dist,    ' m') },
   ];
 
   rows.forEach(row => {
-    if (row.val === null || row.val === undefined) return;
-    if (!row.display || row.display.text === '—') return;
+    if (!row.display) return;
     const d = row.display;
     const div = document.createElement('div');
     div.className = 'norm-row';
