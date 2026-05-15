@@ -8515,13 +8515,13 @@
         "altura_maxima_metros": null,
         "densidad_maxima_vivha": null,
         "densidad_maxima_habha": null,
-        "superficie_predial_minima_m2": null,
+        "superficie_predial_minima_m2": 200,
         "frente_minimo_m": null,
         "antejardín_minimo_m": null,
         "rasante_grados": null,
         "agrupamiento": null,
         "distancia_deslinde_m": null,
-        "subdivision_minima_m2": null,
+        "subdivision_minima_m2": 200,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
         "notas": "ZH1 Zona habitacional 1",
@@ -8590,8 +8590,8 @@
         "Todos los usos de suelo no mencionados como permitidos"
       ],
       "normas_urbanisticas": {
-        "coeficiente_constructibilidad": null,
-        "coeficiente_ocupacion_suelo": 0.6,
+        "coeficiente_constructibilidad": 6.0,
+        "coeficiente_ocupacion_suelo": "N.E.",
         "coeficiente_ocupacion_suelo_total": null,
         "altura_maxima_pisos": null,
         "altura_maxima_metros": null,
@@ -8606,7 +8606,7 @@
         "subdivision_minima_m2": 200,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "COS=0.6",
+        "notas": "CC=6.0. COS=N.E.",
         "adosamiento": false
       }
     },
