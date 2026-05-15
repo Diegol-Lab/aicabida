@@ -2906,7 +2906,7 @@
   "Lebu": [
     {
       "comuna": "Lebu",
-      "prc_decreto": "PRC Lebu. Ordenanza Local. Decreto aprobatorio MINVU (PDF escaneado).",
+      "prc_decreto": "PRC Lebu. Ordenanza Local 2003. MINVU / URBE Ltda. (OCR de PDF escaneado).",
       "zona": "ZA1",
       "nombre": "Zona residencial mixta 1",
       "usos_permitidos": [
@@ -2923,29 +2923,29 @@
         "Todos los usos de suelo no mencionados como permitidos."
       ],
       "normas_urbanisticas": {
-        "coeficiente_constructibilidad": null,
-        "coeficiente_ocupacion_suelo": null,
+        "coeficiente_constructibilidad": 1.4,
+        "coeficiente_ocupacion_suelo": 0.6,
         "coeficiente_ocupacion_suelo_total": null,
-        "altura_maxima_pisos": null,
+        "altura_maxima_pisos": 3,
         "altura_maxima_metros": null,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
-        "superficie_predial_minima_m2": null,
+        "densidad_maxima_habha": 160,
+        "superficie_predial_minima_m2": 120,
         "frente_minimo_m": null,
-        "antejardín_minimo_m": null,
+        "antejardín_minimo_m": "N.E.",
         "rasante_grados": null,
-        "agrupamiento": null,
+        "agrupamiento": "Aislado, Pareado y Continuo",
         "distancia_deslinde_m": null,
-        "subdivision_minima_m2": null,
+        "subdivision_minima_m2": 120,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "PDF escaneado. Ver ordenanza original para norms de ZA1.",
+        "notas": "CC=1.4. COS=0.6. Dens=160hab/há. Agrup=Aislado, Pareado y Continuo",
         "adosamiento": false
       }
     },
     {
       "comuna": "Lebu",
-      "prc_decreto": "PRC Lebu. Ordenanza Local. Decreto aprobatorio MINVU (PDF escaneado).",
+      "prc_decreto": "PRC Lebu. Ordenanza Local 2003. MINVU / URBE Ltda. (OCR de PDF escaneado).",
       "zona": "ZB1",
       "nombre": "Zona equipamiento 1",
       "usos_permitidos": [
@@ -2964,29 +2964,29 @@
         "Todos los usos de suelo no mencionados como permitidos."
       ],
       "normas_urbanisticas": {
-        "coeficiente_constructibilidad": null,
-        "coeficiente_ocupacion_suelo": null,
+        "coeficiente_constructibilidad": 2.0,
+        "coeficiente_ocupacion_suelo": 0.8,
         "coeficiente_ocupacion_suelo_total": null,
-        "altura_maxima_pisos": null,
+        "altura_maxima_pisos": 4,
         "altura_maxima_metros": null,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
-        "superficie_predial_minima_m2": null,
+        "densidad_maxima_habha": 400,
+        "superficie_predial_minima_m2": 250,
         "frente_minimo_m": null,
-        "antejardín_minimo_m": null,
+        "antejardín_minimo_m": 5.0,
         "rasante_grados": null,
-        "agrupamiento": null,
+        "agrupamiento": "Aislado, Pareado y Continuo",
         "distancia_deslinde_m": null,
-        "subdivision_minima_m2": null,
+        "subdivision_minima_m2": 250,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "PDF escaneado. Ver ordenanza original para norms de ZB1.",
+        "notas": "CC=2.0. COS=0.8. Dens=400hab/há. Agrup=Aislado, Pareado y Continuo",
         "adosamiento": false
       }
     },
     {
       "comuna": "Lebu",
-      "prc_decreto": "PRC Lebu. Ordenanza Local. Decreto aprobatorio MINVU (PDF escaneado).",
+      "prc_decreto": "PRC Lebu. Ordenanza Local 2003. MINVU / URBE Ltda. (OCR de PDF escaneado).",
       "zona": "ZE",
       "nombre": "Zona area verde y equipamiento",
       "usos_permitidos": [
@@ -2996,29 +2996,29 @@
         "Todos los usos de suelo no mencionados como permitidos."
       ],
       "normas_urbanisticas": {
-        "coeficiente_constructibilidad": null,
-        "coeficiente_ocupacion_suelo": null,
+        "coeficiente_constructibilidad": 0.02,
+        "coeficiente_ocupacion_suelo": 0.2,
         "coeficiente_ocupacion_suelo_total": null,
-        "altura_maxima_pisos": null,
+        "altura_maxima_pisos": 1,
         "altura_maxima_metros": null,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
-        "superficie_predial_minima_m2": null,
+        "densidad_maxima_habha": "N.E.",
+        "superficie_predial_minima_m2": 2500,
         "frente_minimo_m": null,
         "antejardín_minimo_m": null,
         "rasante_grados": null,
-        "agrupamiento": null,
+        "agrupamiento": "Aislado",
         "distancia_deslinde_m": null,
-        "subdivision_minima_m2": null,
+        "subdivision_minima_m2": 2500,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "PDF escaneado. Ver ordenanza original para norms de ZE.",
+        "notas": "CC=0.02. COS=0.2. Dens=N.E.. Agrup=Aislado",
         "adosamiento": false
       }
     },
     {
       "comuna": "Lebu",
-      "prc_decreto": "PRC Lebu. Ordenanza Local. Decreto aprobatorio MINVU (PDF escaneado).",
+      "prc_decreto": "PRC Lebu. Ordenanza Local 2003. MINVU / URBE Ltda. (OCR de PDF escaneado).",
       "zona": "ZR1",
       "nombre": "Zona restriccion por riesgo de inundacion",
       "usos_permitidos": [
@@ -3046,13 +3046,13 @@
         "subdivision_minima_m2": null,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "PDF escaneado. Ver ordenanza original para norms de ZR1.",
-        "adosamiento": false
+        "notas": "Zona de restriccion por riesgo de inundacion. No edificable.",
+        "adosamiento": null
       }
     },
     {
       "comuna": "Lebu",
-      "prc_decreto": "PRC Lebu. Ordenanza Local. Decreto aprobatorio MINVU (PDF escaneado).",
+      "prc_decreto": "PRC Lebu. Ordenanza Local 2003. MINVU / URBE Ltda. (OCR de PDF escaneado).",
       "zona": "ZB3",
       "nombre": "Zona equipamiento 3",
       "usos_permitidos": [
@@ -3065,29 +3065,29 @@
         "Todos los usos de suelo no mencionados como permitidos."
       ],
       "normas_urbanisticas": {
-        "coeficiente_constructibilidad": null,
-        "coeficiente_ocupacion_suelo": null,
+        "coeficiente_constructibilidad": 1.2,
+        "coeficiente_ocupacion_suelo": 0.5,
         "coeficiente_ocupacion_suelo_total": null,
-        "altura_maxima_pisos": null,
+        "altura_maxima_pisos": 3,
         "altura_maxima_metros": null,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
-        "superficie_predial_minima_m2": null,
+        "densidad_maxima_habha": "N.E.",
+        "superficie_predial_minima_m2": 800,
         "frente_minimo_m": null,
-        "antejardín_minimo_m": null,
+        "antejardín_minimo_m": 5.0,
         "rasante_grados": null,
-        "agrupamiento": null,
+        "agrupamiento": "Aislado",
         "distancia_deslinde_m": null,
-        "subdivision_minima_m2": null,
+        "subdivision_minima_m2": 800,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "PDF escaneado. Ver ordenanza original para norms de ZB3.",
+        "notas": "CC=1.2. COS=0.5. Dens=N.E.. Agrup=Aislado",
         "adosamiento": false
       }
     },
     {
       "comuna": "Lebu",
-      "prc_decreto": "PRC Lebu. Ordenanza Local. Decreto aprobatorio MINVU (PDF escaneado).",
+      "prc_decreto": "PRC Lebu. Ordenanza Local 2003. MINVU / URBE Ltda. (OCR de PDF escaneado).",
       "zona": "ZP3",
       "nombre": "Zona de proteccion - Proteccion por riesgo de incendios forestales",
       "usos_permitidos": [
@@ -3113,13 +3113,13 @@
         "subdivision_minima_m2": null,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "PDF escaneado. Ver ordenanza original para norms de ZP3.",
-        "adosamiento": false
+        "notas": "Zona de proteccion por riesgo de incendios forestales. No edificable.",
+        "adosamiento": null
       }
     },
     {
       "comuna": "Lebu",
-      "prc_decreto": "PRC Lebu. Ordenanza Local. Decreto aprobatorio MINVU (PDF escaneado).",
+      "prc_decreto": "PRC Lebu. Ordenanza Local 2003. MINVU / URBE Ltda. (OCR de PDF escaneado).",
       "zona": "ZBCD2",
       "nombre": "Zona equipamiento - Actividades productivas 2",
       "usos_permitidos": [
@@ -3133,29 +3133,29 @@
         "Todos los usos de suelo no mencionados como permitidos."
       ],
       "normas_urbanisticas": {
-        "coeficiente_constructibilidad": null,
-        "coeficiente_ocupacion_suelo": null,
+        "coeficiente_constructibilidad": 1.0,
+        "coeficiente_ocupacion_suelo": 0.5,
         "coeficiente_ocupacion_suelo_total": null,
-        "altura_maxima_pisos": null,
+        "altura_maxima_pisos": 2,
         "altura_maxima_metros": null,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
-        "superficie_predial_minima_m2": null,
+        "densidad_maxima_habha": "N.E.",
+        "superficie_predial_minima_m2": 500,
         "frente_minimo_m": null,
-        "antejardín_minimo_m": null,
+        "antejardín_minimo_m": 10.0,
         "rasante_grados": null,
-        "agrupamiento": null,
+        "agrupamiento": "Aislado",
         "distancia_deslinde_m": null,
-        "subdivision_minima_m2": null,
+        "subdivision_minima_m2": 500,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "PDF escaneado. Ver ordenanza original para norms de ZBCD2.",
+        "notas": "CC=1.0. COS=0.5. Dens=N.E.. Agrup=Aislado",
         "adosamiento": false
       }
     },
     {
       "comuna": "Lebu",
-      "prc_decreto": "PRC Lebu. Ordenanza Local. Decreto aprobatorio MINVU (PDF escaneado).",
+      "prc_decreto": "PRC Lebu. Ordenanza Local 2003. MINVU / URBE Ltda. (OCR de PDF escaneado).",
       "zona": "ZP2",
       "nombre": "Zona de proteccion 2 - Proteccion por interes y/o valor paisajistico",
       "usos_permitidos": [
@@ -3166,29 +3166,29 @@
         "Todos los usos de suelo no mencionados como permitidos."
       ],
       "normas_urbanisticas": {
-        "coeficiente_constructibilidad": null,
-        "coeficiente_ocupacion_suelo": null,
+        "coeficiente_constructibilidad": 0.3,
+        "coeficiente_ocupacion_suelo": 0.3,
         "coeficiente_ocupacion_suelo_total": null,
-        "altura_maxima_pisos": null,
+        "altura_maxima_pisos": 1,
         "altura_maxima_metros": null,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
-        "superficie_predial_minima_m2": null,
+        "densidad_maxima_habha": "N.E.",
+        "superficie_predial_minima_m2": 2500,
         "frente_minimo_m": null,
         "antejardín_minimo_m": null,
         "rasante_grados": null,
-        "agrupamiento": null,
+        "agrupamiento": "Aislado",
         "distancia_deslinde_m": null,
-        "subdivision_minima_m2": null,
+        "subdivision_minima_m2": 2500,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "PDF escaneado. Ver ordenanza original para norms de ZP2.",
+        "notas": "CC=0.3. COS=0.3. Dens=N.E.. Agrup=Aislado",
         "adosamiento": false
       }
     },
     {
       "comuna": "Lebu",
-      "prc_decreto": "PRC Lebu. Ordenanza Local. Decreto aprobatorio MINVU (PDF escaneado).",
+      "prc_decreto": "PRC Lebu. Ordenanza Local 2003. MINVU / URBE Ltda. (OCR de PDF escaneado).",
       "zona": "ZR2",
       "nombre": "Zona restriccion por riesgo de remocion",
       "usos_permitidos": [
@@ -3216,13 +3216,13 @@
         "subdivision_minima_m2": null,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "PDF escaneado. Ver ordenanza original para norms de ZR2.",
-        "adosamiento": false
+        "notas": "Zona de restriccion por riesgo de remocion. No edificable.",
+        "adosamiento": null
       }
     },
     {
       "comuna": "Lebu",
-      "prc_decreto": "PRC Lebu. Ordenanza Local. Decreto aprobatorio MINVU (PDF escaneado).",
+      "prc_decreto": "PRC Lebu. Ordenanza Local 2003. MINVU / URBE Ltda. (OCR de PDF escaneado).",
       "zona": "ZB2",
       "nombre": "Zona equipamiento 2",
       "usos_permitidos": [
@@ -3232,29 +3232,29 @@
         "Todos los usos de suelo no mencionados como permitidos."
       ],
       "normas_urbanisticas": {
-        "coeficiente_constructibilidad": null,
-        "coeficiente_ocupacion_suelo": null,
+        "coeficiente_constructibilidad": 1.2,
+        "coeficiente_ocupacion_suelo": 0.5,
         "coeficiente_ocupacion_suelo_total": null,
         "altura_maxima_pisos": null,
-        "altura_maxima_metros": null,
+        "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
-        "superficie_predial_minima_m2": null,
+        "densidad_maxima_habha": "N.E.",
+        "superficie_predial_minima_m2": 400,
         "frente_minimo_m": null,
-        "antejardín_minimo_m": null,
+        "antejardín_minimo_m": 3.0,
         "rasante_grados": null,
-        "agrupamiento": null,
+        "agrupamiento": "Aislado y Pareado",
         "distancia_deslinde_m": null,
-        "subdivision_minima_m2": null,
+        "subdivision_minima_m2": 400,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "PDF escaneado. Ver ordenanza original para norms de ZB2.",
+        "notas": "CC=1.2. COS=0.5. Alt.máx=S.R.. Dens=N.E.. Agrup=Aislado y Pareado",
         "adosamiento": false
       }
     },
     {
       "comuna": "Lebu",
-      "prc_decreto": "PRC Lebu. Ordenanza Local. Decreto aprobatorio MINVU (PDF escaneado).",
+      "prc_decreto": "PRC Lebu. Ordenanza Local 2003. MINVU / URBE Ltda. (OCR de PDF escaneado).",
       "zona": "ZA4C",
       "nombre": "Zona residencial mixta 4 - Condicionada por pendiente 1",
       "usos_permitidos": [
@@ -3270,28 +3270,28 @@
       ],
       "normas_urbanisticas": {
         "coeficiente_constructibilidad": null,
-        "coeficiente_ocupacion_suelo": null,
+        "coeficiente_ocupacion_suelo": 0.5,
         "coeficiente_ocupacion_suelo_total": null,
         "altura_maxima_pisos": null,
-        "altura_maxima_metros": null,
+        "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
-        "superficie_predial_minima_m2": null,
+        "densidad_maxima_habha": 100,
+        "superficie_predial_minima_m2": 500,
         "frente_minimo_m": null,
-        "antejardín_minimo_m": null,
+        "antejardín_minimo_m": 5.0,
         "rasante_grados": null,
-        "agrupamiento": null,
+        "agrupamiento": "Aislado",
         "distancia_deslinde_m": null,
-        "subdivision_minima_m2": null,
+        "subdivision_minima_m2": 500,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "PDF escaneado. Ver ordenanza original para norms de ZA4C.",
+        "notas": "COS=0.5. Alt.máx=S.R.. Dens=100hab/há. Agrup=Aislado",
         "adosamiento": false
       }
     },
     {
       "comuna": "Lebu",
-      "prc_decreto": "PRC Lebu. Ordenanza Local. Decreto aprobatorio MINVU (PDF escaneado).",
+      "prc_decreto": "PRC Lebu. Ordenanza Local 2003. MINVU / URBE Ltda. (OCR de PDF escaneado).",
       "zona": "ZA5C",
       "nombre": "Zona residencial mixta 5 - Condicionada por pendiente 2",
       "usos_permitidos": [
@@ -3306,29 +3306,29 @@
         "Todos los usos de suelo no mencionados como permitidos."
       ],
       "normas_urbanisticas": {
-        "coeficiente_constructibilidad": null,
-        "coeficiente_ocupacion_suelo": null,
+        "coeficiente_constructibilidad": 0.8,
+        "coeficiente_ocupacion_suelo": 0.4,
         "coeficiente_ocupacion_suelo_total": null,
         "altura_maxima_pisos": null,
-        "altura_maxima_metros": null,
+        "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
-        "superficie_predial_minima_m2": null,
+        "densidad_maxima_habha": 100,
+        "superficie_predial_minima_m2": 200,
         "frente_minimo_m": null,
-        "antejardín_minimo_m": null,
+        "antejardín_minimo_m": 5.0,
         "rasante_grados": null,
-        "agrupamiento": null,
+        "agrupamiento": "Aislado",
         "distancia_deslinde_m": null,
-        "subdivision_minima_m2": null,
+        "subdivision_minima_m2": 200,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "PDF escaneado. Ver ordenanza original para norms de ZA5C.",
+        "notas": "CC=0.8. COS=0.4. Alt.máx=S.R.. Dens=100hab/há. Agrup=Aislado",
         "adosamiento": false
       }
     },
     {
       "comuna": "Lebu",
-      "prc_decreto": "PRC Lebu. Ordenanza Local. Decreto aprobatorio MINVU (PDF escaneado).",
+      "prc_decreto": "PRC Lebu. Ordenanza Local 2003. MINVU / URBE Ltda. (OCR de PDF escaneado).",
       "zona": "ZED",
       "nombre": "Zona equipamiento deportivo",
       "usos_permitidos": [
@@ -3341,29 +3341,29 @@
         "Todos los usos de suelo no mencionados como permitidos."
       ],
       "normas_urbanisticas": {
-        "coeficiente_constructibilidad": null,
-        "coeficiente_ocupacion_suelo": null,
+        "coeficiente_constructibilidad": 0.3,
+        "coeficiente_ocupacion_suelo": 0.3,
         "coeficiente_ocupacion_suelo_total": null,
-        "altura_maxima_pisos": null,
+        "altura_maxima_pisos": 2,
         "altura_maxima_metros": null,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
-        "superficie_predial_minima_m2": null,
+        "densidad_maxima_habha": "N.E.",
+        "superficie_predial_minima_m2": 2500,
         "frente_minimo_m": null,
         "antejardín_minimo_m": null,
         "rasante_grados": null,
-        "agrupamiento": null,
+        "agrupamiento": "Aislado",
         "distancia_deslinde_m": null,
-        "subdivision_minima_m2": null,
+        "subdivision_minima_m2": 2500,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "PDF escaneado. Ver ordenanza original para norms de ZED.",
+        "notas": "CC=0.3. COS=0.3. Dens=N.E.. Agrup=Aislado",
         "adosamiento": false
       }
     },
     {
       "comuna": "Lebu",
-      "prc_decreto": "PRC Lebu. Ordenanza Local. Decreto aprobatorio MINVU (PDF escaneado).",
+      "prc_decreto": "PRC Lebu. Ordenanza Local 2003. MINVU / URBE Ltda. (OCR de PDF escaneado).",
       "zona": "ZBCD1",
       "nombre": "Zona equipamiento - Actividades productivas 1",
       "usos_permitidos": [
@@ -3378,29 +3378,29 @@
         "Todos los usos de suelo no mencionados como permitidos."
       ],
       "normas_urbanisticas": {
-        "coeficiente_constructibilidad": null,
-        "coeficiente_ocupacion_suelo": null,
+        "coeficiente_constructibilidad": 1.6,
+        "coeficiente_ocupacion_suelo": 0.4,
         "coeficiente_ocupacion_suelo_total": null,
-        "altura_maxima_pisos": null,
+        "altura_maxima_pisos": 4,
         "altura_maxima_metros": null,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
-        "superficie_predial_minima_m2": null,
+        "densidad_maxima_habha": 100,
+        "superficie_predial_minima_m2": 400,
         "frente_minimo_m": null,
         "antejardín_minimo_m": null,
         "rasante_grados": null,
-        "agrupamiento": null,
+        "agrupamiento": "Aislado y Pareado",
         "distancia_deslinde_m": null,
-        "subdivision_minima_m2": null,
+        "subdivision_minima_m2": 400,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "PDF escaneado. Ver ordenanza original para norms de ZBCD1.",
+        "notas": "CC=1.6. COS=0.4. Dens=100hab/há. Agrup=Aislado y Pareado",
         "adosamiento": false
       }
     },
     {
       "comuna": "Lebu",
-      "prc_decreto": "PRC Lebu. Ordenanza Local. Decreto aprobatorio MINVU (PDF escaneado).",
+      "prc_decreto": "PRC Lebu. Ordenanza Local 2003. MINVU / URBE Ltda. (OCR de PDF escaneado).",
       "zona": "ZB4",
       "nombre": "Zona equipamiento 4",
       "usos_permitidos": [
@@ -3413,29 +3413,29 @@
         "Todos los usos de suelo no mencionados como permitidos."
       ],
       "normas_urbanisticas": {
-        "coeficiente_constructibilidad": null,
-        "coeficiente_ocupacion_suelo": null,
+        "coeficiente_constructibilidad": 1.6,
+        "coeficiente_ocupacion_suelo": 0.4,
         "coeficiente_ocupacion_suelo_total": null,
-        "altura_maxima_pisos": null,
+        "altura_maxima_pisos": 4,
         "altura_maxima_metros": null,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
-        "superficie_predial_minima_m2": null,
+        "densidad_maxima_habha": 100,
+        "superficie_predial_minima_m2": 400,
         "frente_minimo_m": null,
         "antejardín_minimo_m": null,
         "rasante_grados": null,
-        "agrupamiento": null,
+        "agrupamiento": "Aislado y Pareado",
         "distancia_deslinde_m": null,
-        "subdivision_minima_m2": null,
+        "subdivision_minima_m2": 400,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "PDF escaneado. Ver ordenanza original para norms de ZB4.",
+        "notas": "CC=1.6. COS=0.4. Dens=100hab/há. Agrup=Aislado y Pareado",
         "adosamiento": false
       }
     },
     {
       "comuna": "Lebu",
-      "prc_decreto": "PRC Lebu. Ordenanza Local. Decreto aprobatorio MINVU (PDF escaneado).",
+      "prc_decreto": "PRC Lebu. Ordenanza Local 2003. MINVU / URBE Ltda. (OCR de PDF escaneado).",
       "zona": "ZBA",
       "nombre": "Zona barrio antiguo",
       "usos_permitidos": [
@@ -3452,29 +3452,29 @@
         "Todos los usos de suelo no mencionados como permitidos."
       ],
       "normas_urbanisticas": {
-        "coeficiente_constructibilidad": null,
-        "coeficiente_ocupacion_suelo": null,
+        "coeficiente_constructibilidad": 1.6,
+        "coeficiente_ocupacion_suelo": 1.0,
         "coeficiente_ocupacion_suelo_total": null,
-        "altura_maxima_pisos": null,
-        "altura_maxima_metros": null,
+        "altura_maxima_pisos": 4,
+        "altura_maxima_metros": 14.0,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
-        "superficie_predial_minima_m2": null,
+        "densidad_maxima_habha": 200,
+        "superficie_predial_minima_m2": 200,
         "frente_minimo_m": null,
-        "antejardín_minimo_m": null,
+        "antejardín_minimo_m": "N.E.",
         "rasante_grados": null,
-        "agrupamiento": null,
+        "agrupamiento": "Aislado, Pareado y Continuo",
         "distancia_deslinde_m": null,
-        "subdivision_minima_m2": null,
+        "subdivision_minima_m2": 200,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "PDF escaneado. Ver ordenanza original para norms de ZBA.",
+        "notas": "CC=1.6. COS=1.0. Alt.máx=14.0m. Dens=200hab/há. Agrup=Aislado, Pareado y Continuo",
         "adosamiento": false
       }
     },
     {
       "comuna": "Lebu",
-      "prc_decreto": "PRC Lebu. Ordenanza Local. Decreto aprobatorio MINVU (PDF escaneado).",
+      "prc_decreto": "PRC Lebu. Ordenanza Local 2003. MINVU / URBE Ltda. (OCR de PDF escaneado).",
       "zona": "ZA2",
       "nombre": "Zona residencial mixta 2",
       "usos_permitidos": [
@@ -3492,29 +3492,29 @@
         "Todos los usos de suelo no mencionados como permitidos."
       ],
       "normas_urbanisticas": {
-        "coeficiente_constructibilidad": null,
-        "coeficiente_ocupacion_suelo": null,
+        "coeficiente_constructibilidad": 0.8,
+        "coeficiente_ocupacion_suelo": 0.4,
         "coeficiente_ocupacion_suelo_total": null,
-        "altura_maxima_pisos": null,
+        "altura_maxima_pisos": 2,
         "altura_maxima_metros": null,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
-        "superficie_predial_minima_m2": null,
+        "densidad_maxima_habha": 400,
+        "superficie_predial_minima_m2": 150,
         "frente_minimo_m": null,
-        "antejardín_minimo_m": null,
+        "antejardín_minimo_m": 3.0,
         "rasante_grados": null,
-        "agrupamiento": null,
+        "agrupamiento": "Aislado y Pareado",
         "distancia_deslinde_m": null,
-        "subdivision_minima_m2": null,
+        "subdivision_minima_m2": 150,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "PDF escaneado. Ver ordenanza original para norms de ZA2.",
+        "notas": "CC=0.8. COS=0.4. Dens=400hab/há. Agrup=Aislado y Pareado",
         "adosamiento": false
       }
     },
     {
       "comuna": "Lebu",
-      "prc_decreto": "PRC Lebu. Ordenanza Local. Decreto aprobatorio MINVU (PDF escaneado).",
+      "prc_decreto": "PRC Lebu. Ordenanza Local 2003. MINVU / URBE Ltda. (OCR de PDF escaneado).",
       "zona": "ZCM",
       "nombre": "Zona de proteccion por cementerio mapuche",
       "usos_permitidos": [
@@ -3540,13 +3540,13 @@
         "subdivision_minima_m2": null,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "PDF escaneado. Ver ordenanza original para norms de ZCM.",
-        "adosamiento": false
+        "notas": "Zona de proteccion Cementerio Mapuche. Intervenciones requieren aprobacion CMN.",
+        "adosamiento": null
       }
     },
     {
       "comuna": "Lebu",
-      "prc_decreto": "PRC Lebu. Ordenanza Local. Decreto aprobatorio MINVU (PDF escaneado).",
+      "prc_decreto": "PRC Lebu. Ordenanza Local 2003. MINVU / URBE Ltda. (OCR de PDF escaneado).",
       "zona": "ZB5",
       "nombre": "Zona equipamiento 5",
       "usos_permitidos": [
@@ -3556,29 +3556,29 @@
         "Todos los usos de suelo no mencionados como permitidos."
       ],
       "normas_urbanisticas": {
-        "coeficiente_constructibilidad": null,
-        "coeficiente_ocupacion_suelo": null,
+        "coeficiente_constructibilidad": 0.02,
+        "coeficiente_ocupacion_suelo": 0.2,
         "coeficiente_ocupacion_suelo_total": null,
-        "altura_maxima_pisos": null,
+        "altura_maxima_pisos": 2,
         "altura_maxima_metros": null,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": null,
         "frente_minimo_m": null,
         "antejardín_minimo_m": null,
         "rasante_grados": null,
-        "agrupamiento": null,
+        "agrupamiento": "Aislado",
         "distancia_deslinde_m": null,
         "subdivision_minima_m2": null,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "PDF escaneado. Ver ordenanza original para norms de ZB5.",
+        "notas": "CC=0.02. COS=0.2. Dens=N.E.. Agrup=Aislado",
         "adosamiento": false
       }
     },
     {
       "comuna": "Lebu",
-      "prc_decreto": "PRC Lebu. Ordenanza Local. Decreto aprobatorio MINVU (PDF escaneado).",
+      "prc_decreto": "PRC Lebu. Ordenanza Local 2003. MINVU / URBE Ltda. (OCR de PDF escaneado).",
       "zona": "ZBCD3",
       "nombre": "Zona equipamiento - Activdades productivas 3",
       "usos_permitidos": [
@@ -3592,29 +3592,29 @@
         "Todos los usos de suelo no mencionados como permitidos."
       ],
       "normas_urbanisticas": {
-        "coeficiente_constructibilidad": null,
-        "coeficiente_ocupacion_suelo": null,
+        "coeficiente_constructibilidad": 1.0,
+        "coeficiente_ocupacion_suelo": 0.5,
         "coeficiente_ocupacion_suelo_total": null,
-        "altura_maxima_pisos": null,
+        "altura_maxima_pisos": 2,
         "altura_maxima_metros": null,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
-        "superficie_predial_minima_m2": null,
+        "densidad_maxima_habha": "N.E.",
+        "superficie_predial_minima_m2": 500,
         "frente_minimo_m": null,
-        "antejardín_minimo_m": null,
+        "antejardín_minimo_m": 10.0,
         "rasante_grados": null,
-        "agrupamiento": null,
+        "agrupamiento": "Aislado",
         "distancia_deslinde_m": null,
-        "subdivision_minima_m2": null,
+        "subdivision_minima_m2": 500,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "PDF escaneado. Ver ordenanza original para norms de ZBCD3.",
+        "notas": "CC=1.0. COS=0.5. Dens=N.E.. Agrup=Aislado",
         "adosamiento": false
       }
     },
     {
       "comuna": "Lebu",
-      "prc_decreto": "PRC Lebu. Ordenanza Local. Decreto aprobatorio MINVU (PDF escaneado).",
+      "prc_decreto": "PRC Lebu. Ordenanza Local 2003. MINVU / URBE Ltda. (OCR de PDF escaneado).",
       "zona": "ZP1",
       "nombre": "Zona de proteccion 1 - Proteccion del borde costero 'playa de mar'",
       "usos_permitidos": [
@@ -3640,13 +3640,13 @@
         "subdivision_minima_m2": null,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "PDF escaneado. Ver ordenanza original para norms de ZP1.",
-        "adosamiento": false
+        "notas": "Zona de proteccion borde costero (Playa de Mar). No edificable.",
+        "adosamiento": null
       }
     },
     {
       "comuna": "Lebu",
-      "prc_decreto": "PRC Lebu. Ordenanza Local. Decreto aprobatorio MINVU (PDF escaneado).",
+      "prc_decreto": "PRC Lebu. Ordenanza Local 2003. MINVU / URBE Ltda. (OCR de PDF escaneado).",
       "zona": "ZA3",
       "nombre": "Zona residencial mixta 3",
       "usos_permitidos": [
@@ -3658,23 +3658,23 @@
         "Todos los usos de suelo no mencionados como permitidos."
       ],
       "normas_urbanisticas": {
-        "coeficiente_constructibilidad": null,
-        "coeficiente_ocupacion_suelo": null,
+        "coeficiente_constructibilidad": 1.6,
+        "coeficiente_ocupacion_suelo": 0.4,
         "coeficiente_ocupacion_suelo_total": null,
-        "altura_maxima_pisos": null,
+        "altura_maxima_pisos": 4,
         "altura_maxima_metros": null,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
-        "superficie_predial_minima_m2": null,
+        "densidad_maxima_habha": 90,
+        "superficie_predial_minima_m2": 450,
         "frente_minimo_m": null,
         "antejardín_minimo_m": null,
         "rasante_grados": null,
-        "agrupamiento": null,
+        "agrupamiento": "Aislado y Pareado",
         "distancia_deslinde_m": null,
-        "subdivision_minima_m2": null,
+        "subdivision_minima_m2": 450,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "PDF escaneado. Ver ordenanza original para norms de ZA3.",
+        "notas": "CC=1.6. COS=0.4. Dens=90hab/há. Agrup=Aislado y Pareado",
         "adosamiento": false
       }
     }
