@@ -23,7 +23,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": 1000,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 5.0,
@@ -33,7 +33,7 @@
         "subdivision_minima_m2": 1000,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=2.0. COS=0.6. Alt.máx=S.R.. Agrup=Aislado",
+        "notas": "CC=2.0. COS=0.6. Alt.máx=S.R.. Dens=N.E.. Agrup=Aislado",
         "adosamiento": true
       }
     },
@@ -148,7 +148,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": 1000,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 5.0,
@@ -158,7 +158,7 @@
         "subdivision_minima_m2": 1000,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=2.0. COS=0.6. Alt.máx=S.R.. Agrup=Aislado",
+        "notas": "CC=2.0. COS=0.6. Alt.máx=S.R.. Dens=N.E.. Agrup=Aislado",
         "adosamiento": true
       }
     },
@@ -181,7 +181,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": "N.E.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": 2500,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 3.0,
@@ -191,7 +191,7 @@
         "subdivision_minima_m2": 2500,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=N.E.. COS=N.E.. Alt.máx=N.E.. Agrup=Aislado",
+        "notas": "CC=N.E.. COS=N.E.. Alt.máx=N.E.. Dens=N.E.. Agrup=Aislado",
         "adosamiento": false
       }
     },
@@ -309,7 +309,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": 2500,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 5.0,
@@ -319,7 +319,7 @@
         "subdivision_minima_m2": 2500,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=0.5. COS=0.2. Alt.máx=S.R.. Agrup=Aislado",
+        "notas": "CC=0.5. COS=0.2. Alt.máx=S.R.. Dens=N.E.. Agrup=Aislado",
         "adosamiento": true
       }
     },
@@ -705,7 +705,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": 14.0,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": 1500,
         "frente_minimo_m": null,
         "antejardín_minimo_m": "N.E.",
@@ -753,7 +753,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": 21.0,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": 600,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": 200,
         "frente_minimo_m": null,
         "antejardín_minimo_m": "N.E.",
@@ -790,7 +790,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": 14.0,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": 2000,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 5.0,
@@ -825,7 +825,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": 14.0,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": 2000,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 5.0,
@@ -863,7 +863,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": 12.0,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": 50,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": 1000,
         "frente_minimo_m": null,
         "antejardín_minimo_m": "N.E.",
@@ -898,7 +898,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": 10.5,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": 1500,
         "frente_minimo_m": null,
         "antejardín_minimo_m": "N.E.",
@@ -1038,7 +1038,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": 28.0,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": 2000,
         "frente_minimo_m": null,
         "antejardín_minimo_m": "N.E.",
@@ -1071,7 +1071,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": 7.0,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": 10000,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 10.0,
@@ -1173,7 +1173,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": 21.0,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": 600,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": 200,
         "frente_minimo_m": null,
         "antejardín_minimo_m": "N.E.",
@@ -1285,13 +1285,13 @@
         "Todos los usos de suelo no mencionados como permitidos."
       ],
       "normas_urbanisticas": {
-        "coeficiente_constructibilidad": 1.0,
+        "coeficiente_constructibilidad": 1.3,
         "coeficiente_ocupacion_suelo": 0.5,
         "coeficiente_ocupacion_suelo_total": null,
         "altura_maxima_pisos": 3,
         "altura_maxima_metros": 10.5,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": 60,
+        "densidad_maxima_habha": 180,
         "superficie_predial_minima_m2": 300,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 0.0,
@@ -1301,7 +1301,7 @@
         "subdivision_minima_m2": 300,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=1.0. COS=0.5. Alt.máx=10.5m. Dens=60hab/há. Agrup=Aislado y Continuo",
+        "notas": "CC=1.3. COS=0.5. Alt.máx=10.5m. Dens=180hab/há. Agrup=Aislado y Continuo",
         "adosamiento": false
       }
     },
@@ -1350,23 +1350,23 @@
         "Todo los usos de suelo no mencionados precedentemente y los señalados en el artículo 18 de la Ordenanza."
       ],
       "normas_urbanisticas": {
-        "coeficiente_constructibilidad": 0.2,
-        "coeficiente_ocupacion_suelo": 0.1,
+        "coeficiente_constructibilidad": 0.4,
+        "coeficiente_ocupacion_suelo": 0.2,
         "coeficiente_ocupacion_suelo_total": null,
         "altura_maxima_pisos": 2,
         "altura_maxima_metros": 7.0,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": 8,
-        "superficie_predial_minima_m2": 5000,
+        "densidad_maxima_habha": 16,
+        "superficie_predial_minima_m2": 2000,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 10.0,
         "rasante_grados": 60.0,
         "agrupamiento": "Aislado",
         "distancia_deslinde_m": 20.0,
-        "subdivision_minima_m2": 5000,
+        "subdivision_minima_m2": 2000,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=0.2. COS=0.1. Alt.máx=7.0m. Dens=8hab/há. Agrup=Aislado",
+        "notas": "CC=0.4. COS=0.2. Alt.máx=7.0m. Dens=16hab/há. Agrup=Aislado",
         "adosamiento": false
       }
     },
@@ -1416,13 +1416,13 @@
         "Todos los usos de suelo no mencionados como permitidos."
       ],
       "normas_urbanisticas": {
-        "coeficiente_constructibilidad": 1.2,
+        "coeficiente_constructibilidad": 1.5,
         "coeficiente_ocupacion_suelo": 0.8,
         "coeficiente_ocupacion_suelo_total": null,
         "altura_maxima_pisos": null,
         "altura_maxima_metros": 15.0,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": 60,
+        "densidad_maxima_habha": 200,
         "superficie_predial_minima_m2": 300,
         "frente_minimo_m": null,
         "antejardín_minimo_m": null,
@@ -1432,7 +1432,7 @@
         "subdivision_minima_m2": 300,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=1.2. COS=0.8. Alt.máx=15.0m. Dens=60hab/há. Agrup=Aislado, Pareado y Continuo",
+        "notas": "CC=1.5. COS=0.8. Alt.máx=15.0m. Dens=200hab/há. Agrup=Aislado, Pareado y Continuo",
         "adosamiento": false
       }
     },
@@ -1448,13 +1448,13 @@
         "Todos los usos de suelo no mencionados como permitidos."
       ],
       "normas_urbanisticas": {
-        "coeficiente_constructibilidad": 1.0,
+        "coeficiente_constructibilidad": 1.3,
         "coeficiente_ocupacion_suelo": 0.5,
         "coeficiente_ocupacion_suelo_total": null,
         "altura_maxima_pisos": 3,
         "altura_maxima_metros": 10.5,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": 60,
+        "densidad_maxima_habha": 180,
         "superficie_predial_minima_m2": 300,
         "frente_minimo_m": null,
         "antejardín_minimo_m": null,
@@ -1464,7 +1464,7 @@
         "subdivision_minima_m2": 300,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=1.0. COS=0.5. Alt.máx=10.5m. Dens=60hab/há. Agrup=Aislado y Continuo",
+        "notas": "CC=1.3. COS=0.5. Alt.máx=10.5m. Dens=180hab/há. Agrup=Aislado y Continuo",
         "adosamiento": false
       }
     },
@@ -1547,8 +1547,8 @@
         "Todos los usos de suelo no mencionados como permitidos."
       ],
       "normas_urbanisticas": {
-        "coeficiente_constructibilidad": 0.4,
-        "coeficiente_ocupacion_suelo": 0.2,
+        "coeficiente_constructibilidad": 1.5,
+        "coeficiente_ocupacion_suelo": 0.5,
         "coeficiente_ocupacion_suelo_total": null,
         "altura_maxima_pisos": 3,
         "altura_maxima_metros": 10.5,
@@ -1563,7 +1563,7 @@
         "subdivision_minima_m2": 1000,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=0.4. COS=0.2. Alt.máx=10.5m. Dens=8hab/há. Agrup=Aislado",
+        "notas": "CC=1.5. COS=0.5. Alt.máx=10.5m. Dens=8hab/há. Agrup=Aislado",
         "adosamiento": false
       }
     },
@@ -1616,13 +1616,13 @@
         "Todos los usos de suelo no mencionados como permitidos."
       ],
       "normas_urbanisticas": {
-        "coeficiente_constructibilidad": 1.2,
+        "coeficiente_constructibilidad": 1.5,
         "coeficiente_ocupacion_suelo": 0.8,
         "coeficiente_ocupacion_suelo_total": null,
         "altura_maxima_pisos": null,
         "altura_maxima_metros": 15.0,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": 60,
+        "densidad_maxima_habha": 200,
         "superficie_predial_minima_m2": 300,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 0.0,
@@ -1632,7 +1632,7 @@
         "subdivision_minima_m2": 300,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=1.2. COS=0.8. Alt.máx=15.0m. Dens=60hab/há. Agrup=Aislado, Pareado y Continuo",
+        "notas": "CC=1.5. COS=0.8. Alt.máx=15.0m. Dens=200hab/há. Agrup=Aislado, Pareado y Continuo",
         "adosamiento": false
       }
     },
@@ -1754,7 +1754,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": 1000,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 3.0,
@@ -1764,7 +1764,7 @@
         "subdivision_minima_m2": 1000,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=0.6. COS=0.2. Alt.máx=S.R.. Agrup=Aislado",
+        "notas": "CC=0.6. COS=0.2. Alt.máx=S.R.. Dens=N.E.. Agrup=Aislado",
         "adosamiento": true
       }
     },
@@ -1787,20 +1787,20 @@
         "coeficiente_ocupacion_suelo": 0.4,
         "coeficiente_ocupacion_suelo_total": null,
         "altura_maxima_pisos": null,
-        "altura_maxima_metros": null,
+        "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": 2000,
         "frente_minimo_m": null,
-        "antejardín_minimo_m": null,
+        "antejardín_minimo_m": 3.0,
         "rasante_grados": null,
-        "agrupamiento": null,
+        "agrupamiento": "Aislado",
         "distancia_deslinde_m": null,
         "subdivision_minima_m2": 2000,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=0.7. COS=0.4",
-        "adosamiento": false
+        "notas": "CC=0.7. COS=0.4. Alt.máx=S.R.. Dens=N.E.. Agrup=Aislado",
+        "adosamiento": true
       }
     },
     {
@@ -1854,7 +1854,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": 2500,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 10.0,
@@ -1864,7 +1864,7 @@
         "subdivision_minima_m2": 2500,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=0.7. COS=0.3. Alt.máx=S.R.. Agrup=Aislado",
+        "notas": "CC=0.7. COS=0.3. Alt.máx=S.R.. Dens=N.E.. Agrup=Aislado",
         "adosamiento": true
       }
     },
@@ -1919,7 +1919,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": 500,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 5.0,
@@ -1929,7 +1929,7 @@
         "subdivision_minima_m2": 500,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=1.0. COS=0.3. Alt.máx=S.R.. Agrup=Aislado",
+        "notas": "CC=1.0. COS=0.3. Alt.máx=S.R.. Dens=N.E.. Agrup=Aislado",
         "adosamiento": true
       }
     },
@@ -1951,7 +1951,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": 500,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 5.0,
@@ -1961,7 +1961,7 @@
         "subdivision_minima_m2": 500,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=0.7. COS=0.4. Alt.máx=S.R.. Agrup=Aislado",
+        "notas": "CC=0.7. COS=0.4. Alt.máx=S.R.. Dens=N.E.. Agrup=Aislado",
         "adosamiento": true
       }
     },
@@ -1985,7 +1985,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": 1000,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 4.0,
@@ -1995,7 +1995,7 @@
         "subdivision_minima_m2": 1000,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=0.5. COS=0.2. Alt.máx=S.R.. Agrup=Aislado",
+        "notas": "CC=0.5. COS=0.2. Alt.máx=S.R.. Dens=N.E.. Agrup=Aislado",
         "adosamiento": true
       }
     },
@@ -2017,7 +2017,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": 120,
         "superficie_predial_minima_m2": 1000,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 4.0,
@@ -2027,7 +2027,7 @@
         "subdivision_minima_m2": 1000,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=0.5. COS=0.4. Alt.máx=S.R.. Agrup=Aislado",
+        "notas": "CC=0.5. COS=0.4. Alt.máx=S.R.. Dens=120hab/há. Agrup=Aislado",
         "adosamiento": true
       }
     },
@@ -2050,7 +2050,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": 2000,
         "frente_minimo_m": null,
         "antejardín_minimo_m": null,
@@ -2060,7 +2060,7 @@
         "subdivision_minima_m2": 2000,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=0.7. COS=0.4. Alt.máx=S.R.. Agrup=Aislado",
+        "notas": "CC=0.7. COS=0.4. Alt.máx=S.R.. Dens=N.E.. Agrup=Aislado",
         "adosamiento": true
       }
     },
@@ -2151,23 +2151,23 @@
         "Todo uso de suelo no mencionado como permitido"
       ],
       "normas_urbanisticas": {
-        "coeficiente_constructibilidad": 1.0,
-        "coeficiente_ocupacion_suelo": 0.4,
+        "coeficiente_constructibilidad": 2.5,
+        "coeficiente_ocupacion_suelo": 0.6,
         "coeficiente_ocupacion_suelo_total": null,
         "altura_maxima_pisos": null,
         "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": 200,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 3.0,
         "rasante_grados": null,
         "agrupamiento": "Aislado y Pareado",
-        "distancia_deslinde_m": null,
+        "distancia_deslinde_m": 4.0,
         "subdivision_minima_m2": 200,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=1.0. COS=0.4. Alt.máx=S.R.. Agrup=Aislado y Pareado",
+        "notas": "CC=2.5. COS=0.6. Alt.máx=S.R.. Dens=N.E.. Agrup=Aislado y Pareado",
         "adosamiento": true
       }
     },
@@ -2238,7 +2238,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": 1000,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 3.0,
@@ -2248,7 +2248,7 @@
         "subdivision_minima_m2": 1000,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=0.6. COS=0.3. Alt.máx=S.R.. Agrup=Aislado",
+        "notas": "CC=0.6. COS=0.3. Alt.máx=S.R.. Dens=N.E.. Agrup=Aislado",
         "adosamiento": true
       }
     },
@@ -2273,7 +2273,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": 2500,
         "frente_minimo_m": null,
         "antejardín_minimo_m": "N.E.",
@@ -2283,7 +2283,7 @@
         "subdivision_minima_m2": 2500,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=2.5. COS=0.6. Alt.máx=S.R.. Agrup=Aislado y Pareado",
+        "notas": "CC=2.5. COS=0.6. Alt.máx=S.R.. Dens=N.E.. Agrup=Aislado y Pareado",
         "adosamiento": true
       }
     },
@@ -2307,7 +2307,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": 1000,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 3.0,
@@ -2317,7 +2317,7 @@
         "subdivision_minima_m2": 1000,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=0.6. COS=0.2. Alt.máx=S.R.. Agrup=Aislado",
+        "notas": "CC=0.6. COS=0.2. Alt.máx=S.R.. Dens=N.E.. Agrup=Aislado",
         "adosamiento": true
       }
     },
@@ -2412,7 +2412,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": 300,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 2.0,
@@ -2422,7 +2422,7 @@
         "subdivision_minima_m2": 300,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=2.5. COS=0.6. Alt.máx=S.R.. Agrup=Aislado y Pareado",
+        "notas": "CC=2.5. COS=0.6. Alt.máx=S.R.. Dens=N.E.. Agrup=Aislado y Pareado",
         "adosamiento": true
       }
     },
@@ -2454,7 +2454,7 @@
         "antejardín_minimo_m": 3.0,
         "rasante_grados": null,
         "agrupamiento": "Aislado",
-        "distancia_deslinde_m": null,
+        "distancia_deslinde_m": 4.0,
         "subdivision_minima_m2": 1000,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
@@ -2519,7 +2519,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": 2000,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 2.0,
@@ -2529,7 +2529,7 @@
         "subdivision_minima_m2": 2000,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=2.5. COS=0.6. Alt.máx=S.R.. Agrup=Aislado y Pareado",
+        "notas": "CC=2.5. COS=0.6. Alt.máx=S.R.. Dens=N.E.. Agrup=Aislado y Pareado",
         "adosamiento": true
       }
     },
@@ -2556,17 +2556,17 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": 1000,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 3.0,
         "rasante_grados": null,
         "agrupamiento": "Aislado",
-        "distancia_deslinde_m": null,
+        "distancia_deslinde_m": 5.0,
         "subdivision_minima_m2": 1000,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=0.6. COS=0.2. Alt.máx=S.R.. Agrup=Aislado",
+        "notas": "CC=0.6. COS=0.2. Alt.máx=S.R.. Dens=N.E.. Agrup=Aislado",
         "adosamiento": true
       }
     },
@@ -2597,7 +2597,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": 2000,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 3.0,
@@ -2607,7 +2607,7 @@
         "subdivision_minima_m2": 2000,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=1.0. COS=0.3. Alt.máx=S.R.. Agrup=Aislado",
+        "notas": "CC=1.0. COS=0.3. Alt.máx=S.R.. Dens=N.E.. Agrup=Aislado",
         "adosamiento": true
       }
     },
@@ -2637,7 +2637,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": 250,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 3.0,
@@ -2647,7 +2647,7 @@
         "subdivision_minima_m2": 250,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=1.0. COS=0.4. Alt.máx=S.R.. Agrup=Aislado y Pareado",
+        "notas": "CC=1.0. COS=0.4. Alt.máx=S.R.. Dens=N.E.. Agrup=Aislado y Pareado",
         "adosamiento": true
       }
     },
@@ -2703,7 +2703,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": 2500,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 5.0,
@@ -2713,7 +2713,7 @@
         "subdivision_minima_m2": 2500,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=0.2. COS=0.2. Alt.máx=S.R.. Agrup=Aislado",
+        "notas": "CC=0.2. COS=0.2. Alt.máx=S.R.. Dens=N.E.. Agrup=Aislado",
         "adosamiento": true
       }
     },
@@ -2744,7 +2744,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": 300,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 2.0,
@@ -2754,7 +2754,7 @@
         "subdivision_minima_m2": 300,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=2.5. COS=0.6. Alt.máx=S.R.. Agrup=Aislado y Pareado",
+        "notas": "CC=2.5. COS=0.6. Alt.máx=S.R.. Dens=N.E.. Agrup=Aislado y Pareado",
         "adosamiento": true
       }
     },
@@ -2785,7 +2785,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": 300,
         "frente_minimo_m": null,
         "antejardín_minimo_m": "N.E.",
@@ -2795,7 +2795,7 @@
         "subdivision_minima_m2": 300,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=N.E.. COS=0.8. Alt.máx=S.R.. Agrup=Aislado",
+        "notas": "CC=N.E.. COS=0.8. Alt.máx=S.R.. Dens=N.E.. Agrup=Aislado",
         "adosamiento": true
       }
     },
@@ -2820,13 +2820,13 @@
         "Todo uso de suelo no mencionado como permitido"
       ],
       "normas_urbanisticas": {
-        "coeficiente_constructibilidad": "N.E.",
-        "coeficiente_ocupacion_suelo": 0.8,
+        "coeficiente_constructibilidad": 2.5,
+        "coeficiente_ocupacion_suelo": 0.6,
         "coeficiente_ocupacion_suelo_total": null,
         "altura_maxima_pisos": null,
         "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": 230,
         "superficie_predial_minima_m2": 300,
         "frente_minimo_m": null,
         "antejardín_minimo_m": "N.E.",
@@ -2836,7 +2836,7 @@
         "subdivision_minima_m2": 300,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=N.E.. COS=0.8. Alt.máx=S.R.. Agrup=Aislado, Pareado y Continuo",
+        "notas": "CC=2.5. COS=0.6. Alt.máx=S.R.. Dens=230hab/há. Agrup=Aislado, Pareado y Continuo",
         "adosamiento": true
       }
     },
@@ -3269,7 +3269,7 @@
         "Todos los usos de suelo no mencionados como permitidos."
       ],
       "normas_urbanisticas": {
-        "coeficiente_constructibilidad": null,
+        "coeficiente_constructibilidad": 2.0,
         "coeficiente_ocupacion_suelo": 0.5,
         "coeficiente_ocupacion_suelo_total": null,
         "altura_maxima_pisos": null,
@@ -3285,7 +3285,7 @@
         "subdivision_minima_m2": 500,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "COS=0.5. Alt.máx=S.R.. Dens=100hab/há. Agrup=Aislado",
+        "notas": "CC=2.0. COS=0.5. Alt.máx=S.R.. Dens=100hab/há. Agrup=Aislado",
         "adosamiento": false
       }
     },
@@ -3930,7 +3930,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": "N.E.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": 700,
         "superficie_predial_minima_m2": 1000,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 3.0,
@@ -3940,7 +3940,7 @@
         "subdivision_minima_m2": 1000,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=3.0. COS=0.8. Alt.máx=N.E.. Agrup=Aislado, Pareado y Continuo",
+        "notas": "CC=3.0. COS=0.8. Alt.máx=N.E.. Dens=700hab/há. Agrup=Aislado, Pareado y Continuo",
         "adosamiento": false
       }
     },
@@ -4478,7 +4478,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": 2500,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 5.0,
@@ -4488,7 +4488,7 @@
         "subdivision_minima_m2": 2500,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "Norms según Zona ZE-2 (zona condicionada). CC=0.3. COS=0.2. Alt.máx=S.R.. Agrup=Aislado",
+        "notas": "Norms según Zona ZE-2 (zona condicionada). CC=0.3. COS=0.2. Alt.máx=S.R.. Dens=N.E.. Agrup=Aislado",
         "adosamiento": false
       }
     },
@@ -4513,7 +4513,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": 400,
         "superficie_predial_minima_m2": 2500,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 5.0,
@@ -4523,7 +4523,7 @@
         "subdivision_minima_m2": 2500,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "Norms según Zona ZAP-1 (zona condicionada). CC=1.6. COS=0.8. Alt.máx=S.R.. Agrup=Aislado",
+        "notas": "Norms según Zona ZAP-1 (zona condicionada). CC=1.6. COS=0.8. Alt.máx=S.R.. Dens=400hab/há. Agrup=Aislado",
         "adosamiento": false
       }
     },
@@ -4553,7 +4553,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": 28.0,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": 120,
         "superficie_predial_minima_m2": null,
         "frente_minimo_m": null,
         "antejardín_minimo_m": null,
@@ -4563,7 +4563,7 @@
         "subdivision_minima_m2": null,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=1.5. COS=0.7. Alt.máx=28.0m. Agrup=Aislado, Pareado y Continuo",
+        "notas": "CC=1.5. COS=0.7. Alt.máx=28.0m. Dens=120hab/há. Agrup=Aislado, Pareado y Continuo",
         "adosamiento": false
       }
     },
@@ -4593,7 +4593,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": 7.0,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": 120,
         "superficie_predial_minima_m2": null,
         "frente_minimo_m": null,
         "antejardín_minimo_m": null,
@@ -4603,7 +4603,7 @@
         "subdivision_minima_m2": null,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=1.5. COS=0.7. Alt.máx=7.0m. Agrup=Aislado, Pareado y Continuo",
+        "notas": "CC=1.5. COS=0.7. Alt.máx=7.0m. Dens=120hab/há. Agrup=Aislado, Pareado y Continuo",
         "adosamiento": false
       }
     },
@@ -4633,7 +4633,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": 112,
         "superficie_predial_minima_m2": 300,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 3.0,
@@ -4643,7 +4643,7 @@
         "subdivision_minima_m2": 300,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=3.0. COS=0.6. Alt.máx=S.R.. Agrup=Aislado y Pareado",
+        "notas": "CC=3.0. COS=0.6. Alt.máx=S.R.. Dens=112hab/há. Agrup=Aislado y Pareado",
         "adosamiento": false
       }
     },
@@ -4713,7 +4713,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": 14.0,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": 140,
         "superficie_predial_minima_m2": null,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 3.0,
@@ -4723,7 +4723,7 @@
         "subdivision_minima_m2": null,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=1.2. COS=0.8. Alt.máx=14.0m. Agrup=Aislado, Pareado y Continuo",
+        "notas": "CC=1.2. COS=0.8. Alt.máx=14.0m. Dens=140hab/há. Agrup=Aislado, Pareado y Continuo",
         "adosamiento": false
       }
     },
@@ -4753,7 +4753,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": 24.5,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": 112,
         "superficie_predial_minima_m2": null,
         "frente_minimo_m": null,
         "antejardín_minimo_m": null,
@@ -4763,7 +4763,7 @@
         "subdivision_minima_m2": null,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=1.5. COS=0.75. Alt.máx=24.5m. Agrup=Aislado, Pareado y Continuo",
+        "notas": "CC=1.5. COS=0.75. Alt.máx=24.5m. Dens=112hab/há. Agrup=Aislado, Pareado y Continuo",
         "adosamiento": false
       }
     },
@@ -4823,7 +4823,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": 11.0,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": 400,
         "superficie_predial_minima_m2": null,
         "frente_minimo_m": null,
         "antejardín_minimo_m": null,
@@ -4833,7 +4833,7 @@
         "subdivision_minima_m2": null,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "Norms según Zona ZAP-3 (zona condicionada). CC=3.2. COS=0.8. Alt.máx=11.0m. Agrup=Aislado",
+        "notas": "Norms según Zona ZAP-3 (zona condicionada). CC=3.2. COS=0.8. Alt.máx=11.0m. Dens=400hab/há. Agrup=Aislado",
         "adosamiento": false
       }
     },
@@ -4904,7 +4904,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": 14.0,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": 400,
         "superficie_predial_minima_m2": null,
         "frente_minimo_m": null,
         "antejardín_minimo_m": null,
@@ -4914,7 +4914,7 @@
         "subdivision_minima_m2": null,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "Norms según Zona ZE-1 (zona condicionada). CC=4.0. COS=1.0. Alt.máx=14.0m. Agrup=Aislado, Pareado y Continuo",
+        "notas": "Norms según Zona ZE-1 (zona condicionada). CC=4.0. COS=1.0. Alt.máx=14.0m. Dens=400hab/há. Agrup=Aislado, Pareado y Continuo",
         "adosamiento": false
       }
     },
@@ -4945,7 +4945,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": 21.0,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": 400,
         "superficie_predial_minima_m2": null,
         "frente_minimo_m": null,
         "antejardín_minimo_m": null,
@@ -4955,7 +4955,7 @@
         "subdivision_minima_m2": null,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "Norms según Zona ZR-1 (zona condicionada). CC=4.0. COS=0.8. Alt.máx=21.0m. Agrup=Aislado, Pareado y Continuo",
+        "notas": "Norms según Zona ZR-1 (zona condicionada). CC=4.0. COS=0.8. Alt.máx=21.0m. Dens=400hab/há. Agrup=Aislado, Pareado y Continuo",
         "adosamiento": false
       }
     },
@@ -5214,7 +5214,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": 14.0,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": 140,
         "superficie_predial_minima_m2": null,
         "frente_minimo_m": null,
         "antejardín_minimo_m": null,
@@ -5224,7 +5224,7 @@
         "subdivision_minima_m2": null,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=1.2. COS=0.8. Alt.máx=14.0m. Agrup=Aislado, Pareado y Continuo",
+        "notas": "CC=1.2. COS=0.8. Alt.máx=14.0m. Dens=140hab/há. Agrup=Aislado, Pareado y Continuo",
         "adosamiento": false
       }
     },
@@ -5254,7 +5254,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": 14.0,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": 112,
         "superficie_predial_minima_m2": null,
         "frente_minimo_m": null,
         "antejardín_minimo_m": null,
@@ -5264,7 +5264,7 @@
         "subdivision_minima_m2": null,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=1.7. COS=0.7. Alt.máx=14.0m. Agrup=Aislado, Pareado y Continuo",
+        "notas": "CC=1.7. COS=0.7. Alt.máx=14.0m. Dens=112hab/há. Agrup=Aislado, Pareado y Continuo",
         "adosamiento": false
       }
     },
@@ -5294,7 +5294,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": 14.0,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": 120,
         "superficie_predial_minima_m2": null,
         "frente_minimo_m": null,
         "antejardín_minimo_m": null,
@@ -5304,7 +5304,7 @@
         "subdivision_minima_m2": null,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=1.5. COS=0.7. Alt.máx=14.0m. Agrup=Aislado, Pareado y Continuo",
+        "notas": "CC=1.5. COS=0.7. Alt.máx=14.0m. Dens=120hab/há. Agrup=Aislado, Pareado y Continuo",
         "adosamiento": false
       }
     },
@@ -5334,7 +5334,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": 24.5,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": 120,
         "superficie_predial_minima_m2": null,
         "frente_minimo_m": null,
         "antejardín_minimo_m": null,
@@ -5344,7 +5344,7 @@
         "subdivision_minima_m2": null,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=1.6. COS=0.75. Alt.máx=24.5m. Agrup=Aislado, Pareado y Continuo",
+        "notas": "CC=1.6. COS=0.75. Alt.máx=24.5m. Dens=120hab/há. Agrup=Aislado, Pareado y Continuo",
         "adosamiento": false
       }
     },
@@ -5641,7 +5641,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": 21.0,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": 400,
         "superficie_predial_minima_m2": 2500,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 5.0,
@@ -5651,7 +5651,7 @@
         "subdivision_minima_m2": 2500,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "Norms según Zona ZR-1 (zona condicionada). CC=4.0. COS=0.8. Alt.máx=21.0m. Agrup=Aislado, Pareado y Continuo",
+        "notas": "Norms según Zona ZR-1 (zona condicionada). CC=4.0. COS=0.8. Alt.máx=21.0m. Dens=400hab/há. Agrup=Aislado, Pareado y Continuo",
         "adosamiento": false
       }
     },
@@ -5888,7 +5888,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": 200,
         "superficie_predial_minima_m2": 200,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 11.0,
@@ -5898,7 +5898,7 @@
         "subdivision_minima_m2": 200,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=1.6. COS=0.8. Alt.máx=S.R.. Agrup=Aislado, Pareado y Continuo",
+        "notas": "CC=1.6. COS=0.8. Alt.máx=S.R.. Dens=200hab/há. Agrup=Aislado, Pareado y Continuo",
         "adosamiento": false
       }
     },
@@ -5929,7 +5929,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": 160,
         "superficie_predial_minima_m2": 200,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 11.0,
@@ -5939,7 +5939,7 @@
         "subdivision_minima_m2": 200,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=1.2. COS=0.6. Alt.máx=S.R.. Agrup=Aislado y Pareado",
+        "notas": "CC=1.2. COS=0.6. Alt.máx=S.R.. Dens=160hab/há. Agrup=Aislado y Pareado",
         "adosamiento": false
       }
     },
@@ -5970,7 +5970,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": 7.0,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": 2500,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 11.0,
@@ -5980,7 +5980,7 @@
         "subdivision_minima_m2": 2500,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=0.4. COS=0.2. Alt.máx=7.0m. Agrup=Aislado",
+        "notas": "CC=0.4. COS=0.2. Alt.máx=7.0m. Dens=N.E.. Agrup=Aislado",
         "adosamiento": false
       }
     },
@@ -6011,7 +6011,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": 1200,
         "superficie_predial_minima_m2": 300,
         "frente_minimo_m": null,
         "antejardín_minimo_m": "N.E.",
@@ -6021,7 +6021,7 @@
         "subdivision_minima_m2": 300,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=6.0. COS=1.0. Alt.máx=S.R.. Agrup=Aislado, Pareado y Continuo",
+        "notas": "CC=6.0. COS=1.0. Alt.máx=S.R.. Dens=1200hab/há. Agrup=Aislado, Pareado y Continuo",
         "adosamiento": false
       }
     },
@@ -6092,7 +6092,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": 160,
         "superficie_predial_minima_m2": 250,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 11.0,
@@ -6102,7 +6102,7 @@
         "subdivision_minima_m2": 250,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=1.0. COS=0.6. Alt.máx=S.R.. Agrup=Aislado y Pareado",
+        "notas": "CC=1.0. COS=0.6. Alt.máx=S.R.. Dens=160hab/há. Agrup=Aislado y Pareado",
         "adosamiento": false
       }
     },
@@ -6133,7 +6133,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": 800,
         "superficie_predial_minima_m2": 200,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 11.0,
@@ -6143,7 +6143,7 @@
         "subdivision_minima_m2": 200,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=4.0. COS=0.8. Alt.máx=S.R.. Agrup=Aislado, Pareado y Continuo",
+        "notas": "CC=4.0. COS=0.8. Alt.máx=S.R.. Dens=800hab/há. Agrup=Aislado, Pareado y Continuo",
         "adosamiento": false
       }
     },
@@ -6174,7 +6174,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": 14.0,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": 400,
         "superficie_predial_minima_m2": 200,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 11.0,
@@ -6184,7 +6184,7 @@
         "subdivision_minima_m2": 200,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=1.2. COS=0.6. Alt.máx=14.0m. Agrup=Aislado y Pareado",
+        "notas": "CC=1.2. COS=0.6. Alt.máx=14.0m. Dens=400hab/há. Agrup=Aislado y Pareado",
         "adosamiento": false
       }
     },
@@ -6249,7 +6249,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": 100,
         "superficie_predial_minima_m2": 500,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 11.0,
@@ -6259,7 +6259,7 @@
         "subdivision_minima_m2": 500,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=0.8. COS=0.4. Alt.máx=S.R.. Agrup=Aislado",
+        "notas": "CC=0.8. COS=0.4. Alt.máx=S.R.. Dens=100hab/há. Agrup=Aislado",
         "adosamiento": false
       }
     },
@@ -6290,7 +6290,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": 60,
         "superficie_predial_minima_m2": 100,
         "frente_minimo_m": null,
         "antejardín_minimo_m": "N.E.",
@@ -6300,7 +6300,7 @@
         "subdivision_minima_m2": 100,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=1.5. COS=0.6. Alt.máx=S.R.. Agrup=Aislado y Pareado",
+        "notas": "CC=1.5. COS=0.6. Alt.máx=S.R.. Dens=60hab/há. Agrup=Aislado y Pareado",
         "adosamiento": false
       }
     },
@@ -6331,7 +6331,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": 200,
         "superficie_predial_minima_m2": 200,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 11.0,
@@ -6341,7 +6341,7 @@
         "subdivision_minima_m2": 200,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=1.2. COS=0.6. Alt.máx=S.R.. Agrup=Aislado, Pareado y Continuo",
+        "notas": "CC=1.2. COS=0.6. Alt.máx=S.R.. Dens=200hab/há. Agrup=Aislado, Pareado y Continuo",
         "adosamiento": false
       }
     },
@@ -6405,7 +6405,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": 25.0,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": 200,
         "superficie_predial_minima_m2": 200,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 11.0,
@@ -6415,7 +6415,7 @@
         "subdivision_minima_m2": 200,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=1.0. COS=0.6. Alt.máx=25.0m. Agrup=Aislado, Pareado y Continuo",
+        "notas": "CC=1.0. COS=0.6. Alt.máx=25.0m. Dens=200hab/há. Agrup=Aislado, Pareado y Continuo",
         "adosamiento": false
       }
     },
@@ -6437,7 +6437,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": 2000,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 11.0,
@@ -6447,7 +6447,7 @@
         "subdivision_minima_m2": 2000,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=1.2. COS=0.6. Alt.máx=S.R.. Agrup=Aislado",
+        "notas": "CC=1.2. COS=0.6. Alt.máx=S.R.. Dens=N.E.. Agrup=Aislado",
         "adosamiento": false
       }
     },
@@ -6478,7 +6478,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": 25.0,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": 500,
         "superficie_predial_minima_m2": 200,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 11.0,
@@ -6488,7 +6488,7 @@
         "subdivision_minima_m2": 200,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=4.0. COS=0.6. Alt.máx=25.0m. Agrup=Aislado y Pareado",
+        "notas": "CC=4.0. COS=0.6. Alt.máx=25.0m. Dens=500hab/há. Agrup=Aislado y Pareado",
         "adosamiento": false
       }
     },
@@ -6519,7 +6519,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": 120,
         "superficie_predial_minima_m2": 200,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 11.0,
@@ -6529,7 +6529,7 @@
         "subdivision_minima_m2": 200,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=1.2. COS=0.6. Alt.máx=S.R.. Agrup=Aislado y Pareado",
+        "notas": "CC=1.2. COS=0.6. Alt.máx=S.R.. Dens=120hab/há. Agrup=Aislado y Pareado",
         "adosamiento": false
       }
     },
@@ -6560,7 +6560,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": 125,
         "superficie_predial_minima_m2": 300,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 11.0,
@@ -6570,7 +6570,7 @@
         "subdivision_minima_m2": 300,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=1.5. COS=0.6. Alt.máx=S.R.. Agrup=Aislado",
+        "notas": "CC=1.5. COS=0.6. Alt.máx=S.R.. Dens=125hab/há. Agrup=Aislado",
         "adosamiento": false
       }
     },
@@ -6592,7 +6592,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": 10000,
         "frente_minimo_m": null,
         "antejardín_minimo_m": "N.E.",
@@ -6602,7 +6602,7 @@
         "subdivision_minima_m2": 10000,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=0.4. COS=0.2. Alt.máx=S.R.. Agrup=Aislado",
+        "notas": "CC=0.4. COS=0.2. Alt.máx=S.R.. Dens=N.E.. Agrup=Aislado",
         "adosamiento": false
       }
     },
@@ -6733,7 +6733,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": 100,
         "superficie_predial_minima_m2": 300,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 11.0,
@@ -6743,7 +6743,7 @@
         "subdivision_minima_m2": 300,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=1.0. COS=0.5. Alt.máx=S.R.. Agrup=Aislado",
+        "notas": "CC=1.0. COS=0.5. Alt.máx=S.R.. Dens=100hab/há. Agrup=Aislado",
         "adosamiento": false
       }
     },
@@ -6765,7 +6765,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": 2500,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 11.0,
@@ -6775,7 +6775,7 @@
         "subdivision_minima_m2": 2500,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=1.2. COS=0.6. Alt.máx=S.R.. Agrup=Aislado",
+        "notas": "CC=1.2. COS=0.6. Alt.máx=S.R.. Dens=N.E.. Agrup=Aislado",
         "adosamiento": false
       }
     },
@@ -6797,7 +6797,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": 3000,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 11.0,
@@ -6807,7 +6807,7 @@
         "subdivision_minima_m2": 3000,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=1.5. COS=0.6. Alt.máx=S.R.. Agrup=Aislado",
+        "notas": "CC=1.5. COS=0.6. Alt.máx=S.R.. Dens=N.E.. Agrup=Aislado",
         "adosamiento": false
       }
     },
@@ -7316,7 +7316,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": 100,
         "superficie_predial_minima_m2": 500,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 11.0,
@@ -7326,7 +7326,7 @@
         "subdivision_minima_m2": 500,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=0.8. COS=0.4. Alt.máx=S.R.. Agrup=Aislado",
+        "notas": "CC=0.8. COS=0.4. Alt.máx=S.R.. Dens=100hab/há. Agrup=Aislado",
         "adosamiento": false
       }
     },
@@ -7357,7 +7357,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": 200,
         "superficie_predial_minima_m2": 200,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 11.0,
@@ -7367,7 +7367,7 @@
         "subdivision_minima_m2": 200,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=1.0. COS=0.6. Alt.máx=S.R.. Agrup=Aislado, Pareado y Continuo",
+        "notas": "CC=1.0. COS=0.6. Alt.máx=S.R.. Dens=200hab/há. Agrup=Aislado, Pareado y Continuo",
         "adosamiento": false
       }
     },
@@ -7426,7 +7426,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": 3000,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 11.0,
@@ -7436,7 +7436,7 @@
         "subdivision_minima_m2": 3000,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=1.5. COS=0.3. Alt.máx=S.R.. Agrup=Aislado",
+        "notas": "CC=1.5. COS=0.3. Alt.máx=S.R.. Dens=N.E.. Agrup=Aislado",
         "adosamiento": false
       }
     },
@@ -7467,7 +7467,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": 1200,
         "superficie_predial_minima_m2": 300,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 11.0,
@@ -7477,7 +7477,7 @@
         "subdivision_minima_m2": 300,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=6.0. COS=0.8. Alt.máx=S.R.. Agrup=Aislado, Pareado y Continuo",
+        "notas": "CC=6.0. COS=0.8. Alt.máx=S.R.. Dens=1200hab/há. Agrup=Aislado, Pareado y Continuo",
         "adosamiento": false
       }
     },
@@ -7634,7 +7634,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": 3.5,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": "N.E.",
         "frente_minimo_m": null,
         "antejardín_minimo_m": null,
@@ -7644,7 +7644,7 @@
         "subdivision_minima_m2": "N.E.",
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=0.3. COS=0.3. Alt.máx=3.5m. Agrup=Aislado",
+        "notas": "CC=0.3. COS=0.3. Alt.máx=3.5m. Dens=N.E.. Agrup=Aislado",
         "adosamiento": false
       }
     },
@@ -7669,7 +7669,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": 3.5,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": "N.E.",
         "frente_minimo_m": null,
         "antejardín_minimo_m": null,
@@ -7679,7 +7679,7 @@
         "subdivision_minima_m2": "N.E.",
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=0.3. COS=0.3. Alt.máx=3.5m. Agrup=Aislado",
+        "notas": "CC=0.3. COS=0.3. Alt.máx=3.5m. Dens=N.E.. Agrup=Aislado",
         "adosamiento": false
       }
     },
@@ -7704,7 +7704,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": 3.5,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": "N.E.",
         "frente_minimo_m": null,
         "antejardín_minimo_m": null,
@@ -7714,7 +7714,7 @@
         "subdivision_minima_m2": "N.E.",
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=0.3. COS=0.3. Alt.máx=3.5m. Agrup=Aislado",
+        "notas": "CC=0.3. COS=0.3. Alt.máx=3.5m. Dens=N.E.. Agrup=Aislado",
         "adosamiento": false
       }
     },
@@ -7738,7 +7738,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": 3.5,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": "N.E.",
         "frente_minimo_m": null,
         "antejardín_minimo_m": null,
@@ -7748,7 +7748,7 @@
         "subdivision_minima_m2": "N.E.",
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=0.3. COS=0.3. Alt.máx=3.5m. Agrup=Aislado",
+        "notas": "CC=0.3. COS=0.3. Alt.máx=3.5m. Dens=N.E.. Agrup=Aislado",
         "adosamiento": false
       }
     },
@@ -7772,7 +7772,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": 3.5,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": "N.E.",
         "frente_minimo_m": null,
         "antejardín_minimo_m": null,
@@ -7782,7 +7782,7 @@
         "subdivision_minima_m2": "N.E.",
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=0.3. COS=0.3. Alt.máx=3.5m. Agrup=Aislado",
+        "notas": "CC=0.3. COS=0.3. Alt.máx=3.5m. Dens=N.E.. Agrup=Aislado",
         "adosamiento": false
       }
     },
@@ -7807,7 +7807,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": 3.5,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": "N.E.",
         "frente_minimo_m": null,
         "antejardín_minimo_m": null,
@@ -7817,7 +7817,7 @@
         "subdivision_minima_m2": "N.E.",
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=0.3. COS=0.3. Alt.máx=3.5m. Agrup=Aislado",
+        "notas": "CC=0.3. COS=0.3. Alt.máx=3.5m. Dens=N.E.. Agrup=Aislado",
         "adosamiento": false
       }
     },
@@ -7841,7 +7841,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": 3.5,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": "N.E.",
         "frente_minimo_m": null,
         "antejardín_minimo_m": null,
@@ -7851,7 +7851,7 @@
         "subdivision_minima_m2": "N.E.",
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=0.3. COS=0.3. Alt.máx=3.5m. Agrup=Aislado",
+        "notas": "CC=0.3. COS=0.3. Alt.máx=3.5m. Dens=N.E.. Agrup=Aislado",
         "adosamiento": false
       }
     },
@@ -7876,7 +7876,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": 3.5,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": "N.E.",
         "frente_minimo_m": null,
         "antejardín_minimo_m": null,
@@ -7886,7 +7886,7 @@
         "subdivision_minima_m2": "N.E.",
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=0.3. COS=0.3. Alt.máx=3.5m. Agrup=Aislado",
+        "notas": "CC=0.3. COS=0.3. Alt.máx=3.5m. Dens=N.E.. Agrup=Aislado",
         "adosamiento": false
       }
     },
@@ -7911,7 +7911,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": 3.5,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": "N.E.",
         "frente_minimo_m": null,
         "antejardín_minimo_m": null,
@@ -7921,7 +7921,7 @@
         "subdivision_minima_m2": "N.E.",
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=0.3. COS=0.3. Alt.máx=3.5m. Agrup=Aislado",
+        "notas": "CC=0.3. COS=0.3. Alt.máx=3.5m. Dens=N.E.. Agrup=Aislado",
         "adosamiento": false
       }
     },
@@ -7946,7 +7946,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": 3.5,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": "N.E.",
         "frente_minimo_m": null,
         "antejardín_minimo_m": null,
@@ -7956,7 +7956,7 @@
         "subdivision_minima_m2": "N.E.",
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=0.3. COS=0.3. Alt.máx=3.5m. Agrup=Aislado",
+        "notas": "CC=0.3. COS=0.3. Alt.máx=3.5m. Dens=N.E.. Agrup=Aislado",
         "adosamiento": false
       }
     },
@@ -7980,7 +7980,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": 3.5,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": "N.E.",
         "frente_minimo_m": null,
         "antejardín_minimo_m": null,
@@ -7990,7 +7990,7 @@
         "subdivision_minima_m2": "N.E.",
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=0.3. COS=0.3. Alt.máx=3.5m. Agrup=Aislado",
+        "notas": "CC=0.3. COS=0.3. Alt.máx=3.5m. Dens=N.E.. Agrup=Aislado",
         "adosamiento": false
       }
     },
@@ -8014,7 +8014,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": 3.5,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": "N.E.",
         "frente_minimo_m": null,
         "antejardín_minimo_m": null,
@@ -8024,7 +8024,7 @@
         "subdivision_minima_m2": "N.E.",
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=0.3. COS=0.3. Alt.máx=3.5m. Agrup=Aislado",
+        "notas": "CC=0.3. COS=0.3. Alt.máx=3.5m. Dens=N.E.. Agrup=Aislado",
         "adosamiento": false
       }
     },
@@ -8048,7 +8048,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": 3.5,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": "N.E.",
         "frente_minimo_m": null,
         "antejardín_minimo_m": null,
@@ -8058,7 +8058,7 @@
         "subdivision_minima_m2": "N.E.",
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=0.3. COS=0.3. Alt.máx=3.5m. Agrup=Aislado",
+        "notas": "CC=0.3. COS=0.3. Alt.máx=3.5m. Dens=N.E.. Agrup=Aislado",
         "adosamiento": false
       }
     },
@@ -8083,7 +8083,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": 3.5,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": "N.E.",
         "frente_minimo_m": null,
         "antejardín_minimo_m": null,
@@ -8093,7 +8093,7 @@
         "subdivision_minima_m2": "N.E.",
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=0.3. COS=0.3. Alt.máx=3.5m. Agrup=Aislado",
+        "notas": "CC=0.3. COS=0.3. Alt.máx=3.5m. Dens=N.E.. Agrup=Aislado",
         "adosamiento": false
       }
     },
@@ -8117,7 +8117,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": 3.5,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": "N.E.",
         "frente_minimo_m": null,
         "antejardín_minimo_m": null,
@@ -8127,7 +8127,7 @@
         "subdivision_minima_m2": "N.E.",
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=0.3. COS=0.3. Alt.máx=3.5m. Agrup=Aislado",
+        "notas": "CC=0.3. COS=0.3. Alt.máx=3.5m. Dens=N.E.. Agrup=Aislado",
         "adosamiento": false
       }
     },
@@ -8151,7 +8151,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": 3.5,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": "N.E.",
         "frente_minimo_m": null,
         "antejardín_minimo_m": null,
@@ -8161,7 +8161,7 @@
         "subdivision_minima_m2": "N.E.",
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=0.3. COS=0.3. Alt.máx=3.5m. Agrup=Aislado",
+        "notas": "CC=0.3. COS=0.3. Alt.máx=3.5m. Dens=N.E.. Agrup=Aislado",
         "adosamiento": false
       }
     },
@@ -8186,7 +8186,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": 3.5,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": "N.E.",
         "frente_minimo_m": null,
         "antejardín_minimo_m": null,
@@ -8196,7 +8196,7 @@
         "subdivision_minima_m2": "N.E.",
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=0.3. COS=0.3. Alt.máx=3.5m. Agrup=Aislado",
+        "notas": "CC=0.3. COS=0.3. Alt.máx=3.5m. Dens=N.E.. Agrup=Aislado",
         "adosamiento": false
       }
     },
@@ -8221,7 +8221,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": 3.5,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": "N.E.",
         "frente_minimo_m": null,
         "antejardín_minimo_m": null,
@@ -8231,7 +8231,7 @@
         "subdivision_minima_m2": "N.E.",
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=0.3. COS=0.3. Alt.máx=3.5m. Agrup=Aislado",
+        "notas": "CC=0.3. COS=0.3. Alt.máx=3.5m. Dens=N.E.. Agrup=Aislado",
         "adosamiento": false
       }
     },
@@ -8256,7 +8256,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": 3.5,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": "N.E.",
         "frente_minimo_m": null,
         "antejardín_minimo_m": null,
@@ -8266,7 +8266,7 @@
         "subdivision_minima_m2": "N.E.",
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=0.3. COS=0.3. Alt.máx=3.5m. Agrup=Aislado",
+        "notas": "CC=0.3. COS=0.3. Alt.máx=3.5m. Dens=N.E.. Agrup=Aislado",
         "adosamiento": false
       }
     },
@@ -8290,7 +8290,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": 3.5,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": "N.E.",
         "frente_minimo_m": null,
         "antejardín_minimo_m": null,
@@ -8300,7 +8300,7 @@
         "subdivision_minima_m2": "N.E.",
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=0.3. COS=0.3. Alt.máx=3.5m. Agrup=Aislado",
+        "notas": "CC=0.3. COS=0.3. Alt.máx=3.5m. Dens=N.E.. Agrup=Aislado",
         "adosamiento": false
       }
     },
@@ -8323,7 +8323,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": 21.0,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": 1500,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 11.0,
@@ -8333,7 +8333,7 @@
         "subdivision_minima_m2": 1500,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=1.6. COS=0.8. Alt.máx=21.0m. Agrup=Aislado",
+        "notas": "CC=1.6. COS=0.8. Alt.máx=21.0m. Dens=N.E.. Agrup=Aislado",
         "adosamiento": false
       }
     },
@@ -8355,7 +8355,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": 7.0,
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": "N.E.",
         "superficie_predial_minima_m2": 2500,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 11.0,
@@ -8365,7 +8365,7 @@
         "subdivision_minima_m2": 2500,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=0.4. COS=0.2. Alt.máx=7.0m. Agrup=Aislado",
+        "notas": "CC=0.4. COS=0.2. Alt.máx=7.0m. Dens=N.E.. Agrup=Aislado",
         "adosamiento": false
       }
     },
@@ -8396,7 +8396,7 @@
         "altura_maxima_pisos": null,
         "altura_maxima_metros": "S.R.",
         "densidad_maxima_vivha": null,
-        "densidad_maxima_habha": null,
+        "densidad_maxima_habha": 80,
         "superficie_predial_minima_m2": 300,
         "frente_minimo_m": null,
         "antejardín_minimo_m": 11.0,
@@ -8406,7 +8406,7 @@
         "subdivision_minima_m2": 300,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": "CC=0.7. COS=0.3. Alt.máx=S.R.. Agrup=Aislado",
+        "notas": "CC=0.7. COS=0.3. Alt.máx=S.R.. Dens=80hab/há. Agrup=Aislado",
         "adosamiento": false
       }
     }
