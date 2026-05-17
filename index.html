@@ -732,12 +732,13 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
     <div class="sindatos-body">
       <div class="sindatos-icon">&#9470;</div>
       <div class="sindatos-title">Sin normas cargadas</div>
-      <div class="sindatos-desc">Esta zona a&uacute;n no tiene datos en AiCabida. Puedes ver el predio en el mapa, pero el c&aacute;lculo no est&aacute; disponible.</div>
+      <div class="sindatos-desc">Esta zona a&uacute;n no tiene datos en AiCabida. Puedes guardar el trazado para referencia y revisar la DOM directamente.</div>
 
       <div class="info-card" id="sd-zona">Zona detectada: &mdash;</div>
       <div class="info-card info-card-dashed" id="sd-cobertura">&mdash; / &mdash; zonas &middot; Ordenanza no ingresada a&uacute;n</div>
 
       <div class="sheet-btns">
+        <button class="btn-primary" onclick="guardarCabida()">Guardar cabida</button>
         <button class="btn-outline" id="btn-dom" onclick="irADOM()">Ir a la DOM</button>
         <button class="btn-ghost" onclick="descartarCabida()">Volver al mapa</button>
       </div>
