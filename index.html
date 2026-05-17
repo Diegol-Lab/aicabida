@@ -559,7 +559,7 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
 
     <div class="splash-btns">
       <button class="btn-primary" onclick="navigate('mapa')">Explorar mapa</button>
-      <button class="btn-outline" onclick="navigate('prospectos')">Ver prospectos</button>
+      <button class="btn-outline" onclick="navigate('prospectos')">Ver cabidas</button>
     </div>
   </div>
 </div>
@@ -920,7 +920,7 @@ function initMap() {
   APP.map = L.map('map', {
     zoomControl: false, attributionControl: false,
     tap: true, tapTolerance: 20
-  }).setView([-36.9, -72.5], 14);
+  }).setView([-37.2, -72.9], 8);
 
   addSatTiles(APP.map);
   APP.drawnLayer = new L.FeatureGroup().addTo(APP.map);
