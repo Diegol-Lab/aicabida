@@ -406,6 +406,14 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
 .kpi-val.missing { color: #F97316 !important; font-size: 14px !important; font-weight: 700 !important; }
 .kpi-val.ne      { color: var(--muted) !important; font-size: 13px !important; }
 
+/* Usos de suelo chips */
+.usos-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+.uso-chip {
+  font-size: 12px; font-weight: 500; padding: 4px 11px;
+  border-radius: 20px; background: var(--bg); border: 1px solid var(--borde);
+  color: var(--texto); line-height: 1.5;
+}
+
 .sheet-btns { display: flex; flex-direction: column; gap: 10px; padding-top: 4px; }
 
 /* ============================================================
@@ -706,6 +714,12 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
     <!-- Edificación -->
     <div class="section-hdr">Normas de edificaci&oacute;n</div>
     <div id="r-normas-extra"></div>
+
+    <!-- Usos de suelo -->
+    <div id="r-usos-section" style="display:none">
+      <div class="section-hdr">Usos de suelo permitidos</div>
+      <div id="r-usos-chips" class="usos-chips"></div>
+    </div>
 
     <!-- Terreno -->
     <div class="section-hdr">Terreno trazado</div>
@@ -1331,6 +1345,21 @@ function mostrarResultados(z, props, sup, per) {
 
   document.getElementById('r-sup-m2').textContent = `${Math.round(sup).toLocaleString('es-CL')} m²`;
   document.getElementById('r-per').textContent    = `${per.toFixed(0)} m`;
+
+  // Usos de suelo permitidos
+  const usosSection = document.getElementById('r-usos-section');
+  const usosChips   = document.getElementById('r-usos-chips');
+  const usos = z.usos_permitidos;
+  if (usos && usos.length) {
+    usosChips.innerHTML = usos.map(u => {
+      const s = u.trim().replace(/\.$/, '');      // remove trailing dot
+      const label = s.charAt(0).toUpperCase() + s.slice(1); // capitalize first letter
+      return `<span class="uso-chip">${label}</span>`;
+    }).join('');
+    usosSection.style.display = '';
+  } else {
+    usosSection.style.display = 'none';
+  }
 
   abrirSheet('sheet-resultados');
   setTimeout(() => initMiniMap('mm-result', 'miniMapResult', APP.currentPolygon), 420);
