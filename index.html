@@ -1185,7 +1185,10 @@ function buscarNormas(props) {
   const rows = APP.normas[comuna];
   if (!rows) return null;
   const code = zona_code || (zona ? zona.split(/[\s\-]/)[0] : null);
-  return rows.find(z => z.zona === code || z.zona === zona) || null;
+  // codeFromZona: first space-separated token of the zona description field
+  // Handles cases where zona_code="ZEH" but zona="ZEH-1 Zona de extensión habitacional 1"
+  const codeFromZona = zona ? zona.trim().split(/\s/)[0] : null;
+  return rows.find(z => z.zona === code || z.zona === zona || (codeFromZona && z.zona === codeFromZona)) || null;
 }
 
 function tieneNormas(z) {
@@ -1211,7 +1214,7 @@ function calcularCabida() {
   if (zonaData && tieneNormas(zonaData)) {
     mostrarResultados(zonaData, zonaProps, supM2, perM);
   } else {
-    mostrarSinDatos(zonaProps, supM2);
+    mostrarSinDatos(zonaProps, supM2, zonaData);
   }
 }
 
@@ -1336,9 +1339,24 @@ function mostrarResultados(z, props, sup, per) {
 // ============================================================
 // SIN DATOS SHEET
 // ============================================================
-function mostrarSinDatos(props, sup) {
+function mostrarSinDatos(props, sup, zonaData) {
   const zona   = props ? (props.zona_code || props.zona || 'Zona desconocida') : 'Sin zona detectada';
   const comuna = props ? (props.comuna || '') : '';
+
+  // Detect if the zone exists in the JSON but is explicitly non-buildable
+  const notas = zonaData && zonaData.normas_urbanisticas && zonaData.normas_urbanisticas.notas;
+  const esNoEdificable = !!(notas && notas.toLowerCase().includes('no edificable'));
+  const esSectorSinZona = !!(notas && notas.toLowerCase().includes('no corresponde'));
+
+  const titleEl = document.querySelector('#sheet-sindatos .sindatos-title');
+  const descEl  = document.querySelector('#sheet-sindatos .sindatos-desc');
+  if (esNoEdificable || esSectorSinZona) {
+    titleEl.textContent = esNoEdificable ? 'Zona no edificable' : 'Sin zona PRC asignada';
+    descEl.textContent  = notas;
+  } else {
+    titleEl.textContent = 'Sin normas cargadas';
+    descEl.textContent  = 'Esta zona aún no tiene datos en AiCabida. Puedes guardar el trazado para referencia y revisar la DOM directamente.';
+  }
 
   document.getElementById('sd-zona').textContent = `Zona: ${zona}${comuna ? ' · ' + comuna : ''}`;
 

@@ -590,6 +590,28 @@
         "notas": "CC=1.0. COS=0.5. Alt.máx=10.5m. Dens=400hab/há. Agrup=Aislado y Pareado",
         "adosamiento": true
       }
+    },
+    {
+      "comuna": "Bulnes",
+      "zona": "- Santa Clara",
+      "nombre": "Sector Santa Clara (sin zona PRC asignada)",
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": null,
+        "coeficiente_ocupacion_suelo": null,
+        "altura_maxima_pisos": null,
+        "altura_maxima_metros": null,
+        "densidad_maxima_habha": null,
+        "superficie_predial_minima_m2": null,
+        "subdivision_minima_m2": null,
+        "frente_minimo_m": null,
+        "antejardín_minimo_m": null,
+        "rasante_grados": null,
+        "distancia_deslinde_m": null,
+        "agrupamiento": null,
+        "adosamiento": null,
+        "notas": "Sector Santa Clara — no corresponde a zona normada del PRC Bulnes.",
+        "_force_clear": true
+      }
     }
   ],
   "ElCarmen": [
@@ -2349,7 +2371,9 @@
         "subdivision_minima_m2": null,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": null
+        "notas": "Zona no edificable. Ver ordenanza Laja para EP.",
+        "adosamiento": null,
+        "_force_clear": true
       }
     },
     {
@@ -2868,7 +2892,9 @@
         "subdivision_minima_m2": null,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": null
+        "notas": "Zona no edificable. Ver ordenanza Laja para Plan Seccional.",
+        "adosamiento": null,
+        "_force_clear": true
       }
     },
     {
@@ -2899,7 +2925,9 @@
         "subdivision_minima_m2": null,
         "estacionamientos_vivienda": null,
         "estacionamientos_comercio": null,
-        "notas": null
+        "notas": "Zona no edificable. Ver ordenanza Laja para Terr. Reserv. Ampliacion.",
+        "adosamiento": null,
+        "_force_clear": true
       }
     }
   ],
