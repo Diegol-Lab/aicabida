@@ -986,7 +986,8 @@ function initMap() {
 
   APP.map = L.map('map', {
     zoomControl: false, attributionControl: false,
-    tap: true, tapTolerance: 20
+    tap: true, tapTolerance: 20,
+    maxZoom: 21
   }).setView([-37.2, -72.9], 8);
 
   addSatTiles(APP.map);
@@ -1952,11 +1953,11 @@ function toast(msg) {
 function addSatTiles(map) {
   L.tileLayer(
     'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
-    { maxZoom: 20, attribution: 'Tiles &copy; Esri' }
+    { maxZoom: 21, maxNativeZoom: 19, attribution: 'Tiles &copy; Esri' }
   ).addTo(map);
   L.tileLayer(
     'https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}',
-    { maxZoom: 20, opacity: 0.85, pane: 'shadowPane' }
+    { maxZoom: 21, maxNativeZoom: 19, opacity: 0.85, pane: 'shadowPane' }
   ).addTo(map);
 }
 
