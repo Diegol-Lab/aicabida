@@ -340,12 +340,12 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
 
 /* Zona tag */
 .zona-pill {
-  display: inline-flex; align-items: center; gap: 6px;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 2px;
   background: var(--bg); border: 1px solid var(--borde);
-  border-radius: 20px; padding: 6px 14px;
-  font-size: 13px; color: var(--muted); font-weight: 600; margin-bottom: 18px;
+  border-radius: 16px; padding: 8px 14px;
+  font-size: 13px; color: var(--muted); font-weight: 600; margin-bottom: 14px;
 }
-.zona-pill .zc { color: var(--accent); }
+.zona-pill .zc { color: var(--accent); font-size: 16px; font-weight: 800; }
 
 /* KPI row */
 .kpi-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
@@ -413,6 +413,43 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
   border-radius: 20px; background: var(--bg); border: 1px solid var(--borde);
   color: var(--texto); line-height: 1.5;
 }
+
+/* Zona pill expandida */
+.zona-pill-top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
+.zona-nombre { font-size: 12px; color: var(--muted); margin-bottom: 6px; font-style: italic; }
+
+/* Tipo de zona badge */
+.tipo-badge {
+  font-size: 10px; font-weight: 700; padding: 3px 9px; border-radius: 10px;
+  letter-spacing: .3px;
+}
+.tipo-residencial  { background:#EBF8FF; color:#2B6CB0; }
+.tipo-mixto        { background:#FAF5FF; color:#6B46C1; }
+.tipo-comercial    { background:#FFFAF0; color:#C05621; }
+.tipo-productivo   { background:#F7FAFC; color:#4A5568; }
+.tipo-equipamiento { background:#E6FFFA; color:#276749; }
+.tipo-proteccion   { background:#F0FFF4; color:#22543D; }
+
+/* Intensidad de uso */
+.intensidad-badge {
+  font-size: 10px; font-weight: 700; padding: 3px 9px; border-radius: 10px;
+  display: flex; align-items: center; gap: 4px;
+}
+.int-baja  { background:#F0FFF4; color:#276749; }
+.int-media { background:#EBF8FF; color:#2B6CB0; }
+.int-alta  { background:#FFFAF0; color:#C05621; }
+
+/* Síntesis */
+.sintesis-wrap {
+  background: var(--bg); border-left: 3px solid var(--accent);
+  border-radius: 0 10px 10px 0; padding: 12px 14px; margin-bottom: 20px;
+}
+.sintesis-text { font-size: 13px; line-height: 1.7; color: var(--texto); }
+
+/* Adosamiento inline badge dentro de norm-row */
+.adosa-ok  { color: #276749; font-size: 13px; font-weight: 700; }
+.adosa-no  { color: var(--muted); font-size: 13px; }
+.adosa-nd  { color: #F97316; font-size: 12px; }
 
 .sheet-btns { display: flex; flex-direction: column; gap: 10px; padding-top: 4px; }
 
@@ -672,8 +709,18 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
 
     <!-- Zona tag -->
     <div class="zona-pill">
-      <span class="zc" id="r-zona-code">ZX</span>
+      <div class="zona-pill-top">
+        <span class="zc" id="r-zona-code">ZX</span>
+        <span id="r-tipo-badge" class="tipo-badge" style="display:none"></span>
+        <span id="r-intensidad-badge" class="intensidad-badge" style="display:none"></span>
+      </div>
+      <div id="r-zona-nombre" class="zona-nombre" style="display:none"></div>
       <span id="r-zona-info">&mdash;</span>
+    </div>
+
+    <!-- Síntesis -->
+    <div id="r-sintesis-wrap" class="sintesis-wrap" style="display:none">
+      <div id="r-sintesis" class="sintesis-text"></div>
     </div>
 
     <!-- Primary KPIs -->
@@ -1248,6 +1295,9 @@ function mostrarResultados(z, props, sup, per) {
   const agrup  = n.agrupamiento;
   const rasante= n.rasante_grados;
   const dist   = n.distancia_deslinde_m;
+  const adosa  = n.adosamiento;          // true / false / null
+  const estViv = n.estacionamientos_vivienda;
+  const estCom = n.estacionamientos_comercio;
 
   // ── Nuevas métricas derivadas ─────────────────────────────
   // Pisos estimados = CC / COS (cada piso consume COS de superficie)
@@ -1291,6 +1341,75 @@ function mostrarResultados(z, props, sup, per) {
 
   document.getElementById('r-zona-code').textContent = zona;
   document.getElementById('r-zona-info').textContent = `${comuna} · ${z.prc_decreto || 'PRC'}`;
+
+  // Nombre largo de la zona
+  const nombreEl = document.getElementById('r-zona-nombre');
+  if (z.nombre && z.nombre.trim()) {
+    nombreEl.textContent = z.nombre;
+    nombreEl.style.display = '';
+  } else {
+    nombreEl.style.display = 'none';
+  }
+
+  // ── Tipo de zona (inferido de usos_permitidos) ────────────────
+  const tipoBadge = document.getElementById('r-tipo-badge');
+  const usosList  = z.usos_permitidos || [];
+  const usosStr   = usosList.join(' ').toLowerCase();
+  let tipoLabel = '', tipoCls = '';
+  if (/equipamiento|educaci|salud|culto|deporte|comunit/i.test(usosStr)) {
+    tipoLabel = 'Equipamiento'; tipoCls = 'tipo-equipamiento';
+  } else if (/protecci|conservaci|ecol[oó]gic|parque|forestal/i.test(usosStr)) {
+    tipoLabel = 'Protección'; tipoCls = 'tipo-proteccion';
+  } else if (/industrial|productiv|bodega|manufactura|taller/i.test(usosStr)) {
+    tipoLabel = 'Productivo'; tipoCls = 'tipo-productivo';
+  } else if (/habitacional|residencial|vivienda/i.test(usosStr) && /comercio|servicio|oficina/i.test(usosStr)) {
+    tipoLabel = 'Mixto'; tipoCls = 'tipo-mixto';
+  } else if (/comercio|servicio|oficina|restaurant|hotel/i.test(usosStr) && !/habitacional|vivienda/i.test(usosStr)) {
+    tipoLabel = 'Comercial'; tipoCls = 'tipo-comercial';
+  } else if (/habitacional|residencial|vivienda/i.test(usosStr)) {
+    tipoLabel = 'Residencial'; tipoCls = 'tipo-residencial';
+  }
+  if (tipoLabel) {
+    tipoBadge.textContent = tipoLabel;
+    tipoBadge.className = `tipo-badge ${tipoCls}`;
+    tipoBadge.style.display = '';
+  } else {
+    tipoBadge.style.display = 'none';
+  }
+
+  // ── Intensidad de uso (basada en CC) ──────────────────────────
+  const intBadge = document.getElementById('r-intensidad-badge');
+  if (cc && typeof cc === 'number') {
+    let intLabel, intCls, intDot;
+    if (cc < 1.0) {
+      intLabel = 'Baja intensidad'; intCls = 'int-baja'; intDot = '🟢';
+    } else if (cc <= 3.0) {
+      intLabel = 'Media intensidad'; intCls = 'int-media'; intDot = '🔵';
+    } else {
+      intLabel = 'Alta intensidad'; intCls = 'int-alta'; intDot = '🟠';
+    }
+    intBadge.innerHTML = `<span>${intDot}</span> ${intLabel}`;
+    intBadge.className = `intensidad-badge ${intCls}`;
+    intBadge.style.display = '';
+  } else {
+    intBadge.style.display = 'none';
+  }
+
+  // ── Síntesis textual ──────────────────────────────────────────
+  const sintWrap = document.getElementById('r-sintesis-wrap');
+  const sintEl   = document.getElementById('r-sintesis');
+  const partes   = [];
+  if (supC) partes.push(`<b>${supC.toLocaleString('es-CL')} m²</b> construibles`);
+  if (altTxt && altCls !== 'missing') partes.push(`altura máx. <b>${altTxt}</b>`);
+  if (typeof cos === 'number') partes.push(`ocupa hasta el <b>${Math.round(cos*100)}%</b> del suelo`);
+  if (vivMax) partes.push(`capacidad estimada <b>~${vivMax} viviendas</b>`);
+  if (partes.length >= 2) {
+    sintEl.innerHTML = partes.join(' · ');
+    sintWrap.style.display = '';
+  } else {
+    sintWrap.style.display = 'none';
+  }
+
   document.getElementById('r-sup-c').textContent     = supC ? supC.toLocaleString('es-CL') : '—';
 
   const rPisos = document.getElementById('r-pisos');
@@ -1305,11 +1424,18 @@ function mostrarResultados(z, props, sup, per) {
   ccEl.className   = 'kpi-val' + (fvCC.cls ? ' ' + fvCC.cls : '');
   if (fvCC.title) ccEl.title = fvCC.title; else ccEl.removeAttribute('title');
 
+  // COS: show as decimal AND percentage
   const fvCOS = fv(cos);
   const cosEl = document.getElementById('r-cos');
-  cosEl.textContent = fvCOS.text;
-  cosEl.className   = 'kpi-val' + (fvCOS.cls ? ' ' + fvCOS.cls : '');
-  if (fvCOS.title) cosEl.title = fvCOS.title; else cosEl.removeAttribute('title');
+  if (cos && typeof cos === 'number') {
+    cosEl.textContent = `${cos} (${Math.round(cos*100)}%)`;
+    cosEl.className   = 'kpi-val';
+    cosEl.removeAttribute('title');
+  } else {
+    cosEl.textContent = fvCOS.text;
+    cosEl.className   = 'kpi-val' + (fvCOS.cls ? ' ' + fvCOS.cls : '');
+    if (fvCOS.title) cosEl.title = fvCOS.title; else cosEl.removeAttribute('title');
+  }
 
   document.getElementById('r-ocup').textContent = ocup ? `${ocup.toLocaleString('es-CL')} m²` : '—';
 
@@ -1323,14 +1449,45 @@ function mostrarResultados(z, props, sup, per) {
   const normasExtra = document.getElementById('r-normas-extra');
   normasExtra.innerHTML = '';
 
+  // Adosamiento display
+  let adosaDisplay = null;
+  if (adosa === true) {
+    adosaDisplay = { text: '✔ Permitido', cls: 'adosa-ok', title: 'La ordenanza permite adosamiento en esta zona' };
+  } else if (adosa === false) {
+    adosaDisplay = { text: '✗ No permitido', cls: 'adosa-no', title: 'La ordenanza no permite adosamiento en esta zona' };
+  }
+  // No mostrar fila si es null (sin datos de adosamiento)
+
+  // Estacionamientos display
+  function fvEstac(val, tipo) {
+    if (val === null || val === undefined) {
+      return { text: 'Según OGUC', cls: 'ne', title: `Consultar tabla del Art. 2.4.3 OGUC — norma general aplicable a toda la zona urbana de ${comuna}` };
+    }
+    if (val === 'N.E.' || val === 0) return { text: 'No se exige', cls: 'ne', title: 'La ordenanza exime este uso de suelo de la norma de estacionamientos' };
+    return { text: `${val} por ${tipo}`, cls: '' };
+  }
+  const estVivDisplay = fvEstac(estViv, 'vivienda');
+  const estComDisplay = fvEstac(estCom, 'comercio');
+
+  // m² por vivienda (si hay densidad y CC)
+  let m2VivDisplay = null;
+  if (supC && vivMax && vivMax > 0) {
+    const m2viv = Math.round(supC / vivMax);
+    m2VivDisplay = { text: `~${m2viv.toLocaleString('es-CL')} m²/viv`, cls: 'accent', title: `Superficie construible total ÷ viviendas estimadas (${supC.toLocaleString('es-CL')} m² ÷ ${vivMax})` };
+  }
+
   const rows = [
-    { lbl: 'Viviendas m&aacute;x.',  display: vivMax ? { text: `~${vivMax}`, cls: 'accent', title: `Estimado: ${dens} hab/há ÷ 3 × ${(sup/10000).toFixed(3)} há` } : null },
-    { lbl: 'Agrupamiento',           display: fv(agrup) },
-    { lbl: 'Frente m&iacute;nimo',   display: fv(frente,  ' m') },
-    { lbl: 'Antejard&iacute;n',      display: fv(antej,   ' m') },
-    { lbl: 'Subdiv. m&iacute;n.',    display: fv(subdiv,  ' m²') },
-    { lbl: 'Rasante',                display: fv(rasante, '°')  },
-    { lbl: 'Dist. deslinde',         display: fv(dist,    ' m') },
+    { lbl: 'Viviendas m&aacute;x.',   display: vivMax ? { text: `~${vivMax}`, cls: 'accent', title: `Estimado: ${dens} hab/há ÷ 3 × ${(sup/10000).toFixed(3)} há` } : null },
+    { lbl: 'm² por vivienda',         display: m2VivDisplay },
+    { lbl: 'Agrupamiento',            display: fv(agrup) },
+    { lbl: 'Adosamiento',             display: adosaDisplay },
+    { lbl: 'Frente m&iacute;nimo',    display: fv(frente,  ' m') },
+    { lbl: 'Antejard&iacute;n',       display: fv(antej,   ' m') },
+    { lbl: 'Subdiv. m&iacute;n.',     display: fv(subdiv,  ' m²') },
+    { lbl: 'Rasante',                 display: fv(rasante, '°')  },
+    { lbl: 'Dist. deslinde',          display: fv(dist,    ' m') },
+    { lbl: 'Estac. vivienda',         display: /habitacional|vivienda|residencial/i.test(usosStr) || usosList.length === 0 ? estVivDisplay : null },
+    { lbl: 'Estac. comercio',         display: /comercio|servicio|oficina|restaurant|hotel|industria/i.test(usosStr) ? estComDisplay : null },
   ];
 
   rows.forEach(row => {
