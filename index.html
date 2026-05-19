@@ -770,9 +770,14 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
 
     <!-- Terreno -->
     <div class="section-hdr">Terreno trazado</div>
-    <div class="kpi-grid4" style="margin-bottom:24px;">
+    <div class="kpi-grid4" style="margin-bottom:12px;">
       <div class="kpi-sm"><div class="kpi-lbl">Superficie</div><div class="kpi-val" id="r-sup-m2">&mdash;</div></div>
       <div class="kpi-sm"><div class="kpi-lbl">Per&iacute;metro</div><div class="kpi-val" id="r-per">&mdash;</div></div>
+    </div>
+    <!-- Frente hacia la calle (cargado async) -->
+    <div id="r-frente-row" class="norm-row" style="margin-bottom:24px;">
+      <span class="norm-row-lbl">Frente hacia calle</span>
+      <span class="norm-row-val ne" id="r-frente">Detectando&hellip;</span>
     </div>
 
     <div class="sheet-btns">
@@ -1277,6 +1282,79 @@ function calcularCabida() {
   } else {
     mostrarSinDatos(zonaProps, supM2, zonaData);
   }
+
+  // Frente hacia la calle — detección async (no bloquea la UI)
+  detectarFrenteCalleAsync(APP.currentPolygon);
+}
+
+// ============================================================
+// FRENTE HACIA LA CALLE (async, OSM Overpass)
+// ============================================================
+async function detectarFrenteCalleAsync(polygon) {
+  const el = document.getElementById('r-frente');
+  if (!el) return;
+  el.textContent = 'Detectando…';
+  el.className = 'norm-row-val ne';
+
+  // Compute all edge lengths from polygon vertices
+  const coords = polygon.geometry.coordinates[0];
+  const edges = [];
+  for (let i = 0; i < coords.length - 1; i++) {
+    const len = turf.distance(turf.point(coords[i]), turf.point(coords[i + 1]), { units: 'meters' });
+    edges.push({ idx: i, len: Math.round(len), mid: [(coords[i][0]+coords[i+1][0])/2, (coords[i][1]+coords[i+1][1])/2] });
+  }
+
+  try {
+    const center = turf.centroid(polygon).geometry.coordinates;
+    const [lng, lat] = center;
+
+    // Query Overpass for roads within 200 m
+    const q = `[out:json][timeout:8];(way["highway"~"^(primary|secondary|tertiary|residential|unclassified|living_street|service|trunk|road)$"](around:200,${lat},${lng}););out geom;`;
+    const res = await Promise.race([
+      fetch(`https://overpass-api.de/api/interpreter?data=${encodeURIComponent(q)}`).then(r => r.json()),
+      new Promise((_, rej) => setTimeout(() => rej(new Error('timeout')), 8000))
+    ]);
+
+    const roads = (res.elements || []).filter(w => w.geometry && w.geometry.length >= 2);
+    if (roads.length === 0) throw new Error('no roads');
+
+    // For each edge midpoint, find minimum distance to any road
+    let bestEdge = null, bestDist = Infinity;
+    for (const edge of edges) {
+      if (edge.len < 2) continue; // skip degenerate edges
+      const pt = turf.point(edge.mid);
+      let minD = Infinity;
+      for (const way of roads) {
+        const line = turf.lineString(way.geometry.map(n => [n.lon, n.lat]));
+        const d = turf.pointToLineDistance(pt, line, { units: 'meters' });
+        if (d < minD) minD = d;
+      }
+      if (minD < bestDist) { bestDist = minD; bestEdge = edge; }
+    }
+
+    if (bestEdge) {
+      el.textContent = `${bestEdge.len} m`;
+      el.className = 'norm-row-val';
+      el.title = `Lado más cercano a una vía detectada (OpenStreetMap) a ${Math.round(bestDist)} m`;
+      // Store for guardar
+      if (APP.currentZona) APP.currentZona.frenteM = bestEdge.len;
+    } else {
+      throw new Error('no best edge');
+    }
+
+  } catch (e) {
+    // Fallback: mostrar el lado más corto (heurística — frontage suele ser el lado más angosto)
+    const sorted = [...edges].filter(e => e.len >= 2).sort((a, b) => a.len - b.len);
+    if (sorted.length > 0) {
+      el.textContent = `~${sorted[0].len} m`;
+      el.className = 'norm-row-val';
+      el.title = `Estimado: lado más corto del polígono trazado (${edges.length} lados: ${edges.map(e=>e.len+'m').join(', ')})`;
+      if (APP.currentZona) APP.currentZona.frenteM = sorted[0].len;
+    } else {
+      el.textContent = '—';
+      el.className = 'norm-row-val ne';
+    }
+  }
 }
 
 // ============================================================
@@ -1459,11 +1537,12 @@ function mostrarResultados(z, props, sup, per) {
   // No mostrar fila si es null (sin datos de adosamiento)
 
   // Estacionamientos display
+  // Nota: Art. 2.4.3 OGUC fue derogado en 2021 — cada PRC fija su propia dotación.
   function fvEstac(val, tipo) {
     if (val === null || val === undefined) {
-      return { text: 'Según OGUC', cls: 'ne', title: `Consultar tabla del Art. 2.4.3 OGUC — norma general aplicable a toda la zona urbana de ${comuna}` };
+      return { text: 'Ver ordenanza', cls: 'ne', title: `La ordenanza de ${comuna} no especifica dotación de estacionamientos. Consultar directamente a la DOM de ${comuna}.` };
     }
-    if (val === 'N.E.' || val === 0) return { text: 'No se exige', cls: 'ne', title: 'La ordenanza exime este uso de suelo de la norma de estacionamientos' };
+    if (val === 'N.E.' || val === 0) return { text: 'No se exige', cls: 'ne', title: 'La ordenanza no establece dotación de estacionamientos para esta zona' };
     return { text: `${val} por ${tipo}`, cls: '' };
   }
   const estVivDisplay = fvEstac(estViv, 'vivienda');
@@ -1637,6 +1716,8 @@ function guardarCabida() {
     coordenadas: turf.centroid(APP.currentPolygon).geometry.coordinates,
     poligono: APP.currentPolygon,
     superficie_predio: Math.round(supM2),
+    perimetro:   Math.round(perM),
+    frente_calle: APP.currentZona.frenteM || null,
     comuna:      props ? props.comuna : '—',
     zona:        props ? (props.zona_code || props.zona) : '—',
     nombre_zona: z ? z.nombre : '—',
@@ -1666,6 +1747,65 @@ function descartarCabida() {
 function cargarProspectos() {
   try { APP.prospectos = JSON.parse(localStorage.getItem('prospectos') || '[]'); }
   catch { APP.prospectos = []; }
+}
+
+// ============================================================
+// VER CABIDA GUARDADA (re-enter desde prospectos)
+// ============================================================
+function verCabida(id) {
+  const p = APP.prospectos.find(x => x.id === id);
+  if (!p || !p.poligono) { toast('No se puede cargar esta cabida'); return; }
+
+  navigate('mapa');
+
+  // Wait for map to be ready, then load the polygon and show results
+  const tryLoad = (attempts) => {
+    if (!APP.map) {
+      if (attempts > 0) setTimeout(() => tryLoad(attempts - 1), 300);
+      return;
+    }
+    // Clear any current drawing
+    reiniciarDibujo();
+
+    // Set current polygon
+    APP.currentPolygon = p.poligono;
+
+    // Draw on map
+    if (APP.currentLayer) { try { APP.map.removeLayer(APP.currentLayer); } catch {} }
+    APP.currentLayer = L.geoJSON(p.poligono, {
+      style: { color: '#0ECBA1', fillColor: '#0ECBA1', fillOpacity: 0.18, weight: 3 }
+    }).addTo(APP.map);
+    try { APP.map.fitBounds(APP.currentLayer.getBounds(), { padding: [50, 50], animate: true }); } catch {}
+
+    // Reconstruct props and lookup zone data
+    const fakeProps = { zona: p.zona, zona_code: p.zona, comuna: p.comuna };
+    const zonaData  = buscarNormas(fakeProps);
+    const supM2     = p.superficie_predio;
+    const perM      = p.perimetro || (turf.length(p.poligono, { units: 'kilometers' }) * 1000);
+
+    APP.currentZona = { props: fakeProps, data: zonaData, supM2, perM, frenteM: p.frente_calle || null };
+
+    if (zonaData && tieneNormas(zonaData)) {
+      mostrarResultados(zonaData, fakeProps, supM2, perM);
+    } else {
+      mostrarSinDatos(fakeProps, supM2, zonaData);
+    }
+
+    // Show frente from saved value (skip async detection since polygon is already known)
+    const frenteEl = document.getElementById('r-frente');
+    if (frenteEl) {
+      if (p.frente_calle) {
+        frenteEl.textContent = `${p.frente_calle} m`;
+        frenteEl.className   = 'norm-row-val';
+        frenteEl.title       = 'Valor guardado al crear esta cabida';
+      } else {
+        // Re-detect async for old cabidas saved without frente
+        detectarFrenteCalleAsync(p.poligono);
+      }
+    }
+  };
+
+  setTimeout(() => tryLoad(10), 400);
 }
 
 // ============================================================
@@ -1710,19 +1850,30 @@ function initProspectos() {
         <div class="prosp-zona">${p.nombre_zona || p.zona} · ${p.comuna}</div>
         <div class="prosp-meta">${p.superficie_predio.toLocaleString('es-CL')} m² predio${viv ? ' · ~' + viv + ' viv.' : ''} · ${fmtFecha(p.fecha)}</div>
       </div>
-      <div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:2px;">
         <div class="prosp-val">${sc ? sc.toLocaleString('es-CL') : '—'}</div>
         <div class="prosp-val-unit">m² const.</div>
+        <div style="font-size:10px;color:var(--accent);font-weight:600;margin-top:2px;">Ver ›</div>
       </div>
       <div class="prosp-del" id="del-${p.id}">
         <button onclick="eliminarProspecto('${p.id}')">🗑</button>
       </div>`;
 
-    let timer;
-    card.addEventListener('touchstart', () => {
-      timer = setTimeout(() => document.getElementById(`del-${p.id}`).classList.toggle('show'), 600);
-    }, { passive: true });
-    card.addEventListener('touchend', () => clearTimeout(timer));
+    // Tap (short press) → ver detalle; Long press → mostrar botón eliminar
+    let timer, moved = false;
+    card.addEventListener('touchstart', () => { moved = false; timer = setTimeout(() => document.getElementById(`del-${p.id}`).classList.toggle('show'), 600); }, { passive: true });
+    card.addEventListener('touchmove', () => { moved = true; clearTimeout(timer); }, { passive: true });
+    card.addEventListener('touchend', (e) => {
+      clearTimeout(timer);
+      if (!moved && !document.getElementById(`del-${p.id}`).classList.contains('show')) {
+        e.preventDefault();
+        verCabida(p.id);
+      }
+    });
+    // Desktop click support
+    card.addEventListener('click', () => {
+      if (!document.getElementById(`del-${p.id}`).classList.contains('show')) verCabida(p.id);
+    });
 
     lista.appendChild(card);
   });
