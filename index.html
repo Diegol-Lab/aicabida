@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <title>AiCabida</title>
 <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#0ECBA1">
+<meta name="theme-color" content="#4F5277">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -23,22 +23,27 @@
 <!-- Turf.js -->
 <script src="https://unpkg.com/@turf/turf@6/turf.min.js"></script>
 
+<!-- jsPDF — generación de PDF en el cliente -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
 <style>
 /* ============================================================
    VARIABLES + RESET
 ============================================================ */
 :root {
-  --accent:       #0ECBA1;
-  --accent-light: rgba(14,203,161,0.12);
-  --accent-glow:  rgba(14,203,161,0.28);
-  --bg:           #F3F6FA;
-  --bg-map:       #DDE5EE;
+  --accent:       #4F5277;
+  --accent-light: rgba(79,82,119,0.10);
+  --accent-glow:  rgba(79,82,119,0.25);
+  --peach:        #FEBE98;
+  --peach-light:  rgba(254,190,152,0.20);
+  --bg:           #FAF7F4;
+  --bg-map:       #E4DDD6;
   --surface:      #ffffff;
-  --texto:        #0F172A;
-  --muted:        #94A3B8;
-  --borde:        #E4EAF2;
-  --shadow-sm:    0 2px 10px rgba(15,23,42,0.07);
-  --shadow-md:    0 4px 24px rgba(15,23,42,0.10);
+  --texto:        #2D2F4A;
+  --muted:        #9496B4;
+  --borde:        #E8E2DA;
+  --shadow-sm:    0 2px 10px rgba(45,47,74,0.07);
+  --shadow-md:    0 4px 24px rgba(45,47,74,0.10);
   --inter:        'Inter', sans-serif;
   --nav-h:        72px;
   --top-h:        56px;
@@ -351,7 +356,7 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
 .kpi-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
 
 .kpi-accent {
-  background: var(--accent); border-radius: 16px; padding: 18px 16px; color: white;
+  background: var(--peach); border-radius: 16px; padding: 18px 16px; color: var(--accent);
 }
 .kpi-gris {
   background: var(--bg); border-radius: 16px; padding: 18px 16px;
@@ -362,14 +367,14 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
   font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
   margin-bottom: 8px; opacity: 0.65;
 }
-.kpi-accent .kpi-lbl { color: white; }
+.kpi-accent .kpi-lbl { color: var(--accent); opacity: 0.75; }
 .kpi-gris .kpi-lbl   { color: var(--muted); }
 
 .kpi-val {
   font-family: var(--inter); font-size: 26px; font-weight: 800;
   line-height: 1; margin-bottom: 4px;
 }
-.kpi-accent .kpi-val { color: white; }
+.kpi-accent .kpi-val { color: var(--accent); }
 .kpi-gris .kpi-val   { color: var(--texto); }
 
 .kpi-unit { font-size: 12px; opacity: 0.6; }
@@ -478,7 +483,7 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
 #mini-map-prospectos { position: absolute; inset: 0; z-index: 1; }
 .prosp-overlay {
   position: absolute; inset: 0; z-index: 2; pointer-events: none;
-  background: linear-gradient(to bottom, transparent 40%, rgba(243,246,250,0.96) 100%);
+  background: linear-gradient(to bottom, transparent 40%, rgba(250,247,244,0.96) 100%);
   display: flex; flex-direction: column; justify-content: flex-end; padding: 14px 18px;
 }
 .prosp-count { font-family: var(--inter); font-size: 28px; font-weight: 800; color: var(--texto); line-height: 1; }
@@ -560,6 +565,64 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
   padding: 6px 10px !important; font-family: var(--inter) !important; font-size: 12px !important;
 }
 .leaflet-div-icon { background: none !important; border: none !important; }
+
+/* ============================================================
+   BOTÓN PEACH (Compartir PDF)
+============================================================ */
+.btn-peach {
+  width: 100%; padding: 16px;
+  background: var(--peach); color: var(--accent);
+  font-family: var(--inter); font-size: 16px; font-weight: 700;
+  border-radius: 16px; border: none; min-height: 52px;
+  box-shadow: 0 4px 16px rgba(254,190,152,0.45);
+  transition: opacity 0.15s, transform 0.1s;
+  display: flex; align-items: center; justify-content: center; gap: 9px;
+}
+.btn-peach:active { opacity: 0.85; transform: scale(0.98); }
+
+/* ============================================================
+   FOTOS ADJUNTAS
+============================================================ */
+.fotos-wrap { margin-bottom: 4px; }
+.fotos-list { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; min-height: 0; }
+
+.foto-thumb-wrap { position: relative; width: 82px; height: 82px; flex-shrink: 0; }
+.foto-thumb {
+  width: 82px; height: 82px; border-radius: 10px;
+  object-fit: cover; border: 2px solid var(--borde); display: block;
+}
+.foto-del {
+  position: absolute; top: -6px; right: -6px;
+  width: 20px; height: 20px; border-radius: 50%;
+  background: #EF4444; color: white; border: 2px solid white;
+  font-size: 10px; line-height: 1; padding: 0;
+  display: flex; align-items: center; justify-content: center; cursor: pointer;
+}
+.btn-add-foto {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 11px 16px; border-radius: 12px;
+  border: 1.5px dashed var(--borde);
+  font-family: var(--inter); font-size: 13px; font-weight: 600;
+  color: var(--accent); background: var(--bg); cursor: pointer; width: 100%;
+  transition: background 0.15s;
+}
+.btn-add-foto:active { background: var(--accent-light); }
+
+/* Chip contador de fotos en prosp-card */
+.foto-count-chip {
+  font-size: 10px; font-weight: 700;
+  color: var(--accent); background: var(--accent-light);
+  padding: 2px 7px; border-radius: 8px;
+  display: inline-flex; align-items: center; gap: 3px;
+}
+/* Botón PDF en prosp-card */
+.btn-prosp-pdf {
+  font-size: 10px; font-weight: 700;
+  padding: 3px 9px; border-radius: 8px;
+  background: var(--peach); color: var(--accent); border: none;
+  cursor: pointer; white-space: nowrap;
+}
+.btn-prosp-pdf:active { opacity: 0.8; }
 </style>
 </head>
 <body>
@@ -572,7 +635,7 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
     <!-- Logo -->
     <div class="logo-wrap">
       <svg class="logo-svg" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="60" height="60" rx="14" fill="#0ECBA1"/>
+        <rect width="60" height="60" rx="14" fill="#4F5277"/>
         <polygon points="12,43 11,21 30,11 48,18 49,39 30,49"
           fill="rgba(255,255,255,0.15)" stroke="white" stroke-width="2.5"
           stroke-linejoin="round" stroke-linecap="round"/>
@@ -775,13 +838,35 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
       <div class="kpi-sm"><div class="kpi-lbl">Per&iacute;metro</div><div class="kpi-val" id="r-per">&mdash;</div></div>
     </div>
     <!-- Frente hacia la calle (cargado async) -->
-    <div id="r-frente-row" class="norm-row" style="margin-bottom:24px;">
+    <div id="r-frente-row" class="norm-row" style="margin-bottom:18px;">
       <span class="norm-row-lbl">Frente hacia calle</span>
       <span class="norm-row-val ne" id="r-frente">Detectando&hellip;</span>
     </div>
 
-    <div class="sheet-btns">
-      <button class="btn-primary" onclick="guardarCabida()">Guardar cabida</button>
+    <!-- Fotos del predio -->
+    <div class="section-hdr">Fotos del predio</div>
+    <div class="fotos-wrap" id="r-fotos-wrap">
+      <div class="fotos-list" id="r-fotos-list"></div>
+      <label class="btn-add-foto" id="btn-add-foto-lbl" for="foto-input">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+          <circle cx="12" cy="13" r="4"/>
+        </svg>
+        Agregar foto
+      </label>
+      <input type="file" id="foto-input" accept="image/*" multiple style="display:none" onchange="agregarFotos(this.files)">
+    </div>
+
+    <div class="sheet-btns" style="padding-top:10px;">
+      <button id="btn-exportar-pdf" class="btn-peach" style="display:none" onclick="exportarPDFActual()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/>
+          <polyline points="16,6 12,2 8,6"/>
+          <line x1="12" y1="2" x2="12" y2="15"/>
+        </svg>
+        Compartir PDF
+      </button>
+      <button class="btn-primary" id="btn-guardar-cabida" onclick="guardarCabida()">Guardar cabida</button>
       <button class="btn-outline" onclick="descartarCabida()">Descartar</button>
     </div>
   </div>
@@ -887,7 +972,9 @@ const APP = {
   drawControl:     null,
   userMarker:      null,
   userHalo:        null,
-  dimMarkers:      []
+  dimMarkers:      [],
+  tempFotos:       [],   // fotos para la cabida en curso (antes de guardar)
+  viewingId:       null  // id del prospecto guardado que se está viendo
 };
 
 const GEO_FILES = ['Bulnes','ElCarmen','Laja','Lebu','Penco','Tome','Yumbel','Yungay'];
@@ -1024,12 +1111,12 @@ function centerOnUser() {
     APP.map.setView([lat, lng], 17);
     if (APP.userHalo) APP.userHalo.remove();
     APP.userHalo = L.circleMarker([lat, lng], {
-      radius: 20, color: '#0ECBA1', fillColor: '#0ECBA1',
-      fillOpacity: 0.15, weight: 0, interactive: false
+      radius: 20, color: '#FEBE98', fillColor: '#FEBE98',
+      fillOpacity: 0.25, weight: 0, interactive: false
     }).addTo(APP.map);
     if (APP.userMarker) APP.userMarker.remove();
     APP.userMarker = L.circleMarker([lat, lng], {
-      radius: 7, color: '#0ECBA1', fillColor: 'white',
+      radius: 7, color: '#4F5277', fillColor: '#FEBE98',
       fillOpacity: 1, weight: 2.5, interactive: false
     }).addTo(APP.map);
   }, () => {});
@@ -1071,16 +1158,16 @@ function startDrawing() {
 
   const dotIcon = L.divIcon({
     className: '', iconSize: [32,32], iconAnchor: [16,16],
-    html: '<div style="width:28px;height:28px;border-radius:50%;background:#0ECBA1;border:3px solid white;box-shadow:0 2px 10px rgba(0,0,0,.30);margin:2px;"></div>'
+    html: '<div style="width:28px;height:28px;border-radius:50%;background:#4F5277;border:3px solid white;box-shadow:0 2px 10px rgba(0,0,0,.30);margin:2px;"></div>'
   });
   const smallIcon = L.divIcon({
     className: '', iconSize: [14,14], iconAnchor: [7,7],
-    html: '<div style="width:12px;height:12px;border-radius:50%;background:#0ECBA1;border:2px solid white;"></div>'
+    html: '<div style="width:12px;height:12px;border-radius:50%;background:#4F5277;border:2px solid white;"></div>'
   });
 
   APP.drawControl = new L.Draw.Polygon(APP.map, {
     shapeOptions: {
-      color: '#0ECBA1', fillColor: '#0ECBA1',
+      color: '#4F5277', fillColor: '#4F5277',
       fillOpacity: 0.12, weight: 2.5
     },
     allowIntersection: false,
@@ -1275,6 +1362,8 @@ function tieneNormas(z) {
 // ============================================================
 function calcularCabida() {
   if (!APP.currentPolygon) return;
+  APP.viewingId  = null;   // es una cabida nueva, no guardada
+  APP.tempFotos  = [];
 
   const zonaProps = detectarZona(APP.currentPolygon);
   const zonaData  = buscarNormas(zonaProps);
@@ -1616,6 +1705,27 @@ function mostrarResultados(z, props, sup, per) {
     usosSection.style.display = 'none';
   }
 
+  // ── Fotos + botones según si es cabida nueva o guardada ──────
+  const isSaved = !!APP.viewingId;
+  const btnGuardar  = document.getElementById('btn-guardar-cabida');
+  const btnExportar = document.getElementById('btn-exportar-pdf');
+  const btnAddFoto  = document.getElementById('btn-add-foto-lbl');
+  if (btnGuardar)  btnGuardar.style.display  = isSaved ? 'none' : '';
+  if (btnExportar) btnExportar.style.display  = isSaved ? 'flex' : 'none';
+  if (btnAddFoto)  btnAddFoto.style.display   = isSaved ? 'none' : '';
+
+  const fotosLista = document.getElementById('r-fotos-list');
+  if (fotosLista) fotosLista.innerHTML = '';
+
+  if (isSaved) {
+    const savedP = APP.prospectos.find(x => x.id === APP.viewingId);
+    if (savedP && savedP.imagenIds && savedP.imagenIds.length) {
+      cargarFotosEnSheet(savedP.imagenIds);
+    }
+  } else {
+    APP.tempFotos = [];
+  }
+
   abrirSheet('sheet-resultados');
   setTimeout(() => initMiniMap('mm-result', 'miniMapResult', APP.currentPolygon), 420);
 }
@@ -1684,7 +1794,7 @@ function initMiniMap(containerId, key, polygon, dashed) {
   if (polygon) {
     const style = dashed
       ? { color: '#94A3B8', fillColor: '#94A3B8', fillOpacity: 0.08, weight: 2, dashArray: '6,4' }
-      : { color: '#0ECBA1', fillColor: '#0ECBA1', fillOpacity: 0.16, weight: 2.5 };
+      : { color: '#4F5277', fillColor: '#4F5277', fillOpacity: 0.16, weight: 2.5 };
     const layer = L.geoJSON(polygon, { style }).addTo(m);
     m.fitBounds(layer.getBounds(), { padding: [22, 22] });
     m.invalidateSize();
@@ -1712,8 +1822,17 @@ function closeSheets() {
 // ============================================================
 // GUARDAR / DESCARTAR
 // ============================================================
-function guardarCabida() {
+async function guardarCabida() {
   if (!APP.currentPolygon || !APP.currentZona) return;
+
+  // Guardar fotos en IndexedDB
+  const imagenIds = [];
+  for (const foto of (APP.tempFotos || [])) {
+    try { await IDB.put(foto.id, foto.dataUrl); imagenIds.push(foto.id); }
+    catch(e) { console.warn('Error guardando foto', e); }
+  }
+  APP.tempFotos = [];
+
   const { data: z, props, supM2, perM } = APP.currentZona;
   const n = (z && z.normas_urbanisticas) || {};
   const cc     = n.coeficiente_constructibilidad;
@@ -1741,6 +1860,7 @@ function guardarCabida() {
     zona:        props ? (props.zona_code || props.zona) : '—',
     nombre_zona: z ? z.nombre : '—',
     normas: { CC: cc, COS: cos, pisos, metros },
+    imagenIds,
     resultados: {
       sup_construible:  cc  ? Math.round(cc  * supM2) : null,
       ocupacion_piso1:  cos ? Math.round(cos * supM2) : null,
@@ -1759,6 +1879,8 @@ function guardarCabida() {
 }
 
 function descartarCabida() {
+  APP.tempFotos = [];
+  APP.viewingId = null;
   closeSheets();
   reiniciarDibujo();
 }
@@ -1774,6 +1896,9 @@ function cargarProspectos() {
 function verCabida(id) {
   const p = APP.prospectos.find(x => x.id === id);
   if (!p || !p.poligono) { toast('No se puede cargar esta cabida'); return; }
+
+  APP.viewingId = id;   // marca que estamos viendo una cabida guardada
+  APP.tempFotos = [];
 
   navigate('mapa');
 
@@ -1792,7 +1917,7 @@ function verCabida(id) {
     // Draw on map
     if (APP.currentLayer) { try { APP.map.removeLayer(APP.currentLayer); } catch {} }
     APP.currentLayer = L.geoJSON(p.poligono, {
-      style: { color: '#0ECBA1', fillColor: '#0ECBA1', fillOpacity: 0.18, weight: 3 }
+      style: { color: '#4F5277', fillColor: '#4F5277', fillOpacity: 0.18, weight: 3 }
     }).addTo(APP.map);
     try { APP.map.fitBounds(APP.currentLayer.getBounds(), { padding: [50, 50], animate: true }); } catch {}
 
@@ -1861,18 +1986,22 @@ function initProspectos() {
   APP.prospectos.forEach(p => {
     const card = document.createElement('div');
     card.className = 'prosp-card';
-    const sc  = p.resultados.sup_construible;
-    const viv = p.resultados.viviendas_max;
+    const sc       = p.resultados.sup_construible;
+    const viv      = p.resultados.viviendas_max;
+    const nFotos   = (p.imagenIds && p.imagenIds.length) ? p.imagenIds.length : 0;
     card.innerHTML = `
       <div class="prosp-dot"></div>
       <div class="prosp-info">
         <div class="prosp-zona">${p.nombre_zona || p.zona} · ${p.comuna}</div>
         <div class="prosp-meta">${p.superficie_predio.toLocaleString('es-CL')} m² predio${viv ? ' · ~' + viv + ' viv.' : ''} · ${fmtFecha(p.fecha)}</div>
       </div>
-      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:2px;">
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;">
         <div class="prosp-val">${sc ? sc.toLocaleString('es-CL') : '—'}</div>
         <div class="prosp-val-unit">m² const.</div>
-        <div style="font-size:10px;color:var(--accent);font-weight:600;margin-top:2px;">Ver ›</div>
+        <div style="display:flex;align-items:center;gap:5px;margin-top:2px;">
+          ${nFotos > 0 ? `<span class="foto-count-chip">📷 ${nFotos}</span>` : ''}
+          <button class="btn-prosp-pdf" onclick="event.stopPropagation(); exportarPDF('${p.id}')">PDF ↗</button>
+        </div>
       </div>
       <div class="prosp-del" id="del-${p.id}">
         <button onclick="eliminarProspecto('${p.id}')">🗑</button>
@@ -1916,7 +2045,7 @@ function initProspectosMap(prospectos) {
     prospectos.forEach(p => {
       if (!p.poligono) return;
       const layer = L.geoJSON(p.poligono, {
-        style: { color: '#0ECBA1', fillColor: '#0ECBA1', fillOpacity: 0.18, weight: 2 }
+        style: { color: '#4F5277', fillColor: '#4F5277', fillOpacity: 0.18, weight: 2 }
       }).addTo(m);
       try { bounds.extend(layer.getBounds()); } catch {}
 
@@ -1924,7 +2053,7 @@ function initProspectosMap(prospectos) {
         L.marker([p.coordenadas[1], p.coordenadas[0]], {
           icon: L.divIcon({
             className: '',
-            html: `<div style="background:#0ECBA1;color:#fff;font-size:10px;font-weight:700;border-radius:10px;padding:2px 8px;white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,.20);">${(p.resultados.sup_construible/1000).toFixed(1)}k m²</div>`,
+            html: `<div style="background:#4F5277;color:#fff;font-size:10px;font-weight:700;border-radius:10px;padding:2px 8px;white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,.20);">${(p.resultados.sup_construible/1000).toFixed(1)}k m²</div>`,
             iconAnchor: [24, -4]
           })
         }).addTo(m);
@@ -1935,8 +2064,12 @@ function initProspectosMap(prospectos) {
   APP.miniMapProspectos = m;
 }
 
-function eliminarProspecto(id) {
-  APP.prospectos = APP.prospectos.filter(p => p.id !== id);
+async function eliminarProspecto(id) {
+  const p = APP.prospectos.find(x => x.id === id);
+  if (p && p.imagenIds && p.imagenIds.length) {
+    try { await IDB.delMany(p.imagenIds); } catch(e) { console.warn('Error borrando fotos', e); }
+  }
+  APP.prospectos = APP.prospectos.filter(x => x.id !== id);
   localStorage.setItem('prospectos', JSON.stringify(APP.prospectos));
   document.getElementById('stat-cabidas').textContent = APP.prospectos.length;
   initProspectos();
@@ -1979,6 +2112,361 @@ function addSatTiles(map) {
     'https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}',
     { maxZoom: 21, maxNativeZoom: 19, opacity: 0.85, pane: 'shadowPane' }
   ).addTo(map);
+}
+
+// ============================================================
+// INDEXED DB — almacenamiento de fotos (blobs, no localStorage)
+// ============================================================
+const IDB = {
+  _db: null,
+  async open() {
+    if (this._db) return this._db;
+    return new Promise((res, rej) => {
+      const req = indexedDB.open('aicabida_photos', 1);
+      req.onupgradeneeded = e => { e.target.result.createObjectStore('photos'); };
+      req.onsuccess = e => { this._db = e.target.result; res(this._db); };
+      req.onerror   = () => rej(req.error);
+    });
+  },
+  async put(id, dataUrl) {
+    const db = await this.open();
+    return new Promise((res, rej) => {
+      const tx = db.transaction('photos', 'readwrite');
+      tx.objectStore('photos').put(dataUrl, id);
+      tx.oncomplete = res; tx.onerror = () => rej(tx.error);
+    });
+  },
+  async get(id) {
+    const db = await this.open();
+    return new Promise((res, rej) => {
+      const req = db.transaction('photos').objectStore('photos').get(id);
+      req.onsuccess = () => res(req.result); req.onerror = () => rej(req.error);
+    });
+  },
+  async delMany(ids = []) {
+    if (!ids.length) return;
+    const db = await this.open();
+    return new Promise((res, rej) => {
+      const tx = db.transaction('photos', 'readwrite');
+      const st = tx.objectStore('photos');
+      ids.forEach(id => st.delete(id));
+      tx.oncomplete = res; tx.onerror = () => rej(tx.error);
+    });
+  }
+};
+
+// ============================================================
+// IMÁGENES — compresión y manejo de fotos
+// ============================================================
+function compressImage(file) {
+  return new Promise(resolve => {
+    const reader = new FileReader();
+    reader.onload = e => {
+      const img = new Image();
+      img.onload = () => {
+        const MAX = 1400;
+        const ratio = Math.min(1, MAX / Math.max(img.width, img.height));
+        const w = Math.round(img.width * ratio);
+        const h = Math.round(img.height * ratio);
+        const canvas = document.createElement('canvas');
+        canvas.width = w; canvas.height = h;
+        canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+        resolve(canvas.toDataURL('image/jpeg', 0.80));
+      };
+      img.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+async function agregarFotos(files) {
+  if (!files || !files.length) return;
+  const MAX = 6;
+  const libre = MAX - APP.tempFotos.length;
+  if (libre <= 0) { toast(`Máximo ${MAX} fotos por cabida`); return; }
+  const toAdd = Math.min(files.length, libre);
+  toast('Procesando foto' + (toAdd > 1 ? 's…' : '…'));
+  for (let i = 0; i < toAdd; i++) {
+    const dataUrl = await compressImage(files[i]);
+    const id = (typeof crypto !== 'undefined' && crypto.randomUUID)
+      ? crypto.randomUUID() : `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+    APP.tempFotos.push({ id, dataUrl });
+  }
+  renderFotosEnSheet(APP.tempFotos, true);
+  document.getElementById('foto-input').value = '';
+}
+
+function renderFotosEnSheet(fotos, editable = false) {
+  const lista = document.getElementById('r-fotos-list');
+  if (!lista) return;
+  lista.innerHTML = '';
+  fotos.forEach(({ id, dataUrl }) => {
+    const wrap = document.createElement('div');
+    wrap.className = 'foto-thumb-wrap';
+    wrap.innerHTML = `
+      <img class="foto-thumb" src="${dataUrl}" alt="Foto predio">
+      ${editable ? `<button class="foto-del" onclick="eliminarFotoTemp('${id}')" title="Eliminar">✕</button>` : ''}
+    `;
+    lista.appendChild(wrap);
+  });
+}
+
+function eliminarFotoTemp(id) {
+  APP.tempFotos = APP.tempFotos.filter(f => f.id !== id);
+  renderFotosEnSheet(APP.tempFotos, true);
+}
+
+async function cargarFotosEnSheet(imagenIds) {
+  const lista = document.getElementById('r-fotos-list');
+  if (!lista || !imagenIds || !imagenIds.length) return;
+  lista.innerHTML = '<div style="font-size:12px;color:var(--muted);padding:4px 0;">Cargando fotos…</div>';
+  const fotos = [];
+  for (const id of imagenIds) {
+    const dataUrl = await IDB.get(id);
+    if (dataUrl) fotos.push({ id, dataUrl });
+  }
+  lista.innerHTML = '';
+  fotos.forEach(({ id, dataUrl }) => {
+    const wrap = document.createElement('div');
+    wrap.className = 'foto-thumb-wrap';
+    wrap.innerHTML = `<img class="foto-thumb" src="${dataUrl}" alt="Foto predio">`;
+    lista.appendChild(wrap);
+  });
+}
+
+// ============================================================
+// EXPORTAR PDF
+// ============================================================
+async function exportarPDF(prospectoId) {
+  const p = APP.prospectos.find(x => x.id === prospectoId);
+  if (!p) { toast('No se encontró la cabida'); return; }
+  if (!window.jspdf) { toast('PDF no disponible — necesitas conexión para cargarlo la primera vez'); return; }
+
+  toast('Generando PDF…');
+
+  try {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
+
+    const PW = 210, PH = 297, M = 15;
+    const CW = PW - M * 2;
+
+    // Colores
+    const C_ACCENT = [79,  82,  119];
+    const C_PEACH  = [254, 190, 152];
+    const C_TEXTO  = [45,  47,  74];
+    const C_MUTED  = [148, 150, 180];
+    const C_BG     = [250, 247, 244];
+    const C_BORDE  = [232, 226, 218];
+
+    let y = 0;
+
+    // ── Helpers ───────────────────────────────────────────────
+    const fechaStr = new Date(p.fecha).toLocaleDateString('es-CL', { day:'2-digit', month:'long', year:'numeric' });
+
+    function drawHeader(title) {
+      doc.setFillColor(...C_ACCENT);
+      doc.rect(0, 0, PW, 22, 'F');
+      doc.setTextColor(255, 255, 255);
+      doc.setFontSize(14); doc.setFont('helvetica', 'bold');
+      doc.text('AiCabida', M, 14);
+      doc.setFontSize(8.5); doc.setFont('helvetica', 'normal');
+      doc.text(title, M + 28, 14);
+      doc.text(fechaStr, PW - M, 14, { align: 'right' });
+      y = 30;
+    }
+
+    function drawFooter() {
+      doc.setFillColor(...C_BG);
+      doc.rect(0, PH - 12, PW, 12, 'F');
+      doc.setFontSize(6.5); doc.setFont('helvetica', 'normal'); doc.setTextColor(...C_MUTED);
+      doc.text('Datos referenciales — verificar en la DOM municipal antes de tomar decisiones.', PW / 2, PH - 6, { align: 'center' });
+      doc.text(`Generado con AiCabida · ${fechaStr}`, PW / 2, PH - 2, { align: 'center' });
+    }
+
+    function sectionTitle(txt) {
+      doc.setFontSize(7); doc.setFont('helvetica', 'bold'); doc.setTextColor(...C_MUTED);
+      doc.text(txt.toUpperCase(), M, y);
+      y += 5.5;
+    }
+
+    function dataRow(lbl, val) {
+      if (val === null || val === undefined || val === '—') return;
+      if (y > PH - 24) { doc.addPage(); drawHeader('Informe de Cabida (continuación)'); drawFooter(); }
+      doc.setFontSize(9); doc.setFont('helvetica', 'normal'); doc.setTextColor(...C_TEXTO);
+      doc.text(String(lbl), M, y);
+      doc.setFont('helvetica', 'bold');
+      doc.text(String(val), PW - M, y, { align: 'right' });
+      y += 5.5;
+    }
+
+    function divider() {
+      doc.setDrawColor(...C_BORDE); doc.setLineWidth(0.25);
+      doc.line(M, y, PW - M, y);
+      y += 6;
+    }
+
+    // ── Página 1 ──────────────────────────────────────────────
+    drawHeader('Informe de Cabida Urbanística');
+    drawFooter();
+
+    // Zona title
+    doc.setTextColor(...C_TEXTO);
+    doc.setFontSize(22); doc.setFont('helvetica', 'bold');
+    doc.text(p.zona || '—', M, y);
+    y += 7;
+    doc.setFontSize(10); doc.setFont('helvetica', 'normal'); doc.setTextColor(...C_MUTED);
+    const nombreLine = (p.nombre_zona && p.nombre_zona !== '—' ? p.nombre_zona + ' · ' : '') + p.comuna;
+    doc.text(nombreLine, M, y);
+    y += 10;
+    divider();
+
+    // KPI boxes (4 cajas)
+    const sc   = p.resultados.sup_construible;
+    const altStr = p.normas.pisos  ? `${p.normas.pisos} pisos`
+                 : p.normas.metros ? `${p.normas.metros} m` : '—';
+    const kpis = [
+      { lbl: 'Sup. construible', val: sc ? sc.toLocaleString('es-CL') + ' m²' : '—', peach: true },
+      { lbl: 'Altura máx.',      val: altStr },
+      { lbl: 'CC',               val: p.normas.CC  != null ? String(p.normas.CC)  : '—' },
+      { lbl: 'COS',              val: p.normas.COS != null ? String(p.normas.COS) : '—' },
+    ];
+    const bW = (CW - 9) / 4;
+    kpis.forEach((k, i) => {
+      const bX = M + i * (bW + 3);
+      doc.setFillColor(...(k.peach ? C_PEACH : C_BG));
+      doc.roundedRect(bX, y, bW, 19, 2, 2, 'F');
+      doc.setFontSize(6); doc.setFont('helvetica', 'normal'); doc.setTextColor(...C_MUTED);
+      doc.text(k.lbl.toUpperCase(), bX + bW / 2, y + 5.5, { align: 'center' });
+      const longVal = k.val.length > 9;
+      doc.setFontSize(longVal ? 8.5 : 11); doc.setFont('helvetica', 'bold');
+      doc.setTextColor(...(k.peach ? C_ACCENT : C_TEXTO));
+      doc.text(k.val, bX + bW / 2, y + 14, { align: 'center' });
+    });
+    y += 25; divider();
+
+    // Terreno
+    sectionTitle('Terreno trazado');
+    dataRow('Superficie del predio',      `${(p.superficie_predio || 0).toLocaleString('es-CL')} m²`);
+    dataRow('Perímetro',                  p.perimetro ? `${p.perimetro} m` : null);
+    dataRow('Frente hacia la calle',      p.frente_calle ? `${p.frente_calle} m` : null);
+    if (p.resultados.viviendas_max)
+      dataRow('Viviendas máx. estimadas', `~${p.resultados.viviendas_max} unidades`);
+    if (sc && p.resultados.viviendas_max)
+      dataRow('m² por vivienda (est.)',   `~${Math.round(sc / p.resultados.viviendas_max)} m²`);
+    y += 2; divider();
+
+    // Normas urbanísticas (re-lookup en APP.normas para tener todos los campos)
+    const zonaData = buscarNormas({ zona: p.zona, zona_code: p.zona, comuna: p.comuna });
+    const nu = zonaData ? (zonaData.normas_urbanisticas || {}) : {};
+
+    sectionTitle('Normas de edificación');
+    if (nu.coeficiente_constructibilidad != null)
+      dataRow('Coef. Constructibilidad (CC)',  String(nu.coeficiente_constructibilidad));
+    if (nu.coeficiente_ocupacion_suelo != null)
+      dataRow('Coef. Ocupación Suelo (COS)',   `${nu.coeficiente_ocupacion_suelo} (${Math.round(nu.coeficiente_ocupacion_suelo * 100)}%)`);
+    if (nu.densidad_maxima_habha != null && nu.densidad_maxima_habha !== 'N.E.')
+      dataRow('Densidad máxima',               `${nu.densidad_maxima_habha} hab/há`);
+    if (nu.frente_minimo_m != null && nu.frente_minimo_m !== 'N.E.')
+      dataRow('Frente mínimo',                 `${nu.frente_minimo_m} m`);
+    if (nu.antejardín_minimo_m != null && nu.antejardín_minimo_m !== 'N.E.')
+      dataRow('Antejardín mínimo',             `${nu.antejardín_minimo_m} m`);
+    if (nu.subdivision_minima_m2 != null && nu.subdivision_minima_m2 !== 'N.E.')
+      dataRow('Subdivisión mínima',            `${nu.subdivision_minima_m2} m²`);
+    if (nu.agrupamiento)
+      dataRow('Agrupamiento',                  nu.agrupamiento);
+    if (nu.adosamiento === true)  dataRow('Adosamiento', 'Permitido');
+    if (nu.adosamiento === false) dataRow('Adosamiento', 'No permitido');
+    if (nu.distancia_deslinde_m != null && nu.distancia_deslinde_m !== 'N.E.')
+      dataRow('Distancia al deslinde',         `${nu.distancia_deslinde_m} m`);
+    y += 2; divider();
+
+    // Usos de suelo
+    if (zonaData && zonaData.usos_permitidos && zonaData.usos_permitidos.length) {
+      sectionTitle('Usos de suelo permitidos');
+      const usosTxt = zonaData.usos_permitidos.map(u => u.trim().replace(/\.$/, '')).join(' · ');
+      doc.setFontSize(8.5); doc.setFont('helvetica', 'normal'); doc.setTextColor(...C_TEXTO);
+      const usosLines = doc.splitTextToSize(usosTxt, CW);
+      if (y + usosLines.length * 4.5 > PH - 20) { doc.addPage(); drawHeader('Informe de Cabida (continuación)'); drawFooter(); }
+      doc.text(usosLines, M, y);
+      y += usosLines.length * 4.5 + 4;
+      divider();
+    }
+
+    // Fuente PRC
+    if (zonaData && zonaData.prc_decreto) {
+      doc.setFontSize(7.5); doc.setFont('helvetica', 'italic'); doc.setTextColor(...C_MUTED);
+      doc.text(`Fuente: ${zonaData.prc_decreto}`, M, y);
+    }
+
+    // ── Páginas de fotos ──────────────────────────────────────
+    if (p.imagenIds && p.imagenIds.length > 0) {
+      doc.addPage();
+      drawHeader(`Fotos del predio — ${p.zona} ${p.comuna}`);
+      drawFooter();
+
+      const imgW = (CW - 8) / 2;
+      const imgH = Math.round(imgW * 0.75);
+      let col = 0;
+
+      for (const imgId of p.imagenIds) {
+        const dataUrl = await IDB.get(imgId);
+        if (!dataUrl) continue;
+
+        if (y + imgH > PH - 16) {
+          doc.addPage();
+          drawHeader(`Fotos del predio — ${p.zona} ${p.comuna}`);
+          drawFooter();
+          col = 0;
+        }
+        const imgX = M + col * (imgW + 8);
+        try {
+          const fmt = dataUrl.startsWith('data:image/png') ? 'PNG' : 'JPEG';
+          doc.addImage(dataUrl, fmt, imgX, y, imgW, imgH, undefined, 'FAST');
+          doc.setDrawColor(...C_BORDE); doc.setLineWidth(0.3);
+          doc.rect(imgX, y, imgW, imgH);
+        } catch(e) { console.warn('imagen no incrustada', e); }
+
+        col++;
+        if (col >= 2) { col = 0; y += imgH + 8; }
+      }
+    }
+
+    // ── Compartir o descargar ─────────────────────────────────
+    const fileName = `Cabida_${p.zona}_${p.comuna}_${new Date(p.fecha).toISOString().slice(0, 10)}.pdf`
+      .replace(/[\s/\\:*?"<>|]/g, '_');
+    const pdfBlob = doc.output('blob');
+
+    // Web Share API — permite enviar directo por WhatsApp en móvil
+    if (navigator.share) {
+      const file = new File([pdfBlob], fileName, { type: 'application/pdf' });
+      const canShare = navigator.canShare && navigator.canShare({ files: [file] });
+      if (canShare) {
+        try {
+          await navigator.share({ files: [file], title: `Cabida ${p.zona} – ${p.comuna}` });
+          return;
+        } catch(e) {
+          if (e.name === 'AbortError') return; // usuario canceló
+        }
+      }
+    }
+
+    // Fallback: descarga directa
+    const url = URL.createObjectURL(pdfBlob);
+    const a = document.createElement('a');
+    a.href = url; a.download = fileName;
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    setTimeout(() => URL.revokeObjectURL(url), 6000);
+    toast('PDF descargado');
+
+  } catch(e) {
+    console.error('Error PDF:', e);
+    toast('Error al generar el PDF');
+  }
+}
+
+async function exportarPDFActual() {
+  if (APP.viewingId) await exportarPDF(APP.viewingId);
 }
 
 // ============================================================

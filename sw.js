@@ -1,5 +1,5 @@
 // AiCabida Service Worker — Cache First strategy
-const CACHE = 'aicabida-v19';
+const CACHE = 'aicabida-v21';
 
 const PRECACHE = [
   '/',
@@ -22,6 +22,8 @@ const PRECACHE = [
   'https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js',
   // CDN: Turf
   'https://unpkg.com/@turf/turf@6/turf.min.js',
+  // CDN: jsPDF
+  'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js',
   // Fonts
   'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap'
 ];
