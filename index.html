@@ -1793,7 +1793,7 @@ function mostrarResultados(z, props, sup, per) {
   const btnAddFoto  = document.getElementById('btn-add-foto-lbl');
   if (btnGuardar)  btnGuardar.style.display  = isSaved ? 'none' : '';
   if (btnExportar) btnExportar.style.display  = isSaved ? 'flex' : 'none';
-  if (btnAddFoto)  btnAddFoto.style.display   = isSaved ? 'none' : '';
+  if (btnAddFoto)  btnAddFoto.style.display   = ''; // siempre visible (nueva o guardada)
 
   const fotosLista = document.getElementById('r-fotos-list');
   if (fotosLista) fotosLista.innerHTML = '';
@@ -2264,17 +2264,39 @@ function compressImage(file) {
 async function agregarFotos(files) {
   if (!files || !files.length) return;
   const MAX = 6;
-  const libre = MAX - APP.tempFotos.length;
-  if (libre <= 0) { toast(`Máximo ${MAX} fotos por cabida`); return; }
-  const toAdd = Math.min(files.length, libre);
-  toast('Procesando foto' + (toAdd > 1 ? 's…' : '…'));
-  for (let i = 0; i < toAdd; i++) {
-    const dataUrl = await compressImage(files[i]);
-    const id = (typeof crypto !== 'undefined' && crypto.randomUUID)
-      ? crypto.randomUUID() : `${Date.now()}-${Math.random().toString(36).slice(2)}`;
-    APP.tempFotos.push({ id, dataUrl });
+  const uid = () => (typeof crypto !== 'undefined' && crypto.randomUUID)
+    ? crypto.randomUUID() : `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+
+  if (APP.viewingId) {
+    // ── Cabida ya guardada: guardar directo en IDB y actualizar prospecto ──
+    const p = APP.prospectos.find(x => x.id === APP.viewingId);
+    if (!p) return;
+    p.imagenIds = p.imagenIds || [];
+    const libre = MAX - p.imagenIds.length;
+    if (libre <= 0) { toast(`Máximo ${MAX} fotos por cabida`); return; }
+    const toAdd = Math.min(files.length, libre);
+    toast('Guardando foto' + (toAdd > 1 ? 's…' : '…'));
+    for (let i = 0; i < toAdd; i++) {
+      const dataUrl = await compressImage(files[i]);
+      const id = uid();
+      await IDB.put(id, dataUrl);
+      p.imagenIds.push(id);
+    }
+    localStorage.setItem('prospectos', JSON.stringify(APP.prospectos));
+    await cargarFotosEnSheet(p.imagenIds);
+
+  } else {
+    // ── Cabida nueva: acumular en tempFotos hasta guardar ──
+    const libre = MAX - APP.tempFotos.length;
+    if (libre <= 0) { toast(`Máximo ${MAX} fotos por cabida`); return; }
+    const toAdd = Math.min(files.length, libre);
+    toast('Procesando foto' + (toAdd > 1 ? 's…' : '…'));
+    for (let i = 0; i < toAdd; i++) {
+      const dataUrl = await compressImage(files[i]);
+      APP.tempFotos.push({ id: uid(), dataUrl });
+    }
+    renderFotosEnSheet(APP.tempFotos, true);
   }
-  renderFotosEnSheet(APP.tempFotos, true);
   document.getElementById('foto-input').value = '';
 }
 
@@ -2300,7 +2322,8 @@ function eliminarFotoTemp(id) {
 
 async function cargarFotosEnSheet(imagenIds) {
   const lista = document.getElementById('r-fotos-list');
-  if (!lista || !imagenIds || !imagenIds.length) return;
+  if (!lista) return;
+  if (!imagenIds || !imagenIds.length) { lista.innerHTML = ''; return; }
   lista.innerHTML = '<div style="font-size:12px;color:var(--muted);padding:4px 0;">Cargando fotos…</div>';
   const fotos = [];
   for (const id of imagenIds) {
@@ -2308,12 +2331,128 @@ async function cargarFotosEnSheet(imagenIds) {
     if (dataUrl) fotos.push({ id, dataUrl });
   }
   lista.innerHTML = '';
+  // Cuando se está viendo una cabida guardada se permite borrar fotos
+  const esEditable = !!APP.viewingId;
   fotos.forEach(({ id, dataUrl }) => {
     const wrap = document.createElement('div');
     wrap.className = 'foto-thumb-wrap';
-    wrap.innerHTML = `<img class="foto-thumb" src="${dataUrl}" alt="Foto predio">`;
+    wrap.innerHTML = `
+      <img class="foto-thumb" src="${dataUrl}" alt="Foto predio">
+      ${esEditable ? `<button class="foto-del" onclick="eliminarFotoGuardada('${id}')" title="Eliminar">✕</button>` : ''}
+    `;
     lista.appendChild(wrap);
   });
+}
+
+async function eliminarFotoGuardada(fotoId) {
+  const p = APP.prospectos.find(x => x.id === APP.viewingId);
+  if (!p) return;
+  try { await IDB.delMany([fotoId]); } catch(e) { console.warn('Error borrando foto', e); }
+  p.imagenIds = (p.imagenIds || []).filter(id => id !== fotoId);
+  localStorage.setItem('prospectos', JSON.stringify(APP.prospectos));
+  await cargarFotosEnSheet(p.imagenIds);
+}
+
+// ============================================================
+// CAPTURA MAPA SATELITAL — tiles ESRI → canvas → JPEG para PDF
+// ============================================================
+async function capturarMapaSatelital(polygon) {
+  try {
+    const bbox = turf.bbox(polygon); // [minLng, minLat, maxLng, maxLat]
+    const [minLng, minLat, maxLng, maxLat] = bbox;
+
+    // Padding 35% — predio siempre queda centrado con contexto
+    const padLng = (maxLng - minLng) * 0.35 || 0.0008;
+    const padLat = (maxLat - minLat) * 0.35 || 0.0008;
+    const west  = minLng - padLng, east  = maxLng + padLng;
+    const south = minLat - padLat, north = maxLat + padLat;
+
+    const TILE_SZ = 256;
+
+    // Coordenada geo → posición flotante en la cuadrícula de tiles
+    function geoToTileF(lng, lat, z) {
+      const n = Math.pow(2, z);
+      const x = (lng + 180) / 360 * n;
+      const latRad = lat * Math.PI / 180;
+      const y = (1 - Math.log(Math.tan(latRad) + 1 / Math.cos(latRad)) / Math.PI) / 2 * n;
+      return { x, y };
+    }
+
+    // Elegir zoom para que no supere 4×3 tiles (máx ~12 requests)
+    let zoom = 17;
+    for (let z = 19; z >= 14; z--) {
+      const tl = geoToTileF(west, north, z);
+      const br = geoToTileF(east, south, z);
+      if ((Math.ceil(br.x) - Math.floor(tl.x) + 1) <= 4 &&
+          (Math.ceil(br.y) - Math.floor(tl.y) + 1) <= 3) { zoom = z; break; }
+    }
+
+    const tl = geoToTileF(west, north, zoom);
+    const br = geoToTileF(east, south, zoom);
+    const txMin = Math.floor(tl.x), txMax = Math.ceil(br.x);
+    const tyMin = Math.floor(tl.y), tyMax = Math.ceil(br.y);
+    const cols  = txMax - txMin + 1, rows = tyMax - tyMin + 1;
+
+    // Canvas de tiles combinados
+    const canvas = document.createElement('canvas');
+    canvas.width  = cols * TILE_SZ;
+    canvas.height = rows * TILE_SZ;
+    const ctx = canvas.getContext('2d');
+
+    // Cargar todos los tiles en paralelo con CORS (ESRI tiene Access-Control-Allow-Origin: *)
+    await Promise.all(
+      Array.from({ length: cols }, (_, ci) =>
+        Array.from({ length: rows }, (_, ri) =>
+          new Promise(resolve => {
+            const img = new Image();
+            img.crossOrigin = 'anonymous';
+            img.onload  = () => { ctx.drawImage(img, ci * TILE_SZ, ri * TILE_SZ); resolve(); };
+            img.onerror = () => resolve(); // tile no disponible → sigue
+            img.src = `https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/${zoom}/${tyMin + ri}/${txMin + ci}`;
+          })
+        )
+      ).flat()
+    );
+
+    // Geo → píxel en el canvas compuesto
+    function geoToPx(lng, lat) {
+      const pt = geoToTileF(lng, lat, zoom);
+      return [(pt.x - txMin) * TILE_SZ, (pt.y - tyMin) * TILE_SZ];
+    }
+
+    // Polígono encima: Peach Fuzz semitransparente
+    const coords = polygon.geometry.coordinates[0];
+    ctx.beginPath();
+    coords.forEach((c, i) => {
+      const [px, py] = geoToPx(c[0], c[1]);
+      i === 0 ? ctx.moveTo(px, py) : ctx.lineTo(px, py);
+    });
+    ctx.closePath();
+    ctx.fillStyle   = 'rgba(254,190,152,0.28)'; ctx.fill();
+    ctx.strokeStyle = '#FEBE98';
+    ctx.lineWidth   = Math.max(2.5, canvas.width / 160);
+    ctx.stroke();
+
+    // Vértices
+    coords.slice(0, -1).forEach(c => {
+      const [px, py] = geoToPx(c[0], c[1]);
+      ctx.beginPath();
+      ctx.arc(px, py, Math.max(4.5, canvas.width / 110), 0, Math.PI * 2);
+      ctx.fillStyle = '#FEBE98'; ctx.fill();
+      ctx.strokeStyle = 'white'; ctx.lineWidth = 2; ctx.stroke();
+    });
+
+    // Escalar a tamaño de salida: ancho de página - márgenes, ratio 16:9
+    const OUT_W = 580, OUT_H = 326;
+    const out = document.createElement('canvas');
+    out.width = OUT_W; out.height = OUT_H;
+    out.getContext('2d').drawImage(canvas, 0, 0, canvas.width, canvas.height, 0, 0, OUT_W, OUT_H);
+    return out.toDataURL('image/jpeg', 0.88);
+
+  } catch(e) {
+    console.warn('capturarMapaSatelital falló:', e);
+    return null;
+  }
 }
 
 // ============================================================
@@ -2327,6 +2466,11 @@ async function exportarPDF(prospectoId) {
   toast('Generando PDF…');
 
   try {
+    // Capturar mapa antes de abrir el doc (puede tardar pero queda mejor flujo)
+    toast('Generando mapa satelital…');
+    const mapImg = p.poligono ? await capturarMapaSatelital(p.poligono) : null;
+    toast('Generando PDF…');
+
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
 
@@ -2392,15 +2536,26 @@ async function exportarPDF(prospectoId) {
     drawHeader('Informe de Cabida Urbanística');
     drawFooter();
 
-    // Zona title
+    // Zona title (compacto para dejar espacio al mapa)
     doc.setTextColor(...C_TEXTO);
-    doc.setFontSize(22); doc.setFont('helvetica', 'bold');
+    doc.setFontSize(20); doc.setFont('helvetica', 'bold');
     doc.text(p.zona || '—', M, y);
-    y += 7;
-    doc.setFontSize(10); doc.setFont('helvetica', 'normal'); doc.setTextColor(...C_MUTED);
+    y += 6;
+    doc.setFontSize(9.5); doc.setFont('helvetica', 'normal'); doc.setTextColor(...C_MUTED);
     const nombreLine = (p.nombre_zona && p.nombre_zona !== '—' ? p.nombre_zona + ' · ' : '') + p.comuna;
     doc.text(nombreLine, M, y);
-    y += 10;
+    y += 7;
+
+    // ── Imagen satelital ──────────────────────────────────────
+    if (mapImg) {
+      const imgH = Math.round(CW * 326 / 580); // ratio 16:9 aprox.
+      doc.addImage(mapImg, 'JPEG', M, y, CW, imgH, undefined, 'FAST');
+      doc.setDrawColor(...C_BORDE); doc.setLineWidth(0.3);
+      doc.rect(M, y, CW, imgH);
+      y += imgH + 5;
+    } else {
+      y += 2;
+    }
     divider();
 
     // KPI boxes (4 cajas)
