@@ -2361,9 +2361,9 @@ async function capturarMapaSatelital(polygon) {
     const bbox = turf.bbox(polygon); // [minLng, minLat, maxLng, maxLat]
     const [minLng, minLat, maxLng, maxLat] = bbox;
 
-    // Padding 35% — predio siempre queda centrado con contexto
-    const padLng = (maxLng - minLng) * 0.35 || 0.0008;
-    const padLat = (maxLat - minLat) * 0.35 || 0.0008;
+    // Padding 100% — polígono ocupa ~1/3 del frame, mostrando contexto urbano
+    const padLng = (maxLng - minLng) * 1.0 || 0.002;
+    const padLat = (maxLat - minLat) * 1.0 || 0.002;
     const west  = minLng - padLng, east  = maxLng + padLng;
     const south = minLat - padLat, north = maxLat + padLat;
 
@@ -2690,19 +2690,30 @@ async function exportarPDF(prospectoId) {
     if (zonaData && zonaData.prc_decreto) {
       doc.setFontSize(7.5); doc.setFont('helvetica', 'italic'); doc.setTextColor(...C_MUTED);
       doc.text(`Fuente: ${zonaData.prc_decreto}`, M, y);
+      y += 6;
     }
 
-    // ── Páginas de fotos ──────────────────────────────────────
+    // ── Fotos del predio ─────────────────────────────────────────
+    // Si hay espacio suficiente para al menos una fila, continuar en la misma página.
+    // Si no, abrir página nueva.
     if (p.imagenIds && p.imagenIds.length > 0) {
-      doc.addPage();
-      drawHeader(`Fotos del predio — ${p.zona}, ${p.comuna}`);
-      drawFooter();
+      const imgW = (CW - 8) / 2;
+      const imgH = Math.round(imgW * 0.75);
+      const minNeeded = 14 + imgH + 14; // sectionTitle + fila + margen inferior
+
+      if (y + minNeeded > PH - 16) {
+        // No cabe: nueva página
+        doc.addPage();
+        drawHeader(`Fotos del predio — ${p.zona}, ${p.comuna}`);
+        drawFooter();
+      } else {
+        // Sí cabe: separador y continuar
+        divider();
+      }
 
       sectionTitle(`Fotos del predio (${p.imagenIds.length} imagen${p.imagenIds.length > 1 ? 'es' : ''})`);
       y += 2;
 
-      const imgW = (CW - 8) / 2;
-      const imgH = Math.round(imgW * 0.75);
       let col = 0, fotoN = 0;
 
       for (const imgId of p.imagenIds) {
@@ -2710,7 +2721,7 @@ async function exportarPDF(prospectoId) {
         if (!dataUrl) continue;
         fotoN++;
 
-        if (y + imgH + 6 > PH - 16) {
+        if (y + imgH + 14 > PH - 16) {
           doc.addPage();
           drawHeader(`Fotos del predio — ${p.zona}, ${p.comuna}`);
           drawFooter();
