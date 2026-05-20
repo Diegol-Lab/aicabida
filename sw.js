@@ -1,5 +1,5 @@
 // AiCabida Service Worker — Cache First strategy
-const CACHE = 'aicabida-v18';
+const CACHE = 'aicabida-v19';
 
 const PRECACHE = [
   '/',
@@ -50,8 +50,8 @@ self.addEventListener('activate', e => {
 self.addEventListener('fetch', e => {
   const url = new URL(e.request.url);
 
-  // Satellite tiles (Google + ESRI labels) → Network with cache fallback
-  if (url.hostname.includes('google.com') || url.hostname.includes('arcgisonline.com')) {
+  // ESRI satellite tiles → Network with cache fallback
+  if (url.hostname.includes('arcgisonline.com')) {
     e.respondWith(
       fetch(e.request)
         .then(res => {
