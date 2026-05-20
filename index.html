@@ -2420,33 +2420,89 @@ async function capturarMapaSatelital(polygon) {
       return [(pt.x - txMin) * TILE_SZ, (pt.y - tyMin) * TILE_SZ];
     }
 
-    // Polígono encima: Peach Fuzz semitransparente
+    // Polígono — alto contraste: relleno peach + halo blanco + trazo accent
     const coords = polygon.geometry.coordinates[0];
+    const lw = Math.max(3, canvas.width / 130);
+
     ctx.beginPath();
     coords.forEach((c, i) => {
       const [px, py] = geoToPx(c[0], c[1]);
       i === 0 ? ctx.moveTo(px, py) : ctx.lineTo(px, py);
     });
     ctx.closePath();
-    ctx.fillStyle   = 'rgba(254,190,152,0.28)'; ctx.fill();
-    ctx.strokeStyle = '#FEBE98';
-    ctx.lineWidth   = Math.max(2.5, canvas.width / 160);
+    // Relleno semi-transparente
+    ctx.fillStyle = 'rgba(254,190,152,0.42)';
+    ctx.fill();
+    // Halo blanco (más grueso, se dibuja primero)
+    ctx.lineWidth   = lw + 6;
+    ctx.strokeStyle = 'rgba(255,255,255,0.88)';
+    ctx.stroke();
+    // Trazo accent encima (Future Dusk, contrasta en cualquier fondo)
+    ctx.lineWidth   = lw;
+    ctx.strokeStyle = '#4F5277';
     ctx.stroke();
 
-    // Vértices
+    // Vértices: disco blanco exterior + disco accent interior
+    const vr = Math.max(5.5, canvas.width / 90);
     coords.slice(0, -1).forEach(c => {
       const [px, py] = geoToPx(c[0], c[1]);
       ctx.beginPath();
-      ctx.arc(px, py, Math.max(4.5, canvas.width / 110), 0, Math.PI * 2);
-      ctx.fillStyle = '#FEBE98'; ctx.fill();
-      ctx.strokeStyle = 'white'; ctx.lineWidth = 2; ctx.stroke();
+      ctx.arc(px, py, vr + 3, 0, Math.PI * 2);
+      ctx.fillStyle = 'white'; ctx.fill();
+      ctx.beginPath();
+      ctx.arc(px, py, vr, 0, Math.PI * 2);
+      ctx.fillStyle = '#4F5277'; ctx.fill();
     });
 
-    // Escalar a tamaño de salida: ancho de página - márgenes, ratio 16:9
+    // ── Recortar al bbox exacto → polígono siempre centrado ──────
+    const [cropX1, cropY1] = geoToPx(west, north);
+    const [cropX2, cropY2] = geoToPx(east, south);
+    const cropW = cropX2 - cropX1, cropH = cropY2 - cropY1;
+
     const OUT_W = 580, OUT_H = 326;
     const out = document.createElement('canvas');
     out.width = OUT_W; out.height = OUT_H;
-    out.getContext('2d').drawImage(canvas, 0, 0, canvas.width, canvas.height, 0, 0, OUT_W, OUT_H);
+    const octx = out.getContext('2d');
+    // Dibujar solo la región del bbox (centra el polígono)
+    octx.drawImage(canvas, cropX1, cropY1, cropW, cropH, 0, 0, OUT_W, OUT_H);
+
+    // ── Flecha norte (arriba-derecha del canvas de salida) ────────
+    const NAX = OUT_W - 28, NAY = 44, NAR = 16;
+    octx.save();
+    // "N" encima del disco
+    octx.font = 'bold 10px Arial';
+    octx.textAlign = 'center';
+    octx.textBaseline = 'bottom';
+    octx.shadowColor = 'rgba(0,0,0,0.85)';
+    octx.shadowBlur  = 3;
+    octx.fillStyle   = '#ffffff';
+    octx.fillText('N', NAX, NAY - NAR - 1);
+    octx.shadowBlur = 0;
+    // Disco de fondo oscuro
+    octx.beginPath();
+    octx.arc(NAX, NAY, NAR, 0, 2 * Math.PI);
+    octx.fillStyle = 'rgba(0,0,0,0.52)';
+    octx.fill();
+    // Mitad norte (blanca, apunta arriba)
+    octx.beginPath();
+    octx.moveTo(NAX,     NAY - NAR + 2);
+    octx.lineTo(NAX - 6, NAY + 3);
+    octx.lineTo(NAX,     NAY - 1);
+    octx.lineTo(NAX + 6, NAY + 3);
+    octx.closePath();
+    octx.fillStyle = '#ffffff';
+    octx.fill();
+    // Mitad sur (tenue)
+    octx.beginPath();
+    octx.moveTo(NAX,     NAY + NAR - 2);
+    octx.lineTo(NAX + 6, NAY - 3);
+    octx.lineTo(NAX,     NAY + 1);
+    octx.lineTo(NAX - 6, NAY - 3);
+    octx.closePath();
+    octx.fillStyle = 'rgba(255,255,255,0.38)';
+    octx.fill();
+    octx.restore();
+
     return out.toDataURL('image/jpeg', 0.88);
 
   } catch(e) {
@@ -2639,20 +2695,24 @@ async function exportarPDF(prospectoId) {
     // ── Páginas de fotos ──────────────────────────────────────
     if (p.imagenIds && p.imagenIds.length > 0) {
       doc.addPage();
-      drawHeader(`Fotos del predio — ${p.zona} ${p.comuna}`);
+      drawHeader(`Fotos del predio — ${p.zona}, ${p.comuna}`);
       drawFooter();
+
+      sectionTitle(`Fotos del predio (${p.imagenIds.length} imagen${p.imagenIds.length > 1 ? 'es' : ''})`);
+      y += 2;
 
       const imgW = (CW - 8) / 2;
       const imgH = Math.round(imgW * 0.75);
-      let col = 0;
+      let col = 0, fotoN = 0;
 
       for (const imgId of p.imagenIds) {
         const dataUrl = await IDB.get(imgId);
         if (!dataUrl) continue;
+        fotoN++;
 
-        if (y + imgH > PH - 16) {
+        if (y + imgH + 6 > PH - 16) {
           doc.addPage();
-          drawHeader(`Fotos del predio — ${p.zona} ${p.comuna}`);
+          drawHeader(`Fotos del predio — ${p.zona}, ${p.comuna}`);
           drawFooter();
           col = 0;
         }
@@ -2662,11 +2722,16 @@ async function exportarPDF(prospectoId) {
           doc.addImage(dataUrl, fmt, imgX, y, imgW, imgH, undefined, 'FAST');
           doc.setDrawColor(...C_BORDE); doc.setLineWidth(0.3);
           doc.rect(imgX, y, imgW, imgH);
+          // Numeración debajo de cada foto
+          doc.setFontSize(6.5); doc.setFont('helvetica', 'normal'); doc.setTextColor(...C_MUTED);
+          doc.text(`Foto ${fotoN}`, imgX + imgW / 2, y + imgH + 3.5, { align: 'center' });
         } catch(e) { console.warn('imagen no incrustada', e); }
 
         col++;
-        if (col >= 2) { col = 0; y += imgH + 8; }
+        if (col >= 2) { col = 0; y += imgH + 10; }
       }
+      // Avanzar y si la última fila quedó incompleta
+      if (col > 0) y += imgH + 10;
     }
 
     // ── Compartir o descargar ─────────────────────────────────
