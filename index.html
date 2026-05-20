@@ -872,6 +872,7 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
 // ============================================================
 const APP = {
   normas:       {},
+  dotacion:     {},
   geoFeatures:  [],
   cobertura:    {},
   prospectos:   [],
@@ -919,6 +920,10 @@ async function loadNormas() {
     const r = await fetch('data/normas_prc.json');
     if (r.ok) APP.normas = await r.json();
   } catch(e) { console.warn('normas no disponibles', e); }
+  try {
+    const r2 = await fetch('data/dotacion_estacionamientos.json');
+    if (r2.ok) APP.dotacion = await r2.json();
+  } catch(e) { console.warn('dotacion no disponible', e); }
 }
 
 async function loadGeoJSON() {
@@ -1537,14 +1542,27 @@ function mostrarResultados(z, props, sup, per) {
   }
   // No mostrar fila si es null (sin datos de adosamiento)
 
-  // Estacionamientos display
-  // Nota: Art. 2.4.3 OGUC fue derogado en 2021 — cada PRC fija su propia dotación.
-  function fvEstac(val, tipo) {
-    if (val === null || val === undefined) {
-      return { text: 'Ver ordenanza', cls: 'ne', title: `La ordenanza de ${comuna} no especifica dotación de estacionamientos. Consultar directamente a la DOM de ${comuna}.` };
+  // Estacionamientos: usa datos del PRC comunal (dotacion_estacionamientos.json)
+  // Art. 2.4.3 OGUC derogado en 2021 — cada PRC fija su propia dotación.
+  const dotComunal = APP.dotacion[comuna] || null;
+
+  function fvEstac(zoneVal, campo) {
+    // 1. Valor específico guardado en la zona (raramente definido)
+    if (zoneVal !== null && zoneVal !== undefined && zoneVal !== 'N.E.' && zoneVal !== 0) {
+      return typeof zoneVal === 'string'
+        ? { text: zoneVal, cls: '', title: 'Valor específico de la ordenanza para esta zona' }
+        : { text: `${zoneVal} est. por unidad`, cls: '' };
     }
-    if (val === 'N.E.' || val === 0) return { text: 'No se exige', cls: 'ne', title: 'La ordenanza no establece dotación de estacionamientos para esta zona' };
-    return { text: `${val} por ${tipo}`, cls: '' };
+    if (zoneVal === 'N.E.' || zoneVal === 0) {
+      return { text: 'No se exige', cls: 'ne', title: 'La ordenanza exime esta zona de dotación de estacionamientos' };
+    }
+    // 2. Dotación comunal del PRC
+    if (dotComunal && dotComunal[campo]) {
+      return { text: dotComunal[campo], cls: '', title: dotComunal.fuente || `PRC ${comuna}` };
+    }
+    // 3. Sin datos — consultar DOM
+    const motivo = dotComunal ? (dotComunal.nota || dotComunal.fuente) : `PRC ${comuna} — no encontrado en ordenanza`;
+    return { text: 'Ver DOM', cls: 'ne', title: motivo };
   }
   const estVivDisplay = fvEstac(estViv, 'vivienda');
   const estComDisplay = fvEstac(estCom, 'comercio');

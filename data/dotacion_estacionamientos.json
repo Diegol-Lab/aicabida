@@ -1,0 +1,56 @@
+{
+  "Bulnes": {
+    "vivienda": null,
+    "comercio": null,
+    "fuente": "PRC Bulnes — ordenanza no establece tabla de dotación específica",
+    "nota": "Consultar directamente a la DOM de Bulnes"
+  },
+  "ElCarmen": {
+    "vivienda": null,
+    "comercio": null,
+    "fuente": "PRC El Carmen, Art. 10 — remite a OGUC sin tabla propia",
+    "nota": "Consultar directamente a la DOM de El Carmen"
+  },
+  "Yungay": {
+    "vivienda": "1 est./viv. (≤100m²) · 2 est. (100–140m²) · 3 est. (>140m²)",
+    "vivienda_social": "1 cada 2 viviendas",
+    "comercio": "1 cada 30 m² (locales) · 1 cada 50 m² (grandes tiendas)",
+    "fuente": "PRC Yungay, Art. 1.2.8 — Cuadro 5"
+  },
+  "Laja": {
+    "vivienda": "1 est. por unidad (unifamiliar)",
+    "vivienda_social": "1 cada 6 unidades",
+    "vivienda_colectiva": "1 por unidad + 1 cada 20 unidades",
+    "comercio": "1 cada 50 m² (supermercado/gran tienda)",
+    "fuente": "PRC Laja, Artículo 10"
+  },
+  "Lebu": {
+    "vivienda": null,
+    "comercio": null,
+    "fuente": "PRC Lebu — ordenanza no establece tabla de dotación específica",
+    "nota": "Consultar directamente a la DOM de Lebu"
+  },
+  "Penco": {
+    "vivienda": "1 est. por unidad (conjuntos habitacionales ≥60m²)",
+    "comercio": "1 cada 30 m² de superficie útil",
+    "servicios": "1 cada 30 m² de superficie útil",
+    "salud": "1 cada 20 m² de superficie útil",
+    "educacion": "1 cada 80 alumnos",
+    "hotel": "1 cada 6 camas",
+    "productivo": "1 cada 150 m² de superficie útil",
+    "fuente": "PRC Penco, Artículo 3.17"
+  },
+  "Tome": {
+    "vivienda": "1 est. por unidad (edificio colectivo en altura)",
+    "vivienda_colectiva_extension": "1,2 por unidad (edificio colectivo en extensión, >5 unidades)",
+    "comercio": "1 cada 50 m² (supermercado/gran tienda) · 1 cada 15 m² (restaurant/discoteca)",
+    "fuente": "PRC Tomé, Artículo 12",
+    "nota": "Vivienda unifamiliar no especificada en tabla"
+  },
+  "Yumbel": {
+    "vivienda": null,
+    "comercio": "1 cada 50 m² (supermercados/centros comerciales)",
+    "fuente": "PRC Yumbel, Art. 10 — aplica solo al centro urbano Yumbel–Estación Yumbel",
+    "nota": "No establece estándar para vivienda unifamiliar"
+  }
+}

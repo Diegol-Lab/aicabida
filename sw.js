@@ -1,11 +1,12 @@
 // AiCabida Service Worker — Cache First strategy
-const CACHE = 'aicabida-v17';
+const CACHE = 'aicabida-v18';
 
 const PRECACHE = [
   '/',
   '/index.html',
   '/manifest.json',
   '/data/normas_prc.json',
+  '/data/dotacion_estacionamientos.json',
   '/data/PRC_Bulnes.geojson',
   '/data/PRC_ElCarmen.geojson',
   '/data/PRC_Laja.geojson',
