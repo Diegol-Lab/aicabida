@@ -386,6 +386,7 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
 
 /* Technical grid */
 .kpi-grid4 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 20px; }
+.kpi-grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 20px; }
 
 .kpi-sm {
   background: var(--surface); box-shadow: var(--shadow-sm);
@@ -408,6 +409,29 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
 .norm-row-val.ne      { color: var(--muted); font-size: 13px; }
 .norm-row-val.missing { color: #F97316; font-size: 13px; font-weight: 600; }
 .norm-row-val.accent  { color: var(--accent); }
+/* Valor textual — sin negrita (agrupamiento, etc.) */
+.norm-row-val.soft    { font-weight: 500; font-size: 13px; }
+
+/* Chip de agrupamiento */
+.agrup-chip {
+  font-size: 11px; font-weight: 700; padding: 4px 12px;
+  border-radius: 20px; background: var(--accent-light); color: var(--accent);
+  letter-spacing: .2px;
+}
+
+/* norm-row apilada (label arriba, valor abajo) para textos largos */
+.norm-row.stacked { flex-direction: column; align-items: flex-start; gap: 5px; }
+.norm-row.stacked .norm-row-val {
+  font-size: 12px; font-weight: 600; color: var(--texto); line-height: 1.5; text-align: left;
+}
+.norm-row.stacked .norm-row-val.ne { font-size: 12px; }
+
+/* Sub-encabezado dentro de sección dinámica */
+.normas-subhdr {
+  font-size: 10px; font-weight: 700; color: var(--muted);
+  text-transform: uppercase; letter-spacing: 0.9px;
+  margin: 16px 0 8px 2px;
+}
 .kpi-val.missing { color: #F97316 !important; font-size: 14px !important; font-weight: 700 !important; }
 .kpi-val.ne      { color: var(--muted) !important; font-size: 13px !important; }
 
@@ -770,7 +794,7 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
     <!-- Mini map -->
     <div class="mini-map-wrap"><div id="mm-result"></div></div>
 
-    <!-- Zona tag -->
+    <!-- Zona pill -->
     <div class="zona-pill">
       <div class="zona-pill-top">
         <span class="zc" id="r-zona-code">ZX</span>
@@ -781,12 +805,29 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
       <span id="r-zona-info">&mdash;</span>
     </div>
 
-    <!-- Síntesis -->
+    <!-- ① TERRENO TRAZADO — primero siempre -->
+    <div class="section-hdr">Terreno trazado</div>
+    <div class="kpi-grid3" style="margin-bottom:16px;">
+      <div class="kpi-sm">
+        <div class="kpi-lbl">Superficie</div>
+        <div class="kpi-val" id="r-sup-m2" style="font-size:15px">&mdash;</div>
+      </div>
+      <div class="kpi-sm">
+        <div class="kpi-lbl">Per&iacute;metro</div>
+        <div class="kpi-val" id="r-per" style="font-size:15px">&mdash;</div>
+      </div>
+      <div class="kpi-sm">
+        <div class="kpi-lbl">Frente calle</div>
+        <div class="kpi-val ne" id="r-frente" style="font-size:15px">&hellip;</div>
+      </div>
+    </div>
+
+    <!-- ② Síntesis textual -->
     <div id="r-sintesis-wrap" class="sintesis-wrap" style="display:none">
       <div id="r-sintesis" class="sintesis-text"></div>
     </div>
 
-    <!-- Primary KPIs -->
+    <!-- ③ KPIs principales: Sup. construible + Altura -->
     <div class="kpi-row">
       <div class="kpi-accent">
         <div class="kpi-lbl">Sup. construible</div>
@@ -800,47 +841,30 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
       </div>
     </div>
 
-    <!-- Coeficientes -->
-    <div class="section-hdr">Coeficientes</div>
-    <div class="kpi-grid4">
+    <!-- ④ Coeficientes PRC — 3 cajas: CC · COS · Densidad -->
+    <div class="section-hdr">Coeficientes PRC</div>
+    <div class="kpi-grid3" style="margin-bottom:20px;">
       <div class="kpi-sm">
-        <div class="kpi-lbl">Constructibilidad (CC)</div>
+        <div class="kpi-lbl">CC</div>
         <div class="kpi-val" id="r-cc">&mdash;</div>
       </div>
       <div class="kpi-sm">
-        <div class="kpi-lbl">Ocupaci&oacute;n suelo (COS)</div>
+        <div class="kpi-lbl">COS</div>
         <div class="kpi-val" id="r-cos">&mdash;</div>
       </div>
       <div class="kpi-sm">
-        <div class="kpi-lbl">Ocup. 1&ordm; piso</div>
-        <div class="kpi-val" id="r-ocup">&mdash;</div>
-      </div>
-      <div class="kpi-sm">
-        <div class="kpi-lbl">Densidad m&aacute;x.</div>
-        <div class="kpi-val" id="r-dens">&mdash;</div>
+        <div class="kpi-lbl">Densidad</div>
+        <div class="kpi-val" id="r-dens" style="font-size:13px">&mdash;</div>
       </div>
     </div>
 
-    <!-- Edificación -->
-    <div class="section-hdr">Normas de edificaci&oacute;n</div>
+    <!-- ⑤ Normas de edificación + estimaciones (dinámico) -->
     <div id="r-normas-extra"></div>
 
-    <!-- Usos de suelo -->
+    <!-- ⑥ Usos de suelo permitidos -->
     <div id="r-usos-section" style="display:none">
-      <div class="section-hdr">Usos de suelo permitidos</div>
+      <div class="section-hdr">Usos de suelo</div>
       <div id="r-usos-chips" class="usos-chips"></div>
-    </div>
-
-    <!-- Terreno -->
-    <div class="section-hdr">Terreno trazado</div>
-    <div class="kpi-grid4" style="margin-bottom:12px;">
-      <div class="kpi-sm"><div class="kpi-lbl">Superficie</div><div class="kpi-val" id="r-sup-m2">&mdash;</div></div>
-      <div class="kpi-sm"><div class="kpi-lbl">Per&iacute;metro</div><div class="kpi-val" id="r-per">&mdash;</div></div>
-    </div>
-    <!-- Frente hacia la calle (cargado async) -->
-    <div id="r-frente-row" class="norm-row" style="margin-bottom:18px;">
-      <span class="norm-row-lbl">Frente hacia calle</span>
-      <span class="norm-row-val ne" id="r-frente">Detectando&hellip;</span>
     </div>
 
     <!-- Fotos del predio -->
@@ -1388,8 +1412,9 @@ function calcularCabida() {
 async function detectarFrenteCalleAsync(polygon) {
   const el = document.getElementById('r-frente');
   if (!el) return;
-  el.textContent = 'Detectando…';
-  el.className = 'norm-row-val ne';
+  el.textContent = '…';
+  el.className = 'kpi-val ne';
+  el.style.fontSize = '15px';
 
   // Compute all edge lengths from polygon vertices
   const coords = polygon.geometry.coordinates[0];
@@ -1429,25 +1454,26 @@ async function detectarFrenteCalleAsync(polygon) {
 
     if (bestEdge) {
       el.textContent = `${bestEdge.len} m`;
-      el.className = 'norm-row-val';
-      el.title = `Lado más cercano a una vía detectada (OpenStreetMap) a ${Math.round(bestDist)} m`;
-      // Store for guardar
+      el.className = 'kpi-val';
+      el.style.fontSize = '15px';
+      el.title = `Lado más cercano a vía (OpenStreetMap, ${Math.round(bestDist)} m)`;
       if (APP.currentZona) APP.currentZona.frenteM = bestEdge.len;
     } else {
       throw new Error('no best edge');
     }
 
   } catch (e) {
-    // Fallback: mostrar el lado más corto (heurística — frontage suele ser el lado más angosto)
     const sorted = [...edges].filter(e => e.len >= 2).sort((a, b) => a.len - b.len);
     if (sorted.length > 0) {
       el.textContent = `~${sorted[0].len} m`;
-      el.className = 'norm-row-val';
+      el.className = 'kpi-val';
+      el.style.fontSize = '15px';
       el.title = `Estimado: lado más corto del polígono trazado (${edges.length} lados: ${edges.map(e=>e.len+'m').join(', ')})`;
       if (APP.currentZona) APP.currentZona.frenteM = sorted[0].len;
     } else {
       el.textContent = '—';
-      el.className = 'norm-row-val ne';
+      el.className = 'kpi-val ne';
+      el.style.fontSize = '15px';
     }
   }
 }
@@ -1610,85 +1636,140 @@ function mostrarResultados(z, props, sup, per) {
     if (fvCOS.title) cosEl.title = fvCOS.title; else cosEl.removeAttribute('title');
   }
 
-  document.getElementById('r-ocup').textContent = ocup ? `${ocup.toLocaleString('es-CL')} m²` : '—';
-
+  // COS — sólo decimal con % entre paréntesis (sin ocupación absoluta en grid)
   const fvDens = fv(dens, ' hab/há');
   const densEl = document.getElementById('r-dens');
-  densEl.textContent = fvDens.text;
-  densEl.className   = 'kpi-val' + (fvDens.cls ? ' ' + fvDens.cls : '');
-  if (fvDens.title) densEl.title = fvDens.title; else densEl.removeAttribute('title');
+  if (typeof dens === 'number') {
+    densEl.textContent = `${dens}`;
+    densEl.className = 'kpi-val';
+    densEl.title = `${dens} hab/há`;
+  } else {
+    densEl.textContent = fvDens.text;
+    densEl.className   = 'kpi-val' + (fvDens.cls ? ' ' + fvDens.cls : '');
+    if (fvDens.title) densEl.title = fvDens.title; else densEl.removeAttribute('title');
+  }
 
-  // Extra normas rows (dynamic)
+  // Terreno trazado (grid 3 col en HTML estático)
+  document.getElementById('r-sup-m2').textContent = `${Math.round(sup).toLocaleString('es-CL')} m²`;
+  document.getElementById('r-per').textContent    = `${per.toFixed(0)} m`;
+  // r-frente se actualiza async por detectarFrenteCalleAsync()
+
+  // ── Normas dinámicas — 3 grupos ───────────────────────────────
   const normasExtra = document.getElementById('r-normas-extra');
   normasExtra.innerHTML = '';
 
-  // Adosamiento display
-  let adosaDisplay = null;
-  if (adosa === true) {
-    adosaDisplay = { text: '✔ Permitido', cls: 'adosa-ok', title: 'La ordenanza permite adosamiento en esta zona' };
-  } else if (adosa === false) {
-    adosaDisplay = { text: '✗ No permitido', cls: 'adosa-no', title: 'La ordenanza no permite adosamiento en esta zona' };
+  // Helper: crea un <div class="section-hdr">
+  function addSubHdr(txt) {
+    const h = document.createElement('div');
+    h.className = 'section-hdr'; h.textContent = txt;
+    normasExtra.appendChild(h);
   }
-  // No mostrar fila si es null (sin datos de adosamiento)
 
-  // Estacionamientos: usa datos del PRC comunal (dotacion_estacionamientos.json)
-  // Art. 2.4.3 OGUC derogado en 2021 — cada PRC fija su propia dotación.
+  // Helper: crea una norm-row simple (label | valor)
+  function addRow(lbl, display, stacked = false) {
+    if (!display) return;
+    const d = display;
+    const div = document.createElement('div');
+    div.className = 'norm-row' + (stacked ? ' stacked' : '');
+    div.innerHTML = `<span class="norm-row-lbl">${lbl}</span>
+      <span class="norm-row-val${d.cls ? ' ' + d.cls : ''}"${d.title ? ` title="${d.title}"` : ''}>${d.text}</span>`;
+    normasExtra.appendChild(div);
+  }
+
+  // Helper: crea una norm-row con chip (para agrupamiento)
+  function addChipRow(lbl, valor) {
+    if (!valor || valor === 'N.E.' || valor === null) return;
+    const div = document.createElement('div');
+    div.className = 'norm-row';
+    div.innerHTML = `<span class="norm-row-lbl">${lbl}</span>
+      <span class="agrup-chip">${valor}</span>`;
+    normasExtra.appendChild(div);
+  }
+
+  // ── GRUPO 1: Potencial edificatorio (estimaciones) ────────────
+  const tieneEstimaciones = vivMax || ocup;
+  if (tieneEstimaciones) {
+    addSubHdr('Potencial estimado');
+    if (vivMax) {
+      addRow('Viviendas m&aacute;x.', {
+        text: `~${vivMax}`,
+        cls: 'accent',
+        title: `Estimado: ${dens} hab/há ÷ 3 hab/viv × ${(sup/10000).toFixed(3)} há`
+      });
+    }
+    if (supC && vivMax) {
+      const m2viv = Math.round(supC / vivMax);
+      addRow('m&sup2; por vivienda', {
+        text: `~${m2viv.toLocaleString('es-CL')} m²`,
+        cls: 'accent',
+        title: `${supC.toLocaleString('es-CL')} m² construibles ÷ ${vivMax} viviendas`
+      });
+    }
+    if (ocup) {
+      addRow('Ocup. 1&ordm; piso', {
+        text: `${ocup.toLocaleString('es-CL')} m²`,
+        cls: '',
+        title: `COS × superficie predio = ${cos} × ${Math.round(sup).toLocaleString('es-CL')} m²`
+      });
+    }
+  }
+
+  // ── GRUPO 2: Normas de edificación ───────────────────────────
+  // Sólo mostramos filas con dato real (no "Sin datos" para campos opcionales)
+  const hayNormasEdif = frente || antej || subdiv || agrup || adosa !== null || rasante || dist;
+  if (hayNormasEdif) {
+    addSubHdr('Normas de edificación');
+
+    // Agrupamiento → chip, no negrita
+    if (agrup && agrup !== 'N.E.') addChipRow('Agrupamiento', agrup);
+
+    // Adosamiento → colores semafórico
+    if (adosa === true) {
+      addRow('Adosamiento', { text: '✔ Permitido', cls: 'adosa-ok', title: 'La ordenanza permite adosamiento en esta zona' });
+    } else if (adosa === false) {
+      addRow('Adosamiento', { text: '✗ No permitido', cls: 'adosa-no', title: 'La ordenanza no permite adosamiento en esta zona' });
+    }
+
+    if (frente  && frente  !== 'N.E.') addRow('Frente m&iacute;nimo', fv(frente,  ' m'));
+    if (antej   && antej   !== 'N.E.') addRow('Antejard&iacute;n',   fv(antej,   ' m'));
+    if (subdiv  && subdiv  !== 'N.E.') addRow('Subdiv. m&iacute;n.', fv(subdiv,  ' m²'));
+    if (rasante && rasante !== 'N.E.') addRow('Rasante',             fv(rasante, '°'));
+    if (dist    && dist    !== 'N.E.') addRow('Dist. deslinde',      fv(dist,    ' m'));
+  }
+
+  // ── GRUPO 3: Estacionamientos ────────────────────────────────
   const dotComunal = APP.dotacion[comuna] || null;
 
   function fvEstac(zoneVal, campo) {
-    // 1. Valor específico guardado en la zona (raramente definido)
     if (zoneVal !== null && zoneVal !== undefined && zoneVal !== 'N.E.' && zoneVal !== 0) {
       return typeof zoneVal === 'string'
-        ? { text: zoneVal, cls: '', title: 'Valor específico de la ordenanza para esta zona' }
-        : { text: `${zoneVal} est. por unidad`, cls: '' };
+        ? { text: zoneVal, title: 'Valor específico de la ordenanza para esta zona' }
+        : { text: `${zoneVal} est. por unidad` };
     }
-    if (zoneVal === 'N.E.' || zoneVal === 0) {
-      return { text: 'No se exige', cls: 'ne', title: 'La ordenanza exime esta zona de dotación de estacionamientos' };
-    }
-    // 2. Dotación comunal del PRC
-    if (dotComunal && dotComunal[campo]) {
-      return { text: dotComunal[campo], cls: '', title: dotComunal.fuente || `PRC ${comuna}` };
-    }
-    // 3. Sin datos — consultar DOM
-    const motivo = dotComunal ? (dotComunal.nota || dotComunal.fuente) : `PRC ${comuna} — no encontrado en ordenanza`;
-    return { text: 'Ver DOM', cls: 'ne', title: motivo };
-  }
-  const estVivDisplay = fvEstac(estViv, 'vivienda');
-  const estComDisplay = fvEstac(estCom, 'comercio');
-
-  // m² por vivienda (si hay densidad y CC)
-  let m2VivDisplay = null;
-  if (supC && vivMax && vivMax > 0) {
-    const m2viv = Math.round(supC / vivMax);
-    m2VivDisplay = { text: `~${m2viv.toLocaleString('es-CL')} m²/viv`, cls: 'accent', title: `Superficie construible total ÷ viviendas estimadas (${supC.toLocaleString('es-CL')} m² ÷ ${vivMax})` };
+    if (zoneVal === 'N.E.' || zoneVal === 0)
+      return { text: 'No se exige', cls: 'ne', title: 'La ordenanza exime esta zona de dotación' };
+    if (dotComunal && dotComunal[campo])
+      return { text: dotComunal[campo], title: dotComunal.fuente || `PRC ${comuna}` };
+    const motivo = dotComunal ? (dotComunal.nota || dotComunal.fuente) : `PRC ${comuna} — consultar DOM`;
+    return { text: 'Consultar DOM', cls: 'ne', title: motivo };
   }
 
-  const rows = [
-    { lbl: 'Viviendas m&aacute;x.',   display: vivMax ? { text: `~${vivMax}`, cls: 'accent', title: `Estimado: ${dens} hab/há ÷ 3 × ${(sup/10000).toFixed(3)} há` } : null },
-    { lbl: 'm² por vivienda',         display: m2VivDisplay },
-    { lbl: 'Agrupamiento',            display: fv(agrup) },
-    { lbl: 'Adosamiento',             display: adosaDisplay },
-    { lbl: 'Frente m&iacute;nimo',    display: fv(frente,  ' m') },
-    { lbl: 'Antejard&iacute;n',       display: fv(antej,   ' m') },
-    { lbl: 'Subdiv. m&iacute;n.',     display: fv(subdiv,  ' m²') },
-    { lbl: 'Rasante',                 display: fv(rasante, '°')  },
-    { lbl: 'Dist. deslinde',          display: fv(dist,    ' m') },
-    { lbl: 'Estac. vivienda',         display: /habitacional|vivienda|residencial/i.test(usosStr) || usosList.length === 0 ? estVivDisplay : null },
-    { lbl: 'Estac. comercio',         display: /comercio|servicio|oficina|restaurant|hotel|industria/i.test(usosStr) ? estComDisplay : null },
-  ];
+  const mostrarEstacViv = /habitacional|vivienda|residencial/i.test(usosStr) || usosList.length === 0;
+  const mostrarEstacCom = /comercio|servicio|oficina|restaurant|hotel|industria/i.test(usosStr);
 
-  rows.forEach(row => {
-    if (!row.display) return;
-    const d = row.display;
-    const div = document.createElement('div');
-    div.className = 'norm-row';
-    div.innerHTML = `<span class="norm-row-lbl">${row.lbl}</span>
-      <span class="norm-row-val${d.cls ? ' ' + d.cls : ''}"${d.title ? ` title="${d.title}"` : ''}>${d.text}</span>`;
-    normasExtra.appendChild(div);
-  });
-
-  document.getElementById('r-sup-m2').textContent = `${Math.round(sup).toLocaleString('es-CL')} m²`;
-  document.getElementById('r-per').textContent    = `${per.toFixed(0)} m`;
+  if (mostrarEstacViv || mostrarEstacCom) {
+    addSubHdr('Estacionamientos requeridos');
+    if (mostrarEstacViv) {
+      const d = fvEstac(estViv, 'vivienda');
+      const esLargo = d.text && d.text.length > 22;
+      addRow('Vivienda', d, esLargo);
+    }
+    if (mostrarEstacCom) {
+      const d = fvEstac(estCom, 'comercio');
+      const esLargo = d.text && d.text.length > 22;
+      addRow('Comercio', d, esLargo);
+    }
+  }
 
   // Usos de suelo permitidos
   const usosSection = document.getElementById('r-usos-section');
@@ -1940,7 +2021,8 @@ function verCabida(id) {
     if (frenteEl) {
       if (p.frente_calle) {
         frenteEl.textContent = `${p.frente_calle} m`;
-        frenteEl.className   = 'norm-row-val';
+        frenteEl.className   = 'kpi-val';
+        frenteEl.style.fontSize = '15px';
         frenteEl.title       = 'Valor guardado al crear esta cabida';
       } else {
         // Re-detect async for old cabidas saved without frente
