@@ -987,7 +987,7 @@ function initMap() {
   APP.map = L.map('map', {
     zoomControl: false, attributionControl: false,
     tap: true, tapTolerance: 20,
-    maxZoom: 21
+    maxZoom: 22
   }).setView([-37.2, -72.9], 8);
 
   addSatTiles(APP.map);
@@ -1951,13 +1951,15 @@ function toast(msg) {
 // TILES — ESRI World Imagery + labels overlay
 // ============================================================
 function addSatTiles(map) {
+  // Google Satellite — mayor resolución nativa en ciudades pequeñas de Chile (hasta z21)
   L.tileLayer(
-    'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
-    { maxZoom: 21, maxNativeZoom: 19, attribution: 'Tiles &copy; Esri' }
+    'https://mt{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}',
+    { subdomains: '0123', maxZoom: 22, maxNativeZoom: 21, attribution: '© Google' }
   ).addTo(map);
+  // Etiquetas ESRI encima
   L.tileLayer(
     'https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}',
-    { maxZoom: 21, maxNativeZoom: 19, opacity: 0.85, pane: 'shadowPane' }
+    { maxZoom: 22, maxNativeZoom: 19, opacity: 0.85, pane: 'shadowPane' }
   ).addTo(map);
 }
 
