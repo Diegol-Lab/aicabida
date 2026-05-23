@@ -2361,9 +2361,9 @@ async function capturarMapaSatelital(polygon) {
     const bbox = turf.bbox(polygon); // [minLng, minLat, maxLng, maxLat]
     const [minLng, minLat, maxLng, maxLat] = bbox;
 
-    // Padding 100% — polígono ocupa ~1/3 del frame, mostrando contexto urbano
-    const padLng = (maxLng - minLng) * 1.0 || 0.002;
-    const padLat = (maxLat - minLat) * 1.0 || 0.002;
+    // Padding 200% — polígono ocupa ~20% del frame, contexto de barrio completo
+    const padLng = (maxLng - minLng) * 2.0 || 0.004;
+    const padLat = (maxLat - minLat) * 2.0 || 0.004;
     const west  = minLng - padLng, east  = maxLng + padLng;
     const south = minLat - padLat, north = maxLat + padLat;
 
@@ -2378,13 +2378,13 @@ async function capturarMapaSatelital(polygon) {
       return { x, y };
     }
 
-    // Elegir zoom para que no supere 4×3 tiles (máx ~12 requests)
+    // Elegir zoom para que no supere 6×4 tiles (máx 24 requests) → más resolución
     let zoom = 17;
-    for (let z = 19; z >= 14; z--) {
+    for (let z = 19; z >= 13; z--) {
       const tl = geoToTileF(west, north, z);
       const br = geoToTileF(east, south, z);
-      if ((Math.ceil(br.x) - Math.floor(tl.x) + 1) <= 4 &&
-          (Math.ceil(br.y) - Math.floor(tl.y) + 1) <= 3) { zoom = z; break; }
+      if ((Math.ceil(br.x) - Math.floor(tl.x) + 1) <= 6 &&
+          (Math.ceil(br.y) - Math.floor(tl.y) + 1) <= 4) { zoom = z; break; }
     }
 
     const tl = geoToTileF(west, north, zoom);
@@ -2459,10 +2459,13 @@ async function capturarMapaSatelital(polygon) {
     const [cropX2, cropY2] = geoToPx(east, south);
     const cropW = cropX2 - cropX1, cropH = cropY2 - cropY1;
 
-    const OUT_W = 580, OUT_H = 326;
+    // Canvas de salida ~150 dpi en PDF (1040×585, ratio 16:9)
+    const OUT_W = 1040, OUT_H = 585;
     const out = document.createElement('canvas');
     out.width = OUT_W; out.height = OUT_H;
     const octx = out.getContext('2d');
+    octx.imageSmoothingEnabled = true;
+    octx.imageSmoothingQuality = 'high';
     // Dibujar solo la región del bbox (centra el polígono)
     octx.drawImage(canvas, cropX1, cropY1, cropW, cropH, 0, 0, OUT_W, OUT_H);
 
@@ -2503,7 +2506,7 @@ async function capturarMapaSatelital(polygon) {
     octx.fill();
     octx.restore();
 
-    return out.toDataURL('image/jpeg', 0.88);
+    return out.toDataURL('image/jpeg', 0.93);
 
   } catch(e) {
     console.warn('capturarMapaSatelital falló:', e);
