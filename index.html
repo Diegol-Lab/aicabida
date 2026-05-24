@@ -180,6 +180,99 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
 /* stat-cabidas oculto pero mantiene referencia JS */
 #stat-cabidas { display: none; }
 
+/* ── Claude text input ──────────────────────────────────── */
+.claude-wrap {
+  background: var(--surface); border-radius: 16px;
+  padding: 14px 16px; box-shadow: var(--shadow-sm); margin-bottom: 2px;
+}
+.claude-textarea {
+  width: 100%; font-size: 14px; font-family: var(--inter); color: var(--texto);
+  background: transparent; border: none; outline: none;
+  resize: none; min-height: 58px; line-height: 1.65;
+}
+.claude-textarea::placeholder { color: var(--muted); }
+.claude-footer {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--borde);
+}
+.claude-hint { font-size: 11px; color: var(--muted); flex:1; }
+.btn-claude {
+  display: flex; align-items: center; gap: 5px; padding: 7px 14px;
+  background: var(--accent); color: white; font-size: 12px; font-weight: 700;
+  border-radius: 20px; font-family: var(--inter); white-space: nowrap;
+  transition: opacity 0.15s;
+}
+.btn-claude:disabled { opacity: 0.45; }
+.brief-divider {
+  display: flex; align-items: center; gap: 10px; margin: 8px 0 4px;
+}
+.brief-divider-line { flex: 1; height: 1px; background: var(--borde); }
+.brief-divider-txt  { font-size: 11px; color: var(--muted); font-weight: 600; white-space: nowrap; }
+
+/* ── Settings modal ─────────────────────────────────────── */
+.modal-overlay {
+  position: fixed; inset: 0; z-index: 999;
+  background: rgba(42,26,16,0.55); backdrop-filter: blur(3px);
+  display: flex; align-items: flex-end;
+}
+.modal-card {
+  background: var(--surface); border-radius: 28px 28px 0 0;
+  padding: 28px 24px 40px; width: 100%; box-shadow: var(--shadow-md);
+}
+.modal-hdr {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 22px;
+}
+.modal-hdr-title { font-size: 17px; font-weight: 700; color: var(--texto); }
+.modal-close {
+  width: 30px; height: 30px; border-radius: 50%;
+  background: var(--bg); color: var(--muted); font-size: 16px;
+  display: flex; align-items: center; justify-content: center;
+}
+.modal-section-label {
+  font-size: 12px; font-weight: 700; color: var(--muted); text-transform: uppercase;
+  letter-spacing: 0.5px; margin-bottom: 5px;
+}
+.modal-hint {
+  font-size: 12px; color: var(--muted); line-height: 1.6; margin-bottom: 12px;
+}
+.modal-input {
+  width: 100%; padding: 13px 15px; font-size: 14px; font-family: var(--inter);
+  color: var(--texto); background: var(--bg); border: 1.5px solid var(--borde);
+  border-radius: 12px; outline: none; margin-bottom: 16px; letter-spacing: 1px;
+}
+.modal-input:focus { border-color: var(--accent); }
+.modal-key-status {
+  font-size: 12px; font-weight: 600; padding: 6px 10px; border-radius: 8px;
+  margin-bottom: 16px; display: none;
+}
+.modal-key-status.ok  { background: #DCFCE7; color: #15803D; }
+.modal-key-status.err { background: #FEE2E2; color: #DC2626; }
+
+/* ── OSM context section ────────────────────────────────── */
+.osm-row {
+  display: flex; align-items: flex-start; padding: 10px 0;
+  border-bottom: 1px solid var(--borde); gap: 10px;
+}
+.osm-row:last-child { border-bottom: none; }
+.osm-icon  { font-size: 17px; flex-shrink: 0; width: 26px; text-align: center; margin-top: 1px; }
+.osm-body  { flex: 1; min-width: 0; }
+.osm-cat   { font-size: 13px; font-weight: 600; color: var(--texto); display: flex; align-items: center; gap: 6px; }
+.osm-items { font-size: 12px; color: var(--muted); margin-top: 2px; line-height: 1.6; }
+.osm-dist  { font-weight: 700; color: var(--accent); }
+.osm-priority-dot {
+  width: 7px; height: 7px; border-radius: 50%; background: var(--peach); flex-shrink: 0;
+}
+.osm-none  { font-size: 12px; color: var(--muted); font-style: italic; padding: 6px 0; }
+.osm-loading {
+  font-size: 13px; color: var(--muted); padding: 12px 0;
+  display: flex; align-items: center; gap: 8px;
+}
+.osm-radio-chip {
+  font-size: 10px; font-weight: 700; color: var(--muted);
+  background: var(--bg); padding: 2px 8px; border-radius: 10px;
+}
+
 /* ============================================================
    MAPA SCREEN
 ============================================================ */
@@ -703,7 +796,25 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
     </div>
 
     <p class="tagline">¿Qué quieres construir?</p>
-    <p class="subtitle">Define tu proyecto y traza el predio para calcular la normativa al instante.</p>
+    <p class="subtitle">Describe tu proyecto o configúralo manualmente.</p>
+
+    <!-- Claude text input -->
+    <div class="claude-wrap">
+      <textarea class="claude-textarea" id="claude-input" rows="2"
+        placeholder="ej: quiero 20 dptos de 60m² para arriendo, necesito buena conectividad…"></textarea>
+      <div class="claude-footer">
+        <span class="claude-hint" id="claude-hint">✨ Análisis con IA (configura tu key en ⚙️)</span>
+        <button class="btn-claude" id="btn-analizar" onclick="analizarBrief()">
+          ✨ Analizar
+        </button>
+      </div>
+    </div>
+
+    <div class="brief-divider">
+      <div class="brief-divider-line"></div>
+      <span class="brief-divider-txt">o configura manualmente</span>
+      <div class="brief-divider-line"></div>
+    </div>
 
     <!-- Brief form -->
     <div class="brief-form">
@@ -961,6 +1072,17 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
       <div id="r-usos-chips" class="usos-chips"></div>
     </div>
 
+    <!-- ⑦ Contexto urbano OSM -->
+    <div id="r-osm-section" style="display:none">
+      <div class="section-hdr" style="display:flex;justify-content:space-between;align-items:center;">
+        Contexto urbano
+        <span class="osm-radio-chip">600 m</span>
+      </div>
+      <div id="r-osm-content">
+        <div class="osm-loading">⏳ Consultando mapa…</div>
+      </div>
+    </div>
+
     <!-- Fotos del predio -->
     <div class="section-hdr">Fotos del predio</div>
     <div class="fotos-wrap" id="r-fotos-wrap">
@@ -1123,6 +1245,7 @@ async function initApp() {
   await loadGeoJSON();
   calcularCobertura();
   updateSplash();
+  actualizarHintClaude();
   registrarSW();
 }
 
@@ -1532,6 +1655,9 @@ function calcularCabida() {
 
   // Frente hacia la calle — detección async (no bloquea la UI)
   detectarFrenteCalleAsync(APP.currentPolygon);
+
+  // Contexto urbano OSM — async, no bloquea la UI
+  cargarContextoOSM(APP.currentPolygon);
 }
 
 // ============================================================
@@ -2286,7 +2412,326 @@ function irADOM() {
   if (url) window.open(url, '_blank');
 }
 
-function openConfig() { toast('Configuración próximamente'); }
+// ============================================================
+// CONFIGURACIÓN — API KEY
+// ============================================================
+function openConfig() {
+  const modal = document.getElementById('modal-config');
+  modal.style.display = 'flex';
+  const key = localStorage.getItem('anthropic_key') || '';
+  const input = document.getElementById('cfg-api-key');
+  input.value = key ? '••••••••' + key.slice(-6) : '';
+  actualizarEstadoKey();
+}
+
+function cerrarConfig(e) {
+  if (!e || e.target === document.getElementById('modal-config'))
+    document.getElementById('modal-config').style.display = 'none';
+}
+
+function guardarApiKey() {
+  const raw = document.getElementById('cfg-api-key').value.trim();
+  if (!raw || raw.startsWith('••')) {
+    toast('Ingresa una clave válida'); return;
+  }
+  if (!raw.startsWith('sk-ant-')) {
+    mostrarEstadoKey('La clave debe comenzar con sk-ant-', false); return;
+  }
+  localStorage.setItem('anthropic_key', raw);
+  mostrarEstadoKey('✓ Clave guardada correctamente', true);
+  actualizarHintClaude();
+  setTimeout(() => cerrarConfig(), 1200);
+}
+
+function borrarApiKey() {
+  localStorage.removeItem('anthropic_key');
+  document.getElementById('cfg-api-key').value = '';
+  mostrarEstadoKey('Clave eliminada', false);
+  actualizarHintClaude();
+}
+
+function mostrarEstadoKey(msg, ok) {
+  const el = document.getElementById('cfg-key-status');
+  el.textContent = msg;
+  el.className = `modal-key-status ${ok ? 'ok' : 'err'}`;
+  el.style.display = 'block';
+}
+
+function actualizarEstadoKey() {
+  const key = localStorage.getItem('anthropic_key');
+  const el = document.getElementById('cfg-key-status');
+  if (key) {
+    el.textContent = `✓ Clave configurada (…${key.slice(-6)})`;
+    el.className = 'modal-key-status ok';
+    el.style.display = 'block';
+  } else {
+    el.style.display = 'none';
+  }
+}
+
+function actualizarHintClaude() {
+  const hint = document.getElementById('claude-hint');
+  if (!hint) return;
+  const key = localStorage.getItem('anthropic_key');
+  hint.textContent = key ? '✨ IA lista — describe tu proyecto arriba' : '✨ Configura tu key en ⚙️ para usar la IA';
+}
+
+// ============================================================
+// CLAUDE API — analizar brief en texto libre
+// ============================================================
+async function analizarBrief() {
+  const key = localStorage.getItem('anthropic_key');
+  if (!key) { openConfig(); return; }
+
+  const texto = (document.getElementById('claude-input').value || '').trim();
+  if (!texto) { toast('Escribe una descripción primero'); return; }
+
+  const btn = document.getElementById('btn-analizar');
+  btn.disabled = true; btn.textContent = '…';
+
+  const system = `Eres el asistente de AiCabida, herramienta de prospección urbana en Chile.
+El usuario describe un proyecto. Extrae los datos y responde ÚNICAMENTE con JSON válido, sin texto extra:
+{
+  "tipo": "residencial" | "comercial" | "mixto",
+  "dptos": número | null,
+  "sup_dpto": número en m² | null,
+  "locales": número | null,
+  "sup_local": número en m² | null,
+  "prioridades": array de strings de ["transporte","educacion","salud","comercio","recreacion"],
+  "nota": "observación breve útil para el arquitecto"
+}`;
+
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'x-api-key':  key,
+        'anthropic-version': '2023-06-01',
+        'content-type': 'application/json',
+        'anthropic-dangerous-direct-browser-access': 'true'
+      },
+      body: JSON.stringify({
+        model: 'claude-haiku-4-5',
+        max_tokens: 350,
+        system,
+        messages: [{ role: 'user', content: texto }]
+      })
+    });
+
+    const data = await res.json();
+    if (data.error) { toast('Error Claude: ' + data.error.message); return; }
+
+    const txt = data.content[0].text;
+    const match = txt.match(/\{[\s\S]*\}/);
+    if (!match) { toast('No se pudo interpretar la respuesta'); return; }
+
+    const brief = JSON.parse(match[0]);
+    aplicarBriefDesdeIA(brief);
+
+  } catch(e) {
+    console.error('Claude error', e);
+    toast('Error al conectar con Claude');
+  } finally {
+    btn.disabled = false; btn.textContent = '✨ Analizar';
+  }
+}
+
+function aplicarBriefDesdeIA(b) {
+  // Actualizar APP.brief
+  APP.brief.tipo = b.tipo || 'residencial';
+  APP.brief.dptos     = b.dptos     || null;
+  APP.brief.sup_dpto  = b.sup_dpto  || null;
+  APP.brief.locales   = b.locales   || null;
+  APP.brief.sup_local = b.sup_local || null;
+  if (b.prioridades) APP.brief.prioridades = b.prioridades;
+
+  // Actualizar UI del formulario
+  setBriefTipo(APP.brief.tipo);
+  const set = (id, val) => { const el = document.getElementById(id); if (el && val) el.value = val; };
+
+  if (APP.brief.tipo === 'residencial') {
+    set('b-dptos', b.dptos); set('b-sup-dpto', b.sup_dpto);
+  } else if (APP.brief.tipo === 'comercial') {
+    set('b-locales', b.locales); set('b-sup-local', b.sup_local);
+  } else {
+    set('b-dptos-m', b.dptos); set('b-sup-dpto-m', b.sup_dpto);
+    set('b-locales-m', b.locales); set('b-sup-local-m', b.sup_local);
+  }
+
+  if (b.nota) {
+    const hint = document.getElementById('claude-hint');
+    if (hint) hint.textContent = `💡 ${b.nota}`;
+  }
+  toast('✅ Brief actualizado');
+}
+
+// ============================================================
+// OSM — Consulta Overpass API y muestra contexto urbano
+// ============================================================
+const OSM_CATS = {
+  transporte: {
+    label: 'Transporte',  icon: '🚌',
+    amenityTags: ['bus_station'],
+    highwayTags: ['bus_stop'],
+    railwayTags: ['station','subway_entrance','tram_stop','halt']
+  },
+  educacion: {
+    label: 'Educación',   icon: '🏫',
+    amenityTags: ['school','kindergarten','university','college']
+  },
+  salud: {
+    label: 'Salud',       icon: '🏥',
+    amenityTags: ['hospital','clinic','pharmacy','doctors','dentist','health_post']
+  },
+  comercio: {
+    label: 'Comercio',    icon: '🛒',
+    amenityTags: ['marketplace','supermarket'],
+    shopTags:   ['supermarket','mall','convenience','department_store']
+  },
+  recreacion: {
+    label: 'Recreación',  icon: '🌳',
+    leisureTags: ['park','playground','sports_centre','fitness_centre','pitch']
+  },
+  obras: {
+    label: 'En obras',    icon: '🏗️',
+    buildingTags: ['construction']
+  }
+};
+
+async function consultarOSM(lat, lng) {
+  const R = 600;
+  const q = `
+[out:json][timeout:20];
+(
+  node(around:${R},${lat},${lng})[amenity~"school|kindergarten|university|college|hospital|clinic|pharmacy|doctors|dentist|marketplace|supermarket|bus_station"];
+  node(around:${R},${lat},${lng})[highway=bus_stop];
+  node(around:${R},${lat},${lng})[railway~"station|subway_entrance|tram_stop|halt"];
+  node(around:${R},${lat},${lng})[shop~"supermarket|mall|convenience|department_store"];
+  node(around:${R},${lat},${lng})[leisure~"park|playground|sports_centre|fitness_centre|pitch"];
+  way(around:${R},${lat},${lng})[building=construction];
+  way(around:${R},${lat},${lng})[landuse=construction];
+);
+out body center;`;
+
+  const res = await fetch('https://overpass-api.de/api/interpreter', {
+    method: 'POST',
+    body: 'data=' + encodeURIComponent(q)
+  });
+  if (!res.ok) throw new Error('Overpass error ' + res.status);
+  const data = await res.json();
+  return data.elements || [];
+}
+
+function distanciaM(lat1, lng1, lat2, lng2) {
+  return Math.round(
+    turf.distance(turf.point([lng1, lat1]), turf.point([lng2, lat2]),
+      { units: 'kilometers' }) * 1000
+  );
+}
+
+function procesarOSM(elements, lat, lng) {
+  const result = {};
+  Object.keys(OSM_CATS).forEach(k => { result[k] = []; });
+
+  elements.forEach(el => {
+    const elLat = el.lat ?? el.center?.lat;
+    const elLng = el.lon ?? el.center?.lon;
+    if (elLat == null || elLng == null) return;
+    const dist = distanciaM(lat, lng, elLat, elLng);
+    const name = el.tags?.name || null;
+    const item = { name, dist };
+    const t = el.tags || {};
+
+    if (['school','kindergarten','university','college'].includes(t.amenity))
+      result.educacion.push(item);
+    else if (['hospital','clinic','pharmacy','doctors','dentist','health_post'].includes(t.amenity))
+      result.salud.push(item);
+    else if (['marketplace','supermarket'].includes(t.amenity) ||
+             ['supermarket','mall','convenience','department_store'].includes(t.shop))
+      result.comercio.push(item);
+    else if (t.highway === 'bus_stop' || t.amenity === 'bus_station' ||
+             ['station','subway_entrance','tram_stop','halt'].includes(t.railway))
+      result.transporte.push(item);
+    else if (['park','playground','sports_centre','fitness_centre','pitch'].includes(t.leisure))
+      result.recreacion.push(item);
+    else if (t.building === 'construction' || t.landuse === 'construction')
+      result.obras.push(item);
+  });
+
+  Object.values(result).forEach(arr => arr.sort((a, b) => a.dist - b.dist));
+  return result;
+}
+
+function renderOSMSection(cats) {
+  const section = document.getElementById('r-osm-section');
+  const content = document.getElementById('r-osm-content');
+  if (!section || !content) return;
+
+  const prioridades = APP.brief.prioridades ||
+    (APP.brief.tipo === 'comercial'
+      ? ['transporte','comercio','recreacion','salud','educacion']
+      : ['transporte','educacion','salud','comercio','recreacion']);
+
+  // Ordenar categorías por prioridad del brief
+  const orden = [...prioridades, 'obras'].filter(k => OSM_CATS[k]);
+
+  let html = '';
+  let hayAlgo = false;
+
+  orden.forEach(key => {
+    const cat    = OSM_CATS[key];
+    const items  = cats[key] || [];
+    const esPrio = prioridades.indexOf(key) < 3;
+
+    // Mostrar hasta 3 más cercanos
+    const top = items.slice(0, 3);
+    let itemsHtml = '';
+    if (top.length === 0) {
+      itemsHtml = `<span style="font-style:italic;color:var(--muted)">Sin equipamiento en 600 m</span>`;
+    } else {
+      hayAlgo = true;
+      itemsHtml = top.map(i =>
+        `${i.name ? i.name + ' ' : ''}<span class="osm-dist">${i.dist} m</span>`
+      ).join('  ·  ');
+    }
+
+    html += `
+      <div class="osm-row">
+        <span class="osm-icon">${cat.icon}</span>
+        <div class="osm-body">
+          <div class="osm-cat">
+            ${cat.label}
+            ${esPrio && items.length > 0 ? '<span class="osm-priority-dot" title="Prioridad del proyecto"></span>' : ''}
+            ${items.length > 0 ? `<span style="font-size:11px;color:var(--muted);font-weight:400">(${items.length})</span>` : ''}
+          </div>
+          <div class="osm-items">${itemsHtml}</div>
+        </div>
+      </div>`;
+  });
+
+  content.innerHTML = html || '<div class="osm-none">Sin datos OSM para esta zona.</div>';
+  section.style.display = '';
+}
+
+async function cargarContextoOSM(polygon) {
+  const section = document.getElementById('r-osm-section');
+  const content = document.getElementById('r-osm-content');
+  if (!section || !content) return;
+
+  section.style.display = '';
+  content.innerHTML = '<div class="osm-loading">⏳ Consultando equipamiento urbano…</div>';
+
+  try {
+    const [lng, lat] = turf.centroid(polygon).geometry.coordinates;
+    const elements = await consultarOSM(lat, lng);
+    const cats = procesarOSM(elements, lat, lng);
+    renderOSMSection(cats);
+  } catch(e) {
+    console.warn('OSM error', e);
+    content.innerHTML = '<div class="osm-none">No se pudo cargar el contexto urbano.</div>';
+    section.style.display = '';
+  }
+}
 
 function fmtFecha(iso) {
   try { return new Date(iso).toLocaleDateString('es-CL', { day:'2-digit', month:'short', year:'numeric' }); }
@@ -2963,5 +3408,31 @@ async function exportarPDFActual() {
 // ============================================================
 initApp();
 </script>
+
+<!-- ============================================================
+     MODAL: CONFIGURACIÓN
+============================================================ -->
+<div id="modal-config" class="modal-overlay" style="display:none" onclick="cerrarConfig(event)">
+  <div class="modal-card" onclick="event.stopPropagation()">
+    <div class="modal-hdr">
+      <span class="modal-hdr-title">⚙️ Configuración</span>
+      <button class="modal-close" onclick="cerrarConfig()">✕</button>
+    </div>
+
+    <p class="modal-section-label">API Key de Anthropic (Claude IA)</p>
+    <p class="modal-hint">
+      Obtén tu clave en <strong>console.anthropic.com</strong> → API Keys.<br>
+      Se guarda solo en este dispositivo, nunca sale de tu browser.
+    </p>
+    <input type="password" id="cfg-api-key" class="modal-input"
+           placeholder="sk-ant-api03-…" autocomplete="off" spellcheck="false">
+    <div class="modal-key-status" id="cfg-key-status"></div>
+    <button class="btn-primary" onclick="guardarApiKey()">Guardar clave</button>
+    <button class="btn-ghost" style="margin-top:8px;color:var(--muted);" onclick="borrarApiKey()">
+      Eliminar clave guardada
+    </button>
+  </div>
+</div>
+
 </body>
 </html>
