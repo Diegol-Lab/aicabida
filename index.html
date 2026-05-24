@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <title>AiCabida</title>
 <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#4F5277">
+<meta name="theme-color" content="#3B2314">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -31,19 +31,19 @@
    VARIABLES + RESET
 ============================================================ */
 :root {
-  --accent:       #4F5277;
-  --accent-light: rgba(79,82,119,0.10);
-  --accent-glow:  rgba(79,82,119,0.25);
+  --accent:       #3B2314;  /* Pantone 19-0915 TCX Coffee Bean */
+  --accent-light: rgba(59,35,20,0.10);
+  --accent-glow:  rgba(59,35,20,0.30);
   --peach:        #FEBE98;
   --peach-light:  rgba(254,190,152,0.20);
   --bg:           #FAF7F4;
   --bg-map:       #E4DDD6;
   --surface:      #ffffff;
-  --texto:        #2D2F4A;
-  --muted:        #9496B4;
-  --borde:        #E8E2DA;
-  --shadow-sm:    0 2px 10px rgba(45,47,74,0.07);
-  --shadow-md:    0 4px 24px rgba(45,47,74,0.10);
+  --texto:        #2A1A10;
+  --muted:        #9B8476;
+  --borde:        #EAE0D5;
+  --shadow-sm:    0 2px 10px rgba(59,35,20,0.08);
+  --shadow-md:    0 4px 24px rgba(59,35,20,0.13);
   --inter:        'Inter', sans-serif;
   --nav-h:        72px;
   --top-h:        56px;
@@ -125,29 +125,60 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
   color: var(--muted); line-height: 1.65; margin-bottom: 32px;
 }
 
-.stat-cards {
-  display: grid; grid-template-columns: repeat(3,1fr);
-  gap: 10px; margin-bottom: 36px;
+/* Brief form */
+.brief-form { display: flex; flex-direction: column; gap: 16px; margin-bottom: 28px; }
+
+.brief-label {
+  font-size: 12px; font-weight: 700; color: var(--muted);
+  text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 4px;
 }
 
-.stat-card {
-  background: var(--surface); box-shadow: var(--shadow-sm);
-  border-radius: 16px; padding: 18px 8px; text-align: center;
+.brief-chips { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.brief-chip {
+  padding: 9px 16px; border-radius: 24px; font-size: 14px; font-weight: 600;
+  border: 1.5px solid var(--borde); background: var(--surface); color: var(--muted);
+  font-family: var(--inter); transition: all 0.15s; cursor: pointer;
+}
+.brief-chip.active {
+  background: var(--accent); color: white; border-color: var(--accent);
+  box-shadow: 0 3px 12px var(--accent-glow);
 }
 
-.stat-num {
-  display: block; font-family: var(--inter); font-size: 24px; font-weight: 800;
-  color: var(--texto); line-height: 1;
-}
-.stat-num.accent { color: var(--accent); }
+.brief-panel { display: flex; flex-direction: column; gap: 10px; }
 
-.stat-label {
-  display: block; font-size: 11px; color: var(--muted);
-  margin-top: 5px; font-weight: 600;
-  text-transform: uppercase; letter-spacing: 0.5px;
+.brief-row {
+  display: flex; align-items: center; justify-content: space-between;
+  background: var(--surface); border-radius: 12px; padding: 12px 14px;
+  box-shadow: var(--shadow-sm);
 }
+.brief-row-label { font-size: 14px; font-weight: 500; color: var(--texto); }
+
+.brief-input-unit { display: flex; align-items: center; gap: 6px; }
+.brief-input-unit span { font-size: 12px; color: var(--muted); font-weight: 600; }
+
+.brief-input {
+  width: 80px; text-align: right; padding: 5px 8px; font-size: 15px; font-weight: 700;
+  font-family: var(--inter); color: var(--accent); background: var(--bg);
+  border: 1.5px solid var(--borde); border-radius: 8px;
+  outline: none; -moz-appearance: textfield;
+}
+.brief-input:focus { border-color: var(--accent); }
+.brief-input::-webkit-inner-spin-button,
+.brief-input::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+
+.brief-notes {
+  width: 100%; padding: 13px 15px; font-size: 14px; font-family: var(--inter);
+  color: var(--texto); background: var(--surface); border: 1.5px solid var(--borde);
+  border-radius: 12px; outline: none; box-shadow: var(--shadow-sm);
+}
+.brief-notes:focus { border-color: var(--accent); }
+.brief-notes::placeholder { color: var(--muted); }
 
 .splash-btns { display: flex; flex-direction: column; gap: 12px; margin-top: auto; padding-top: 8px; }
+
+/* stat-cabidas oculto pero mantiene referencia JS */
+#stat-cabidas { display: none; }
 
 /* ============================================================
    MAPA SCREEN
@@ -659,7 +690,7 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
     <!-- Logo -->
     <div class="logo-wrap">
       <svg class="logo-svg" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="60" height="60" rx="14" fill="#4F5277"/>
+        <rect width="60" height="60" rx="14" fill="#3B2314"/>
         <polygon points="12,43 11,21 30,11 48,18 49,39 30,49"
           fill="rgba(255,255,255,0.15)" stroke="white" stroke-width="2.5"
           stroke-linejoin="round" stroke-linecap="round"/>
@@ -671,27 +702,90 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
       <div class="logo-title">Ai<span>Cabida</span></div>
     </div>
 
-    <p class="tagline">Prospección urbana en terreno.</p>
-    <p class="subtitle">Traza cualquier predio y calcula su potencial constructivo al instante.</p>
+    <p class="tagline">¿Qué quieres construir?</p>
+    <p class="subtitle">Define tu proyecto y traza el predio para calcular la normativa al instante.</p>
 
-    <div class="stat-cards">
-      <div class="stat-card">
-        <span class="stat-num" id="stat-comunas">8</span>
-        <span class="stat-label">comunas</span>
+    <!-- Brief form -->
+    <div class="brief-form">
+
+      <!-- Tipo de proyecto -->
+      <div>
+        <p class="brief-label">Tipo de proyecto</p>
+        <div class="brief-chips" id="brief-tipo-chips">
+          <button class="brief-chip active" data-tipo="residencial" onclick="setBriefTipo('residencial')">🏠 Residencial</button>
+          <button class="brief-chip"        data-tipo="comercial"   onclick="setBriefTipo('comercial')">🏪 Comercial</button>
+          <button class="brief-chip"        data-tipo="mixto"       onclick="setBriefTipo('mixto')">🏢 Mixto</button>
+        </div>
       </div>
-      <div class="stat-card">
-        <span class="stat-num" id="stat-zonas">252</span>
-        <span class="stat-label">zonas PRC</span>
+
+      <!-- Panel Residencial -->
+      <div id="brief-panel-residencial" class="brief-panel">
+        <div class="brief-row">
+          <span class="brief-row-label">Departamentos</span>
+          <input class="brief-input" type="number" id="b-dptos" placeholder="ej. 20" min="1">
+        </div>
+        <div class="brief-row">
+          <span class="brief-row-label">Superficie por depto.</span>
+          <div class="brief-input-unit">
+            <input class="brief-input" type="number" id="b-sup-dpto" placeholder="ej. 60" min="10">
+            <span>m²</span>
+          </div>
+        </div>
       </div>
-      <div class="stat-card">
-        <span class="stat-num accent" id="stat-cabidas">0</span>
-        <span class="stat-label">cabidas</span>
+
+      <!-- Panel Comercial -->
+      <div id="brief-panel-comercial" class="brief-panel" style="display:none">
+        <div class="brief-row">
+          <span class="brief-row-label">Locales</span>
+          <input class="brief-input" type="number" id="b-locales" placeholder="ej. 5" min="1">
+        </div>
+        <div class="brief-row">
+          <span class="brief-row-label">Superficie por local</span>
+          <div class="brief-input-unit">
+            <input class="brief-input" type="number" id="b-sup-local" placeholder="ej. 80" min="10">
+            <span>m²</span>
+          </div>
+        </div>
       </div>
+
+      <!-- Panel Mixto -->
+      <div id="brief-panel-mixto" class="brief-panel" style="display:none">
+        <div class="brief-row">
+          <span class="brief-row-label">Departamentos</span>
+          <input class="brief-input" type="number" id="b-dptos-m" placeholder="ej. 12" min="1">
+        </div>
+        <div class="brief-row">
+          <span class="brief-row-label">Superficie por depto.</span>
+          <div class="brief-input-unit">
+            <input class="brief-input" type="number" id="b-sup-dpto-m" placeholder="ej. 55" min="10">
+            <span>m²</span>
+          </div>
+        </div>
+        <div class="brief-row">
+          <span class="brief-row-label">Locales comerciales</span>
+          <input class="brief-input" type="number" id="b-locales-m" placeholder="ej. 3" min="1">
+        </div>
+        <div class="brief-row">
+          <span class="brief-row-label">Superficie por local</span>
+          <div class="brief-input-unit">
+            <input class="brief-input" type="number" id="b-sup-local-m" placeholder="ej. 80" min="10">
+            <span>m²</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Notas -->
+      <input class="brief-notes" id="b-notas" type="text"
+             placeholder="Otras consideraciones… (opcional)">
+
     </div>
 
+    <!-- stat-cabidas oculto para compatibilidad JS -->
+    <span id="stat-cabidas" style="display:none">0</span>
+
     <div class="splash-btns">
-      <button class="btn-primary" onclick="navigate('mapa')">Explorar mapa</button>
-      <button class="btn-outline" onclick="navigate('prospectos')">Ver cabidas</button>
+      <button class="btn-primary" onclick="iniciarProspecto()">Explorar mapa →</button>
+      <button class="btn-ghost"   onclick="navigate('prospectos')">Ver cabidas guardadas</button>
     </div>
   </div>
 </div>
@@ -998,7 +1092,13 @@ const APP = {
   userHalo:        null,
   dimMarkers:      [],
   tempFotos:       [],   // fotos para la cabida en curso (antes de guardar)
-  viewingId:       null  // id del prospecto guardado que se está viendo
+  viewingId:       null, // id del prospecto guardado que se está viendo
+  brief: {               // brief del proyecto ingresado en la pantalla de inicio
+    tipo:      'residencial',
+    dptos:     null, sup_dpto:  null,
+    locales:   null, sup_local: null,
+    notas:     ''
+  }
 };
 
 const GEO_FILES = ['Bulnes','ElCarmen','Laja','Lebu','Penco','Tome','Yumbel','Yungay'];
@@ -1065,11 +1165,39 @@ function calcularCobertura() {
 }
 
 function updateSplash() {
-  const nc = Object.keys(APP.normas).length || 8;
-  const nz = Object.values(APP.normas).reduce((s,z) => s + z.length, 0) || 252;
-  document.getElementById('stat-comunas').textContent = nc;
-  document.getElementById('stat-zonas').textContent   = nz;
-  document.getElementById('stat-cabidas').textContent = APP.prospectos.length;
+  // stat-cabidas sigue oculto pero se actualiza para compatibilidad
+  const el = document.getElementById('stat-cabidas');
+  if (el) el.textContent = APP.prospectos.length;
+}
+
+// ── Brief form ────────────────────────────────────────────────
+function setBriefTipo(tipo) {
+  APP.brief.tipo = tipo;
+  document.querySelectorAll('.brief-chip').forEach(c =>
+    c.classList.toggle('active', c.dataset.tipo === tipo)
+  );
+  ['residencial', 'comercial', 'mixto'].forEach(t => {
+    const panel = document.getElementById(`brief-panel-${t}`);
+    if (panel) panel.style.display = t === tipo ? '' : 'none';
+  });
+}
+
+function iniciarProspecto() {
+  const t = APP.brief.tipo;
+  if (t === 'residencial') {
+    APP.brief.dptos    = parseInt(document.getElementById('b-dptos').value)    || null;
+    APP.brief.sup_dpto = parseInt(document.getElementById('b-sup-dpto').value) || null;
+  } else if (t === 'comercial') {
+    APP.brief.locales   = parseInt(document.getElementById('b-locales').value)   || null;
+    APP.brief.sup_local = parseInt(document.getElementById('b-sup-local').value) || null;
+  } else {
+    APP.brief.dptos     = parseInt(document.getElementById('b-dptos-m').value)    || null;
+    APP.brief.sup_dpto  = parseInt(document.getElementById('b-sup-dpto-m').value) || null;
+    APP.brief.locales   = parseInt(document.getElementById('b-locales-m').value)  || null;
+    APP.brief.sup_local = parseInt(document.getElementById('b-sup-local-m').value)|| null;
+  }
+  APP.brief.notas = (document.getElementById('b-notas').value || '').trim();
+  navigate('mapa');
 }
 
 function registrarSW() {
@@ -1140,7 +1268,7 @@ function centerOnUser() {
     }).addTo(APP.map);
     if (APP.userMarker) APP.userMarker.remove();
     APP.userMarker = L.circleMarker([lat, lng], {
-      radius: 7, color: '#4F5277', fillColor: '#FEBE98',
+      radius: 7, color: '#3B2314', fillColor: '#FEBE98',
       fillOpacity: 1, weight: 2.5, interactive: false
     }).addTo(APP.map);
   }, () => {});
@@ -1182,17 +1310,17 @@ function startDrawing() {
 
   const dotIcon = L.divIcon({
     className: '', iconSize: [32,32], iconAnchor: [16,16],
-    html: '<div style="width:28px;height:28px;border-radius:50%;background:#4F5277;border:3px solid white;box-shadow:0 2px 10px rgba(0,0,0,.30);margin:2px;"></div>'
+    html: '<div style="width:28px;height:28px;border-radius:50%;background:#3B2314;border:3px solid white;box-shadow:0 2px 10px rgba(0,0,0,.30);margin:2px;"></div>'
   });
   const smallIcon = L.divIcon({
     className: '', iconSize: [14,14], iconAnchor: [7,7],
-    html: '<div style="width:12px;height:12px;border-radius:50%;background:#4F5277;border:2px solid white;"></div>'
+    html: '<div style="width:12px;height:12px;border-radius:50%;background:#3B2314;border:2px solid white;"></div>'
   });
 
   APP.drawControl = new L.Draw.Polygon(APP.map, {
     shapeOptions: {
-      color: '#4F5277', fillColor: '#4F5277',
-      fillOpacity: 0.12, weight: 2.5
+      color: '#3B2314', fillColor: '#3B2314',
+      fillOpacity: 0.28, weight: 2.5
     },
     allowIntersection: false,
     showArea: false, showLength: false,
@@ -1792,7 +1920,7 @@ function mostrarResultados(z, props, sup, per) {
   const btnExportar = document.getElementById('btn-exportar-pdf');
   const btnAddFoto  = document.getElementById('btn-add-foto-lbl');
   if (btnGuardar)  btnGuardar.style.display  = isSaved ? 'none' : '';
-  if (btnExportar) btnExportar.style.display  = isSaved ? 'flex' : 'none';
+  if (btnExportar) btnExportar.style.display  = 'flex'; // siempre visible
   if (btnAddFoto)  btnAddFoto.style.display   = ''; // siempre visible (nueva o guardada)
 
   const fotosLista = document.getElementById('r-fotos-list');
@@ -1875,7 +2003,7 @@ function initMiniMap(containerId, key, polygon, dashed) {
   if (polygon) {
     const style = dashed
       ? { color: '#94A3B8', fillColor: '#94A3B8', fillOpacity: 0.08, weight: 2, dashArray: '6,4' }
-      : { color: '#4F5277', fillColor: '#4F5277', fillOpacity: 0.16, weight: 2.5 };
+      : { color: '#3B2314', fillColor: '#3B2314', fillOpacity: 0.28, weight: 2.5 };
     const layer = L.geoJSON(polygon, { style }).addTo(m);
     m.fitBounds(layer.getBounds(), { padding: [22, 22] });
     m.invalidateSize();
@@ -1998,7 +2126,7 @@ function verCabida(id) {
     // Draw on map
     if (APP.currentLayer) { try { APP.map.removeLayer(APP.currentLayer); } catch {} }
     APP.currentLayer = L.geoJSON(p.poligono, {
-      style: { color: '#4F5277', fillColor: '#4F5277', fillOpacity: 0.18, weight: 3 }
+      style: { color: '#3B2314', fillColor: '#3B2314', fillOpacity: 0.28, weight: 3 }
     }).addTo(APP.map);
     try { APP.map.fitBounds(APP.currentLayer.getBounds(), { padding: [50, 50], animate: true }); } catch {}
 
@@ -2060,10 +2188,7 @@ function initProspectos() {
   const comunas = [...new Set(APP.prospectos.map(p => p.comuna).filter(Boolean))];
   document.getElementById('p-comunas').textContent = comunas.join(' · ');
 
-  const total = APP.prospectos.reduce((s,p) => s + (p.resultados.sup_construible || 0), 0);
-  document.getElementById('p-total').textContent     = `${total.toLocaleString('es-CL')} m²`;
-  document.getElementById('p-total-sub').textContent = `construibles entre ${APP.prospectos.length} cabida${APP.prospectos.length !== 1 ? 's' : ''}`;
-  document.getElementById('card-total-wrap').style.display = 'block';
+  document.getElementById('card-total-wrap').style.display = 'none';
 
   APP.prospectos.forEach(p => {
     const card = document.createElement('div');
@@ -2077,13 +2202,9 @@ function initProspectos() {
         <div class="prosp-zona">${p.nombre_zona || p.zona} · ${p.comuna}</div>
         <div class="prosp-meta">${p.superficie_predio.toLocaleString('es-CL')} m² predio${viv ? ' · ~' + viv + ' viv.' : ''} · ${fmtFecha(p.fecha)}</div>
       </div>
-      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;">
-        <div class="prosp-val">${sc ? sc.toLocaleString('es-CL') : '—'}</div>
-        <div class="prosp-val-unit">m² const.</div>
-        <div style="display:flex;align-items:center;gap:5px;margin-top:2px;">
-          ${nFotos > 0 ? `<span class="foto-count-chip">📷 ${nFotos}</span>` : ''}
-          <button class="btn-prosp-pdf" onclick="event.stopPropagation(); exportarPDF('${p.id}')">PDF ↗</button>
-        </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px;">
+        ${nFotos > 0 ? `<span class="foto-count-chip">📷 ${nFotos}</span>` : ''}
+        <button class="btn-prosp-pdf" onclick="event.stopPropagation(); exportarPDF('${p.id}')">PDF ↗</button>
       </div>
       <div class="prosp-del" id="del-${p.id}">
         <button onclick="eliminarProspecto('${p.id}')">🗑</button>
@@ -2127,7 +2248,7 @@ function initProspectosMap(prospectos) {
     prospectos.forEach(p => {
       if (!p.poligono) return;
       const layer = L.geoJSON(p.poligono, {
-        style: { color: '#4F5277', fillColor: '#4F5277', fillOpacity: 0.18, weight: 2 }
+        style: { color: '#3B2314', fillColor: '#3B2314', fillOpacity: 0.28, weight: 2 }
       }).addTo(m);
       try { bounds.extend(layer.getBounds()); } catch {}
 
@@ -2135,7 +2256,7 @@ function initProspectosMap(prospectos) {
         L.marker([p.coordenadas[1], p.coordenadas[0]], {
           icon: L.divIcon({
             className: '',
-            html: `<div style="background:#4F5277;color:#fff;font-size:10px;font-weight:700;border-radius:10px;padding:2px 8px;white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,.20);">${(p.resultados.sup_construible/1000).toFixed(1)}k m²</div>`,
+            html: `<div style="background:#3B2314;color:#fff;font-size:10px;font-weight:700;border-radius:10px;padding:2px 8px;white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,.20);">${(p.resultados.sup_construible/1000).toFixed(1)}k m²</div>`,
             iconAnchor: [24, -4]
           })
         }).addTo(m);
@@ -2439,7 +2560,7 @@ async function capturarMapaSatelital(polygon) {
     ctx.stroke();
     // Trazo accent encima (Future Dusk, contrasta en cualquier fondo)
     ctx.lineWidth   = lw;
-    ctx.strokeStyle = '#4F5277';
+    ctx.strokeStyle = '#3B2314';
     ctx.stroke();
 
     // Vértices: disco blanco exterior + disco accent interior
@@ -2451,7 +2572,7 @@ async function capturarMapaSatelital(polygon) {
       ctx.fillStyle = 'white'; ctx.fill();
       ctx.beginPath();
       ctx.arc(px, py, vr, 0, Math.PI * 2);
-      ctx.fillStyle = '#4F5277'; ctx.fill();
+      ctx.fillStyle = '#3B2314'; ctx.fill();
     });
 
     // ── Recortar al bbox exacto → polígono siempre centrado ──────
@@ -2537,10 +2658,10 @@ async function exportarPDF(prospectoId) {
     const CW = PW - M * 2;
 
     // Colores
-    const C_ACCENT = [79,  82,  119];
+    const C_ACCENT = [59,  35,  20];   // Coffee Bean
     const C_PEACH  = [254, 190, 152];
-    const C_TEXTO  = [45,  47,  74];
-    const C_MUTED  = [148, 150, 180];
+    const C_TEXTO  = [42,  26,  16];
+    const C_MUTED  = [155, 132, 118];
     const C_BG     = [250, 247, 244];
     const C_BORDE  = [232, 226, 218];
 
@@ -2782,7 +2903,59 @@ async function exportarPDF(prospectoId) {
 }
 
 async function exportarPDFActual() {
-  if (APP.viewingId) await exportarPDF(APP.viewingId);
+  if (APP.viewingId) {
+    await exportarPDF(APP.viewingId);
+    return;
+  }
+  // Cabida nueva aún no guardada → construir prospecto temporal
+  if (!APP.currentPolygon || !APP.currentZona) { toast('Traza un predio primero'); return; }
+
+  const { data: z, props, supM2, perM } = APP.currentZona;
+  const n   = (z && z.normas_urbanisticas) || {};
+  const cc  = n.coeficiente_constructibilidad;
+  const cos = n.coeficiente_ocupacion_suelo;
+  const pisos  = n.altura_maxima_pisos;
+  const metros = n.altura_maxima_metros;
+  const dens   = n.densidad_maxima_habha;
+  const vivMax = (typeof dens === 'number' && dens > 0 && supM2 > 0)
+    ? Math.max(1, Math.round((dens / 3.0) * (supM2 / 10000))) : null;
+
+  // Guardar fotos en IDB temporalmente
+  const imagenIds = [];
+  for (const foto of (APP.tempFotos || [])) {
+    try { await IDB.put(foto.id, foto.dataUrl); imagenIds.push(foto.id); }
+    catch(e) { console.warn('foto temp', e); }
+  }
+
+  const tempId = `temp-${Date.now()}`;
+  const tempP = {
+    id: tempId, fecha: new Date().toISOString(),
+    coordenadas: turf.centroid(APP.currentPolygon).geometry.coordinates,
+    poligono: APP.currentPolygon,
+    superficie_predio: Math.round(supM2), perimetro: Math.round(perM),
+    frente_calle: APP.currentZona.frenteM || null,
+    comuna:      props ? props.comuna : '—',
+    zona:        props ? (props.zona_code || props.zona) : '—',
+    nombre_zona: z ? z.nombre : '—',
+    normas: { CC: cc, COS: cos, pisos, metros },
+    imagenIds,
+    resultados: {
+      sup_construible:  cc  ? Math.round(cc  * supM2) : null,
+      ocupacion_piso1:  cos ? Math.round(cos * supM2) : null,
+      altura_estimada:  pisos ? +(pisos * 2.8).toFixed(1) : metros,
+      viviendas_max:    vivMax
+    }
+  };
+
+  // Agregar temporalmente para que exportarPDF lo encuentre
+  APP.prospectos.push(tempP);
+  try {
+    await exportarPDF(tempId);
+  } finally {
+    // Limpiar: remover del array y borrar fotos temp de IDB
+    APP.prospectos = APP.prospectos.filter(p => p.id !== tempId);
+    if (imagenIds.length) IDB.delMany(imagenIds).catch(() => {});
+  }
 }
 
 // ============================================================
