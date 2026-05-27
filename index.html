@@ -677,6 +677,50 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
 .sheet-btns { display: flex; flex-direction: column; gap: 10px; padding-top: 4px; }
 
 /* ============================================================
+   ZONAS COMPATIBLES — overlay mapa
+============================================================ */
+.fab-zonas {
+  position: absolute; top: 118px; right: 12px; z-index: 500;
+  background: white; color: var(--texto);
+  border-radius: 20px; padding: 7px 13px;
+  font-size: 12px; font-weight: 600; letter-spacing: .2px;
+  box-shadow: var(--shadow-md);
+  display: flex; align-items: center; gap: 5px;
+  border: 1.5px solid var(--borde);
+  transition: background 0.2s, color 0.2s;
+}
+.fab-zonas.active { background: var(--accent); color: white; border-color: var(--accent); }
+.zonas-leyenda {
+  position: absolute; bottom: 108px; left: 12px; z-index: 500;
+  background: rgba(255,255,255,0.96); backdrop-filter: blur(6px);
+  border-radius: 12px; padding: 10px 13px;
+  box-shadow: var(--shadow-md); font-size: 11px;
+}
+.leyenda-item {
+  display: flex; align-items: center; gap: 8px;
+  padding: 3px 0; color: var(--texto); white-space: nowrap;
+}
+.leyenda-dot {
+  width: 11px; height: 11px; border-radius: 3px; flex-shrink: 0;
+}
+
+/* ============================================================
+   RESUMEN EJECUTIVO IA
+============================================================ */
+.resumen-card {
+  background: linear-gradient(135deg, var(--accent-light) 0%, var(--peach-light) 100%);
+  border: 1px solid var(--borde); border-radius: 16px;
+  padding: 16px; margin-bottom: 20px;
+}
+.resumen-loading {
+  color: var(--muted); font-size: 13px;
+  display: flex; align-items: center; gap: 8px;
+}
+.resumen-text {
+  font-size: 13.5px; line-height: 1.8; color: var(--texto);
+}
+
+/* ============================================================
    SIN DATOS SHEET
 ============================================================ */
 .sindatos-body { padding: 4px 0 40px; text-align: center; }
@@ -1027,6 +1071,23 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
   <!-- FAB: Redibujar -->
   <button class="fab-redibujar" id="btn-redibujar" onclick="reiniciarDibujo()">&#8635; Redibujar</button>
 
+  <!-- Toggle: zonas compatibles con el brief -->
+  <button class="fab-zonas" id="btn-zonas-brief" onclick="toggleZonasBrief()" title="Colorear zonas según compatibilidad con el proyecto">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="3,6 9,3 15,6 21,3 21,18 15,21 9,18 3,21"/>
+      <line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/>
+    </svg>
+    Zonas
+  </button>
+  <!-- Leyenda -->
+  <div class="zonas-leyenda" id="zonas-leyenda" style="display:none">
+    <div class="leyenda-item"><span class="leyenda-dot" style="background:#16A34A"></span>Compatible · alta constructibilidad</div>
+    <div class="leyenda-item"><span class="leyenda-dot" style="background:#84CC16"></span>Compatible · media constructibilidad</div>
+    <div class="leyenda-item"><span class="leyenda-dot" style="background:#D97706"></span>Compatible · baja constructibilidad</div>
+    <div class="leyenda-item"><span class="leyenda-dot" style="background:#DC2626"></span>Uso incompatible con el proyecto</div>
+    <div class="leyenda-item"><span class="leyenda-dot" style="background:#94A3B8"></span>Sin normas registradas</div>
+  </div>
+
   <!-- FAB: Calcular -->
   <button class="fab-calcular" id="btn-calcular" onclick="calcularCabida()">
     Listo &mdash; calcular
@@ -1174,6 +1235,14 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
       </div>
     </div>
 
+    <!-- ⑧ Resumen ejecutivo IA -->
+    <div id="r-resumen-section" style="display:none">
+      <div class="section-hdr">Resumen ejecutivo</div>
+      <div class="resumen-card">
+        <div id="r-resumen-content" class="resumen-loading">✨ Generando análisis…</div>
+      </div>
+    </div>
+
     <!-- Fotos del predio -->
     <div class="section-hdr">Fotos del predio</div>
     <div class="fotos-wrap" id="r-fotos-wrap">
@@ -1306,6 +1375,8 @@ const APP = {
   dimMarkers:      [],
   tempFotos:       [],   // fotos para la cabida en curso (antes de guardar)
   viewingId:       null, // id del prospecto guardado que se está viendo
+  zonasLayer:      null, // capa Leaflet de coloreado por brief
+  zonasVisible:    false,
   brief: {               // brief del proyecto ingresado en la pantalla de inicio
     tipo:      'residencial',
     dptos:     null, sup_dpto:  null,
@@ -1412,6 +1483,8 @@ function iniciarProspecto() {
   }
   APP.brief.notas = (document.getElementById('b-notas').value || '').trim();
   navigate('mapa');
+  // Auto-mostrar overlay de zonas compatibles al entrar al mapa
+  setTimeout(() => mostrarZonasBrief(), 450);
 }
 
 function registrarSW() {
@@ -1421,6 +1494,192 @@ function registrarSW() {
     if (!reloading) { reloading = true; window.location.reload(); }
   });
   navigator.serviceWorker.register('sw.js').catch(() => {});
+}
+
+// ============================================================
+// ZONAS COMPATIBLES — overlay coloreado según el brief
+// ============================================================
+function colorZonaBrief(normaData) {
+  // Sin normas → gris neutro
+  if (!normaData) return { color:'#94A3B8', fillColor:'#94A3B8', fillOpacity:0.09, weight:0.5, interactive:false };
+
+  const usos  = (normaData.usos_permitidos || []).join(' ').toLowerCase();
+  const cc    = (normaData.normas_urbanisticas || {}).coeficiente_constructibilidad;
+  const b     = APP.brief;
+
+  // Sin usos registrados → asumimos compatible (no filtramos por dato incompleto)
+  let compat = true;
+  if (usos) {
+    const hasResi = /habitacional|residencial|vivienda/.test(usos);
+    const hasCom  = /comercio|servicio|oficina|restaurant/.test(usos);
+    if      (b.tipo === 'residencial') compat = hasResi;
+    else if (b.tipo === 'comercial')   compat = hasCom;
+    else                               compat = hasResi || hasCom;
+  }
+
+  if (!compat)
+    return { color:'#DC2626', fillColor:'#DC2626', fillOpacity:0.20, weight:1, interactive:false };
+
+  // Compatible → tonalidad según CC
+  const ccNum = (typeof cc === 'number') ? cc : 1.0;
+  if (ccNum >= 2.0) return { color:'#16A34A', fillColor:'#16A34A', fillOpacity:0.24, weight:1, interactive:false };
+  if (ccNum >= 1.0) return { color:'#84CC16', fillColor:'#84CC16', fillOpacity:0.20, weight:1, interactive:false };
+                    return { color:'#D97706', fillColor:'#D97706', fillOpacity:0.17, weight:1, interactive:false };
+}
+
+function mostrarZonasBrief() {
+  if (!APP.map || !APP.geoFeatures.length) return;
+  if (APP.zonasLayer) { APP.map.removeLayer(APP.zonasLayer); APP.zonasLayer = null; }
+
+  APP.zonasLayer = L.geoJSON(
+    { type:'FeatureCollection', features: APP.geoFeatures },
+    { style: f => colorZonaBrief(buscarNormas(f.properties)), interactive: false }
+  ).addTo(APP.map);
+
+  APP.zonasVisible = true;
+  const btn = document.getElementById('btn-zonas-brief');
+  const ley = document.getElementById('zonas-leyenda');
+  if (btn) btn.classList.add('active');
+  if (ley) ley.style.display = '';
+}
+
+function ocultarZonasBrief() {
+  if (APP.zonasLayer) { APP.map.removeLayer(APP.zonasLayer); APP.zonasLayer = null; }
+  APP.zonasVisible = false;
+  const btn = document.getElementById('btn-zonas-brief');
+  const ley = document.getElementById('zonas-leyenda');
+  if (btn) btn.classList.remove('active');
+  if (ley) ley.style.display = 'none';
+}
+
+function toggleZonasBrief() {
+  if (APP.zonasVisible) ocultarZonasBrief();
+  else mostrarZonasBrief();
+}
+
+// ============================================================
+// RESUMEN EJECUTIVO IA — llama a Gemini/Claude con contexto completo
+// ============================================================
+async function generarResumenEjecutivo(cats) {
+  const section = document.getElementById('r-resumen-section');
+  const content = document.getElementById('r-resumen-content');
+  if (!section || !content) return;
+
+  const p    = getProvider();
+  const gKey = localStorage.getItem('gemini_key');
+  const cKey = localStorage.getItem('anthropic_key');
+  if ((p === 'gemini' && !gKey) || (p === 'claude' && !cKey)) {
+    section.style.display = 'none'; return;
+  }
+
+  section.style.display = '';
+  content.className = 'resumen-loading';
+  content.textContent = '✨ Generando análisis…';
+
+  // ── Recolectar contexto ──────────────────────────────────
+  const z     = APP.currentZona?.data;
+  const props = APP.currentZona?.props;
+  const sup   = APP.currentZona?.supM2 || 0;
+  const b     = APP.brief;
+  const n     = z?.normas_urbanisticas || {};
+
+  const cc    = n.coeficiente_constructibilidad;
+  const cos   = n.coeficiente_ocupacion_suelo;
+  const supC  = (typeof cc === 'number') ? Math.round(cc * sup) : null;
+  const zona  = props?.zona_code || props?.zona || '—';
+  const mun   = props?.comuna || '—';
+  const alt   = n.altura_maxima_pisos ? `${n.altura_maxima_pisos} pisos`
+              : n.altura_maxima_metros ? `${n.altura_maxima_metros} m` : 'S.R.';
+
+  // Descripción del programa
+  const partes = [];
+  if (b.tipo === 'residencial' && b.dptos && b.sup_dpto)
+    partes.push(`${b.dptos} departamentos de ${b.sup_dpto} m²`);
+  else if (b.tipo === 'comercial' && b.locales && b.sup_local)
+    partes.push(`${b.locales} locales comerciales de ${b.sup_local} m²`);
+  else {
+    if (b.dptos  && b.sup_dpto)   partes.push(`${b.dptos} dptos ${b.sup_dpto} m²`);
+    if (b.locales && b.sup_local) partes.push(`${b.locales} locales ${b.sup_local} m²`);
+  }
+  const briefDesc = partes.join(' + ') || `uso ${b.tipo}`;
+
+  // Estado de factibilidad
+  const req   = (b.dptos||0)*(b.sup_dpto||0) + (b.locales||0)*(b.sup_local||0);
+  const ratio = (req && supC) ? req / supC : null;
+  const factTxt = !ratio     ? 'factibilidad no calculada'
+    : ratio <= 0.85 ? `factible con margen (${Math.round(ratio*100)}% de capacidad usada)`
+    : ratio <= 1.0  ? `factible pero ajustado (${Math.round(ratio*100)}% de capacidad usada)`
+    : `excede la normativa (${Math.round(ratio*100)}% — requiere ajustar programa)`;
+
+  // Resumen OSM
+  const osmLineas = [];
+  if (cats) {
+    Object.entries(cats).forEach(([k, items]) => {
+      if (items?.length) {
+        const cat = OSM_CATS[k];
+        const nombres = items.slice(0,2).map(i => i.name || i.type).filter(Boolean);
+        osmLineas.push(`${cat.label}: ${nombres.length ? nombres.join(', ') : items.length + ' equipamientos'}`);
+      }
+    });
+  }
+
+  const prompt =
+`Redacta un párrafo técnico de 3-4 oraciones en español, estilo informe de factibilidad arquitectónica, sin markdown ni listas.
+
+PREDIO: ${Math.round(sup)} m² · zona ${zona} · ${mun}
+NORMATIVA: CC ${cc ?? 'S.D.'} · COS ${cos ?? 'S.D.'} · altura ${alt} · superficie construible: ${supC ? supC+' m²' : 'S.D.'}
+PROGRAMA PROPUESTO: ${briefDesc}
+FACTIBILIDAD: ${factTxt}
+ENTORNO URBANO (600 m): ${osmLineas.length ? osmLineas.join('; ') : 'sin datos disponibles'}
+
+Genera el párrafo resumen técnico.`;
+
+  try {
+    const txt = p === 'gemini'
+      ? await llamarGeminiRaw(prompt, gKey)
+      : await llamarClaudeRaw(prompt, cKey);
+    content.className = 'resumen-text';
+    content.textContent = txt.trim();
+  } catch(e) {
+    console.warn('Resumen IA error', e);
+    section.style.display = 'none';
+  }
+}
+
+// Variantes "raw" sin system prompt (para texto libre, no JSON)
+async function llamarGeminiRaw(texto, key) {
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${key}`;
+  const res = await fetch(url, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      contents: [{ parts: [{ text: texto }] }],
+      generationConfig: { maxOutputTokens: 280, temperature: 0.4 }
+    })
+  });
+  const data = await res.json();
+  if (data.error) throw new Error(data.error.message);
+  return data.candidates[0].content.parts[0].text;
+}
+
+async function llamarClaudeRaw(texto, key) {
+  const res = await fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: {
+      'x-api-key': key,
+      'anthropic-version': '2023-06-01',
+      'content-type': 'application/json',
+      'anthropic-dangerous-direct-browser-access': 'true'
+    },
+    body: JSON.stringify({
+      model: 'claude-haiku-4-5',
+      max_tokens: 280,
+      messages: [{ role: 'user', content: texto }]
+    })
+  });
+  const data = await res.json();
+  if (data.error) throw new Error(data.error.message);
+  return data.content[0].text;
 }
 
 // ============================================================
@@ -2250,6 +2509,10 @@ function mostrarResultados(z, props, sup, per) {
   // ── Panel de factibilidad del brief ──────────────────────────
   mostrarFactibilidad(supC, estViv, estCom, usos || []);
 
+  // ── Resetear resumen ejecutivo (se llenará async desde cargarContextoOSM) ─
+  const resumenSection = document.getElementById('r-resumen-section');
+  if (resumenSection) resumenSection.style.display = 'none';
+
   // ── Fotos + botones según si es cabida nueva o guardada ──────
   const isSaved = !!APP.viewingId;
   const btnGuardar  = document.getElementById('btn-guardar-cabida');
@@ -2989,16 +3252,20 @@ async function cargarContextoOSM(polygon) {
   section.style.display = '';
   content.innerHTML = '<div class="osm-loading">⏳ Consultando equipamiento urbano…</div>';
 
+  let cats = null;
   try {
     const [lng, lat] = turf.centroid(polygon).geometry.coordinates;
     const elements = await consultarOSM(lat, lng);
-    const cats = procesarOSM(elements, lat, lng);
+    cats = procesarOSM(elements, lat, lng);
     renderOSMSection(cats);
   } catch(e) {
     console.warn('OSM error', e);
     content.innerHTML = '<div class="osm-none">No se pudo cargar el contexto urbano.</div>';
     section.style.display = '';
   }
+
+  // Generar resumen ejecutivo con IA (incluye contexto OSM si está disponible)
+  generarResumenEjecutivo(cats);
 }
 
 function fmtFecha(iso) {
