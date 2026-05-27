@@ -625,6 +625,50 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
 }
 .sintesis-text { font-size: 13px; line-height: 1.7; color: var(--texto); }
 
+/* Factibilidad del proyecto */
+.fact-card {
+  border-radius: 16px; padding: 16px; margin-bottom: 20px;
+  border: 1.5px solid var(--borde); background: var(--surface);
+}
+.fact-card.fact-ok   { background: #F0FDF4; border-color: #22C55E; }
+.fact-card.fact-warn { background: #FFFBEB; border-color: #F59E0B; }
+.fact-card.fact-bad  { background: #FEF2F2; border-color: #EF4444; }
+.fact-status {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 13px; font-weight: 700; color: var(--texto); margin-bottom: 12px;
+}
+.fact-bar-bg {
+  background: rgba(0,0,0,0.08); border-radius: 99px;
+  height: 7px; overflow: hidden; margin-bottom: 5px;
+}
+.fact-bar-fill { height: 100%; border-radius: 99px; transition: width 0.6s ease; }
+.fact-bar-fill.ok   { background: #22C55E; }
+.fact-bar-fill.warn { background: #F59E0B; }
+.fact-bar-fill.bad  { background: #EF4444; }
+.fact-bar-fill.info { background: var(--accent); opacity: 0.35; }
+.fact-bar-labels {
+  display: flex; justify-content: space-between;
+  font-size: 10px; color: var(--muted); margin-bottom: 10px;
+}
+.fact-row {
+  display: flex; justify-content: space-between; align-items: baseline;
+  font-size: 12.5px; padding: 5px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+.fact-row:last-child { border-bottom: none; }
+.fact-row-lbl { color: var(--muted); }
+.fact-row-val { font-weight: 700; color: var(--texto); }
+.fact-compat {
+  font-size: 11.5px; color: var(--muted);
+  padding-top: 8px; margin-top: 4px;
+  border-top: 1px solid rgba(0,0,0,0.06);
+  display: flex; align-items: center; gap: 5px;
+}
+.fact-hint {
+  font-size: 11px; color: var(--muted); margin-top: 6px;
+  font-style: italic;
+}
+
 /* Adosamiento inline badge dentro de norm-row */
 .adosa-ok  { color: #276749; font-size: 13px; font-weight: 700; }
 .adosa-no  { color: var(--muted); font-size: 13px; }
@@ -1056,6 +1100,27 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
     <!-- ② Síntesis textual -->
     <div id="r-sintesis-wrap" class="sintesis-wrap" style="display:none">
       <div id="r-sintesis" class="sintesis-text"></div>
+    </div>
+
+    <!-- ② bis — Factibilidad del proyecto (visible si hay brief) -->
+    <div id="r-fact-section" style="display:none">
+      <div class="section-hdr">Factibilidad del proyecto</div>
+      <div id="r-fact-card" class="fact-card">
+        <div class="fact-status">
+          <span id="r-fact-dot">ℹ️</span>
+          <span id="r-fact-titulo">—</span>
+        </div>
+        <div id="r-fact-bar-wrap">
+          <div class="fact-bar-bg">
+            <div class="fact-bar-fill info" id="r-fact-bar" style="width:0%"></div>
+          </div>
+          <div class="fact-bar-labels">
+            <span id="r-fact-lbl-l"></span>
+            <span id="r-fact-lbl-r"></span>
+          </div>
+        </div>
+        <div id="r-fact-rows"></div>
+      </div>
     </div>
 
     <!-- ③ KPIs principales: Sup. construible + Altura -->
@@ -1759,6 +1824,122 @@ async function detectarFrenteCalleAsync(polygon) {
 }
 
 // ============================================================
+// FACTIBILIDAD DEL PROYECTO
+// Compara APP.brief contra la normativa calculada
+// ============================================================
+function mostrarFactibilidad(supC, estViv, estCom, usosList) {
+  const section = document.getElementById('r-fact-section');
+  const b = APP.brief;
+
+  // Calcular m² del programa del brief
+  let requerido = 0, unidadesLabel = '', maxUnid = null;
+
+  if (b.tipo === 'residencial' && b.dptos && b.sup_dpto) {
+    requerido = b.dptos * b.sup_dpto;
+    unidadesLabel = `${b.dptos} dptos × ${b.sup_dpto} m²`;
+    if (supC) maxUnid = { n: Math.floor(supC / b.sup_dpto), tipo: 'dptos', sup: b.sup_dpto };
+  } else if (b.tipo === 'comercial' && b.locales && b.sup_local) {
+    requerido = b.locales * b.sup_local;
+    unidadesLabel = `${b.locales} locales × ${b.sup_local} m²`;
+    if (supC) maxUnid = { n: Math.floor(supC / b.sup_local), tipo: 'locales', sup: b.sup_local };
+  } else if (b.tipo === 'mixto') {
+    const pR = (b.dptos  && b.sup_dpto)  ? b.dptos  * b.sup_dpto  : 0;
+    const pC = (b.locales && b.sup_local) ? b.locales * b.sup_local : 0;
+    requerido = pR + pC;
+    if (pR && pC) unidadesLabel = `${b.dptos} dptos + ${b.locales} locales`;
+    else if (pR)  unidadesLabel = `${b.dptos} dptos × ${b.sup_dpto} m²`;
+    else if (pC)  unidadesLabel = `${b.locales} locales × ${b.sup_local} m²`;
+  }
+
+  // Compatibilidad de uso
+  const usosStr = (usosList || []).join(' ').toLowerCase();
+  let compatIcon = '', compatMsg = '';
+  if (usosStr && b.tipo) {
+    const hasResi = /habitacional|residencial|vivienda/.test(usosStr);
+    const hasCom  = /comercio|servicio|oficina|restaurant/.test(usosStr);
+    if (b.tipo === 'residencial') {
+      compatIcon = hasResi ? '✅' : '⚠️';
+      compatMsg  = hasResi ? 'Uso residencial permitido en esta zona'
+                           : 'Esta zona no permite uso residencial';
+    } else if (b.tipo === 'comercial') {
+      compatIcon = hasCom ? '✅' : '⚠️';
+      compatMsg  = hasCom ? 'Uso comercial permitido en esta zona'
+                          : 'Esta zona no permite uso comercial';
+    } else if (b.tipo === 'mixto') {
+      if (hasResi && hasCom) { compatIcon = '✅'; compatMsg = 'Uso mixto compatible con la zona'; }
+      else if (!hasResi)     { compatIcon = '⚠️'; compatMsg = 'La zona no permite uso residencial'; }
+      else                   { compatIcon = '⚠️'; compatMsg = 'La zona no permite uso comercial'; }
+    }
+  }
+
+  // Ocultar si no hay ningún dato relevante
+  const hayAlgo = requerido > 0 || compatMsg || b.dptos || b.locales;
+  if (!hayAlgo) { section.style.display = 'none'; return; }
+  section.style.display = '';
+
+  // Determinar estado de factibilidad
+  const ratio = (requerido && supC) ? requerido / supC : null;
+  let dot, titulo, cardCls, barCls;
+
+  if (!requerido && !supC) {
+    dot = 'ℹ️'; titulo = 'Define unidades y superficies para calcular'; cardCls = ''; barCls = 'info';
+  } else if (!requerido) {
+    dot = 'ℹ️'; titulo = 'Completa el programa (cant. + tamaño) para evaluar'; cardCls = ''; barCls = 'info';
+  } else if (!supC) {
+    dot = 'ℹ️'; titulo = 'Normativa sin CC — cálculo no disponible'; cardCls = ''; barCls = 'info';
+  } else if (ratio <= 0.85) {
+    dot = '✅'; titulo = 'Factible con margen'; cardCls = 'fact-ok'; barCls = 'ok';
+  } else if (ratio <= 1.0) {
+    dot = '⚠️'; titulo = 'Factible, pero muy ajustado'; cardCls = 'fact-warn'; barCls = 'warn';
+  } else {
+    dot = '❌'; titulo = 'No cabe — excede la normativa'; cardCls = 'fact-bad'; barCls = 'bad';
+  }
+
+  document.getElementById('r-fact-card').className = `fact-card ${cardCls}`;
+  document.getElementById('r-fact-dot').textContent    = dot;
+  document.getElementById('r-fact-titulo').textContent = titulo;
+
+  // Barra de progreso
+  const pct = ratio ? Math.min(ratio * 100, 100) : 0;
+  const barEl = document.getElementById('r-fact-bar');
+  barEl.style.width    = pct + '%';
+  barEl.className      = `fact-bar-fill ${barCls}`;
+  document.getElementById('r-fact-lbl-l').textContent =
+    requerido ? `Programa: ${requerido.toLocaleString('es-CL')} m²` : '';
+  document.getElementById('r-fact-lbl-r').textContent =
+    supC      ? `Permite: ${supC.toLocaleString('es-CL')} m²` : '';
+
+  // Filas detalle
+  const rowsEl = document.getElementById('r-fact-rows');
+  rowsEl.innerHTML = '';
+  const addRow = (lbl, val) => {
+    rowsEl.insertAdjacentHTML('beforeend',
+      `<div class="fact-row">
+         <span class="fact-row-lbl">${lbl}</span>
+         <span class="fact-row-val">${val}</span>
+       </div>`);
+  };
+
+  if (unidadesLabel && requerido) addRow('Programa requerido', `${requerido.toLocaleString('es-CL')} m² (${unidadesLabel})`);
+  if (supC)                        addRow('Superficie construible', `${supC.toLocaleString('es-CL')} m²`);
+  if (maxUnid && maxUnid.n > 0)    addRow(`Máx. ${maxUnid.tipo} de ${maxUnid.sup} m²`, `~${maxUnid.n} ${maxUnid.tipo}`);
+
+  // Estacionamientos calculados
+  const nDptos   = b.dptos   || 0;
+  const nLocales = b.locales || 0;
+  const estReq =
+    (nDptos   > 0 && typeof estViv === 'number' ? nDptos   * estViv : 0) +
+    (nLocales > 0 && typeof estCom === 'number' ? nLocales * estCom : 0);
+  if (estReq > 0) addRow('Estacionamientos exigidos', `${estReq} est.`);
+
+  // Compatibilidad de uso
+  if (compatMsg) {
+    rowsEl.insertAdjacentHTML('beforeend',
+      `<div class="fact-compat">${compatIcon} ${compatMsg}</div>`);
+  }
+}
+
+// ============================================================
 // RESULTS SHEET
 // ============================================================
 function mostrarResultados(z, props, sup, per) {
@@ -2065,6 +2246,9 @@ function mostrarResultados(z, props, sup, per) {
   } else {
     usosSection.style.display = 'none';
   }
+
+  // ── Panel de factibilidad del brief ──────────────────────────
+  mostrarFactibilidad(supC, estViv, estCom, usos || []);
 
   // ── Fotos + botones según si es cabida nueva o guardada ──────
   const isSaved = !!APP.viewingId;
