@@ -31,19 +31,18 @@
    VARIABLES + RESET
 ============================================================ */
 :root {
-  --accent:       #3B2314;  /* Pantone 19-0915 TCX Coffee Bean */
-  --accent-light: rgba(59,35,20,0.10);
-  --accent-glow:  rgba(59,35,20,0.30);
-  --peach:        #FEBE98;
-  --peach-light:  rgba(254,190,152,0.20);
-  --bg:           #FAF7F4;
-  --bg-map:       #E4DDD6;
-  --surface:      #ffffff;
-  --texto:        #2A1A10;
-  --muted:        #9B8476;
-  --borde:        #EAE0D5;
-  --shadow-sm:    0 2px 10px rgba(59,35,20,0.08);
-  --shadow-md:    0 4px 24px rgba(59,35,20,0.13);
+  --accent:       #F5E400;  /* Amarillo vibrante — solo para fondos */
+  --accent-text:  #1C1C1C;  /* Texto sobre fondos amarillos */
+  --accent-light: rgba(245,228,0,0.13);
+  --accent-glow:  rgba(245,228,0,0.40);
+  --bg:           #EBEBEB;  /* Gris neutro global */
+  --bg-map:       #DEDEDE;
+  --surface:      #FFFFFF;
+  --texto:        #1C1C1C;
+  --muted:        #8A8A8A;
+  --borde:        #D4D4D4;
+  --shadow-sm:    0 2px 8px rgba(0,0,0,0.07);
+  --shadow-md:    0 4px 20px rgba(0,0,0,0.11);
   --inter:        'Inter', sans-serif;
   --nav-h:        72px;
   --top-h:        56px;
@@ -71,8 +70,8 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
 ============================================================ */
 .btn-primary {
   width: 100%; padding: 16px;
-  background: var(--accent); color: white;
-  font-family: var(--inter); font-size: 16px; font-weight: 600;
+  background: var(--accent); color: var(--accent-text);
+  font-family: var(--inter); font-size: 16px; font-weight: 700;
   border-radius: 16px; border: none; min-height: 52px;
   box-shadow: 0 4px 16px var(--accent-glow);
   transition: opacity 0.15s, transform 0.1s;
@@ -82,12 +81,12 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
 
 .btn-outline {
   width: 100%; padding: 15px;
-  background: transparent; color: var(--accent);
+  background: transparent; color: var(--texto);
   font-family: var(--inter); font-size: 16px; font-weight: 600;
-  border-radius: 16px; border: 1.5px solid var(--accent);
+  border-radius: 16px; border: 2px solid var(--texto);
   min-height: 52px; transition: all 0.15s;
 }
-.btn-outline:active { background: var(--accent-light); }
+.btn-outline:active { background: rgba(0,0,0,0.05); }
 
 .btn-ghost {
   width: 100%; padding: 14px;
@@ -106,23 +105,33 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
   display: flex; flex-direction: column; min-height: 100%;
 }
 
-.logo-wrap { display: flex; align-items: center; gap: 14px; margin-bottom: 36px; }
-.logo-svg  { width: 54px; height: 54px; flex-shrink: 0; }
+.splash-hero {
+  display: flex; justify-content: center; align-items: center;
+  margin: 0 auto 28px; width: 220px; height: 220px; flex-shrink: 0;
+}
+.hero-shape { width: 100%; height: 100%; }
+
+.logo-wrap { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+.logo-svg  { width: 48px; height: 48px; flex-shrink: 0; }
 
 .logo-title {
-  font-family: var(--inter); font-size: 30px; font-weight: 800;
-  color: var(--texto); line-height: 1;
+  font-family: var(--inter); font-size: 32px; font-weight: 900;
+  color: var(--texto); line-height: 1; letter-spacing: -0.5px;
 }
-.logo-title span { color: var(--accent); }
+.logo-title span {
+  background: var(--accent); color: var(--accent-text);
+  border-radius: 5px; padding: 0 5px;
+}
 
 .tagline {
-  font-family: var(--inter); font-size: 22px; font-weight: 800;
-  line-height: 1.25; color: var(--texto); margin-bottom: 12px;
+  font-family: var(--inter); font-size: 26px; font-weight: 900;
+  line-height: 1.18; color: var(--texto); margin-bottom: 10px;
+  letter-spacing: -0.5px;
 }
 
 .subtitle {
-  font-size: 15px; font-weight: 400;
-  color: var(--muted); line-height: 1.65; margin-bottom: 32px;
+  font-size: 14px; font-weight: 400;
+  color: var(--muted); line-height: 1.65; margin-bottom: 28px;
 }
 
 /* Brief form */
@@ -136,12 +145,12 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
 .brief-chips { display: flex; gap: 8px; flex-wrap: wrap; }
 
 .brief-chip {
-  padding: 9px 16px; border-radius: 24px; font-size: 14px; font-weight: 600;
-  border: 1.5px solid var(--borde); background: var(--surface); color: var(--muted);
+  padding: 9px 18px; border-radius: 24px; font-size: 14px; font-weight: 700;
+  border: 2px solid var(--borde); background: var(--surface); color: var(--muted);
   font-family: var(--inter); transition: all 0.15s; cursor: pointer;
 }
 .brief-chip.active {
-  background: var(--accent); color: white; border-color: var(--accent);
+  background: var(--accent); color: var(--accent-text); border-color: var(--accent);
   box-shadow: 0 3px 12px var(--accent-glow);
 }
 
@@ -159,11 +168,11 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
 
 .brief-input {
   width: 80px; text-align: right; padding: 5px 8px; font-size: 15px; font-weight: 700;
-  font-family: var(--inter); color: var(--accent); background: var(--bg);
-  border: 1.5px solid var(--borde); border-radius: 8px;
+  font-family: var(--inter); color: var(--texto); background: var(--bg);
+  border: 2px solid var(--borde); border-radius: 8px;
   outline: none; -moz-appearance: textfield;
 }
-.brief-input:focus { border-color: var(--accent); }
+.brief-input:focus { border-color: var(--texto); }
 .brief-input::-webkit-inner-spin-button,
 .brief-input::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
 
@@ -198,7 +207,7 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
 .claude-hint { font-size: 11px; color: var(--muted); flex:1; }
 .btn-claude {
   display: flex; align-items: center; gap: 5px; padding: 7px 14px;
-  background: var(--accent); color: white; font-size: 12px; font-weight: 700;
+  background: var(--accent); color: var(--accent-text); font-size: 12px; font-weight: 700;
   border-radius: 20px; font-family: var(--inter); white-space: nowrap;
   transition: opacity 0.15s;
 }
@@ -212,7 +221,7 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
 /* ── Settings modal ─────────────────────────────────────── */
 .modal-overlay {
   position: fixed; inset: 0; z-index: 999;
-  background: rgba(42,26,16,0.55); backdrop-filter: blur(3px);
+  background: rgba(28,28,28,0.55); backdrop-filter: blur(4px);
   display: flex; align-items: flex-end;
 }
 .modal-card {
@@ -256,7 +265,7 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
   border: 1.5px solid var(--borde); background: var(--bg); color: var(--muted);
   font-family: var(--inter); transition: all 0.15s; text-align: center; line-height: 1.3;
 }
-.provider-chip-cfg.active { background: var(--accent); color: white; border-color: var(--accent); }
+.provider-chip-cfg.active { background: var(--accent); color: var(--accent-text); border-color: var(--accent); }
 .cfg-provider-card {
   border: 1.5px solid var(--borde); border-radius: 16px; padding: 16px; margin-bottom: 14px;
 }
@@ -266,7 +275,7 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
 .cfg-input-row { display: flex; gap: 8px; align-items: center; margin-bottom: 6px; }
 .cfg-input-row .modal-input { flex: 1; margin-bottom: 0; font-size: 13px; padding: 10px 12px; }
 .cfg-save-btn {
-  padding: 10px 14px; background: var(--accent); color: white; font-size: 12px;
+  padding: 10px 14px; background: var(--accent); color: var(--accent-text); font-size: 12px;
   font-weight: 700; border-radius: 10px; font-family: var(--inter); white-space: nowrap;
   border: none; cursor: pointer; flex-shrink: 0;
 }
@@ -327,7 +336,7 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
   padding: 4px 10px; border-radius: 20px;
   letter-spacing: 0.8px; text-transform: uppercase;
 }
-.badge-accent { background: var(--accent); color: white; }
+.badge-accent { background: var(--accent); color: var(--accent-text); }
 .badge-verde  { background: #22C55E; color: white; }
 .badge-gris   { background: var(--borde); color: var(--muted); }
 
@@ -357,17 +366,17 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
 
 .fab-redibujar {
   position: absolute; bottom: calc(var(--nav-h) + 80px); left: 16px;
-  padding: 9px 16px; background: white; color: var(--accent);
-  font-family: var(--inter); font-size: 13px; font-weight: 600;
-  border-radius: 20px; border: 1.5px solid var(--accent);
+  padding: 9px 16px; background: white; color: var(--texto);
+  font-family: var(--inter); font-size: 13px; font-weight: 700;
+  border-radius: 20px; border: 2px solid var(--texto);
   box-shadow: var(--shadow-sm); z-index: 500; display: none;
 }
 
 .fab-calcular {
   position: absolute; bottom: calc(var(--nav-h) + 12px);
   left: 16px; right: 16px; padding: 16px;
-  background: var(--accent); color: white;
-  font-family: var(--inter); font-size: 16px; font-weight: 600;
+  background: var(--accent); color: var(--accent-text);
+  font-family: var(--inter); font-size: 16px; font-weight: 700;
   border-radius: 16px; border: none;
   box-shadow: 0 6px 24px var(--accent-glow);
   z-index: 500; display: none; transition: transform 0.1s;
@@ -414,8 +423,8 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
 .fab-trazar {
   position: absolute; bottom: calc(var(--nav-h) + 12px);
   left: 16px; right: 16px; padding: 16px;
-  background: var(--accent); color: white;
-  font-family: var(--inter); font-size: 16px; font-weight: 600;
+  background: var(--accent); color: var(--accent-text);
+  font-family: var(--inter); font-size: 16px; font-weight: 700;
   border-radius: 16px; border: none;
   box-shadow: 0 6px 24px var(--accent-glow); z-index: 500;
   display: flex; align-items: center; justify-content: center; gap: 10px;
@@ -423,8 +432,8 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
 }
 .fab-trazar:active { transform: scale(0.98); }
 .fab-trazar.cancelar {
-  background: white; color: var(--accent);
-  border: 1.5px solid var(--accent);
+  background: white; color: var(--texto);
+  border: 2px solid var(--texto);
   box-shadow: var(--shadow-sm);
 }
 
@@ -506,28 +515,29 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
 .kpi-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
 
 .kpi-accent {
-  background: var(--peach); border-radius: 16px; padding: 18px 16px; color: var(--accent);
+  background: var(--accent); border-radius: 16px; padding: 18px 16px;
 }
 .kpi-gris {
-  background: var(--bg); border-radius: 16px; padding: 18px 16px;
+  background: var(--surface); border-radius: 16px; padding: 18px 16px;
   box-shadow: var(--shadow-sm);
 }
 
 .kpi-lbl {
-  font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+  font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px;
   margin-bottom: 8px; opacity: 0.65;
 }
-.kpi-accent .kpi-lbl { color: var(--accent); opacity: 0.75; }
+.kpi-accent .kpi-lbl { color: var(--accent-text); opacity: 0.65; }
 .kpi-gris .kpi-lbl   { color: var(--muted); }
 
 .kpi-val {
-  font-family: var(--inter); font-size: 26px; font-weight: 800;
-  line-height: 1; margin-bottom: 4px;
+  font-family: var(--inter); font-size: 28px; font-weight: 900;
+  line-height: 1; margin-bottom: 4px; letter-spacing: -0.5px;
 }
-.kpi-accent .kpi-val { color: var(--accent); }
+.kpi-accent .kpi-val { color: var(--accent-text); }
 .kpi-gris .kpi-val   { color: var(--texto); }
 
 .kpi-unit { font-size: 12px; opacity: 0.6; }
+.kpi-accent .kpi-unit { color: var(--accent-text); }
 
 .section-hdr {
   font-size: 11px; font-weight: 600; color: var(--muted);
@@ -620,8 +630,9 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
 
 /* Síntesis */
 .sintesis-wrap {
-  background: var(--bg); border-left: 3px solid var(--accent);
+  background: var(--surface); border-left: 4px solid var(--accent);
   border-radius: 0 10px 10px 0; padding: 12px 14px; margin-bottom: 20px;
+  box-shadow: var(--shadow-sm);
 }
 .sintesis-text { font-size: 13px; line-height: 1.7; color: var(--texto); }
 
@@ -689,7 +700,7 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
   border: 1.5px solid var(--borde);
   transition: background 0.2s, color 0.2s;
 }
-.fab-zonas.active { background: var(--accent); color: white; border-color: var(--accent); }
+.fab-zonas.active { background: var(--accent); color: var(--accent-text); border-color: var(--accent); }
 .zonas-leyenda {
   position: absolute; bottom: 108px; left: 12px; z-index: 500;
   background: rgba(255,255,255,0.96); backdrop-filter: blur(6px);
@@ -708,9 +719,10 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
    RESUMEN EJECUTIVO IA
 ============================================================ */
 .resumen-card {
-  background: linear-gradient(135deg, var(--accent-light) 0%, var(--peach-light) 100%);
-  border: 1px solid var(--borde); border-radius: 16px;
-  padding: 16px; margin-bottom: 20px;
+  background: var(--surface);
+  border: 1px solid var(--borde); border-left: 4px solid var(--accent);
+  border-radius: 16px; padding: 16px; margin-bottom: 20px;
+  box-shadow: var(--shadow-sm);
 }
 .resumen-loading {
   color: var(--muted); font-size: 13px;
@@ -833,10 +845,10 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
 ============================================================ */
 .btn-peach {
   width: 100%; padding: 16px;
-  background: var(--peach); color: var(--accent);
+  background: var(--accent); color: var(--accent-text);
   font-family: var(--inter); font-size: 16px; font-weight: 700;
   border-radius: 16px; border: none; min-height: 52px;
-  box-shadow: 0 4px 16px rgba(254,190,152,0.45);
+  box-shadow: 0 4px 16px var(--accent-glow);
   transition: opacity 0.15s, transform 0.1s;
   display: flex; align-items: center; justify-content: center; gap: 9px;
 }
@@ -863,9 +875,9 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
 .btn-add-foto {
   display: flex; align-items: center; justify-content: center; gap: 8px;
   padding: 11px 16px; border-radius: 12px;
-  border: 1.5px dashed var(--borde);
-  font-family: var(--inter); font-size: 13px; font-weight: 600;
-  color: var(--accent); background: var(--bg); cursor: pointer; width: 100%;
+  border: 2px dashed var(--borde);
+  font-family: var(--inter); font-size: 13px; font-weight: 700;
+  color: var(--texto); background: var(--bg); cursor: pointer; width: 100%;
   transition: background 0.15s;
 }
 .btn-add-foto:active { background: var(--accent-light); }
@@ -873,7 +885,7 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
 /* Chip contador de fotos en prosp-card */
 .foto-count-chip {
   font-size: 10px; font-weight: 700;
-  color: var(--accent); background: var(--accent-light);
+  color: var(--accent-text); background: var(--accent);
   padding: 2px 7px; border-radius: 8px;
   display: inline-flex; align-items: center; gap: 3px;
 }
@@ -881,7 +893,7 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
 .btn-prosp-pdf {
   font-size: 10px; font-weight: 700;
   padding: 3px 9px; border-radius: 8px;
-  background: var(--peach); color: var(--accent); border: none;
+  background: var(--accent); color: var(--accent-text); border: none;
   cursor: pointer; white-space: nowrap;
 }
 .btn-prosp-pdf:active { opacity: 0.8; }
@@ -894,22 +906,44 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
 ============================================================ -->
 <div id="s-splash" class="screen active">
   <div class="splash-inner">
+
+    <!-- Hero shape geométrico -->
+    <div class="splash-hero">
+      <svg class="hero-shape" viewBox="0 0 280 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Anillo exterior -->
+        <circle cx="140" cy="140" r="128" stroke="#D4D4D4" stroke-width="2"/>
+        <!-- Anillo interior -->
+        <circle cx="140" cy="140" r="95" stroke="#D4D4D4" stroke-width="1.5" opacity="0.5"/>
+        <!-- Polígono del predio — acento amarillo -->
+        <polygon points="140,48 222,84 238,170 188,242 86,236 48,162 68,78"
+          fill="rgba(245,228,0,0.18)" stroke="#F5E400" stroke-width="2.5"
+          stroke-linejoin="round"/>
+        <!-- Punto central -->
+        <circle cx="140" cy="140" r="7" fill="#F5E400"/>
+        <circle cx="140" cy="140" r="3" fill="#1C1C1C"/>
+        <!-- Flecha norte -->
+        <line x1="140" y1="130" x2="140" y2="108" stroke="#D4D4D4" stroke-width="2" stroke-linecap="round"/>
+        <polygon points="140,101 135,112 145,112" fill="#D4D4D4"/>
+        <text x="136" y="99" font-family="Inter,sans-serif" font-size="9" font-weight="700" fill="#8A8A8A">N</text>
+      </svg>
+    </div>
+
     <!-- Logo -->
     <div class="logo-wrap">
       <svg class="logo-svg" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="60" height="60" rx="14" fill="#3B2314"/>
+        <rect width="60" height="60" rx="14" fill="#1C1C1C"/>
         <polygon points="12,43 11,21 30,11 48,18 49,39 30,49"
-          fill="rgba(255,255,255,0.15)" stroke="white" stroke-width="2.5"
+          fill="rgba(245,228,0,0.15)" stroke="#F5E400" stroke-width="2.5"
           stroke-linejoin="round" stroke-linecap="round"/>
-        <circle cx="30" cy="29" r="4.5" stroke="white" stroke-width="2.2"/>
-        <circle cx="30" cy="29" r="1.8" fill="white"/>
-        <line x1="30" y1="34" x2="30" y2="43" stroke="white" stroke-width="1.5"
+        <circle cx="30" cy="29" r="4.5" stroke="#F5E400" stroke-width="2.2"/>
+        <circle cx="30" cy="29" r="1.8" fill="#F5E400"/>
+        <line x1="30" y1="34" x2="30" y2="43" stroke="#F5E400" stroke-width="1.5"
           stroke-dasharray="2.5,2.5" stroke-linecap="round" opacity="0.80"/>
       </svg>
       <div class="logo-title">Ai<span>Cabida</span></div>
     </div>
 
-    <p class="tagline">¿Qué quieres construir?</p>
+    <p class="tagline">¿Qué quieres<br>construir?</p>
     <p class="subtitle">Describe tu proyecto o configúralo manualmente.</p>
 
     <!-- Claude text input -->
