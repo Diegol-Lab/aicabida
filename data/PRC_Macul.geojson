@@ -1,0 +1,660 @@
+{
+  "type": "FeatureCollection",
+  "name": "PRC_Macul",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "zona": "ZM-1",
+        "nombre": "ZM-1 Zona Residencial Mixta Densidad Alta",
+        "decreto": "DTO 552",
+        "comuna": "Macul"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6178,
+              -33.502
+            ],
+            [
+              -70.61,
+              -33.502
+            ],
+            [
+              -70.61,
+              -33.507
+            ],
+            [
+              -70.6178,
+              -33.507
+            ],
+            [
+              -70.6178,
+              -33.502
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "zona": "ZM-1",
+        "nombre": "ZM-1 Zona Residencial Mixta Densidad Alta",
+        "decreto": "DTO 552",
+        "comuna": "Macul"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6178,
+              -33.4935
+            ],
+            [
+              -70.608,
+              -33.4935
+            ],
+            [
+              -70.608,
+              -33.499
+            ],
+            [
+              -70.6178,
+              -33.499
+            ],
+            [
+              -70.6178,
+              -33.4935
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "zona": "ZM-1",
+        "nombre": "ZM-1 Zona Residencial Mixta Densidad Alta",
+        "decreto": "DTO 552",
+        "comuna": "Macul"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.601,
+              -33.484
+            ],
+            [
+              -70.5945,
+              -33.484
+            ],
+            [
+              -70.5945,
+              -33.49
+            ],
+            [
+              -70.601,
+              -33.49
+            ],
+            [
+              -70.601,
+              -33.484
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "zona": "ZM-2",
+        "nombre": "ZM-2 Zona Residencial Mixta Densidad Alta Comercial",
+        "decreto": "DTO 552",
+        "comuna": "Macul"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.601,
+              -33.49
+            ],
+            [
+              -70.5945,
+              -33.49
+            ],
+            [
+              -70.5946,
+              -33.501
+            ],
+            [
+              -70.601,
+              -33.501
+            ],
+            [
+              -70.601,
+              -33.49
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "zona": "ZM-2",
+        "nombre": "ZM-2 Zona Residencial Mixta Densidad Alta Comercial",
+        "decreto": "DTO 552",
+        "comuna": "Macul"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6075,
+              -33.485
+            ],
+            [
+              -70.601,
+              -33.485
+            ],
+            [
+              -70.601,
+              -33.502
+            ],
+            [
+              -70.6075,
+              -33.502
+            ],
+            [
+              -70.6075,
+              -33.485
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "zona": "ZM-4",
+        "nombre": "ZM-4 Zona Residencial Mixta Densidad Media",
+        "decreto": "DTO 552",
+        "comuna": "Macul"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.608,
+              -33.484
+            ],
+            [
+              -70.601,
+              -33.484
+            ],
+            [
+              -70.601,
+              -33.4935
+            ],
+            [
+              -70.608,
+              -33.4935
+            ],
+            [
+              -70.608,
+              -33.484
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "zona": "ZM-4",
+        "nombre": "ZM-4 Zona Residencial Mixta Densidad Media",
+        "decreto": "DTO 552",
+        "comuna": "Macul"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6175,
+              -33.4835
+            ],
+            [
+              -70.608,
+              -33.4835
+            ],
+            [
+              -70.608,
+              -33.4935
+            ],
+            [
+              -70.6175,
+              -33.4935
+            ],
+            [
+              -70.6175,
+              -33.4835
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "zona": "ZM-4",
+        "nombre": "ZM-4 Zona Residencial Mixta Densidad Media",
+        "decreto": "DTO 552",
+        "comuna": "Macul"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.61,
+              -33.499
+            ],
+            [
+              -70.601,
+              -33.499
+            ],
+            [
+              -70.601,
+              -33.502
+            ],
+            [
+              -70.61,
+              -33.502
+            ],
+            [
+              -70.61,
+              -33.499
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "zona": "ZR-6",
+        "nombre": "ZR-6 Zona Residencial Densidad Baja",
+        "decreto": "DTO 552",
+        "comuna": "Macul"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6175,
+              -33.499
+            ],
+            [
+              -70.61,
+              -33.499
+            ],
+            [
+              -70.61,
+              -33.502
+            ],
+            [
+              -70.6178,
+              -33.502
+            ],
+            [
+              -70.6175,
+              -33.499
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "zona": "ZI-e",
+        "nombre": "ZI-e Zona Industrial Exclusiva",
+        "decreto": "DTO 552",
+        "comuna": "Macul"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6175,
+              -33.487
+            ],
+            [
+              -70.613,
+              -33.487
+            ],
+            [
+              -70.613,
+              -33.4935
+            ],
+            [
+              -70.6175,
+              -33.4935
+            ],
+            [
+              -70.6175,
+              -33.487
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "zona": "ZI-i",
+        "nombre": "ZI-i Zona Industrial Inofensiva",
+        "decreto": "DTO 552",
+        "comuna": "Macul"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.608,
+              -33.4935
+            ],
+            [
+              -70.604,
+              -33.4935
+            ],
+            [
+              -70.604,
+              -33.499
+            ],
+            [
+              -70.608,
+              -33.499
+            ],
+            [
+              -70.608,
+              -33.4935
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "zona": "ZI-m",
+        "nombre": "ZI-m Zona Industrial Mixta Densidad Alta",
+        "decreto": "DTO 552",
+        "comuna": "Macul"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.601,
+              -33.501
+            ],
+            [
+              -70.5946,
+              -33.501
+            ],
+            [
+              -70.5946,
+              -33.5075
+            ],
+            [
+              -70.601,
+              -33.5075
+            ],
+            [
+              -70.601,
+              -33.501
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "zona": "ZM-1A",
+        "nombre": "ZM-1A Zona Residencial Mixta Densidad Alta 1A",
+        "decreto": "Decreto 2230 2022",
+        "comuna": "Macul"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.608,
+              -33.499
+            ],
+            [
+              -70.604,
+              -33.499
+            ],
+            [
+              -70.604,
+              -33.502
+            ],
+            [
+              -70.608,
+              -33.502
+            ],
+            [
+              -70.608,
+              -33.499
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "zona": "ZM-2A",
+        "nombre": "ZM-2A Zona Residencial Mixta Densidad Alta Comercial 2A",
+        "decreto": "Decreto 2230 2022",
+        "comuna": "Macul"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.61,
+              -33.502
+            ],
+            [
+              -70.604,
+              -33.502
+            ],
+            [
+              -70.604,
+              -33.505
+            ],
+            [
+              -70.61,
+              -33.505
+            ],
+            [
+              -70.61,
+              -33.502
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "zona": "ZM-4A",
+        "nombre": "ZM-4A Zona Residencial Mixta Densidad Media 4A",
+        "decreto": "Decreto 2230 2022",
+        "comuna": "Macul"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.6175,
+              -33.502
+            ],
+            [
+              -70.61,
+              -33.502
+            ],
+            [
+              -70.61,
+              -33.507
+            ],
+            [
+              -70.6178,
+              -33.507
+            ],
+            [
+              -70.6175,
+              -33.502
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "zona": "ZM-5A",
+        "nombre": "ZM-5A Zona Residencial Mixta Densidad Media Comercial 5A",
+        "decreto": "Decreto 2230 2022",
+        "comuna": "Macul"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.604,
+              -33.505
+            ],
+            [
+              -70.598,
+              -33.505
+            ],
+            [
+              -70.598,
+              -33.5075
+            ],
+            [
+              -70.604,
+              -33.5075
+            ],
+            [
+              -70.604,
+              -33.505
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "zona": "ZR-6A",
+        "nombre": "ZR-6A Zona Residencial Densidad Baja 6A",
+        "decreto": "Decreto 2230 2022",
+        "comuna": "Macul"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.61,
+              -33.505
+            ],
+            [
+              -70.604,
+              -33.505
+            ],
+            [
+              -70.604,
+              -33.5075
+            ],
+            [
+              -70.61,
+              -33.5075
+            ],
+            [
+              -70.61,
+              -33.505
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "zona": "ZM-8",
+        "nombre": "ZM-8 Zona Residencial Mixta Densidad Media Civica 8",
+        "decreto": "Decreto 2230 2022",
+        "comuna": "Macul"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.604,
+              -33.499
+            ],
+            [
+              -70.598,
+              -33.499
+            ],
+            [
+              -70.598,
+              -33.505
+            ],
+            [
+              -70.604,
+              -33.505
+            ],
+            [
+              -70.604,
+              -33.499
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}
