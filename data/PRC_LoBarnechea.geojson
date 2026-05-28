@@ -1,0 +1,732 @@
+{
+  "type": "FeatureCollection",
+  "name": "PRC_LoBarnechea",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "zona": "A",
+        "nombre": "A Pueblo Lo Barnechea",
+        "decreto": "Decreto Alcaldicio N°1295 D.O. 05.09.2002 + MPRC-LB-01 al -20",
+        "comuna": "LoBarnechea"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.568,
+              -33.34
+            ],
+            [
+              -70.548,
+              -33.34
+            ],
+            [
+              -70.548,
+              -33.355
+            ],
+            [
+              -70.568,
+              -33.355
+            ],
+            [
+              -70.568,
+              -33.34
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "zona": "B",
+        "nombre": "B Raúl Labbé",
+        "decreto": "Decreto Alcaldicio N°1295 D.O. 05.09.2002 + MPRC-LB-01 al -20",
+        "comuna": "LoBarnechea"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.568,
+              -33.355
+            ],
+            [
+              -70.548,
+              -33.355
+            ],
+            [
+              -70.548,
+              -33.372
+            ],
+            [
+              -70.568,
+              -33.372
+            ],
+            [
+              -70.568,
+              -33.355
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "zona": "C1",
+        "nombre": "C1 Pueblo San Enrique",
+        "decreto": "Decreto Alcaldicio N°1295 D.O. 05.09.2002 + MPRC-LB-01 al -20",
+        "comuna": "LoBarnechea"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.548,
+              -33.34
+            ],
+            [
+              -70.528,
+              -33.34
+            ],
+            [
+              -70.528,
+              -33.355
+            ],
+            [
+              -70.548,
+              -33.355
+            ],
+            [
+              -70.548,
+              -33.34
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "zona": "C2",
+        "nombre": "C2 San Enrique",
+        "decreto": "Decreto Alcaldicio N°1295 D.O. 05.09.2002 + MPRC-LB-01 al -20",
+        "comuna": "LoBarnechea"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.528,
+              -33.34
+            ],
+            [
+              -70.51,
+              -33.34
+            ],
+            [
+              -70.51,
+              -33.355
+            ],
+            [
+              -70.528,
+              -33.355
+            ],
+            [
+              -70.528,
+              -33.34
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "zona": "D",
+        "nombre": "D Las Puertas-San Francisco",
+        "decreto": "Decreto Alcaldicio N°1295 D.O. 05.09.2002 + MPRC-LB-01 al -20",
+        "comuna": "LoBarnechea"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.568,
+              -33.372
+            ],
+            [
+              -70.54,
+              -33.372
+            ],
+            [
+              -70.54,
+              -33.388
+            ],
+            [
+              -70.568,
+              -33.388
+            ],
+            [
+              -70.568,
+              -33.372
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "zona": "E",
+        "nombre": "E Equipamiento Educacional",
+        "decreto": "Decreto Alcaldicio N°1295 D.O. 05.09.2002 + MPRC-LB-01 al -20",
+        "comuna": "LoBarnechea"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.54,
+              -33.372
+            ],
+            [
+              -70.522,
+              -33.372
+            ],
+            [
+              -70.522,
+              -33.385
+            ],
+            [
+              -70.54,
+              -33.385
+            ],
+            [
+              -70.54,
+              -33.372
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "zona": "F",
+        "nombre": "F La Ermita de San Antonio",
+        "decreto": "Decreto Alcaldicio N°1295 D.O. 05.09.2002 + MPRC-LB-01 al -20",
+        "comuna": "LoBarnechea"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.578,
+              -33.337
+            ],
+            [
+              -70.568,
+              -33.337
+            ],
+            [
+              -70.568,
+              -33.347
+            ],
+            [
+              -70.578,
+              -33.347
+            ],
+            [
+              -70.578,
+              -33.337
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "zona": "G",
+        "nombre": "G Cajón Río Mapocho",
+        "decreto": "Decreto Alcaldicio N°1295 D.O. 05.09.2002 + MPRC-LB-01 al -20",
+        "comuna": "LoBarnechea"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.51,
+              -33.3
+            ],
+            [
+              -70.485,
+              -33.295
+            ],
+            [
+              -70.48,
+              -33.34
+            ],
+            [
+              -70.51,
+              -33.34
+            ],
+            [
+              -70.51,
+              -33.3
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "zona": "H",
+        "nombre": "H Cajón El Arrayán",
+        "decreto": "Decreto Alcaldicio N°1295 D.O. 05.09.2002 + MPRC-LB-01 al -20",
+        "comuna": "LoBarnechea"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.52,
+              -33.355
+            ],
+            [
+              -70.495,
+              -33.355
+            ],
+            [
+              -70.49,
+              -33.4
+            ],
+            [
+              -70.52,
+              -33.4
+            ],
+            [
+              -70.52,
+              -33.355
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "zona": "I",
+        "nombre": "I El Arrayán Alto",
+        "decreto": "Decreto Alcaldicio N°1295 D.O. 05.09.2002 + MPRC-LB-01 al -20",
+        "comuna": "LoBarnechea"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.5,
+              -33.305
+            ],
+            [
+              -70.48,
+              -33.3
+            ],
+            [
+              -70.475,
+              -33.355
+            ],
+            [
+              -70.5,
+              -33.355
+            ],
+            [
+              -70.5,
+              -33.305
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "zona": "J",
+        "nombre": "J La Dehesa",
+        "decreto": "Decreto Alcaldicio N°1295 D.O. 05.09.2002 + MPRC-LB-01 al -20",
+        "comuna": "LoBarnechea"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.548,
+              -33.388
+            ],
+            [
+              -70.522,
+              -33.388
+            ],
+            [
+              -70.522,
+              -33.415
+            ],
+            [
+              -70.548,
+              -33.415
+            ],
+            [
+              -70.548,
+              -33.388
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "zona": "J1",
+        "nombre": "J1 La Dehesa Antigua",
+        "decreto": "Decreto Alcaldicio N°1295 D.O. 05.09.2002 + MPRC-LB-01 al -20",
+        "comuna": "LoBarnechea"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.548,
+              -33.375
+            ],
+            [
+              -70.535,
+              -33.375
+            ],
+            [
+              -70.535,
+              -33.39
+            ],
+            [
+              -70.548,
+              -33.39
+            ],
+            [
+              -70.548,
+              -33.375
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "zona": "J2",
+        "nombre": "J2 Densificación La Dehesa",
+        "decreto": "Decreto Alcaldicio N°1295 D.O. 05.09.2002 + MPRC-LB-01 al -20",
+        "comuna": "LoBarnechea"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.54,
+              -33.388
+            ],
+            [
+              -70.528,
+              -33.388
+            ],
+            [
+              -70.528,
+              -33.4
+            ],
+            [
+              -70.54,
+              -33.4
+            ],
+            [
+              -70.54,
+              -33.388
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "zona": "K",
+        "nombre": "K La Dehesa Alta",
+        "decreto": "Decreto Alcaldicio N°1295 D.O. 05.09.2002 + MPRC-LB-01 al -20",
+        "comuna": "LoBarnechea"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.518,
+              -33.4
+            ],
+            [
+              -70.495,
+              -33.398
+            ],
+            [
+              -70.492,
+              -33.43
+            ],
+            [
+              -70.518,
+              -33.43
+            ],
+            [
+              -70.518,
+              -33.4
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "zona": "L",
+        "nombre": "L Circunvalación Vial",
+        "decreto": "Decreto Alcaldicio N°1295 D.O. 05.09.2002 + MPRC-LB-01 al -20",
+        "comuna": "LoBarnechea"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.548,
+              -33.415
+            ],
+            [
+              -70.522,
+              -33.415
+            ],
+            [
+              -70.522,
+              -33.43
+            ],
+            [
+              -70.548,
+              -33.43
+            ],
+            [
+              -70.548,
+              -33.415
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "zona": "L1",
+        "nombre": "L1 Densificación Circunvalación Vial",
+        "decreto": "Decreto Alcaldicio N°1295 D.O. 05.09.2002 + MPRC-LB-01 al -20",
+        "comuna": "LoBarnechea"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.558,
+              -33.405
+            ],
+            [
+              -70.545,
+              -33.405
+            ],
+            [
+              -70.545,
+              -33.42
+            ],
+            [
+              -70.558,
+              -33.42
+            ],
+            [
+              -70.558,
+              -33.405
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "zona": "LL",
+        "nombre": "LL Equipamiento de Culto",
+        "decreto": "Decreto Alcaldicio N°1295 D.O. 05.09.2002 + MPRC-LB-01 al -20",
+        "comuna": "LoBarnechea"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.562,
+              -33.362
+            ],
+            [
+              -70.553,
+              -33.362
+            ],
+            [
+              -70.553,
+              -33.372
+            ],
+            [
+              -70.562,
+              -33.372
+            ],
+            [
+              -70.562,
+              -33.362
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "zona": "M",
+        "nombre": "M Av. La Dehesa",
+        "decreto": "Decreto Alcaldicio N°1295 D.O. 05.09.2002 + MPRC-LB-01 al -20",
+        "comuna": "LoBarnechea"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.578,
+              -33.355
+            ],
+            [
+              -70.568,
+              -33.355
+            ],
+            [
+              -70.568,
+              -33.42
+            ],
+            [
+              -70.578,
+              -33.42
+            ],
+            [
+              -70.578,
+              -33.355
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "zona": "N",
+        "nombre": "N Interés Cultural",
+        "decreto": "Decreto Alcaldicio N°1295 D.O. 05.09.2002 + MPRC-LB-01 al -20",
+        "comuna": "LoBarnechea"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.548,
+              -33.355
+            ],
+            [
+              -70.535,
+              -33.355
+            ],
+            [
+              -70.535,
+              -33.368
+            ],
+            [
+              -70.548,
+              -33.368
+            ],
+            [
+              -70.548,
+              -33.355
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "zona": "O",
+        "nombre": "O Parque Praguer",
+        "decreto": "Decreto Alcaldicio N°1295 D.O. 05.09.2002 + MPRC-LB-01 al -20",
+        "comuna": "LoBarnechea"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -70.535,
+              -33.415
+            ],
+            [
+              -70.518,
+              -33.415
+            ],
+            [
+              -70.518,
+              -33.43
+            ],
+            [
+              -70.535,
+              -33.43
+            ],
+            [
+              -70.535,
+              -33.415
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

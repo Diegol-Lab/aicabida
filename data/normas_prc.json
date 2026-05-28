@@ -9897,5 +9897,735 @@
         "adosamiento": true
       }
     }
+  ],
+  "LoBarnechea": [
+    {
+      "comuna": "LoBarnechea",
+      "prc_decreto": "PRC Lo Barnechea. Decreto Alcaldicio N°1295 D.O. 05.09.2002 + Mod. MPRC-LB-01 a MPRC-LB-20 (2004-2015).",
+      "zona": "A",
+      "nombre": "A Pueblo Lo Barnechea",
+      "usos_permitidos": [
+        "Residencial",
+        "Equipamiento (salud, educación, culto, cultura, social, seguridad, deportes, esparcimiento, comercio, servicios)",
+        "Áreas Verdes",
+        "Actividades productivas inofensivas",
+        "Infraestructura",
+        "Espacio Público"
+      ],
+      "usos_prohibidos": [
+        "Todo lo no expresamente permitido. Plantas de tratamiento de aguas servidas."
+      ],
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": 0.9,
+        "coeficiente_ocupacion_suelo": 0.4,
+        "coeficiente_ocupacion_suelo_total": null,
+        "altura_maxima_pisos": 3,
+        "altura_maxima_metros": 10.5,
+        "densidad_maxima_vivha": null,
+        "densidad_maxima_habha": 456,
+        "superficie_predial_minima_m2": 350,
+        "frente_minimo_m": null,
+        "antejardín_minimo_m": 3.0,
+        "rasante_grados": null,
+        "agrupamiento": "Aislado",
+        "distancia_deslinde_m": null,
+        "subdivision_minima_m2": 350,
+        "estacionamientos_vivienda": null,
+        "estacionamientos_comercio": null,
+        "notas": "Zona urbana tradicional. CC res=0.9, COS res=0.4. Alt máx=10.5m (3p). Dens=456 h/h. Ant=3m.",
+        "adosamiento": false
+      }
+    },
+    {
+      "comuna": "LoBarnechea",
+      "prc_decreto": "PRC Lo Barnechea. Decreto Alcaldicio N°1295 D.O. 05.09.2002 + Mod. MPRC-LB-01 a MPRC-LB-20 (2004-2015).",
+      "zona": "B",
+      "nombre": "B Raúl Labbé",
+      "usos_permitidos": [
+        "Residencial",
+        "Equipamiento (salud, educación, culto, cultura, social, seguridad, deportes, esparcimiento, comercio, servicios)",
+        "Áreas Verdes",
+        "Actividades productivas inofensivas",
+        "Infraestructura",
+        "Espacio Público"
+      ],
+      "usos_prohibidos": [
+        "Todo lo no expresamente permitido. Plantas de tratamiento de aguas servidas."
+      ],
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": 1.5,
+        "coeficiente_ocupacion_suelo": 0.35,
+        "coeficiente_ocupacion_suelo_total": null,
+        "altura_maxima_pisos": 5,
+        "altura_maxima_metros": 17.5,
+        "densidad_maxima_vivha": null,
+        "densidad_maxima_habha": 456,
+        "superficie_predial_minima_m2": 800,
+        "frente_minimo_m": null,
+        "antejardín_minimo_m": 5.0,
+        "rasante_grados": null,
+        "agrupamiento": "Aislado",
+        "distancia_deslinde_m": null,
+        "subdivision_minima_m2": 800,
+        "estacionamientos_vivienda": null,
+        "estacionamientos_comercio": null,
+        "notas": "CC res=1.5, COS res=0.35. Alt máx=17.5m (5p). Dens=456 h/h. Subdiv=800m². Admite actividades productivas inofensivas.",
+        "adosamiento": false
+      }
+    },
+    {
+      "comuna": "LoBarnechea",
+      "prc_decreto": "PRC Lo Barnechea. Decreto Alcaldicio N°1295 D.O. 05.09.2002 + Mod. MPRC-LB-01 a MPRC-LB-20 (2004-2015).",
+      "zona": "C1",
+      "nombre": "C1 Pueblo San Enrique",
+      "usos_permitidos": [
+        "Residencial",
+        "Equipamiento (salud, educación, culto, cultura, social, seguridad, deportes, esparcimiento, comercio, servicios)",
+        "Áreas Verdes",
+        "Actividades productivas inofensivas",
+        "Infraestructura",
+        "Espacio Público"
+      ],
+      "usos_prohibidos": [
+        "Todo lo no expresamente permitido. Plantas de tratamiento de aguas servidas."
+      ],
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": 1.6,
+        "coeficiente_ocupacion_suelo": 0.4,
+        "coeficiente_ocupacion_suelo_total": null,
+        "altura_maxima_pisos": 5,
+        "altura_maxima_metros": 17.5,
+        "densidad_maxima_vivha": null,
+        "densidad_maxima_habha": 456,
+        "superficie_predial_minima_m2": 800,
+        "frente_minimo_m": null,
+        "antejardín_minimo_m": 5.0,
+        "rasante_grados": null,
+        "agrupamiento": "Aislado",
+        "distancia_deslinde_m": null,
+        "subdivision_minima_m2": 800,
+        "estacionamientos_vivienda": null,
+        "estacionamientos_comercio": null,
+        "notas": "CC res=1.6, COS res=0.4. Alt máx=17.5m (5p). Dens=456 h/h. Subdiv=800m².",
+        "adosamiento": false
+      }
+    },
+    {
+      "comuna": "LoBarnechea",
+      "prc_decreto": "PRC Lo Barnechea. Decreto Alcaldicio N°1295 D.O. 05.09.2002 + Mod. MPRC-LB-01 a MPRC-LB-20 (2004-2015).",
+      "zona": "C2",
+      "nombre": "C2 San Enrique",
+      "usos_permitidos": [
+        "Residencial",
+        "Equipamiento (salud, educación, culto, cultura, social, seguridad, deportes, esparcimiento, comercio, servicios)",
+        "Áreas Verdes",
+        "Actividades productivas inofensivas",
+        "Infraestructura",
+        "Espacio Público"
+      ],
+      "usos_prohibidos": [
+        "Todo lo no expresamente permitido. Plantas de tratamiento de aguas servidas."
+      ],
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": 1.0,
+        "coeficiente_ocupacion_suelo": 0.4,
+        "coeficiente_ocupacion_suelo_total": null,
+        "altura_maxima_pisos": 3,
+        "altura_maxima_metros": 10.5,
+        "densidad_maxima_vivha": null,
+        "densidad_maxima_habha": 319,
+        "superficie_predial_minima_m2": 350,
+        "frente_minimo_m": null,
+        "antejardín_minimo_m": 5.0,
+        "rasante_grados": null,
+        "agrupamiento": "Aislado",
+        "distancia_deslinde_m": null,
+        "subdivision_minima_m2": 350,
+        "estacionamientos_vivienda": null,
+        "estacionamientos_comercio": null,
+        "notas": "CC res=1.0, COS res=0.4. Alt máx=10.5m (3p). Dens=319 h/h. Subdiv=350m².",
+        "adosamiento": false
+      }
+    },
+    {
+      "comuna": "LoBarnechea",
+      "prc_decreto": "PRC Lo Barnechea. Decreto Alcaldicio N°1295 D.O. 05.09.2002 + Mod. MPRC-LB-01 a MPRC-LB-20 (2004-2015).",
+      "zona": "D",
+      "nombre": "D Las Puertas-San Francisco",
+      "usos_permitidos": [
+        "Residencial",
+        "Equipamiento (salud, educación, culto, cultura, social, seguridad, deportes, esparcimiento, comercio, servicios)",
+        "Áreas Verdes",
+        "Actividades productivas inofensivas",
+        "Infraestructura",
+        "Espacio Público"
+      ],
+      "usos_prohibidos": [
+        "Todo lo no expresamente permitido. Plantas de tratamiento de aguas servidas."
+      ],
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": 2.0,
+        "coeficiente_ocupacion_suelo": 0.35,
+        "coeficiente_ocupacion_suelo_total": null,
+        "altura_maxima_pisos": 12,
+        "altura_maxima_metros": 35.0,
+        "densidad_maxima_vivha": null,
+        "densidad_maxima_habha": 760,
+        "superficie_predial_minima_m2": 2000,
+        "frente_minimo_m": null,
+        "antejardín_minimo_m": 7.0,
+        "rasante_grados": null,
+        "agrupamiento": "Aislado",
+        "distancia_deslinde_m": null,
+        "subdivision_minima_m2": 2000,
+        "estacionamientos_vivienda": null,
+        "estacionamientos_comercio": null,
+        "notas": "Zona alta densidad. CC res=2.0, COS res=0.35. Alt máx=35m (12p). Dens=760 h/h. Subdiv=2000m². Ant=7m. Predios especiales pueden usar subdiv mín 1200m².",
+        "adosamiento": false
+      }
+    },
+    {
+      "comuna": "LoBarnechea",
+      "prc_decreto": "PRC Lo Barnechea. Decreto Alcaldicio N°1295 D.O. 05.09.2002 + Mod. MPRC-LB-01 a MPRC-LB-20 (2004-2015).",
+      "zona": "E",
+      "nombre": "E Equipamiento Educacional",
+      "usos_permitidos": [
+        "Equipamiento educacional (universidades, liceos, colegios, jardines infantiles, parvularios)",
+        "Áreas Verdes"
+      ],
+      "usos_prohibidos": [
+        "Residencial",
+        "Todo lo no expresamente permitido"
+      ],
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": 1.0,
+        "coeficiente_ocupacion_suelo": 0.6,
+        "coeficiente_ocupacion_suelo_total": null,
+        "altura_maxima_pisos": 3,
+        "altura_maxima_metros": 10.5,
+        "densidad_maxima_vivha": null,
+        "densidad_maxima_habha": null,
+        "superficie_predial_minima_m2": null,
+        "frente_minimo_m": null,
+        "antejardín_minimo_m": 5.0,
+        "rasante_grados": null,
+        "agrupamiento": "Aislado",
+        "distancia_deslinde_m": null,
+        "subdivision_minima_m2": null,
+        "estacionamientos_vivienda": null,
+        "estacionamientos_comercio": null,
+        "notas": "Zona exclusiva equipamiento educacional. CC eq=1.0, COS eq=0.6. Alt máx=10.5m (3p). Sin subdiv predial mínima definida.",
+        "adosamiento": false
+      }
+    },
+    {
+      "comuna": "LoBarnechea",
+      "prc_decreto": "PRC Lo Barnechea. Decreto Alcaldicio N°1295 D.O. 05.09.2002 + Mod. MPRC-LB-01 a MPRC-LB-20 (2004-2015).",
+      "zona": "F",
+      "nombre": "F La Ermita de San Antonio",
+      "usos_permitidos": [
+        "Residencial",
+        "Equipamiento (salud, educación, culto, cultura, social, seguridad, deportes, esparcimiento, comercio, servicios)",
+        "Áreas Verdes",
+        "Actividades productivas inofensivas",
+        "Infraestructura",
+        "Espacio Público"
+      ],
+      "usos_prohibidos": [
+        "Todo lo no expresamente permitido. Plantas de tratamiento de aguas servidas."
+      ],
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": 1.5,
+        "coeficiente_ocupacion_suelo": 0.6,
+        "coeficiente_ocupacion_suelo_total": null,
+        "altura_maxima_pisos": 3,
+        "altura_maxima_metros": 10.5,
+        "densidad_maxima_vivha": null,
+        "densidad_maxima_habha": 420,
+        "superficie_predial_minima_m2": 60,
+        "frente_minimo_m": null,
+        "antejardín_minimo_m": 0.0,
+        "rasante_grados": null,
+        "agrupamiento": "Aislado",
+        "distancia_deslinde_m": null,
+        "subdivision_minima_m2": 60,
+        "estacionamientos_vivienda": null,
+        "estacionamientos_comercio": null,
+        "notas": "CC res=1.5, COS res=0.6. Alt máx=10.5m (3p). Dens=420 h/h. Subdiv mín=60m² (predios históricos). Ant=0m.",
+        "adosamiento": false
+      }
+    },
+    {
+      "comuna": "LoBarnechea",
+      "prc_decreto": "PRC Lo Barnechea. Decreto Alcaldicio N°1295 D.O. 05.09.2002 + Mod. MPRC-LB-01 a MPRC-LB-20 (2004-2015).",
+      "zona": "G",
+      "nombre": "G Cajón Río Mapocho",
+      "usos_permitidos": [
+        "Residencial",
+        "Equipamiento (salud, educación, culto, cultura, social, seguridad, deportes, esparcimiento, comercio, servicios)",
+        "Áreas Verdes",
+        "Actividades productivas inofensivas",
+        "Infraestructura",
+        "Espacio Público"
+      ],
+      "usos_prohibidos": [
+        "Todo lo no expresamente permitido. Plantas de tratamiento de aguas servidas."
+      ],
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": 0.2,
+        "coeficiente_ocupacion_suelo": 0.1,
+        "coeficiente_ocupacion_suelo_total": null,
+        "altura_maxima_pisos": 3,
+        "altura_maxima_metros": 10.5,
+        "densidad_maxima_vivha": null,
+        "densidad_maxima_habha": 38,
+        "superficie_predial_minima_m2": 4000,
+        "frente_minimo_m": null,
+        "antejardín_minimo_m": 5.0,
+        "rasante_grados": null,
+        "agrupamiento": "Aislado",
+        "distancia_deslinde_m": null,
+        "subdivision_minima_m2": 4000,
+        "estacionamientos_vivienda": null,
+        "estacionamientos_comercio": null,
+        "notas": "Zona ru-montana. CC res=0.2, COS res=0.1. Alt máx=10.5m (3p). Dens=38 h/h. Subdiv=4000m². Uso condicionado por valor paisajístico.",
+        "adosamiento": false
+      }
+    },
+    {
+      "comuna": "LoBarnechea",
+      "prc_decreto": "PRC Lo Barnechea. Decreto Alcaldicio N°1295 D.O. 05.09.2002 + Mod. MPRC-LB-01 a MPRC-LB-20 (2004-2015).",
+      "zona": "H",
+      "nombre": "H Cajón El Arrayán",
+      "usos_permitidos": [
+        "Residencial",
+        "Equipamiento (salud, educación, culto, cultura, social, seguridad, deportes, esparcimiento, comercio, servicios)",
+        "Áreas Verdes",
+        "Actividades productivas inofensivas",
+        "Infraestructura",
+        "Espacio Público"
+      ],
+      "usos_prohibidos": [
+        "Todo lo no expresamente permitido. Plantas de tratamiento de aguas servidas."
+      ],
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": 0.4,
+        "coeficiente_ocupacion_suelo": 0.2,
+        "coeficiente_ocupacion_suelo_total": null,
+        "altura_maxima_pisos": 2,
+        "altura_maxima_metros": 10.5,
+        "densidad_maxima_vivha": null,
+        "densidad_maxima_habha": 19,
+        "superficie_predial_minima_m2": 2000,
+        "frente_minimo_m": null,
+        "antejardín_minimo_m": 5.0,
+        "rasante_grados": null,
+        "agrupamiento": "Aislado",
+        "distancia_deslinde_m": null,
+        "subdivision_minima_m2": 2000,
+        "estacionamientos_vivienda": null,
+        "estacionamientos_comercio": null,
+        "notas": "Zona baja densidad cajón. CC res=0.4, COS res=0.2. Alt máx=10.5m (2p). Dens=19 h/h. Subdiv=2000m².",
+        "adosamiento": false
+      }
+    },
+    {
+      "comuna": "LoBarnechea",
+      "prc_decreto": "PRC Lo Barnechea. Decreto Alcaldicio N°1295 D.O. 05.09.2002 + Mod. MPRC-LB-01 a MPRC-LB-20 (2004-2015).",
+      "zona": "I",
+      "nombre": "I El Arrayán Alto",
+      "usos_permitidos": [
+        "Residencial",
+        "Equipamiento (salud, educación, culto, cultura, social, seguridad, deportes, esparcimiento, comercio, servicios)",
+        "Áreas Verdes",
+        "Actividades productivas inofensivas",
+        "Infraestructura",
+        "Espacio Público"
+      ],
+      "usos_prohibidos": [
+        "Todo lo no expresamente permitido. Plantas de tratamiento de aguas servidas."
+      ],
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": 0.4,
+        "coeficiente_ocupacion_suelo": 0.2,
+        "coeficiente_ocupacion_suelo_total": null,
+        "altura_maxima_pisos": 2,
+        "altura_maxima_metros": 10.5,
+        "densidad_maxima_vivha": null,
+        "densidad_maxima_habha": 19,
+        "superficie_predial_minima_m2": 4000,
+        "frente_minimo_m": null,
+        "antejardín_minimo_m": 5.0,
+        "rasante_grados": null,
+        "agrupamiento": "Aislado",
+        "distancia_deslinde_m": null,
+        "subdivision_minima_m2": 4000,
+        "estacionamientos_vivienda": null,
+        "estacionamientos_comercio": null,
+        "notas": "Zona muy baja densidad. CC res=0.4, COS res=0.2. Alt máx=10.5m (2p). Dens=19 h/h. Subdiv=4000m².",
+        "adosamiento": false
+      }
+    },
+    {
+      "comuna": "LoBarnechea",
+      "prc_decreto": "PRC Lo Barnechea. Decreto Alcaldicio N°1295 D.O. 05.09.2002 + Mod. MPRC-LB-01 a MPRC-LB-20 (2004-2015).",
+      "zona": "J",
+      "nombre": "J La Dehesa",
+      "usos_permitidos": [
+        "Residencial",
+        "Equipamiento (salud, educación, culto, cultura, social, seguridad, deportes, esparcimiento, comercio, servicios)",
+        "Áreas Verdes",
+        "Actividades productivas inofensivas",
+        "Infraestructura",
+        "Espacio Público"
+      ],
+      "usos_prohibidos": [
+        "Todo lo no expresamente permitido. Plantas de tratamiento de aguas servidas."
+      ],
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": 0.42,
+        "coeficiente_ocupacion_suelo": 0.35,
+        "coeficiente_ocupacion_suelo_total": null,
+        "altura_maxima_pisos": 2,
+        "altura_maxima_metros": 10.5,
+        "densidad_maxima_vivha": null,
+        "densidad_maxima_habha": 43,
+        "superficie_predial_minima_m2": 900,
+        "frente_minimo_m": null,
+        "antejardín_minimo_m": 5.0,
+        "rasante_grados": null,
+        "agrupamiento": "Aislado",
+        "distancia_deslinde_m": null,
+        "subdivision_minima_m2": 900,
+        "estacionamientos_vivienda": null,
+        "estacionamientos_comercio": null,
+        "notas": "Zona base La Dehesa. CC res=0.42, COS res=0.35. Alt máx=10.5m (2p). Dens=43 h/h. Sub-zonas J1 (La Dehesa Antigua, CC=1.0, Alt=14m/4p) y J2 (Densificación, CC=1.8, Alt=17.5m/5p).",
+        "adosamiento": false
+      }
+    },
+    {
+      "comuna": "LoBarnechea",
+      "prc_decreto": "PRC Lo Barnechea. Decreto Alcaldicio N°1295 D.O. 05.09.2002 + Mod. MPRC-LB-01 a MPRC-LB-20 (2004-2015).",
+      "zona": "J1",
+      "nombre": "J1 La Dehesa Antigua",
+      "usos_permitidos": [
+        "Residencial",
+        "Equipamiento (salud, educación, culto, cultura, social, seguridad, deportes, esparcimiento, comercio, servicios)",
+        "Áreas Verdes",
+        "Actividades productivas inofensivas",
+        "Infraestructura",
+        "Espacio Público"
+      ],
+      "usos_prohibidos": [
+        "Todo lo no expresamente permitido. Plantas de tratamiento de aguas servidas."
+      ],
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": 1.0,
+        "coeficiente_ocupacion_suelo": 0.25,
+        "coeficiente_ocupacion_suelo_total": null,
+        "altura_maxima_pisos": 4,
+        "altura_maxima_metros": 14.0,
+        "densidad_maxima_vivha": null,
+        "densidad_maxima_habha": 304,
+        "superficie_predial_minima_m2": 900,
+        "frente_minimo_m": null,
+        "antejardín_minimo_m": 5.0,
+        "rasante_grados": null,
+        "agrupamiento": "Aislado",
+        "distancia_deslinde_m": null,
+        "subdivision_minima_m2": 900,
+        "estacionamientos_vivienda": null,
+        "estacionamientos_comercio": null,
+        "notas": "Sub-sector de Zona J. CC=1.0, COS=0.25. Alt máx=14m (4p). Dens=304 h/h. Subdiv=900m².",
+        "adosamiento": false
+      }
+    },
+    {
+      "comuna": "LoBarnechea",
+      "prc_decreto": "PRC Lo Barnechea. Decreto Alcaldicio N°1295 D.O. 05.09.2002 + Mod. MPRC-LB-01 a MPRC-LB-20 (2004-2015).",
+      "zona": "J2",
+      "nombre": "J2 Densificación La Dehesa",
+      "usos_permitidos": [
+        "Residencial",
+        "Equipamiento (salud, educación, culto, cultura, social, seguridad, deportes, esparcimiento, comercio, servicios)",
+        "Áreas Verdes",
+        "Actividades productivas inofensivas",
+        "Infraestructura",
+        "Espacio Público"
+      ],
+      "usos_prohibidos": [
+        "Todo lo no expresamente permitido. Plantas de tratamiento de aguas servidas."
+      ],
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": 1.8,
+        "coeficiente_ocupacion_suelo": 0.4,
+        "coeficiente_ocupacion_suelo_total": null,
+        "altura_maxima_pisos": 5,
+        "altura_maxima_metros": 17.5,
+        "densidad_maxima_vivha": null,
+        "densidad_maxima_habha": 456,
+        "superficie_predial_minima_m2": 900,
+        "frente_minimo_m": null,
+        "antejardín_minimo_m": 5.0,
+        "rasante_grados": null,
+        "agrupamiento": "Aislado",
+        "distancia_deslinde_m": null,
+        "subdivision_minima_m2": 900,
+        "estacionamientos_vivienda": null,
+        "estacionamientos_comercio": null,
+        "notas": "Sub-sector densificación de Zona J. CC=1.8, COS=0.4. Alt máx=17.5m (5p). Dens=456 h/h. Subdiv=900m².",
+        "adosamiento": false
+      }
+    },
+    {
+      "comuna": "LoBarnechea",
+      "prc_decreto": "PRC Lo Barnechea. Decreto Alcaldicio N°1295 D.O. 05.09.2002 + Mod. MPRC-LB-01 a MPRC-LB-20 (2004-2015).",
+      "zona": "K",
+      "nombre": "K La Dehesa Alta",
+      "usos_permitidos": [
+        "Residencial",
+        "Equipamiento (salud, educación, culto, cultura, social, seguridad, deportes, esparcimiento, comercio, servicios)",
+        "Áreas Verdes",
+        "Actividades productivas inofensivas",
+        "Infraestructura",
+        "Espacio Público"
+      ],
+      "usos_prohibidos": [
+        "Todo lo no expresamente permitido. Plantas de tratamiento de aguas servidas."
+      ],
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": 0.4,
+        "coeficiente_ocupacion_suelo": 0.2,
+        "coeficiente_ocupacion_suelo_total": null,
+        "altura_maxima_pisos": 2,
+        "altura_maxima_metros": 10.5,
+        "densidad_maxima_vivha": null,
+        "densidad_maxima_habha": 19,
+        "superficie_predial_minima_m2": 4000,
+        "frente_minimo_m": null,
+        "antejardín_minimo_m": 5.0,
+        "rasante_grados": null,
+        "agrupamiento": "Aislado",
+        "distancia_deslinde_m": null,
+        "subdivision_minima_m2": 4000,
+        "estacionamientos_vivienda": null,
+        "estacionamientos_comercio": null,
+        "notas": "Zona baja densidad La Dehesa Alta. CC=0.4, COS=0.2. Alt máx=10.5m (2p). Dens=19 h/h. Subdiv=4000m².",
+        "adosamiento": false
+      }
+    },
+    {
+      "comuna": "LoBarnechea",
+      "prc_decreto": "PRC Lo Barnechea. Decreto Alcaldicio N°1295 D.O. 05.09.2002 + Mod. MPRC-LB-01 a MPRC-LB-20 (2004-2015).",
+      "zona": "L",
+      "nombre": "L Circunvalación Vial",
+      "usos_permitidos": [
+        "Residencial",
+        "Equipamiento (salud, educación, culto, cultura, social, seguridad, deportes, esparcimiento, comercio, servicios)",
+        "Áreas Verdes",
+        "Actividades productivas inofensivas",
+        "Infraestructura",
+        "Espacio Público"
+      ],
+      "usos_prohibidos": [
+        "Todo lo no expresamente permitido. Plantas de tratamiento de aguas servidas."
+      ],
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": 0.42,
+        "coeficiente_ocupacion_suelo": 0.35,
+        "coeficiente_ocupacion_suelo_total": null,
+        "altura_maxima_pisos": 2,
+        "altura_maxima_metros": 10.5,
+        "densidad_maxima_vivha": null,
+        "densidad_maxima_habha": 43,
+        "superficie_predial_minima_m2": 900,
+        "frente_minimo_m": null,
+        "antejardín_minimo_m": 5.0,
+        "rasante_grados": null,
+        "agrupamiento": "Aislado",
+        "distancia_deslinde_m": null,
+        "subdivision_minima_m2": 900,
+        "estacionamientos_vivienda": null,
+        "estacionamientos_comercio": null,
+        "notas": "Franja vial residencial. CC res=0.42, COS res=0.35. Alt máx=10.5m (2p). Dens=43 h/h. Subdiv=900m². Equipamiento en predio >10.000m²: CC=1.0, COS=0.6, Alt=20m/5p. Sub-zona L1 Densificación: CC=1.5, COS=0.3, Alt=14m/4p, Dens=260 h/h, Subdiv=2500m².",
+        "adosamiento": false
+      }
+    },
+    {
+      "comuna": "LoBarnechea",
+      "prc_decreto": "PRC Lo Barnechea. Decreto Alcaldicio N°1295 D.O. 05.09.2002 + Mod. MPRC-LB-01 a MPRC-LB-20 (2004-2015).",
+      "zona": "L1",
+      "nombre": "L1 Densificación Circunvalación Vial",
+      "usos_permitidos": [
+        "Residencial"
+      ],
+      "usos_prohibidos": [
+        "Equipamiento",
+        "Todo lo no expresamente permitido"
+      ],
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": 1.5,
+        "coeficiente_ocupacion_suelo": 0.3,
+        "coeficiente_ocupacion_suelo_total": null,
+        "altura_maxima_pisos": 4,
+        "altura_maxima_metros": 14.0,
+        "densidad_maxima_vivha": null,
+        "densidad_maxima_habha": 260,
+        "superficie_predial_minima_m2": 2500,
+        "frente_minimo_m": null,
+        "antejardín_minimo_m": 5.0,
+        "rasante_grados": null,
+        "agrupamiento": "Aislado",
+        "distancia_deslinde_m": null,
+        "subdivision_minima_m2": 2500,
+        "estacionamientos_vivienda": null,
+        "estacionamientos_comercio": null,
+        "notas": "Sub-zona residencial exclusiva dentro de Circunvalación Vial. CC=1.5, COS=0.3. Alt máx=14m (4p). Dens=260 h/h. Subdiv=2500m². No se permite equipamiento.",
+        "adosamiento": false
+      }
+    },
+    {
+      "comuna": "LoBarnechea",
+      "prc_decreto": "PRC Lo Barnechea. Decreto Alcaldicio N°1295 D.O. 05.09.2002 + Mod. MPRC-LB-01 a MPRC-LB-20 (2004-2015).",
+      "zona": "LL",
+      "nombre": "LL Equipamiento de Culto",
+      "usos_permitidos": [
+        "Equipamiento de culto y cultura (templos, santuarios, sinagogas, mezquitas, museos, bibliotecas y actividades complementarias)"
+      ],
+      "usos_prohibidos": [
+        "Residencial",
+        "Todo lo no expresamente permitido"
+      ],
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": 1.0,
+        "coeficiente_ocupacion_suelo": 0.6,
+        "coeficiente_ocupacion_suelo_total": null,
+        "altura_maxima_pisos": 2,
+        "altura_maxima_metros": 10.5,
+        "densidad_maxima_vivha": null,
+        "densidad_maxima_habha": null,
+        "superficie_predial_minima_m2": null,
+        "frente_minimo_m": null,
+        "antejardín_minimo_m": 5.0,
+        "rasante_grados": null,
+        "agrupamiento": "Aislado",
+        "distancia_deslinde_m": null,
+        "subdivision_minima_m2": null,
+        "estacionamientos_vivienda": null,
+        "estacionamientos_comercio": null,
+        "notas": "Zona para 5 iglesias y capillas definidas nominalmente en la ordenanza. CC eq=1.0, COS eq=0.6. Alt máx=10.5m (2p). Sin subdiv predial mínima. Incorporada por MPRC-LB-20 (2015).",
+        "adosamiento": false
+      }
+    },
+    {
+      "comuna": "LoBarnechea",
+      "prc_decreto": "PRC Lo Barnechea. Decreto Alcaldicio N°1295 D.O. 05.09.2002 + Mod. MPRC-LB-01 a MPRC-LB-20 (2004-2015).",
+      "zona": "M",
+      "nombre": "M Av. La Dehesa",
+      "usos_permitidos": [
+        "Residencial",
+        "Equipamiento (salud, educación, culto, cultura, social, seguridad, deportes, esparcimiento, comercio, servicios)",
+        "Áreas Verdes",
+        "Actividades productivas inofensivas",
+        "Infraestructura",
+        "Espacio Público"
+      ],
+      "usos_prohibidos": [
+        "Todo lo no expresamente permitido. Plantas de tratamiento de aguas servidas."
+      ],
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": 1.8,
+        "coeficiente_ocupacion_suelo": 0.3,
+        "coeficiente_ocupacion_suelo_total": null,
+        "altura_maxima_pisos": 6,
+        "altura_maxima_metros": 20.5,
+        "densidad_maxima_vivha": null,
+        "densidad_maxima_habha": 456,
+        "superficie_predial_minima_m2": 2000,
+        "frente_minimo_m": null,
+        "antejardín_minimo_m": 7.0,
+        "rasante_grados": null,
+        "agrupamiento": "Aislado",
+        "distancia_deslinde_m": null,
+        "subdivision_minima_m2": 2000,
+        "estacionamientos_vivienda": null,
+        "estacionamientos_comercio": null,
+        "notas": "Corredor Av. La Dehesa. CC res=1.8, COS res=0.3. COS eq=0.5. Alt máx=20.5m (6p). Dens=456 h/h. Subdiv res=2000m². Ant=7m. Predios especiales con vialidad/áreas verdes: subdiv mín=1200m².",
+        "adosamiento": false
+      }
+    },
+    {
+      "comuna": "LoBarnechea",
+      "prc_decreto": "PRC Lo Barnechea. Decreto Alcaldicio N°1295 D.O. 05.09.2002 + Mod. MPRC-LB-01 a MPRC-LB-20 (2004-2015).",
+      "zona": "N",
+      "nombre": "N Interés Cultural",
+      "usos_permitidos": [
+        "Equipamiento (servicios de producción y cuidado de especies animales en peligro de extinción)",
+        "Infraestructura",
+        "Áreas Verdes"
+      ],
+      "usos_prohibidos": [
+        "Residencial (restringido a construcciones complementarias)",
+        "Plantas de tratamiento de aguas servidas",
+        "Todo lo no expresamente permitido"
+      ],
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": 0.05,
+        "coeficiente_ocupacion_suelo": 0.03,
+        "coeficiente_ocupacion_suelo_total": null,
+        "altura_maxima_pisos": 2,
+        "altura_maxima_metros": 7.0,
+        "densidad_maxima_vivha": null,
+        "densidad_maxima_habha": null,
+        "superficie_predial_minima_m2": null,
+        "frente_minimo_m": null,
+        "antejardín_minimo_m": 0.0,
+        "rasante_grados": null,
+        "agrupamiento": "Aislado",
+        "distancia_deslinde_m": null,
+        "subdivision_minima_m2": null,
+        "estacionamientos_vivienda": null,
+        "estacionamientos_comercio": null,
+        "notas": "Zona conservación patrimonio natural/cultural. CC eq=0.05, COS eq=0.03. Alt máx=7m (2p). No se permite subdivisión. Sin antejardín mínimo. Residencial sólo restringido (accesorio al destino principal).",
+        "adosamiento": false
+      }
+    },
+    {
+      "comuna": "LoBarnechea",
+      "prc_decreto": "PRC Lo Barnechea. Decreto Alcaldicio N°1295 D.O. 05.09.2002 + Mod. MPRC-LB-01 a MPRC-LB-20 (2004-2015).",
+      "zona": "O",
+      "nombre": "O Parque Praguer",
+      "usos_permitidos": [
+        "Residencial",
+        "Equipamiento (salud, educación, culto, cultura, social, seguridad, deportes, esparcimiento, comercio, servicios)",
+        "Áreas Verdes",
+        "Actividades productivas inofensivas",
+        "Infraestructura",
+        "Espacio Público"
+      ],
+      "usos_prohibidos": [
+        "Todo lo no expresamente permitido. Plantas de tratamiento de aguas servidas."
+      ],
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": 1.2,
+        "coeficiente_ocupacion_suelo": 0.25,
+        "coeficiente_ocupacion_suelo_total": null,
+        "altura_maxima_pisos": 6,
+        "altura_maxima_metros": 17.5,
+        "densidad_maxima_vivha": null,
+        "densidad_maxima_habha": 329,
+        "superficie_predial_minima_m2": 2500,
+        "frente_minimo_m": null,
+        "antejardín_minimo_m": 5.0,
+        "rasante_grados": null,
+        "agrupamiento": "Aislado",
+        "distancia_deslinde_m": null,
+        "subdivision_minima_m2": 2500,
+        "estacionamientos_vivienda": null,
+        "estacionamientos_comercio": null,
+        "notas": "CC res=1.2, COS res=0.25. Alt máx res=17.5m (6p). Dens=329 h/h. Subdiv=2500m². Ant=5m. Equipamiento: CC=0.5, COS=0.25, Alt=7m (2p). Uso equipamiento: Esparcimiento-Parque de Entretenciones.",
+        "adosamiento": false
+      }
+    }
   ]
 }
