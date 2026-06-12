@@ -10627,5 +10627,157 @@
         "adosamiento": false
       }
     }
+  ],
+  "Curanilahue": [
+    {
+      "comuna": "Curanilahue",
+      "prc_decreto": "PRC Curanilahue. D.S. N°56 (V. y U.) D.O. 27.05.1982. Versión consolidada al 13.11.2015 (4 modificaciones; 3ra Res. GORE N°82 D.O. 21.08.2009, 4ta Decreto N°27 D.O. 22.04.2013).",
+      "zona": "Z-1",
+      "nombre": "Z-1 Zona Central Residencial Mixta",
+      "usos_permitidos": [
+        "Vivienda",
+        "Comercio",
+        "Oficina",
+        "Equipamiento",
+        "Área verde",
+        "Taller artesanal calificado por organismo competente"
+      ],
+      "usos_prohibidos": [
+        "Todo tipo de industria y bodega"
+      ],
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": null,
+        "coeficiente_ocupacion_suelo": 0.8,
+        "coeficiente_ocupacion_suelo_total": null,
+        "altura_maxima_pisos": null,
+        "altura_maxima_metros": 7.0,
+        "densidad_maxima_vivha": null,
+        "densidad_maxima_habha": "N.E.",
+        "superficie_predial_minima_m2": 200,
+        "frente_minimo_m": 8.0,
+        "antejardín_minimo_m": 1.5,
+        "rasante_grados": null,
+        "agrupamiento": "Aislado / Pareado / Continuo",
+        "distancia_deslinde_m": null,
+        "subdivision_minima_m2": 200,
+        "estacionamientos_vivienda": null,
+        "estacionamientos_comercio": null,
+        "notas": "COS=80%. Subdiv mín=200m². Frente mín=8m. Agrup. Aislado/Pareado/Continuo (long. máx agrup. 80%, altura máx agrup. 7m). PRC de 1982: NO define coef. constructibilidad ni densidad máxima. Volumen edificable regido por COS + rasantes OGUC. Altura máx 7m solo aplica a agrupamiento pareado/continuo; en aislado rige rasante OGUC. Antejardín no exigible (mín 1.5m si se deja; obligatorio mantener el existente en sectores consolidados ≥60%). Cierros máx 1.6m. Estacionamientos/adosamientos/rasantes según OGUC.",
+        "adosamiento": true
+      }
+    },
+    {
+      "comuna": "Curanilahue",
+      "prc_decreto": "PRC Curanilahue. D.S. N°56 (V. y U.) D.O. 27.05.1982. Versión consolidada al 13.11.2015 (4 modificaciones; 3ra Res. GORE N°82 D.O. 21.08.2009, 4ta Decreto N°27 D.O. 22.04.2013).",
+      "zona": "Z-2",
+      "nombre": "Z-2 Zona Residencial Mixta con Industria Inofensiva",
+      "usos_permitidos": [
+        "Vivienda",
+        "Comercio",
+        "Oficina",
+        "Equipamiento",
+        "Área verde",
+        "Taller artesanal",
+        "Industria o bodega inofensiva calificada por organismo competente"
+      ],
+      "usos_prohibidos": [
+        "Industria y bodega molesta"
+      ],
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": null,
+        "coeficiente_ocupacion_suelo": 0.5,
+        "coeficiente_ocupacion_suelo_total": null,
+        "altura_maxima_pisos": null,
+        "altura_maxima_metros": 7.0,
+        "densidad_maxima_vivha": null,
+        "densidad_maxima_habha": "N.E.",
+        "superficie_predial_minima_m2": 200,
+        "frente_minimo_m": 8.0,
+        "antejardín_minimo_m": 1.5,
+        "rasante_grados": null,
+        "agrupamiento": "Aislado / Pareado / Continuo",
+        "distancia_deslinde_m": null,
+        "subdivision_minima_m2": 200,
+        "estacionamientos_vivienda": null,
+        "estacionamientos_comercio": null,
+        "notas": "COS=50% (en terrenos con pendiente <20%). Subdiv mín=200m². Frente mín=8m. Agrup. Aislado/Pareado/Continuo (long. máx 50%, altura máx 7m). PRC de 1982: NO define coef. constructibilidad ni densidad máxima. Volumen edificable regido por COS + rasantes OGUC. Altura máx 7m solo aplica a agrupamiento pareado/continuo; en aislado rige rasante OGUC. Antejardín no exigible (mín 1.5m si se deja; obligatorio mantener el existente en sectores consolidados ≥60%). Cierros máx 1.6m. Estacionamientos/adosamientos/rasantes según OGUC.",
+        "adosamiento": true
+      }
+    },
+    {
+      "comuna": "Curanilahue",
+      "prc_decreto": "PRC Curanilahue. D.S. N°56 (V. y U.) D.O. 27.05.1982. Versión consolidada al 13.11.2015 (4 modificaciones; 3ra Res. GORE N°82 D.O. 21.08.2009, 4ta Decreto N°27 D.O. 22.04.2013).",
+      "zona": "Z-3",
+      "nombre": "Z-3 Zona Mixta con Industria Molesta No Contaminante",
+      "usos_permitidos": [
+        "Vivienda",
+        "Comercio",
+        "Oficina",
+        "Equipamiento",
+        "Área verde",
+        "Taller artesanal",
+        "Industria o bodega inofensiva y molesta no contaminante"
+      ],
+      "usos_prohibidos": [
+        "Industria o bodega contaminante"
+      ],
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": null,
+        "coeficiente_ocupacion_suelo": 0.5,
+        "coeficiente_ocupacion_suelo_total": null,
+        "altura_maxima_pisos": null,
+        "altura_maxima_metros": 7.0,
+        "densidad_maxima_vivha": null,
+        "densidad_maxima_habha": "N.E.",
+        "superficie_predial_minima_m2": 200,
+        "frente_minimo_m": 8.0,
+        "antejardín_minimo_m": 1.5,
+        "rasante_grados": null,
+        "agrupamiento": "Aislado / Pareado / Continuo",
+        "distancia_deslinde_m": null,
+        "subdivision_minima_m2": 200,
+        "estacionamientos_vivienda": null,
+        "estacionamientos_comercio": null,
+        "notas": "Usos residenciales: COS=50%, subdiv 200m², frente 8m, agrup A/P/C (long máx 50%, alt máx 7m). Industria inofensiva/molesta no contaminante y bodega: subdiv 300m², frente 15m, COS=50%, agrup Aislado. PRC de 1982: NO define coef. constructibilidad ni densidad máxima. Volumen edificable regido por COS + rasantes OGUC. Altura máx 7m solo aplica a agrupamiento pareado/continuo; en aislado rige rasante OGUC. Antejardín no exigible (mín 1.5m si se deja; obligatorio mantener el existente en sectores consolidados ≥60%). Cierros máx 1.6m. Estacionamientos/adosamientos/rasantes según OGUC.",
+        "adosamiento": true
+      }
+    },
+    {
+      "comuna": "Curanilahue",
+      "prc_decreto": "PRC Curanilahue. D.S. N°56 (V. y U.) D.O. 27.05.1982. Versión consolidada al 13.11.2015 (4 modificaciones; 3ra Res. GORE N°82 D.O. 21.08.2009, 4ta Decreto N°27 D.O. 22.04.2013).",
+      "zona": "Z-4",
+      "nombre": "Z-4 Zona Industrial y Bodegaje",
+      "usos_permitidos": [
+        "Industria y bodega inofensiva o molesta",
+        "Taller artesanal",
+        "Áreas verdes"
+      ],
+      "usos_prohibidos": [
+        "Vivienda",
+        "Comercio",
+        "Oficina",
+        "Equipamiento"
+      ],
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": null,
+        "coeficiente_ocupacion_suelo": 0.2,
+        "coeficiente_ocupacion_suelo_total": null,
+        "altura_maxima_pisos": null,
+        "altura_maxima_metros": "S.R.",
+        "densidad_maxima_vivha": null,
+        "densidad_maxima_habha": "N.E.",
+        "superficie_predial_minima_m2": 2000,
+        "frente_minimo_m": 40.0,
+        "antejardín_minimo_m": 1.5,
+        "rasante_grados": null,
+        "agrupamiento": "Aislado",
+        "distancia_deslinde_m": null,
+        "subdivision_minima_m2": 2000,
+        "estacionamientos_vivienda": null,
+        "estacionamientos_comercio": null,
+        "notas": "COS=20%. Subdiv mín=2.000m². Frente mín=40m. Agrupamiento Aislado. Sin altura máxima expresa (rige rasante OGUC). Polígonos según 4ta Modificación (Decreto N°27, D.O. 22.04.2013). PRC de 1982: NO define coef. constructibilidad ni densidad máxima. Volumen edificable regido por COS + rasantes OGUC. Altura máx 7m solo aplica a agrupamiento pareado/continuo; en aislado rige rasante OGUC. Antejardín no exigible (mín 1.5m si se deja; obligatorio mantener el existente en sectores consolidados ≥60%). Cierros máx 1.6m. Estacionamientos/adosamientos/rasantes según OGUC.",
+        "adosamiento": true
+      }
+    }
   ]
 }
