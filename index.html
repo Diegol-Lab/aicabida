@@ -2271,20 +2271,51 @@ function setTopbar(txt, color, badge) {
 function detectarZona(polygon) {
   if (!APP.geoFeatures.length) return null;
   const centroid = turf.centroid(polygon);
+  const conNormas = f => { const n = buscarNormas(f.properties); return n && tieneNormas(n); };
+
+  // 1) Zonas que CONTIENEN el centroide. Si hay varias superpuestas
+  //    (p.ej. una capa de riesgo/área verde sobre la zona base), preferir
+  //    la que tenga normas urbanísticas registradas.
+  const contienen = [];
   for (const f of APP.geoFeatures) {
-    try { if (turf.booleanPointInPolygon(centroid, f)) return f.properties; } catch {}
+    try { if (turf.booleanPointInPolygon(centroid, f)) contienen.push(f); } catch {}
   }
-  let best = null, bestArea = 0;
+  if (contienen.length) {
+    const conN = contienen.find(conNormas);
+    return (conN || contienen[0]).properties;
+  }
+
+  // 2) El predio no contiene el centroide en ninguna zona → mayor intersección.
+  //    Preferir, a igualdad, una zona con normas.
+  let best = null, bestArea = 0, bestN = null, bestNArea = 0;
   for (const f of APP.geoFeatures) {
     try {
       const inter = turf.intersect(polygon, f);
       if (inter) {
         const a = turf.area(inter);
-        if (a > bestArea) { bestArea = a; best = f.properties; }
+        if (a > bestArea) { bestArea = a; best = f; }
+        if (a > bestNArea && conNormas(f)) { bestNArea = a; bestN = f; }
       }
     } catch {}
   }
-  return best;
+  if (bestN) return bestN.properties;
+  if (best)  return best.properties;
+
+  // 3) Lote en un hueco (calle ancha, plaza, sliver entre polígonos):
+  //    asignar la zona CON normas más cercana dentro de 120 m.
+  let near = null, nearD = Infinity;
+  for (const f of APP.geoFeatures) {
+    if (!conNormas(f)) continue;
+    try {
+      const ls = turf.polygonToLine(f);
+      const arr = ls.type === 'FeatureCollection' ? ls.features : [ls];
+      for (const l of arr) {
+        const d = turf.pointToLineDistance(centroid, l, { units: 'meters' });
+        if (d < nearD) { nearD = d; near = f; }
+      }
+    } catch {}
+  }
+  return (near && nearD <= 120) ? near.properties : null;
 }
 
 function buscarNormas(props) {
