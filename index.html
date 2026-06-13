@@ -715,6 +715,51 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
   width: 11px; height: 11px; border-radius: 3px; flex-shrink: 0;
 }
 
+/* SII — toggle, hint y panel */
+.fab-sii {
+  position: absolute; top: 160px; right: 12px; z-index: 500;
+  background: white; color: var(--texto);
+  border-radius: 20px; padding: 7px 13px;
+  font-size: 12px; font-weight: 600; letter-spacing: .2px;
+  box-shadow: var(--shadow-md);
+  display: flex; align-items: center; gap: 5px;
+  border: 1.5px solid var(--borde);
+  transition: background 0.2s, color 0.2s;
+}
+.fab-sii.active { background: #2563EB; color: #fff; border-color: #2563EB; }
+.sii-hint {
+  position: absolute; top: 200px; right: 12px; z-index: 500;
+  background: rgba(37,99,235,0.95); color: #fff;
+  border-radius: 10px; padding: 6px 11px; font-size: 11px; font-weight: 500;
+  max-width: 180px; box-shadow: var(--shadow-md);
+}
+.sii-panel {
+  position: absolute; bottom: calc(var(--nav-h) + 12px); left: 16px; right: 16px;
+  background: #fff; border-radius: 16px; z-index: 510;
+  box-shadow: var(--shadow-md); padding: 16px 18px;
+  border: 1.5px solid var(--borde);
+}
+.sii-panel.hidden { display: none; }
+.sii-panel-close {
+  position: absolute; top: 10px; right: 12px; border: none; background: none;
+  font-size: 20px; line-height: 1; color: var(--muted); cursor: pointer;
+}
+.sii-loading { color: var(--muted); font-size: 13px; padding: 4px 0; }
+.sii-rol {
+  display: inline-block; background: #2563EB; color: #fff;
+  font-weight: 800; font-size: 14px; padding: 3px 10px; border-radius: 8px;
+}
+.sii-dir { font-size: 15px; font-weight: 700; color: var(--texto); margin-top: 8px; }
+.sii-meta { font-size: 12px; color: var(--muted); margin-top: 2px; }
+.sii-aval { margin-top: 12px; border-top: 1px solid var(--borde); padding-top: 10px; }
+.sii-row {
+  display: flex; justify-content: space-between; align-items: baseline;
+  font-size: 13px; padding: 3px 0; color: var(--texto);
+}
+.sii-row span { color: var(--muted); }
+.sii-row b { font-weight: 700; }
+.sii-foot { font-size: 10px; color: var(--muted); margin-top: 10px; text-align: right; }
+
 /* ============================================================
    RESUMEN EJECUTIVO IA
 ============================================================ */
@@ -1122,6 +1167,22 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
     <div class="leyenda-item"><span class="leyenda-dot" style="background:#94A3B8"></span>Sin normas registradas</div>
   </div>
 
+  <!-- Toggle: predios SII -->
+  <button class="fab-sii" id="btn-sii" onclick="toggleSiiPredios()" title="Mostrar predios oficiales del SII (ROL, dirección, avalúo)">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/>
+    </svg>
+    Predios SII
+  </button>
+  <!-- Hint SII -->
+  <div class="sii-hint" id="sii-hint" style="display:none">Toca un predio para ver su ROL, dirección y avalúo</div>
+
+  <!-- Panel resultado predio SII -->
+  <div class="sii-panel hidden" id="sii-panel">
+    <button class="sii-panel-close" onclick="cerrarPredioSII()">&#215;</button>
+    <div class="sii-panel-body" id="sii-panel-body"></div>
+  </div>
+
   <!-- FAB: Calcular -->
   <button class="fab-calcular" id="btn-calcular" onclick="calcularCabida()">
     Listo &mdash; calcular
@@ -1411,6 +1472,11 @@ const APP = {
   viewingId:       null, // id del prospecto guardado que se está viendo
   zonasLayer:      null, // capa Leaflet de coloreado por brief
   zonasVisible:    false,
+  siiLayer:        null, // capa WMS de predios SII
+  siiVisible:      false,
+  siiComuna:       null, // comuna SII actualmente cargada en la capa
+  siiMarker:       null, // marcador del predio consultado por clic
+  siiBusy:         false,
   brief: {               // brief del proyecto ingresado en la pantalla de inicio
     tipo:      'residencial',
     dptos:     null, sup_dpto:  null,
@@ -1434,6 +1500,33 @@ const DOM_URLS = {
   LoBarnechea:  'https://www.lobarnechea.cl',
   Curanilahue:  'https://www.curanilahue.cl'
 };
+
+// ============================================================
+// SII — Mapas catastrales (predios, ROL, dirección, avalúo)
+// Backend público del Servicio de Impuestos Internos, sin login.
+//  • Capa WMS de predios: imagen, se sirve directo (no requiere CORS).
+//  • Datos del predio (getFeatureInfo): JSON sin CORS → vía proxy Worker.
+// Códigos y capas verificados contra getServicioPredio (jun-2026).
+// ============================================================
+const SII_WMS_URL = 'https://www4.sii.cl/mapasui/services/ui/wmsProxyService/call';
+const SII_STYLE   = 'PREDIOS_WMS_V0';
+const SII_COMUNAS = {
+  Bulnes:      { code: 8113,  layer: 'sii:BR_CART_BULNES_WMS' },
+  ElCarmen:    { code: 8118,  layer: 'sii:BR_CART_EL_CARMEN_WMS' },
+  Laja:        { code: 8403,  layer: 'sii:BR_CART_LAJA_WMS' },
+  Lebu:        { code: 8303,  layer: 'sii:BR_CART_LEBU_WMS' },
+  Penco:       { code: 8202,  layer: 'sii:BR_CART_PENCO_WMS' },
+  Tome:        { code: 8205,  layer: 'sii:BR_CART_TOME_WMS' },
+  Yumbel:      { code: 8409,  layer: 'sii:BR_CART_YUMBEL_WMS' },
+  Yungay:      { code: 8116,  layer: 'sii:BR_CART_YUNGAY_WMS' },
+  Macul:       { code: 15151, layer: 'sii:BR_CART_MACUL_WMS' },
+  LoBarnechea: { code: 15161, layer: 'sii:BR_CART_LO_BARNECHEA_WMS' },
+  Curanilahue: { code: 8302,  layer: 'sii:BR_CART_CURANILAHUE_WMS' }
+};
+// URL del Cloudflare Worker (proxy). Se setea en Config; vacío = sin datos de predio.
+function siiWorkerUrl() {
+  return (localStorage.getItem('sii_worker_url') || '').replace(/\/+$/, '');
+}
 
 // ============================================================
 // INIT
@@ -1592,6 +1685,200 @@ function ocultarZonasBrief() {
 function toggleZonasBrief() {
   if (APP.zonasVisible) ocultarZonasBrief();
   else mostrarZonasBrief();
+}
+
+// ============================================================
+// SII — Capa de predios + consulta de ROL / dirección / avalúo
+// ============================================================
+
+// Detecta la comuna SII bajo un punto, usando los polígonos de zonas cargados.
+function siiComunaAt(latlng) {
+  if (!APP.geoFeatures.length || typeof turf === 'undefined') return null;
+  const pt = turf.point([latlng.lng, latlng.lat]);
+  for (const f of APP.geoFeatures) {
+    const com = f.properties && f.properties.comuna;
+    if (!com || !SII_COMUNAS[com]) continue;
+    try {
+      if (turf.booleanPointInPolygon(pt, f)) return com;
+    } catch {}
+  }
+  return null;
+}
+
+function buildSiiLayer(comunaKey) {
+  const cfg = SII_COMUNAS[comunaKey];
+  return L.tileLayer.wms(SII_WMS_URL, {
+    layers: cfg.layer,
+    styles: SII_STYLE,
+    format: 'image/png',
+    transparent: true,
+    version: '1.1.1',
+    zIndex: 600,
+    maxZoom: 22,
+    updateWhenIdle: true,
+    updateWhenZooming: false
+  });
+}
+
+// Carga / cambia la capa WMS según la comuna bajo el centro del mapa.
+function refreshSiiLayer() {
+  if (!APP.siiVisible || !APP.map) return;
+  const com = siiComunaAt(APP.map.getCenter());
+  if (!com) return;                       // fuera de comunas cargadas → conserva la capa actual
+  if (com === APP.siiComuna && APP.siiLayer) return;
+  if (APP.siiLayer) { APP.map.removeLayer(APP.siiLayer); APP.siiLayer = null; }
+  APP.siiComuna = com;
+  APP.siiLayer = buildSiiLayer(com).addTo(APP.map);
+}
+
+function mostrarSiiPredios() {
+  if (!APP.map) return;
+  const com = siiComunaAt(APP.map.getCenter());
+  if (!com) {
+    toast('Acércate a una comuna con datos cargados para ver los predios del SII');
+    return;
+  }
+  APP.siiVisible = true;
+  APP.siiComuna = com;
+  APP.siiLayer = buildSiiLayer(com).addTo(APP.map);
+  APP.map.on('moveend', refreshSiiLayer);
+  APP.map.on('click', siiClickHandler);
+  const btn = document.getElementById('btn-sii');
+  if (btn) btn.classList.add('active');
+  const hint = document.getElementById('sii-hint');
+  if (hint) hint.style.display = '';
+}
+
+function ocultarSiiPredios() {
+  if (APP.siiLayer && APP.map) { APP.map.removeLayer(APP.siiLayer); }
+  APP.siiLayer = null;
+  APP.siiComuna = null;
+  APP.siiVisible = false;
+  if (APP.map) {
+    APP.map.off('moveend', refreshSiiLayer);
+    APP.map.off('click', siiClickHandler);
+  }
+  cerrarPredioSII();
+  const btn = document.getElementById('btn-sii');
+  if (btn) btn.classList.remove('active');
+  const hint = document.getElementById('sii-hint');
+  if (hint) hint.style.display = 'none';
+}
+
+function toggleSiiPredios() {
+  if (APP.siiVisible) ocultarSiiPredios();
+  else mostrarSiiPredios();
+}
+
+// Clic en el mapa → consulta el predio bajo el punto en el SII.
+async function siiClickHandler(e) {
+  if (!APP.siiVisible || APP.siiBusy) return;
+  // No interferir con el modo de trazado.
+  const trazarBtn = document.getElementById('btn-trazar');
+  if (trazarBtn && trazarBtn.classList.contains('cancelar')) return;
+
+  const worker = siiWorkerUrl();
+  if (!worker) {
+    toast('Configura el proxy SII en Config para consultar ROL y avalúo');
+    return;
+  }
+  const com = siiComunaAt(e.latlng) || APP.siiComuna;
+  if (!com || !SII_COMUNAS[com]) { toast('Predio fuera de las comunas cargadas'); return; }
+  const cfg = SII_COMUNAS[com];
+
+  APP.siiBusy = true;
+  const b = APP.map.getBounds(), size = APP.map.getSize();
+  const pt = APP.map.latLngToContainerPoint(e.latlng);
+  const envelope = {
+    metaData: {
+      namespace: 'cl.sii.sdi.lob.bbrr.mapas.data.api.interfaces.MapasFacadeService/getFeatureInfo',
+      conversationId: 'UNAUTHENTICATED-CALL',
+      transactionId: (crypto.randomUUID ? crypto.randomUUID() : String(Date.now()))
+    },
+    data: {
+      clickInfo: {
+        x: pt.x, y: pt.y,
+        southwestx: b.getSouthWest().lat, southwesty: b.getSouthWest().lng,
+        northeastx: b.getNorthEast().lat, northeasty: b.getNorthEast().lng,
+        layer: cfg.layer,
+        width: size.x, height: size.y,
+        servicios: [{ comuna: cfg.code, layer: cfg.layer, style: SII_STYLE, eac: 0, eacano: 0 }],
+        tokenARSII: null
+      },
+      tokenARSII: null
+    }
+  };
+
+  mostrarPredioSII({ _loading: true });
+  try {
+    const res = await fetch(worker + '/getFeatureInfo', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(envelope)
+    });
+    const json = await res.json();
+    const predio = json && json.data;
+    if (!predio || predio.existePredio !== 1) {
+      mostrarPredioSII({ _empty: true });
+    } else {
+      mostrarPredioSII(predio);
+      if (predio.ubicacionX && predio.ubicacionY) {
+        if (APP.siiMarker) APP.siiMarker.remove();
+        APP.siiMarker = L.circleMarker([predio.ubicacionX, predio.ubicacionY], {
+          radius: 8, color: '#3B2314', fillColor: '#F5E400', fillOpacity: 1, weight: 2.5
+        }).addTo(APP.map);
+      }
+    }
+  } catch (err) {
+    mostrarPredioSII({ _error: true });
+  } finally {
+    APP.siiBusy = false;
+  }
+}
+
+function fmtPesos(n) {
+  if (n == null || isNaN(n)) return '—';
+  return '$' + Number(n).toLocaleString('es-CL');
+}
+
+function mostrarPredioSII(predio) {
+  const panel = document.getElementById('sii-panel');
+  const body  = document.getElementById('sii-panel-body');
+  if (!panel || !body) return;
+  panel.classList.remove('hidden');
+
+  if (predio._loading) {
+    body.innerHTML = '<div class="sii-loading">Consultando el SII…</div>';
+    return;
+  }
+  if (predio._empty) {
+    body.innerHTML = '<div class="sii-loading">No hay predio del SII en ese punto. Prueba sobre el centro del lote.</div>';
+    return;
+  }
+  if (predio._error) {
+    body.innerHTML = '<div class="sii-loading">No se pudo consultar el SII. Revisa el proxy en Config.</div>';
+    return;
+  }
+
+  const sup = (predio.supTerreno && predio.supTerreno > 0)
+    ? `<div class="sii-row"><span>Superficie terreno</span><b>${Number(predio.supTerreno).toLocaleString('es-CL')} ${predio.medidaSup || 'm²'}</b></div>` : '';
+  body.innerHTML = `
+    <div class="sii-rol">ROL ${predio.rol || (predio.manzana + '-' + predio.predio)}</div>
+    <div class="sii-dir">${(predio.direccion || '').trim() || '—'}</div>
+    <div class="sii-meta">${predio.nombreComuna || ''}${predio.destinoDescripcion ? ' · ' + predio.destinoDescripcion : ''}${predio.ubicacion ? ' · ' + predio.ubicacion : ''}</div>
+    <div class="sii-aval">
+      <div class="sii-row"><span>Avalúo total</span><b>${fmtPesos(predio.valorTotal)}</b></div>
+      <div class="sii-row"><span>Avalúo afecto</span><b>${fmtPesos(predio.valorAfecto)}</b></div>
+      <div class="sii-row"><span>Avalúo exento</span><b>${fmtPesos(predio.valorExento)}</b></div>
+      ${sup}
+    </div>
+    <div class="sii-foot">Fuente: Mapas SII · ${predio.periodo || ''}</div>`;
+}
+
+function cerrarPredioSII() {
+  const panel = document.getElementById('sii-panel');
+  if (panel) panel.classList.add('hidden');
+  if (APP.siiMarker) { APP.siiMarker.remove(); APP.siiMarker = null; }
 }
 
 // ============================================================
@@ -2958,6 +3245,33 @@ function openConfig() {
   setProvider(getProvider());
   mostrarEstadoClave('gemini', gKey);
   mostrarEstadoClave('claude', cKey);
+  // Proxy SII
+  const sInput = document.getElementById('cfg-sii-worker');
+  const sUrl = siiWorkerUrl();
+  if (sInput) sInput.value = sUrl;
+  mostrarEstadoSii(sUrl);
+}
+
+function mostrarEstadoSii(url) {
+  const el = document.getElementById('cfg-status-sii');
+  if (!el) return;
+  if (url) {
+    el.textContent = '✓ Proxy configurado';
+    el.className = 'modal-key-status ok';
+  } else {
+    el.textContent = 'Sin proxy · predios visibles pero sin ROL/avalúo';
+    el.className = 'modal-key-status err';
+  }
+  el.style.display = 'block';
+}
+
+function guardarSiiWorker() {
+  const raw = document.getElementById('cfg-sii-worker').value.trim().replace(/\/+$/, '');
+  if (raw && !/^https?:\/\//.test(raw)) { toast('La URL debe comenzar con https://'); return; }
+  if (raw) localStorage.setItem('sii_worker_url', raw);
+  else localStorage.removeItem('sii_worker_url');
+  mostrarEstadoSii(raw);
+  toast(raw ? '✓ Proxy SII guardado' : 'Proxy SII eliminado');
 }
 
 function cerrarConfig(e) {
@@ -4026,6 +4340,19 @@ initApp();
       </div>
       <div class="modal-key-status" id="cfg-status-claude"></div>
       <button class="cfg-del-btn" onclick="borrarClaudeKey()">Eliminar clave</button>
+    </div>
+
+    <!-- Proxy SII -->
+    <p class="modal-section-label" style="margin-top:18px">Mapa SII (predios)</p>
+    <div class="cfg-provider-card">
+      <div class="cfg-provider-name">Proxy Cloudflare Worker</div>
+      <div class="cfg-provider-meta">Habilita ROL, dirección y avalúo al tocar un predio. Despliega <strong>sii-proxy-worker.js</strong> y pega aquí su URL.</div>
+      <div class="cfg-input-row">
+        <input type="text" id="cfg-sii-worker" class="modal-input"
+               placeholder="https://…workers.dev" autocomplete="off" spellcheck="false">
+        <button class="cfg-save-btn" onclick="guardarSiiWorker()">Guardar</button>
+      </div>
+      <div class="modal-key-status" id="cfg-status-sii"></div>
     </div>
   </div>
 </div>
