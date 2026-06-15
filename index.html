@@ -2028,7 +2028,7 @@ function initMap() {
   APP.map = L.map('map', {
     zoomControl: false, attributionControl: false,
     tap: true, tapTolerance: 20,
-    maxZoom: 22
+    maxZoom: 22, zoomSnap: 0.5, zoomDelta: 0.5, wheelPxPerZoomLevel: 80
   }).setView([-37.2, -72.9], 8);
 
   addSatTiles(APP.map);
@@ -3667,15 +3667,19 @@ function toast(msg) {
 // TILES — ESRI World Imagery + labels overlay
 // ============================================================
 function addSatTiles(map) {
-  // ESRI World Imagery — uso autorizado, resolución nativa hasta z19-20 en Chile
+  // ESRI World Imagery — uso autorizado. En Chile la cobertura nativa universal
+  // llega a ~z18 (en ciudades grandes hay z19-20, pero pueblos chicos como Lebu
+  // o Curanilahue se quedan en z18; pedir z19+ devuelve "Map data not yet available").
+  // Fijamos maxNativeZoom:18 para que de z19 en adelante Leaflet ESCALE la imagen
+  // real de z18 (overzoom borroso pero presente) en vez de pedir tiles inexistentes.
   L.tileLayer(
     'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
-    { maxZoom: 21, maxNativeZoom: 20, attribution: 'Tiles &copy; Esri' }
+    { maxZoom: 22, maxNativeZoom: 18, attribution: 'Tiles &copy; Esri' }
   ).addTo(map);
   // Etiquetas encima
   L.tileLayer(
     'https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}',
-    { maxZoom: 21, maxNativeZoom: 19, opacity: 0.85, pane: 'shadowPane' }
+    { maxZoom: 22, maxNativeZoom: 18, opacity: 0.85, pane: 'shadowPane' }
   ).addTo(map);
 }
 
