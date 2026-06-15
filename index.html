@@ -2028,10 +2028,16 @@ function initMap() {
   APP.map = L.map('map', {
     zoomControl: false, attributionControl: false,
     tap: true, tapTolerance: 20,
-    maxZoom: 22, zoomSnap: 0.5, zoomDelta: 0.5, wheelPxPerZoomLevel: 80
+    maxZoom: 23, zoomSnap: 0.5, zoomDelta: 0.5, wheelPxPerZoomLevel: 80
   }).setView([-37.2, -72.9], 8);
 
   addSatTiles(APP.map);
+  // Ajuste adaptativo de resolución satelital (debounced)
+  let _satTimer = null;
+  APP.map.on('moveend', () => {
+    clearTimeout(_satTimer);
+    _satTimer = setTimeout(ajustarResolucionSat, 450);
+  });
   APP.drawnLayer = new L.FeatureGroup().addTo(APP.map);
   centerOnUser();
 
@@ -3667,20 +3673,84 @@ function toast(msg) {
 // TILES — ESRI World Imagery + labels overlay
 // ============================================================
 function addSatTiles(map) {
-  // ESRI World Imagery — uso autorizado. En Chile la cobertura nativa universal
-  // llega a ~z18 (en ciudades grandes hay z19-20, pero pueblos chicos como Lebu
-  // o Curanilahue se quedan en z18; pedir z19+ devuelve "Map data not yet available").
-  // Fijamos maxNativeZoom:18 para que de z19 en adelante Leaflet ESCALE la imagen
-  // real de z18 (overzoom borroso pero presente) en vez de pedir tiles inexistentes.
-  L.tileLayer(
-    'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
-    { maxZoom: 22, maxNativeZoom: 18, attribution: 'Tiles &copy; Esri' }
-  ).addTo(map);
+  // ESRI World Imagery — uso autorizado. La cobertura nativa varía: ciudades
+  // grandes tienen z19-20, pueblos chicos (Lebu, Curanilahue) se quedan en z18
+  // (pedir z19+ ahí devuelve "Map data not yet available"). Partimos en z18 y
+  // ajustarResolucionSat() sube el nativo a 19-20 donde exista imagen real.
+  APP.satNative = 18;
+  APP.satLayer = _crearCapaSat(18).addTo(map);
   // Etiquetas encima
-  L.tileLayer(
+  APP.satLabels = L.tileLayer(
     'https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}',
-    { maxZoom: 22, maxNativeZoom: 18, opacity: 0.85, pane: 'shadowPane' }
+    { maxZoom: 23, maxNativeZoom: 18, opacity: 0.85, pane: 'shadowPane', zIndex: 2 }
   ).addTo(map);
+}
+
+function _crearCapaSat(nativeZoom) {
+  return L.tileLayer(
+    'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+    { maxZoom: 23, maxNativeZoom: nativeZoom, attribution: 'Tiles &copy; Esri', zIndex: 1 }
+  );
+}
+
+// ── Resolución satelital adaptativa ───────────────────────────────────────────
+// ESRI sirve un tile placeholder ("Map data not yet available", gris claro y casi
+// uniforme) cuando no hay imagen nativa en ese nivel. Probamos el tile central
+// del área visible en z19/z20: si es imagen real, subimos maxNativeZoom ahí para
+// máxima nitidez; si es placeholder, lo dejamos en 18 (Leaflet escala z18).
+function _ll2tile(lon, lat, z) {
+  const n = Math.pow(2, z);
+  const x = Math.floor((lon + 180) / 360 * n);
+  const y = Math.floor((1 - Math.log(Math.tan(lat * Math.PI/180) + 1/Math.cos(lat * Math.PI/180)) / Math.PI) / 2 * n);
+  return { x, y };
+}
+function _probeTileReal(z, x, y) {
+  return new Promise(res => {
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.onload = () => {
+      try {
+        const c = document.createElement('canvas'); c.width = c.height = 48;
+        const ctx = c.getContext('2d'); ctx.drawImage(img, 0, 0, 48, 48);
+        const d = ctx.getImageData(0, 0, 48, 48).data;
+        let mn = 255, mx = 0, sum = 0;
+        for (let i = 0; i < d.length; i += 4) { mn = Math.min(mn, d[i]); mx = Math.max(mx, d[i]); sum += d[i]; }
+        const rango = mx - mn, brillo = sum / (d.length / 4);
+        // placeholder ≈ poca variación de color + claro
+        res(!(rango < 80 && brillo > 175));
+      } catch { res(true); } // si el canvas se contamina, asumimos imagen real
+    };
+    img.onerror = () => res(false);
+    img.src = `https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/${z}/${y}/${x}`;
+  });
+}
+let _satProbeKey = null;
+async function ajustarResolucionSat() {
+  if (!APP.satLayer || !APP.map) return;
+  // A zoom bajo no hace falta probar; deja el nativo en 18.
+  if (APP.map.getZoom() < 16) { _setNativeSat(18); return; }
+  const c = APP.map.getCenter();
+  const key = Math.round(c.lat * 800) + '_' + Math.round(c.lng * 800);
+  if (key === _satProbeKey) return;
+  _satProbeKey = key;
+  let best = 18;
+  for (const lvl of [19, 20]) {
+    const t = _ll2tile(c.lng, c.lat, lvl);
+    if (await _probeTileReal(lvl, t.x, t.y)) best = lvl; else break;
+  }
+  _setNativeSat(best);
+}
+function _setNativeSat(n) {
+  if (!APP.satLayer || !APP.map) return;
+  if (APP.satNative === n) return;
+  // Recrear la capa (mutar maxNativeZoom + redraw deja la capa sin tiles en Leaflet).
+  const nueva = _crearCapaSat(n).addTo(APP.map);
+  const vieja = APP.satLayer;
+  APP.satLayer = nueva;
+  APP.satNative = n;
+  // Quitar la anterior cuando la nueva ya tenga tiles, para evitar parpadeo.
+  nueva.once('load', () => { try { APP.map.removeLayer(vieja); } catch {} });
+  setTimeout(() => { try { APP.map.removeLayer(vieja); } catch {} }, 2500);
 }
 
 // ============================================================
