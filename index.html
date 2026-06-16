@@ -258,14 +258,6 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
 .modal-key-status.ok  { background: #DCFCE7; color: #15803D; }
 .modal-key-status.err { background: #FEE2E2; color: #DC2626; }
 
-/* Provider toggle */
-.provider-toggle { display: flex; gap: 8px; margin-bottom: 20px; }
-.provider-chip-cfg {
-  flex: 1; padding: 10px 8px; border-radius: 12px; font-size: 13px; font-weight: 600;
-  border: 1.5px solid var(--borde); background: var(--bg); color: var(--muted);
-  font-family: var(--inter); transition: all 0.15s; text-align: center; line-height: 1.3;
-}
-.provider-chip-cfg.active { background: var(--accent); color: var(--accent-text); border-color: var(--accent); }
 .cfg-provider-card {
   border: 1.5px solid var(--borde); border-radius: 16px; padding: 16px; margin-bottom: 14px;
 }
@@ -989,7 +981,7 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
     </div>
 
     <p class="tagline">¿Qué quieres<br>construir?</p>
-    <p class="subtitle">Describe tu proyecto o configúralo manualmente.</p>
+    <p class="subtitle">Describe tu proyecto.</p>
 
     <!-- Claude text input -->
     <div class="claude-wrap">
@@ -1001,87 +993,6 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
           ✨ Analizar
         </button>
       </div>
-    </div>
-
-    <div class="brief-divider">
-      <div class="brief-divider-line"></div>
-      <span class="brief-divider-txt">o configura manualmente</span>
-      <div class="brief-divider-line"></div>
-    </div>
-
-    <!-- Brief form -->
-    <div class="brief-form">
-
-      <!-- Tipo de proyecto -->
-      <div>
-        <p class="brief-label">Tipo de proyecto</p>
-        <div class="brief-chips" id="brief-tipo-chips">
-          <button class="brief-chip active" data-tipo="residencial" onclick="setBriefTipo('residencial')">🏠 Residencial</button>
-          <button class="brief-chip"        data-tipo="comercial"   onclick="setBriefTipo('comercial')">🏪 Comercial</button>
-          <button class="brief-chip"        data-tipo="mixto"       onclick="setBriefTipo('mixto')">🏢 Mixto</button>
-        </div>
-      </div>
-
-      <!-- Panel Residencial -->
-      <div id="brief-panel-residencial" class="brief-panel">
-        <div class="brief-row">
-          <span class="brief-row-label">Departamentos</span>
-          <input class="brief-input" type="number" id="b-dptos" placeholder="ej. 20" min="1">
-        </div>
-        <div class="brief-row">
-          <span class="brief-row-label">Superficie por depto.</span>
-          <div class="brief-input-unit">
-            <input class="brief-input" type="number" id="b-sup-dpto" placeholder="ej. 60" min="10">
-            <span>m²</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Panel Comercial -->
-      <div id="brief-panel-comercial" class="brief-panel" style="display:none">
-        <div class="brief-row">
-          <span class="brief-row-label">Locales</span>
-          <input class="brief-input" type="number" id="b-locales" placeholder="ej. 5" min="1">
-        </div>
-        <div class="brief-row">
-          <span class="brief-row-label">Superficie por local</span>
-          <div class="brief-input-unit">
-            <input class="brief-input" type="number" id="b-sup-local" placeholder="ej. 80" min="10">
-            <span>m²</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Panel Mixto -->
-      <div id="brief-panel-mixto" class="brief-panel" style="display:none">
-        <div class="brief-row">
-          <span class="brief-row-label">Departamentos</span>
-          <input class="brief-input" type="number" id="b-dptos-m" placeholder="ej. 12" min="1">
-        </div>
-        <div class="brief-row">
-          <span class="brief-row-label">Superficie por depto.</span>
-          <div class="brief-input-unit">
-            <input class="brief-input" type="number" id="b-sup-dpto-m" placeholder="ej. 55" min="10">
-            <span>m²</span>
-          </div>
-        </div>
-        <div class="brief-row">
-          <span class="brief-row-label">Locales comerciales</span>
-          <input class="brief-input" type="number" id="b-locales-m" placeholder="ej. 3" min="1">
-        </div>
-        <div class="brief-row">
-          <span class="brief-row-label">Superficie por local</span>
-          <div class="brief-input-unit">
-            <input class="brief-input" type="number" id="b-sup-local-m" placeholder="ej. 80" min="10">
-            <span>m²</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Notas -->
-      <input class="brief-notes" id="b-notas" type="text"
-             placeholder="Otras consideraciones… (opcional)">
-
     </div>
 
     <!-- stat-cabidas oculto para compatibilidad JS -->
@@ -1588,30 +1499,11 @@ function updateSplash() {
 // ── Brief form ────────────────────────────────────────────────
 function setBriefTipo(tipo) {
   APP.brief.tipo = tipo;
-  document.querySelectorAll('.brief-chip').forEach(c =>
-    c.classList.toggle('active', c.dataset.tipo === tipo)
-  );
-  ['residencial', 'comercial', 'mixto'].forEach(t => {
-    const panel = document.getElementById(`brief-panel-${t}`);
-    if (panel) panel.style.display = t === tipo ? '' : 'none';
-  });
 }
 
 function iniciarProspecto() {
-  const t = APP.brief.tipo;
-  if (t === 'residencial') {
-    APP.brief.dptos    = parseInt(document.getElementById('b-dptos').value)    || null;
-    APP.brief.sup_dpto = parseInt(document.getElementById('b-sup-dpto').value) || null;
-  } else if (t === 'comercial') {
-    APP.brief.locales   = parseInt(document.getElementById('b-locales').value)   || null;
-    APP.brief.sup_local = parseInt(document.getElementById('b-sup-local').value) || null;
-  } else {
-    APP.brief.dptos     = parseInt(document.getElementById('b-dptos-m').value)    || null;
-    APP.brief.sup_dpto  = parseInt(document.getElementById('b-sup-dpto-m').value) || null;
-    APP.brief.locales   = parseInt(document.getElementById('b-locales-m').value)  || null;
-    APP.brief.sup_local = parseInt(document.getElementById('b-sup-local-m').value)|| null;
-  }
-  APP.brief.notas = (document.getElementById('b-notas').value || '').trim();
+  // El brief se define mediante la descripción con IA (analizarBrief).
+  // Si no se describió nada, APP.brief conserva sus valores por defecto.
   navigate('mapa');
   // Auto-mostrar overlay de zonas compatibles al entrar al mapa
   setTimeout(() => mostrarZonasBrief(), 450);
@@ -1887,10 +1779,8 @@ async function generarResumenEjecutivo(cats) {
   const content = document.getElementById('r-resumen-content');
   if (!section || !content) return;
 
-  const p    = getProvider();
   const gKey = localStorage.getItem('gemini_key');
-  const cKey = localStorage.getItem('anthropic_key');
-  if ((p === 'gemini' && !gKey) || (p === 'claude' && !cKey)) {
+  if (!gKey) {
     section.style.display = 'none'; return;
   }
 
@@ -1957,9 +1847,7 @@ ENTORNO URBANO (600 m): ${osmLineas.length ? osmLineas.join('; ') : 'sin datos d
 Genera el párrafo resumen técnico.`;
 
   try {
-    const txt = p === 'gemini'
-      ? await llamarGeminiRaw(prompt, gKey)
-      : await llamarClaudeRaw(prompt, cKey);
+    const txt = await llamarGeminiRaw(prompt, gKey);
     content.className = 'resumen-text';
     content.textContent = txt.trim();
   } catch(e) {
@@ -1982,26 +1870,6 @@ async function llamarGeminiRaw(texto, key) {
   const data = await res.json();
   if (data.error) throw new Error(data.error.message);
   return data.candidates[0].content.parts[0].text;
-}
-
-async function llamarClaudeRaw(texto, key) {
-  const res = await fetch('https://api.anthropic.com/v1/messages', {
-    method: 'POST',
-    headers: {
-      'x-api-key': key,
-      'anthropic-version': '2023-06-01',
-      'content-type': 'application/json',
-      'anthropic-dangerous-direct-browser-access': 'true'
-    },
-    body: JSON.stringify({
-      model: 'claude-haiku-4-5',
-      max_tokens: 280,
-      messages: [{ role: 'user', content: texto }]
-    })
-  });
-  const data = await res.json();
-  if (data.error) throw new Error(data.error.message);
-  return data.content[0].text;
 }
 
 // ============================================================
@@ -3248,38 +3116,17 @@ function irADOM() {
 // CONFIGURACIÓN — proveedor de IA (Claude · Gemini)
 // ============================================================
 function getProvider() {
-  return localStorage.getItem('ia_provider') || 'gemini';
-}
-
-function setProvider(p) {
-  localStorage.setItem('ia_provider', p);
-  // chips del modal
-  document.querySelectorAll('.provider-chip-cfg').forEach(c =>
-    c.classList.toggle('active', c.dataset.p === p)
-  );
-  // bordes de las cards
-  const cards = { gemini: 'cfg-card-gemini', claude: 'cfg-card-claude' };
-  Object.entries(cards).forEach(([k, id]) => {
-    const el = document.getElementById(id);
-    if (el) el.classList.toggle('active-provider', k === p);
-  });
-  actualizarHintClaude();
+  return 'gemini';
 }
 
 function openConfig() {
   const modal = document.getElementById('modal-config');
   modal.style.display = 'flex';
-  // Pre-llenar inputs con indicador enmascarado si ya hay key
+  // Pre-llenar input con indicador enmascarado si ya hay key
   const gKey = localStorage.getItem('gemini_key') || '';
-  const cKey = localStorage.getItem('anthropic_key') || '';
   const gInput = document.getElementById('cfg-gemini-key');
-  const cInput = document.getElementById('cfg-claude-key');
   if (gInput) gInput.value = gKey ? '••••••' + gKey.slice(-6) : '';
-  if (cInput) cInput.value = cKey ? '••••••' + cKey.slice(-6) : '';
-  // Reflejar proveedor activo
-  setProvider(getProvider());
   mostrarEstadoClave('gemini', gKey);
-  mostrarEstadoClave('claude', cKey);
   // Proxy SII
   const sInput = document.getElementById('cfg-sii-worker');
   const sUrl = siiWorkerUrl();
@@ -3335,7 +3182,6 @@ function guardarGeminiKey() {
   if (!raw.startsWith('AIza')) { mostrarEstadoClave('gemini', ''); toast('La clave Gemini comienza con AIza'); return; }
   localStorage.setItem('gemini_key', raw);
   mostrarEstadoClave('gemini', raw);
-  setProvider('gemini');
   actualizarHintClaude();
   toast('✓ Clave Gemini guardada');
 }
@@ -3348,35 +3194,12 @@ function borrarGeminiKey() {
   actualizarHintClaude();
 }
 
-function guardarClaudeKey() {
-  const raw = document.getElementById('cfg-claude-key').value.trim();
-  if (!raw || raw.startsWith('••')) { toast('Ingresa una clave válida'); return; }
-  if (!raw.startsWith('sk-ant-')) { mostrarEstadoClave('claude', ''); toast('La clave Claude comienza con sk-ant-'); return; }
-  localStorage.setItem('anthropic_key', raw);
-  mostrarEstadoClave('claude', raw);
-  setProvider('claude');
-  actualizarHintClaude();
-  toast('✓ Clave Claude guardada');
-}
-
-function borrarClaudeKey() {
-  localStorage.removeItem('anthropic_key');
-  const el = document.getElementById('cfg-claude-key');
-  if (el) el.value = '';
-  mostrarEstadoClave('claude', '');
-  actualizarHintClaude();
-}
-
 function actualizarHintClaude() {
   const hint = document.getElementById('claude-hint');
   if (!hint) return;
-  const p = getProvider();
   const gKey = localStorage.getItem('gemini_key');
-  const cKey = localStorage.getItem('anthropic_key');
-  const activeKey = p === 'gemini' ? gKey : cKey;
-  const nombre = p === 'gemini' ? 'Gemini (gratis)' : 'Claude';
-  hint.textContent = activeKey
-    ? `✨ ${nombre} listo — describe tu proyecto`
+  hint.textContent = gKey
+    ? '✨ Gemini (gratis) listo — describe tu proyecto'
     : '✨ Configura tu API key en ⚙️';
 }
 
@@ -3391,20 +3214,14 @@ async function analizarBrief() {
   const texto = (document.getElementById('claude-input').value || '').trim();
   if (!texto) { toast('Escribe una descripción primero'); return; }
 
-  const p    = getProvider();
   const gKey = localStorage.getItem('gemini_key');
-  const cKey = localStorage.getItem('anthropic_key');
-
-  if (p === 'gemini' && !gKey) { openConfig(); return; }
-  if (p === 'claude' && !cKey) { openConfig(); return; }
+  if (!gKey) { openConfig(); return; }
 
   const btn = document.getElementById('btn-analizar');
   btn.disabled = true; btn.textContent = '…';
 
   try {
-    const txt = p === 'gemini'
-      ? await llamarGemini(texto, gKey)
-      : await llamarClaude(texto, cKey);
+    const txt = await llamarGemini(texto, gKey);
 
     const match = txt.match(/\{[\s\S]*\}/);
     if (!match) { toast('No se pudo interpretar la respuesta'); return; }
@@ -3432,27 +3249,6 @@ async function llamarGemini(texto, key) {
   return data.candidates[0].content.parts[0].text;
 }
 
-async function llamarClaude(texto, key) {
-  const res = await fetch('https://api.anthropic.com/v1/messages', {
-    method: 'POST',
-    headers: {
-      'x-api-key': key,
-      'anthropic-version': '2023-06-01',
-      'content-type': 'application/json',
-      'anthropic-dangerous-direct-browser-access': 'true'
-    },
-    body: JSON.stringify({
-      model: 'claude-haiku-4-5',
-      max_tokens: 350,
-      system: IA_SYSTEM,
-      messages: [{ role: 'user', content: texto }]
-    })
-  });
-  const data = await res.json();
-  if (data.error) throw new Error(data.error.message);
-  return data.content[0].text;
-}
-
 function aplicarBriefDesdeIA(b) {
   // Actualizar APP.brief
   APP.brief.tipo = b.tipo || 'residencial';
@@ -3461,19 +3257,6 @@ function aplicarBriefDesdeIA(b) {
   APP.brief.locales   = b.locales   || null;
   APP.brief.sup_local = b.sup_local || null;
   if (b.prioridades) APP.brief.prioridades = b.prioridades;
-
-  // Actualizar UI del formulario
-  setBriefTipo(APP.brief.tipo);
-  const set = (id, val) => { const el = document.getElementById(id); if (el && val) el.value = val; };
-
-  if (APP.brief.tipo === 'residencial') {
-    set('b-dptos', b.dptos); set('b-sup-dpto', b.sup_dpto);
-  } else if (APP.brief.tipo === 'comercial') {
-    set('b-locales', b.locales); set('b-sup-local', b.sup_local);
-  } else {
-    set('b-dptos-m', b.dptos); set('b-sup-dpto-m', b.sup_dpto);
-    set('b-locales-m', b.locales); set('b-sup-local-m', b.sup_local);
-  }
 
   if (b.nota) {
     const hint = document.getElementById('claude-hint');
@@ -4408,18 +4191,8 @@ initApp();
       <button class="modal-close" onclick="cerrarConfig()">✕</button>
     </div>
 
-    <!-- Selector de proveedor -->
-    <p class="modal-section-label">Proveedor activo</p>
-    <div class="provider-toggle">
-      <button class="provider-chip-cfg active" data-p="gemini" onclick="setProvider('gemini')">
-        🆓 Gemini<br><small>Gratis</small>
-      </button>
-      <button class="provider-chip-cfg" data-p="claude" onclick="setProvider('claude')">
-        💎 Claude<br><small>Pago por uso</small>
-      </button>
-    </div>
-
-    <!-- Tarjeta Gemini -->
+    <!-- Análisis con IA (Gemini) -->
+    <p class="modal-section-label">Análisis con IA</p>
     <div class="cfg-provider-card" id="cfg-card-gemini">
       <div class="cfg-provider-name">Google Gemini Flash</div>
       <div class="cfg-provider-meta">Gratis · 1 500 req/día · <strong>aistudio.google.com</strong> → Get API key</div>
@@ -4430,19 +4203,6 @@ initApp();
       </div>
       <div class="modal-key-status" id="cfg-status-gemini"></div>
       <button class="cfg-del-btn" onclick="borrarGeminiKey()">Eliminar clave</button>
-    </div>
-
-    <!-- Tarjeta Claude -->
-    <div class="cfg-provider-card" id="cfg-card-claude">
-      <div class="cfg-provider-name">Anthropic Claude Haiku</div>
-      <div class="cfg-provider-meta">Pago por uso · <strong>console.anthropic.com</strong> → API Keys</div>
-      <div class="cfg-input-row">
-        <input type="password" id="cfg-claude-key" class="modal-input"
-               placeholder="sk-ant-…" autocomplete="off" spellcheck="false">
-        <button class="cfg-save-btn" onclick="guardarClaudeKey()">Guardar</button>
-      </div>
-      <div class="modal-key-status" id="cfg-status-claude"></div>
-      <button class="cfg-del-btn" onclick="borrarClaudeKey()">Eliminar clave</button>
     </div>
 
     <!-- Proxy SII -->
