@@ -679,34 +679,6 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
 
 .sheet-btns { display: flex; flex-direction: column; gap: 10px; padding-top: 4px; }
 
-/* ============================================================
-   ZONAS COMPATIBLES — overlay mapa
-============================================================ */
-.fab-zonas {
-  position: absolute; top: 118px; right: 12px; z-index: 500;
-  background: white; color: var(--texto);
-  border-radius: 20px; padding: 7px 13px;
-  font-size: 12px; font-weight: 600; letter-spacing: .2px;
-  box-shadow: var(--shadow-md);
-  display: flex; align-items: center; gap: 5px;
-  border: 1.5px solid var(--borde);
-  transition: background 0.2s, color 0.2s;
-}
-.fab-zonas.active { background: var(--accent); color: var(--accent-text); border-color: var(--accent); }
-.zonas-leyenda {
-  position: absolute; bottom: 108px; left: 12px; z-index: 500;
-  background: rgba(255,255,255,0.96); backdrop-filter: blur(6px);
-  border-radius: 12px; padding: 10px 13px;
-  box-shadow: var(--shadow-md); font-size: 11px;
-}
-.leyenda-item {
-  display: flex; align-items: center; gap: 8px;
-  padding: 3px 0; color: var(--texto); white-space: nowrap;
-}
-.leyenda-dot {
-  width: 11px; height: 11px; border-radius: 3px; flex-shrink: 0;
-}
-
 /* SII — toggle, hint y panel */
 .fab-sii {
   position: absolute; top: 160px; right: 12px; z-index: 500;
@@ -1061,23 +1033,6 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
   <!-- FAB: Redibujar -->
   <button class="fab-redibujar" id="btn-redibujar" onclick="reiniciarDibujo()">&#8635; Redibujar</button>
 
-  <!-- Toggle: zonas compatibles con el brief -->
-  <button class="fab-zonas" id="btn-zonas-brief" onclick="toggleZonasBrief()" title="Colorear zonas según compatibilidad con el proyecto">
-    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-      <polygon points="3,6 9,3 15,6 21,3 21,18 15,21 9,18 3,21"/>
-      <line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/>
-    </svg>
-    Zonas
-  </button>
-  <!-- Leyenda -->
-  <div class="zonas-leyenda" id="zonas-leyenda" style="display:none">
-    <div class="leyenda-item"><span class="leyenda-dot" style="background:#16A34A"></span>Compatible · alta constructibilidad</div>
-    <div class="leyenda-item"><span class="leyenda-dot" style="background:#84CC16"></span>Compatible · media constructibilidad</div>
-    <div class="leyenda-item"><span class="leyenda-dot" style="background:#D97706"></span>Compatible · baja constructibilidad</div>
-    <div class="leyenda-item"><span class="leyenda-dot" style="background:#DC2626"></span>Uso incompatible con el proyecto</div>
-    <div class="leyenda-item"><span class="leyenda-dot" style="background:#94A3B8"></span>Sin normas registradas</div>
-  </div>
-
   <!-- Toggle: predios SII -->
   <button class="fab-sii" id="btn-sii" onclick="toggleSiiPredios()" title="Mostrar predios oficiales del SII (ROL, dirección, avalúo)">
     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
@@ -1381,8 +1336,6 @@ const APP = {
   dimMarkers:      [],
   tempFotos:       [],   // fotos para la cabida en curso (antes de guardar)
   viewingId:       null, // id del prospecto guardado que se está viendo
-  zonasLayer:      null, // capa Leaflet de coloreado por brief
-  zonasVisible:    false,
   siiLayer:        null, // capa WMS de predios SII
   siiVisible:      false,
   siiComuna:       null, // comuna SII actualmente cargada en la capa
@@ -1505,8 +1458,6 @@ function iniciarProspecto() {
   // El brief se define mediante la descripción con IA (analizarBrief).
   // Si no se describió nada, APP.brief conserva sus valores por defecto.
   navigate('mapa');
-  // Auto-mostrar overlay de zonas compatibles al entrar al mapa
-  setTimeout(() => mostrarZonasBrief(), 450);
 }
 
 function registrarSW() {
@@ -1516,67 +1467,6 @@ function registrarSW() {
     if (!reloading) { reloading = true; window.location.reload(); }
   });
   navigator.serviceWorker.register('sw.js').catch(() => {});
-}
-
-// ============================================================
-// ZONAS COMPATIBLES — overlay coloreado según el brief
-// ============================================================
-function colorZonaBrief(normaData) {
-  // Sin normas → gris neutro
-  if (!normaData) return { color:'#94A3B8', fillColor:'#94A3B8', fillOpacity:0.09, weight:0.5, interactive:false };
-
-  const usos  = (normaData.usos_permitidos || []).join(' ').toLowerCase();
-  const cc    = (normaData.normas_urbanisticas || {}).coeficiente_constructibilidad;
-  const b     = APP.brief;
-
-  // Sin usos registrados → asumimos compatible (no filtramos por dato incompleto)
-  let compat = true;
-  if (usos) {
-    const hasResi = /habitacional|residencial|vivienda/.test(usos);
-    const hasCom  = /comercio|servicio|oficina|restaurant/.test(usos);
-    if      (b.tipo === 'residencial') compat = hasResi;
-    else if (b.tipo === 'comercial')   compat = hasCom;
-    else                               compat = hasResi || hasCom;
-  }
-
-  if (!compat)
-    return { color:'#DC2626', fillColor:'#DC2626', fillOpacity:0.20, weight:1, interactive:false };
-
-  // Compatible → tonalidad según CC
-  const ccNum = (typeof cc === 'number') ? cc : 1.0;
-  if (ccNum >= 2.0) return { color:'#16A34A', fillColor:'#16A34A', fillOpacity:0.24, weight:1, interactive:false };
-  if (ccNum >= 1.0) return { color:'#84CC16', fillColor:'#84CC16', fillOpacity:0.20, weight:1, interactive:false };
-                    return { color:'#D97706', fillColor:'#D97706', fillOpacity:0.17, weight:1, interactive:false };
-}
-
-function mostrarZonasBrief() {
-  if (!APP.map || !APP.geoFeatures.length) return;
-  if (APP.zonasLayer) { APP.map.removeLayer(APP.zonasLayer); APP.zonasLayer = null; }
-
-  APP.zonasLayer = L.geoJSON(
-    { type:'FeatureCollection', features: APP.geoFeatures },
-    { style: f => colorZonaBrief(buscarNormas(f.properties)), interactive: false }
-  ).addTo(APP.map);
-
-  APP.zonasVisible = true;
-  const btn = document.getElementById('btn-zonas-brief');
-  const ley = document.getElementById('zonas-leyenda');
-  if (btn) btn.classList.add('active');
-  if (ley) ley.style.display = '';
-}
-
-function ocultarZonasBrief() {
-  if (APP.zonasLayer) { APP.map.removeLayer(APP.zonasLayer); APP.zonasLayer = null; }
-  APP.zonasVisible = false;
-  const btn = document.getElementById('btn-zonas-brief');
-  const ley = document.getElementById('zonas-leyenda');
-  if (btn) btn.classList.remove('active');
-  if (ley) ley.style.display = 'none';
-}
-
-function toggleZonasBrief() {
-  if (APP.zonasVisible) ocultarZonasBrief();
-  else mostrarZonasBrief();
 }
 
 // ============================================================
