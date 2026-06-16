@@ -100,7 +100,7 @@ export default {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Accept': 'application/json',
+          'Accept': 'application/json, text/plain, */*',
           // El SII exige este Referer para responder.
           'Referer': 'https://www4.sii.cl/mapasui/internet/',
           'User-Agent': 'Mozilla/5.0 (AiCabida proxy)',
