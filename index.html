@@ -1427,9 +1427,12 @@ const SII_COMUNAS = {
   Curanilahue: { code: 8302,  layer: 'sii:BR_CART_CURANILAHUE_WMS' },
   SanPedroDeLaPaz: { code: 8210, layer: 'sii:BR_CART_SAN_PEDRO_LA_PAZ_WMS' }
 };
-// URL del Cloudflare Worker (proxy). Se setea en Config; vacío = sin datos de predio.
+// Proxy SII (Cloudflare Worker). Viene uno por defecto para que el ROL/dirección/
+// avalúo funcionen SIEMPRE, sin que cada persona configure nada. Config permite
+// sobreescribirlo con un Worker propio (override opcional).
+const SII_WORKER_DEFAULT = 'https://aicabida-sii.casvitacurabmw.workers.dev';
 function siiWorkerUrl() {
-  return (localStorage.getItem('sii_worker_url') || '').replace(/\/+$/, '');
+  return (localStorage.getItem('sii_worker_url') || SII_WORKER_DEFAULT).replace(/\/+$/, '');
 }
 
 // ============================================================
@@ -3153,23 +3156,20 @@ function openConfig() {
   const gInput = document.getElementById('cfg-gemini-key');
   if (gInput) gInput.value = gKey ? '••••••' + gKey.slice(-6) : '';
   mostrarEstadoClave('gemini', gKey);
-  // Proxy SII
+  // Proxy SII — el campo es un OVERRIDE opcional (la app trae uno por defecto)
   const sInput = document.getElementById('cfg-sii-worker');
-  const sUrl = siiWorkerUrl();
-  if (sInput) sInput.value = sUrl;
-  mostrarEstadoSii(sUrl);
+  if (sInput) sInput.value = localStorage.getItem('sii_worker_url') || '';
+  mostrarEstadoSii();
 }
 
-function mostrarEstadoSii(url) {
+function mostrarEstadoSii() {
   const el = document.getElementById('cfg-status-sii');
   if (!el) return;
-  if (url) {
-    el.textContent = '✓ Proxy configurado';
-    el.className = 'modal-key-status ok';
-  } else {
-    el.textContent = 'Sin proxy · predios visibles pero sin ROL/avalúo';
-    el.className = 'modal-key-status err';
-  }
+  const override = localStorage.getItem('sii_worker_url');
+  el.textContent = override
+    ? '✓ Usando tu Worker propio'
+    : '✓ Activo por defecto — la info del SII funciona sin configurar';
+  el.className = 'modal-key-status ok';
   el.style.display = 'block';
 }
 
@@ -3178,8 +3178,8 @@ function guardarSiiWorker() {
   if (raw && !/^https?:\/\//.test(raw)) { toast('La URL debe comenzar con https://'); return; }
   if (raw) localStorage.setItem('sii_worker_url', raw);
   else localStorage.removeItem('sii_worker_url');
-  mostrarEstadoSii(raw);
-  toast(raw ? '✓ Proxy SII guardado' : 'Proxy SII eliminado');
+  mostrarEstadoSii();
+  toast(raw ? '✓ Worker propio guardado' : '✓ Volviste al Worker por defecto');
 }
 
 function cerrarConfig(e) {
@@ -4234,11 +4234,11 @@ initApp();
     <!-- Proxy SII -->
     <p class="modal-section-label" style="margin-top:18px">Mapa SII (predios)</p>
     <div class="cfg-provider-card">
-      <div class="cfg-provider-name">Proxy Cloudflare Worker</div>
-      <div class="cfg-provider-meta">Habilita ROL, dirección y avalúo al tocar un predio. Despliega <strong>sii-proxy-worker.js</strong> y pega aquí su URL.</div>
+      <div class="cfg-provider-name">Proxy del SII</div>
+      <div class="cfg-provider-meta">El ROL, dirección y avalúo al tocar un predio <strong>funcionan por defecto</strong>, sin configurar nada. Opcional: usa tu propio Cloudflare Worker pegando su URL.</div>
       <div class="cfg-input-row">
         <input type="text" id="cfg-sii-worker" class="modal-input"
-               placeholder="https://…workers.dev" autocomplete="off" spellcheck="false">
+               placeholder="(opcional) https://…workers.dev" autocomplete="off" spellcheck="false">
         <button class="cfg-save-btn" onclick="guardarSiiWorker()">Guardar</button>
       </div>
       <div class="modal-key-status" id="cfg-status-sii"></div>
