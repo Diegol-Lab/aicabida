@@ -1,5 +1,5 @@
 // AiCabida Service Worker — Cache First strategy
-const CACHE = 'aicabida-v44';
+const CACHE = 'aicabida-v45';
 
 const PRECACHE = [
   '/',
@@ -18,6 +18,7 @@ const PRECACHE = [
   '/data/PRC_Macul.geojson',
   '/data/PRC_LoBarnechea.geojson',
   '/data/PRC_Curanilahue.geojson',
+  '/data/PRC_SanPedroDeLaPaz.geojson',
   // CDN: Leaflet
   'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css',
   'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js',

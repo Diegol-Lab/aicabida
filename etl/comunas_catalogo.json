@@ -32,7 +32,9 @@
 
     { "nombre": "San Pedro de la Paz", "key": "SanPedroDeLaPaz", "region_minvu": 8,
       "arcgis": { "service": "PRC_Biobio", "tipo": "FeatureServer", "layer_id": 42, "layer_riesgo": null },
-      "codigo_sii": null, "centro": [-36.8420, -73.1080], "zoom": 13, "estado": "pendiente" },
+      "ordenanza_url": "https://www.transparencia.sanpedrodelapaz.cl/archivos/ordenanzas/Plan_Regulador.pdf",
+      "validacion_zonas_pct": 91,
+      "codigo_sii": null, "centro": [-36.8420, -73.1080], "zoom": 13, "estado": "completa" },
 
     { "nombre": "Ñuñoa", "key": "Nunoa", "region_minvu": 13,
       "arcgis": { "service": "PRC_RM_Norte", "tipo": "MapServer", "layer_id": 17, "layer_riesgo": null },

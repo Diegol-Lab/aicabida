@@ -81,6 +81,88 @@ def cargar_usos(key):
     return {z['zona']: z for z in d.get('zonas', [])}
 
 
+def _es_label(tok):
+    """Token que forma parte de una etiqueta: tiene letras y todas en mayúscula."""
+    letras = [c for c in tok if c.isalpha()]
+    return bool(letras) and all(c.isupper() for c in letras)
+
+
+def parse_cuadro(bloque):
+    """
+    Captura TODAS las filas del cuadro de normas verbatim (etiqueta → valor),
+    preservando las condiciones tal como las escribe el municipio. General:
+    una fila empieza donde hay una etiqueta en MAYÚSCULAS; el valor abarca el
+    resto de la línea y las líneas siguientes hasta la próxima etiqueta.
+    """
+    # Empezar desde las condiciones de edificación (omitir el bloque de usos).
+    m = re.search(r'CONDICIONES\s+DE\s+SUBDIVISI[OÓ]N\s+Y\s+EDIFICACI[OÓ]N', bloque, re.I)
+    texto = bloque[m.end():] if m else bloque
+
+    filas = []
+    label = None
+    val = []
+
+    def cerrar():
+        if label:
+            v = re.sub(r'\s+', ' ', ' '.join(val)).strip(' :.-')
+            filas.append({'etiqueta': re.sub(r'\s+', ' ', label).strip(' :.-').title(), 'valor': v})
+
+    for linea in texto.split('\n'):
+        linea = linea.strip()
+        if not linea:
+            continue
+        toks = linea.split()
+        i = 0
+        while i < len(toks) and _es_label(toks[i]):
+            i += 1
+        # i = nº de tokens-etiqueta al inicio
+        if i >= 2 and i < len(toks):          # etiqueta + valor en la misma línea
+            cerrar()
+            label = ' '.join(toks[:i]); val = [' '.join(toks[i:])]
+        elif i >= 2 and i == len(toks):       # línea entera es etiqueta (valor abajo)
+            cerrar()
+            label = ' '.join(toks); val = []
+        else:                                 # continuación del valor anterior
+            if label:
+                val.append(linea)
+    cerrar()
+    return _limpiar_cuadro(filas)
+
+
+_LABELS_EMBEBIDAS = re.compile(
+    r'\b(ADOSAMIENTO|RASANTE|ANTEJARD[IÍ]N\s+M[IÍ]NIMO|DISTANCIA\s+M[IÍ]NIMA[A-Z\s]*|'
+    r'DENSIDAD[A-Z\s]*BRUTA|ESTACIONAMIENTOS|CONDICIONES\s+ESPECIALES)\b')
+
+
+def _limpiar_cuadro(filas):
+    out = []
+    for f in filas:
+        et, v = f['etiqueta'], f['valor']
+        # descartar footers/encabezados (SECPLA, asesoría urbana, letras sueltas)
+        if re.search(r'SECPLA|ASESOR[IÍ]A\s+URBANA|^P R C|PLAN REGULADOR', et + ' ' + v, re.I):
+            continue
+        if all(len(t) <= 1 for t in et.split()):     # "S E C P L A"
+            continue
+        # separar una etiqueta embebida al final del valor (ej. "...No se permite ADOSAMIENTO No se permite")
+        m = _LABELS_EMBEBIDAS.search(v)
+        extra = None
+        if m and m.start() > 0:
+            resto = v[m.start():]
+            v = v[:m.start()].strip()
+            mm = re.match(r'([A-ZÁÉÍÓÚÑ\s]+?)\s+(.+)', resto)
+            if mm:
+                extra = {'etiqueta': re.sub(r'\s+', ' ', mm.group(1)).strip().title(),
+                         'valor': mm.group(2).strip()}
+        # quitar número de página al final del valor
+        v = re.sub(r'\s+\d{1,3}$', '', v).strip(' :.-')
+        if v and len(et) <= 55:
+            out.append({'etiqueta': et, 'valor': v})
+        if extra and extra['valor']:
+            extra['valor'] = re.sub(r'\s+\d{1,3}$', '', extra['valor']).strip(' :.-')
+            out.append(extra)
+    return out[:24]
+
+
 def parsear(key, pdf_path):
     with pdfplumber.open(pdf_path) as pdf:
         txt = '\n'.join((p.extract_text() or '') for p in pdf.pages)
@@ -109,6 +191,8 @@ def parsear(key, pdf_path):
         agrup = agr.group(1).strip()[:50] if agr else None
         ados_b = bool(ados and 'permite' in ados.group(1).lower() and 'no se' not in ados.group(1).lower())
 
+        cuadro = parse_cuadro(bloque)   # filas verbatim (muestra TODAS las condiciones)
+
         uz = usos.get(zona, {})
         zonas_out.append({
             'comuna': 'San Pedro de la Paz', 'zona': zona, 'zona_code': zona,
@@ -116,6 +200,8 @@ def parsear(key, pdf_path):
             'usos_permitidos': [u.strip() for u in (uz.get('usos_permitidos', '') or '').split(',') if u.strip()],
             'usos_prohibidos': [uz.get('usos_prohibidos', '')] if uz.get('usos_prohibidos') else [],
             'prc_decreto': 'PRC San Pedro de la Paz (ordenanza municipal, texto refundido).',
+            # Valores representativos (para el cálculo de cabida). El detalle
+            # completo, con todas las condiciones del municipio, va en cuadro_normas.
             'normas_urbanisticas': {
                 'coeficiente_constructibilidad': n['coeficiente_constructibilidad'],
                 'coeficiente_ocupacion_suelo': n['coeficiente_ocupacion_suelo'],
@@ -128,7 +214,9 @@ def parsear(key, pdf_path):
                 'agrupamiento': agrup,
                 'adosamiento': ados_b,
                 'notas': ' | '.join(notas_extra)[:400]
-            }
+            },
+            # Cuadro completo tal como lo presenta la ordenanza (se muestra todo).
+            'cuadro_normas': cuadro
         })
         verif.append((zona, n['coeficiente_constructibilidad'], n['coeficiente_ocupacion_suelo'],
                       n['altura_maxima_metros'], n['superficie_predial_minima_m2'], n['antejardín_minimo_m']))

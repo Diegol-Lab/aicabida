@@ -603,6 +603,10 @@ button { cursor: pointer; border: none; background: none; font-family: var(--int
   font-size: 12px; font-weight: 600; color: var(--texto); line-height: 1.5; text-align: left;
 }
 .norm-row.stacked .norm-row-val.ne { font-size: 12px; }
+.norm-row-note {
+  font-size: 11px; color: var(--muted); line-height: 1.45;
+  margin: -2px 2px 8px; font-style: italic;
+}
 
 /* Sub-encabezado dentro de sección dinámica */
 .normas-subhdr {
@@ -1384,7 +1388,7 @@ const APP = {
   }
 };
 
-const GEO_FILES = ['Bulnes','ElCarmen','Laja','Lebu','Penco','Tome','Yumbel','Yungay','Macul','LoBarnechea','Curanilahue'];
+const GEO_FILES = ['Bulnes','ElCarmen','Laja','Lebu','Penco','Tome','Yumbel','Yungay','Macul','LoBarnechea','Curanilahue','SanPedroDeLaPaz'];
 
 const DOM_URLS = {
   Penco:    'https://www.penco.cl',
@@ -1520,7 +1524,7 @@ const COMUNAS_LISTA = [
   { nombre:'Ñuñoa',               lat:-33.4569, lon:-70.5980, zoom:13.5 },
   { nombre:'Penco',               lat:-36.7400, lon:-72.9970, zoom:13.5, geo:'Penco' },
   { nombre:'San Joaquín',         lat:-33.4950, lon:-70.6280, zoom:14 },
-  { nombre:'San Pedro de la Paz', lat:-36.8420, lon:-73.1080, zoom:13 },
+  { nombre:'San Pedro de la Paz', lat:-36.8420, lon:-73.1080, zoom:13, geo:'SanPedroDeLaPaz' },
   { nombre:'Tomé',                lat:-36.6170, lon:-72.9560, zoom:13.5, geo:'Tome' },
   { nombre:'Viña del Mar',        lat:-33.0245, lon:-71.5518, zoom:13 },
   { nombre:'Vitacura',            lat:-33.3900, lon:-70.5800, zoom:13.5 },
@@ -2716,6 +2720,27 @@ function mostrarResultados(z, props, sup, per) {
       const esLargo = d.text && d.text.length > 22;
       addRow('Comercio', d, esLargo);
     }
+  }
+
+  // ── GRUPO 4: Cuadro normativo completo (verbatim de la ordenanza) ─────────
+  // Muestra TODAS las filas tal como las redacta el municipio, con sus
+  // condiciones (ej. "CC 2,5 para vivienda en extensión / 12 para altura").
+  if (Array.isArray(z.cuadro_normas) && z.cuadro_normas.length) {
+    const esc = s => String(s == null ? '' : s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    addSubHdr('Cuadro normativo (según ordenanza)');
+    const nota = document.createElement('div');
+    nota.className = 'norm-row-note';
+    nota.textContent = 'Texto íntegro de la ordenanza. Cuando hay condiciones (vivienda en extensión vs. altura) se muestran todas.';
+    normasExtra.appendChild(nota);
+    z.cuadro_normas.forEach(f => {
+      if (!f || !f.valor) return;
+      const div = document.createElement('div');
+      div.className = 'norm-row stacked';
+      div.innerHTML = `<span class="norm-row-lbl">${esc(f.etiqueta)}</span>
+        <span class="norm-row-val">${esc(f.valor)}</span>`;
+      normasExtra.appendChild(div);
+    });
   }
 
   // Usos de suelo permitidos
