@@ -39,15 +39,28 @@ Notas:
 - La detección de zona en la app usa fallback de cercanía, así que la
   simplificación de bordes no afecta.
 
-### Etapa 2 — Documentos (ordenanza, planos, DDU)  ⏳ pendiente
-Fuentes: `instrumentosdeplanificacion.minvu.cl/<región>` (HTML scrapeable con
-enlaces directos a PDF por comuna) + BCN LeyChile XML
-(`leychile.cl/Consulta/obtxml?opt=7&idNorma=<id>`) para texto + tablas de normas.
+### Etapa 2 — Documentos (ordenanza, planos, DDU)  🔶 parcial
+Fuentes: `instrumentosdeplanificacion.minvu.cl/<región>` + BCN LeyChile XML
+(`leychile.cl/Consulta/obtxml?opt=7&idNorma=<id>`).
+
+`extraer_tablas_bcn.py <idNorma> <carpeta>` descarga la ordenanza desde BCN y
+extrae las tablas de normas (vienen como JPEG embebidos, no como texto).
+
+**Lección del piloto (La Cisterna): la discovery del documento es el cuello de
+botella y NO es confiablemente automatizable.** Casos reales encontrados:
+- Un `idNorma` de la búsqueda era de **otra comuna** (Río Teno, Maule).
+- Otro era solo una **modificación parcial**, no el texto refundido.
+- El sitio municipal bloquea scraping (403); el portal MINVU RM filtra por JS.
+
+→ Por eso el **`idNorma_bcn` (o URL de la ordenanza) debe guardarse VERIFICADO
+por comuna en el catálogo**. Es el paso humano-en-el-loop del sistema. El
+script `verificar()` chequea menciones de la comuna y zonas como cordura.
 
 ### Etapa 3 — Normas (asistida + revisión humana)  ⏳ pendiente
-Extraer tablas de la ordenanza → poblar `data/normas_prc.json` por zona,
-usando `<key>_zonas.json` como scaffold. **Nunca se publica sin verificar**
-contra la ordenanza (dato legal). Cada norma guarda su `decreto`/`idNorma`.
+Leer las tablas (vision/OCR) → poblar `data/normas_prc.json` por zona, usando
+`<key>_zonas.json` como scaffold (ya trae los usos permitidos/prohibidos del
+ArcGIS). **Nunca se publica sin verificar** contra la ordenanza (dato legal).
+Cada norma guarda su `decreto`/`idNorma`.
 
 ### Etapa 4 — Validación QA  ⏳ pendiente
 Cruce zona↔norma: toda ZONA del GeoJSON debe tener entrada de normas; flags de
