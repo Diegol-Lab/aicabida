@@ -34,7 +34,8 @@
       "arcgis": { "service": "PRC_Biobio", "tipo": "FeatureServer", "layer_id": 42, "layer_riesgo": null },
       "ordenanza_url": "https://www.transparencia.sanpedrodelapaz.cl/archivos/ordenanzas/Plan_Regulador.pdf",
       "validacion_zonas_pct": 91,
-      "codigo_sii": null, "centro": [-36.8420, -73.1080], "zoom": 13, "estado": "completa" },
+      "codigo_sii": 8210, "sii_layer": "sii:BR_CART_SAN_PEDRO_LA_PAZ_WMS",
+      "centro": [-36.8420, -73.1080], "zoom": 13, "estado": "completa" },
 
     { "nombre": "Ñuñoa", "key": "Nunoa", "region_minvu": 13,
       "arcgis": { "service": "PRC_RM_Norte", "tipo": "MapServer", "layer_id": 17, "layer_riesgo": null },
