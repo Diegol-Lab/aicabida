@@ -1,0 +1,105 @@
+{
+  "comuna": "Vitacura",
+  "key": "Vitacura",
+  "fuente": "PRC_RM_Norte/MapServer/32",
+  "zonas": [
+    {
+      "zona": "R-7",
+      "nombre": "R-7",
+      "usos_permitidos": "Científico, Cultural, Educativo, Recreacional, Deporte y Turístico. Mayor detalle en ordenanza.",
+      "usos_prohibidos": "Todo aquello no mencionado como uso permitido. Mayor detalle en ordenanza.",
+      "decreto": ""
+    },
+    {
+      "zona": "U AVPC",
+      "nombre": "U AVPC",
+      "usos_permitidos": "Áreas verdes",
+      "usos_prohibidos": "Todo aquello no mencionado como uso permitido. Mayor detalle en ordenanza.",
+      "decreto": ""
+    },
+    {
+      "zona": "U Ee1",
+      "nombre": "U Ee1",
+      "usos_permitidos": "Equipamiento de escala intercomunal, comunal y vecinal.",
+      "usos_prohibidos": "Todo aquello no mencionado como uso permitido. Mayor detalle en ordenanza.",
+      "decreto": ""
+    },
+    {
+      "zona": "U Ee2",
+      "nombre": "U Ee2",
+      "usos_permitidos": "Áreas verdes de carácter metropolitano, según lo establecido en la ordenanza del PRMS, artículo 5.2.2. En el territorio comunal se establecen el Parque Metropolitano San Cristóbal y Parque del Río Mapocho.",
+      "usos_prohibidos": "Todo aquello no mencionado como uso permitido. Mayor detalle en ordenanza.",
+      "decreto": ""
+    },
+    {
+      "zona": "U Ee3",
+      "nombre": "U Ee3",
+      "usos_permitidos": "Áreas verdes de carácter intercomunal, según  la ordenanza del PRMS, art. 5.2.3.1 y 5.2.3.2,  en el territorio comunal se establecen los parques Naciones Unidas y Cuautemoc, Cerros Islas: Parte cerro Alvarado, Parte del cerro Manquehue ladera sur",
+      "usos_prohibidos": "Todo aquello no mencionado como uso permitido. Mayor detalle en ordenanza.",
+      "decreto": ""
+    },
+    {
+      "zona": "U Ee4",
+      "nombre": "U Ee4",
+      "usos_permitidos": "Equipamiento recreacional deportivo,  según lo establecido en la ordenanza del PRMS, artículo 5.2.4.1.",
+      "usos_prohibidos": "Todo aquello no mencionado como uso permitido. Mayor detalle en ordenanza.",
+      "decreto": ""
+    },
+    {
+      "zona": "U PC",
+      "nombre": "U PC",
+      "usos_permitidos": "Residencial; Equipamiento de comercio, culto y cultural, deporte, educación, esparcimiento, salud, seguridad, servicios, social; Actividad productiva: industria; infraetsructura en general; Espacios público; Áreas verdes. Mayor detalle en ordenanza.",
+      "usos_prohibidos": "Todo aquello no mencionado como uso permitido. Mayor detalle en ordenanza.",
+      "decreto": ""
+    },
+    {
+      "zona": "U PCsz",
+      "nombre": "U PCsz",
+      "usos_permitidos": "Residencial; Equipamiento de comercio, culto y cultural, deporte, educación, esparcimiento, salud, seguridad, servicios, social; Actividad productiva: industria; infraetsructura en general; Espacios público; Áreas verdes. Mayor detalle en ordenanza.",
+      "usos_prohibidos": "Todo aquello no mencionado como uso permitido. Mayor detalle en ordenanza.",
+      "decreto": ""
+    },
+    {
+      "zona": "U POC",
+      "nombre": "U POC",
+      "usos_permitidos": "Residencial; Equipamiento de comercio, culto y cultural, deporte, educación, esparcimiento, salud, seguridad, servicios, social; Actividad productiva: industria; infraetsructura en general; Espacios público; Áreas verdes. Mayor detalle en ordenanza.",
+      "usos_prohibidos": "Todo aquello no mencionado como uso permitido. Mayor detalle en ordenanza.",
+      "decreto": ""
+    },
+    {
+      "zona": "U POCsz",
+      "nombre": "U POCsz",
+      "usos_permitidos": "Residencial; Equipamiento de comercio, culto y cultural, deporte, educación, esparcimiento, salud, seguridad, servicios, social; Actividad productiva: industria; infraetsructura en general; Espacios público; Áreas verdes. Mayor detalle en ordenanza.",
+      "usos_prohibidos": "Todo aquello no mencionado como uso permitido. Mayor detalle en ordenanza.",
+      "decreto": ""
+    },
+    {
+      "zona": "U PVEV",
+      "nombre": "U PVEV",
+      "usos_permitidos": "Residencial; Equipamiento de comercio, culto y cultural, deporte, educación, esparcimiento, salud, seguridad, servicios, social; Actividad productiva: industria; infraetsructura en general; Espacios público; Áreas verdes. Mayor detalle en ordenanza.",
+      "usos_prohibidos": "Todo aquello no mencionado como uso permitido. Mayor detalle en ordenanza.",
+      "decreto": ""
+    },
+    {
+      "zona": "U PVO",
+      "nombre": "U PVO",
+      "usos_permitidos": "Residencial; Equipamiento de comercio, culto y cultural, deporte, educación, esparcimiento, salud, seguridad, servicios, social; Actividad productiva: industria; infraetsructura en general; Espacios público; Áreas verdes. Mayor detalle en ordenanza.",
+      "usos_prohibidos": "Todo aquello no mencionado como uso permitido. Mayor detalle en ordenanza.",
+      "decreto": ""
+    },
+    {
+      "zona": "U PVOsz",
+      "nombre": "U PVOsz",
+      "usos_permitidos": "Residencial; Equipamiento de comercio, culto y cultural, deporte, educación, esparcimiento, salud, seguridad, servicios, social; Actividad productiva: industria; infraetsructura en general; Espacios público; Áreas verdes. Mayor detalle en ordenanza.",
+      "usos_prohibidos": "Todo aquello no mencionado como uso permitido. Mayor detalle en ordenanza.",
+      "decreto": ""
+    },
+    {
+      "zona": "U-V",
+      "nombre": "U-V",
+      "usos_permitidos": "Residencial; Equipamiento de comercio, culto y cultural, deporte, educación, esparcimiento, salud, seguridad, servicios, social; infraetsructura en general; Espacios público; Áreas verdes. Mayor detalle en ordenanza.",
+      "usos_prohibidos": "Todo aquello no mencionado como uso permitido. Mayor detalle en ordenanza.",
+      "decreto": ""
+    }
+  ]
+}

@@ -1,0 +1,546 @@
+{
+  "comuna": "Viña del Mar",
+  "key": "VinaDelMar",
+  "fuente": "PRC_Valparaíso/FeatureServer/46",
+  "zonas": [
+    {
+      "zona": "AV",
+      "nombre": "AV",
+      "usos_permitidos": "Plazas.",
+      "usos_prohibidos": "Todo otro uso no indicado previamente.",
+      "decreto": ""
+    },
+    {
+      "zona": "AV-1",
+      "nombre": "AV-1",
+      "usos_permitidos": "Áreas verdes, equipamiento deportivo, cultural y de esparcimiento y turismo.",
+      "usos_prohibidos": "Todos los no mencionados como permitidos.",
+      "decreto": ""
+    },
+    {
+      "zona": "AV2",
+      "nombre": "AV2",
+      "usos_permitidos": "Santuario de la Naturaleza",
+      "usos_prohibidos": "Todo otro uso no indicado previamente.",
+      "decreto": ""
+    },
+    {
+      "zona": "AV3",
+      "nombre": "AV3",
+      "usos_permitidos": "Santuario de la Naturaleza",
+      "usos_prohibidos": "Todo otro uso no indicado previamente.",
+      "decreto": ""
+    },
+    {
+      "zona": "AV4",
+      "nombre": "AV4",
+      "usos_permitidos": "Santuario de la Naturaleza",
+      "usos_prohibidos": "Todo otro uso no indicado previamente.",
+      "decreto": ""
+    },
+    {
+      "zona": "B-14b",
+      "nombre": "B-14b",
+      "usos_permitidos": "Residencial, Equipamiento, Espacio Público, mayor detalle en Ordenanza",
+      "usos_prohibidos": "Todos los no mencionados como permitidos.",
+      "decreto": ""
+    },
+    {
+      "zona": "B-14c",
+      "nombre": "B-14c",
+      "usos_permitidos": "Residencial, Equipamiento, Espacio Público, mayor detalle en Ordenanza",
+      "usos_prohibidos": "Todos los no mencionados como permitidos.",
+      "decreto": ""
+    },
+    {
+      "zona": "B-14d",
+      "nombre": "B-14d",
+      "usos_permitidos": "Residencial, Equipamiento, Espacio Público, Industria inofensiva, mayor detalle en Ordenanza",
+      "usos_prohibidos": "Todos los no mencionados como permitidos.",
+      "decreto": ""
+    },
+    {
+      "zona": "B-46",
+      "nombre": "B-46",
+      "usos_permitidos": "Residencial, Equipamiento, Espacio Público, mayor detalle en Ordenanza",
+      "usos_prohibidos": "Todo otro uso no indicado previamente.",
+      "decreto": ""
+    },
+    {
+      "zona": "BC",
+      "nombre": "BC",
+      "usos_permitidos": "Equipamiento de culto (catedral, templo, santuario, parroquia, capilla) y de salud (cementerio). Espacio público y áreas verdes.",
+      "usos_prohibidos": "Todos los no mencionados como permitidos y en especial todo tipo de uso residencial.",
+      "decreto": ""
+    },
+    {
+      "zona": "C-6",
+      "nombre": "C-6",
+      "usos_permitidos": "Área de Reserva",
+      "usos_prohibidos": "Todos los no mencionados como permitidos.",
+      "decreto": ""
+    },
+    {
+      "zona": "C1",
+      "nombre": "C1",
+      "usos_permitidos": "Vivienda, vialidad, áreas verdes y equipamiento. Mayor detalle en ordenanza.",
+      "usos_prohibidos": "Todo uso no indicado precedentemente.",
+      "decreto": ""
+    },
+    {
+      "zona": "E-10",
+      "nombre": "E-10",
+      "usos_permitidos": "Residencial, Equipamiento, Espacio Público, mayor detalle en Ordenanza",
+      "usos_prohibidos": "Todos los no mencionados como permitidos y en especial equipamientos como Estación de servicio,Centro de Servicio automotor,etc, mayor detalle en Ordenanza",
+      "decreto": ""
+    },
+    {
+      "zona": "E-11",
+      "nombre": "E-11",
+      "usos_permitidos": "Residencial, Equipamiento, Espacio Público, mayor detalle en Ordenanza",
+      "usos_prohibidos": "Todos los no mencionados como permitidos y en especial equipamientos de cultura como centros de televisón, radiodifusión ,etc, mayor detalle en Ordenanza",
+      "decreto": ""
+    },
+    {
+      "zona": "E-12",
+      "nombre": "E-12",
+      "usos_permitidos": "Residencial, Equipamiento, Espacio Público, mayor detalle en Ordenanza",
+      "usos_prohibidos": "Todos los no mencionados como permitidos y en especial equipamientos de cultura como centros de televisón, radiodifusión ,etc, mayor detalle en Ordenanza",
+      "decreto": ""
+    },
+    {
+      "zona": "E-13",
+      "nombre": "E-13",
+      "usos_permitidos": "Residencial, Equipamiento, Espacio Público, mayor detalle en Ordenanza",
+      "usos_prohibidos": "Todos los no mencionados como permitidos y en especial equipamientos como Estación de servicio,Centro de Servicio automotor,etc, mayor detalle en Ordenanza",
+      "decreto": ""
+    },
+    {
+      "zona": "E1",
+      "nombre": "E1",
+      "usos_permitidos": "Residencial. Equipamiento de: comercio, culto, cultura, deporte, educación, esparcimiento, salud, salud, seguridad, social. Infraestructura de transporte. Espacio público y áreas verdes.",
+      "usos_prohibidos": "Todos los no mencionados como permitidos.",
+      "decreto": ""
+    },
+    {
+      "zona": "E3",
+      "nombre": "E3",
+      "usos_permitidos": "Residencial. Equipamiento de: comercio, culto, cultura, deporte, educación, esparcimiento, salud, seguridad, servicios, social. Espacio público y áreas verdes. Más detalle revisar Ordenanza.",
+      "usos_prohibidos": "Todos los no mencionados como permitidos.",
+      "decreto": ""
+    },
+    {
+      "zona": "E3a",
+      "nombre": "E3a",
+      "usos_permitidos": "Residencial. Equipamiento de: comercio, cultura, deporte, educación, esparcimiento, salud, seguridad, servicios, social. Espacio público y áreas verdes. Más detalle revisar Ordenanza.",
+      "usos_prohibidos": "Todos los no mencionados como permitidos.",
+      "decreto": ""
+    },
+    {
+      "zona": "E4",
+      "nombre": "E4",
+      "usos_permitidos": "Residencial. Equipamiento de: comercio, culto, cultura, educación, salud, seguridad, servicios, social. Espacio público y áreas verdes. Más detalle revisar Ordenanza.",
+      "usos_prohibidos": "Todos los no mencionados como permitidos.",
+      "decreto": ""
+    },
+    {
+      "zona": "E5",
+      "nombre": "E5",
+      "usos_permitidos": "Residencial. Equipamiento de: comercio, culto, cultura, deporte, educación, esparcimiento, salud, seguridad, servicios, social. Actividades productivas inofensivas, infraestructura de transporte. Espacio público y áreas verdes.",
+      "usos_prohibidos": "Todos los no mencionados como permitidos.",
+      "decreto": ""
+    },
+    {
+      "zona": "E8",
+      "nombre": "E8",
+      "usos_permitidos": "Residencial. Equipamiento de: comercio, cultura, esparcimiento. Espacio público y áreas verdes.",
+      "usos_prohibidos": "Vivienda, Apart-Hotel y todos los no mencionados como permitidos.",
+      "decreto": ""
+    },
+    {
+      "zona": "E9a",
+      "nombre": "E9a",
+      "usos_permitidos": "Residencial, Equipamiento, Espacio Público, mayor detalle en Ordenanza",
+      "usos_prohibidos": "Todos los no mencionados como permitidos y en especial equipamientos como Estación de servicio,Centro de Servicio automotor,etc, mayor detalle en Ordenanza",
+      "decreto": ""
+    },
+    {
+      "zona": "E9b",
+      "nombre": "E9b",
+      "usos_permitidos": "Residencial, Equipamiento, Espacio Público, mayor detalle en Ordenanza",
+      "usos_prohibidos": "Todos los no mencionados como permitidos y en especial equipamientos como Estación de servicio,Centro de Servicio automotor,etc, mayor detalle en Ordenanza",
+      "decreto": ""
+    },
+    {
+      "zona": "E9c",
+      "nombre": "E9c",
+      "usos_permitidos": "Residencial, Equipamiento, Espacio Público, mayor detalle en Ordenanza",
+      "usos_prohibidos": "Todos los no mencionados como permitidos y en especial equipamientos como botillerías y de cultura como centros de televisón, radiodifusión ,etc, mayor detalle en Ordenanza",
+      "decreto": ""
+    },
+    {
+      "zona": "EC",
+      "nombre": "EC",
+      "usos_permitidos": "Vivienda; equipamiento educacional, deportivo, comunitaria, cultural, culto y de servicios, esparcimiento y turismo comunal, orden y seguridad, comercio, áreas verdes y vialidad.",
+      "usos_prohibidos": "Todo otro uso no indicado previamente.",
+      "decreto": ""
+    },
+    {
+      "zona": "EC1",
+      "nombre": "EC1",
+      "usos_permitidos": "Vivienda; equipamiento educacional, deportivo, comunitaria, cultural, culto y de servicios, esparcimiento y turismo comunal, orden y seguridad, comercio, áreas verdes y vialidad.",
+      "usos_prohibidos": "Todo otro uso no indicado previamente.",
+      "decreto": ""
+    },
+    {
+      "zona": "ECC",
+      "nombre": "ECC",
+      "usos_permitidos": "Equipamiento nivel vecional de Culto",
+      "usos_prohibidos": "Todo otro uso no indicado previamente.",
+      "decreto": ""
+    },
+    {
+      "zona": "EE-1",
+      "nombre": "EE-1",
+      "usos_permitidos": "Residencial (Hotel). Equipamiento de: cultura, deporte, social, comercio. Área verde. Más detalle revisar Ordenanza.",
+      "usos_prohibidos": "Todos los no mencionados como permitidos y en especial vivienda, Apart hotel, servicios artesanales y profesionales.",
+      "decreto": ""
+    },
+    {
+      "zona": "EE-2",
+      "nombre": "EE-2",
+      "usos_permitidos": "Residencial (Hotel). Equipamiento de: comercio, cultura, deporte, esparcimiento, social. Áreas verdes, construcciones complementarias permitidas (caballerizas y cocheras). Más detalle revisar Ordenanza.",
+      "usos_prohibidos": "Todos los no mencionados como permitidos y en especial vivienda, Apart hotel, servicios artesanales y profesionales.",
+      "decreto": ""
+    },
+    {
+      "zona": "EGN-1",
+      "nombre": "EGN-1",
+      "usos_permitidos": "Sector destinado a equipamiento.",
+      "usos_prohibidos": "Todos los no mencionados como permitidos.",
+      "decreto": ""
+    },
+    {
+      "zona": "EGN-2",
+      "nombre": "EGN-2",
+      "usos_permitidos": "Sector destinado a equipamiento.",
+      "usos_prohibidos": "Todos los no mencionados como permitidos.",
+      "decreto": ""
+    },
+    {
+      "zona": "EU",
+      "nombre": "EU",
+      "usos_permitidos": "Equipamiento educacional universitario y deportivo.",
+      "usos_prohibidos": "Todos los no mencionados como permitidos.",
+      "decreto": ""
+    },
+    {
+      "zona": "H9",
+      "nombre": "H9",
+      "usos_permitidos": "Residencial, Equipamiento, Espacio Público, mayor detalle en Ordenanza",
+      "usos_prohibidos": "Todos los no mencionados como permitidos.",
+      "decreto": ""
+    },
+    {
+      "zona": "I",
+      "nombre": "I",
+      "usos_permitidos": "Residencial (vivienda del cuidador). Equipamiento de: comercio, culto, cultura, deporte, seguridad, servicios. Actividades productivas inofensivas y/o molestas. Infraestructura, espacio público y áreas verdes. Más detalle en Ordenanza.",
+      "usos_prohibidos": "Todos los no mencionados como permitidos.",
+      "decreto": ""
+    },
+    {
+      "zona": "M",
+      "nombre": "M",
+      "usos_permitidos": "Restricción Militar",
+      "usos_prohibidos": "Restricción Militar",
+      "decreto": ""
+    },
+    {
+      "zona": "N",
+      "nombre": "N",
+      "usos_permitidos": "Equipamiento de culto y salud. Espacio público y áreas verdes.",
+      "usos_prohibidos": "Todos los no mencionados como permitidos y en especial todo tipo de uso residencial.",
+      "decreto": ""
+    },
+    {
+      "zona": "R-1",
+      "nombre": "R-1",
+      "usos_permitidos": "Sector destinado exclusivamente a residencia.",
+      "usos_prohibidos": "Todos los no mencionados como permitidos.",
+      "decreto": ""
+    },
+    {
+      "zona": "R-2",
+      "nombre": "R-2",
+      "usos_permitidos": "Sector destinado preferentemente a residencia y equipamiento vecinal.",
+      "usos_prohibidos": "Todos los no mencionados como permitidos.",
+      "decreto": ""
+    },
+    {
+      "zona": "R-3",
+      "nombre": "R-3",
+      "usos_permitidos": "Sector destinado preferentemente a residencia y equipamiento turístico.",
+      "usos_prohibidos": "Todos los no mencionados como permitidos.",
+      "decreto": ""
+    },
+    {
+      "zona": "R-4",
+      "nombre": "R-4",
+      "usos_permitidos": "Sector destinado preferentemente a residencia y equipamiento turístico.",
+      "usos_prohibidos": "Todos los no mencionados como permitidos.",
+      "decreto": ""
+    },
+    {
+      "zona": "RA",
+      "nombre": "RA",
+      "usos_permitidos": "Vivienda. Equipamiento comunal de comercio y oficinas. Áreas verdes.",
+      "usos_prohibidos": "Industrias y artesanías peligrosas, molestas y/o contaminantes y además todos los no mencionados como permitidos.",
+      "decreto": ""
+    },
+    {
+      "zona": "RA-1",
+      "nombre": "RA-1",
+      "usos_permitidos": "Vivienda. Equipamiento comunal de comercio minorista y oficinas. Áreas verdes.",
+      "usos_prohibidos": "Industrias y artesanías peligrosas, molestas y/o contaminantes y además todos los no mencionados como permitidos.",
+      "decreto": ""
+    },
+    {
+      "zona": "RA-2",
+      "nombre": "RA-2",
+      "usos_permitidos": "Vivienda. Equipamiento comunal de comercio minorista y oficinas. Áreas verdes.",
+      "usos_prohibidos": "Industrias y artesanías peligrosas, molestas y/o contaminantes y además todos los no mencionados como permitidos.",
+      "decreto": ""
+    },
+    {
+      "zona": "RE",
+      "nombre": "RE",
+      "usos_permitidos": "Vivienda. Equipamiento comunal de comercio minoristas y oficinas. Áreas verdes.",
+      "usos_prohibidos": "Industrias y artesanías peligrosas, molestas y/o contaminantes y además todos los no mencionados como permitidos.",
+      "decreto": ""
+    },
+    {
+      "zona": "RE-1",
+      "nombre": "RE-1",
+      "usos_permitidos": "Residencial. Equipamiento de: comercio minorista, culto, cultura, deporte, educación, servicios, social, seguridad. Espacio público y áreas verdes. Más detalle revisar Ordenanza.",
+      "usos_prohibidos": "Todos los no mencionados como permitidos.",
+      "decreto": ""
+    },
+    {
+      "zona": "RE-2",
+      "nombre": "RE-2",
+      "usos_permitidos": "Residencial. Equipamiento de: comercio minorista, culto, deporte, educación, servicios, social. Espacio público y áreas verdes. Más detalle revisar Ordenanza.",
+      "usos_prohibidos": "Todos los no mencionados como permitidos.",
+      "decreto": ""
+    },
+    {
+      "zona": "RE-3",
+      "nombre": "RE-3",
+      "usos_permitidos": "Residencial. Equipamiento de: comercio minorista, culto, deporte, educación, social. Espacio público y áreas verdes. Más detalle revisar Ordenanza.",
+      "usos_prohibidos": "Todos los no mencionados como permitidos.",
+      "decreto": ""
+    },
+    {
+      "zona": "RE-4",
+      "nombre": "RE-4",
+      "usos_permitidos": "Residencial. Equipamiento de: comercio minorista, culto, cultura, deporte, educación, servicios, social. Espacio público y áreas verdes. Más detalle revisar Ordenanza.",
+      "usos_prohibidos": "Todos los no mencionados como permitidos.",
+      "decreto": ""
+    },
+    {
+      "zona": "RE-5",
+      "nombre": "RE-5",
+      "usos_permitidos": "Residencial. Equipamiento de: comercio minorista, culto, cultura, deporte, educación, salud, servicios, social. Espacio público y áreas verdes. Más detalle revisar Ordenanza.",
+      "usos_prohibidos": "Todos los no mencionados como permitidos.",
+      "decreto": ""
+    },
+    {
+      "zona": "RE-6",
+      "nombre": "RE-6",
+      "usos_permitidos": "Residencial. Equipamiento de: comercio minorista, culto, cultura, deporte, social. Espacio público y áreas verdes. Más detalle revisar Ordenanza.",
+      "usos_prohibidos": "Todos los no mencionados como permitidos.",
+      "decreto": ""
+    },
+    {
+      "zona": "REP-1",
+      "nombre": "REP-1",
+      "usos_permitidos": "Vivienda y equipamiento comunal de comercio minorista. Servicios artesanales.",
+      "usos_prohibidos": "Industrias y artesanías peligrosas, molestas y/o contaminantes (ambientales) con las restricciones correspondientes y además todos los usos no mencionados como permitidos.",
+      "decreto": ""
+    },
+    {
+      "zona": "REP-2",
+      "nombre": "REP-2",
+      "usos_permitidos": "Vivienda. equipamiento comunal de comercio minorista, oficinas, servicios artesanales. Áreas verdes.",
+      "usos_prohibidos": "Industrias y artesanías peligrosas, molestas y/o contaminantes y además todos los usos no mencionados como permitidos.",
+      "decreto": ""
+    },
+    {
+      "zona": "RP-3",
+      "nombre": "RP-3",
+      "usos_permitidos": "Vivienda. Equipamiento comunal de comercio minorista, oficinas y servicios artesanales. Áreas verdes.",
+      "usos_prohibidos": "Todos los no mencionados como permitidos.",
+      "decreto": ""
+    },
+    {
+      "zona": "RP-4",
+      "nombre": "RP-4",
+      "usos_permitidos": "Vivienda. Equipamiento comunal de comercio minorista, oficinas y servicios artesanales. Áreas verdes.",
+      "usos_prohibidos": "Industrias y artesanías peligrosas, molestas y/o contaminantes y además todos los no mencionados como permitidos.",
+      "decreto": ""
+    },
+    {
+      "zona": "RZUE",
+      "nombre": "RZUE",
+      "usos_permitidos": "Sin información",
+      "usos_prohibidos": "Sin información",
+      "decreto": ""
+    },
+    {
+      "zona": "Santuario",
+      "nombre": "Santuario",
+      "usos_permitidos": "Santuario.",
+      "usos_prohibidos": "-",
+      "decreto": ""
+    },
+    {
+      "zona": "V1",
+      "nombre": "V1",
+      "usos_permitidos": "Vivienda, vialidad, áreas verdes.",
+      "usos_prohibidos": "Todo otro uso no indicado previamente.",
+      "decreto": ""
+    },
+    {
+      "zona": "V10/RU-1",
+      "nombre": "V10/RU-1",
+      "usos_permitidos": "Residencial. Equipamiento de: comercio,científico, culto, cultura, deporte, educación, salud, servicios, social. Espacio público y áreas verdes. Más detalle revisar Ordenanza.",
+      "usos_prohibidos": "Todos los no mencionados como permitidos.",
+      "decreto": ""
+    },
+    {
+      "zona": "V10/RU-2",
+      "nombre": "V10/RU-2",
+      "usos_permitidos": "Residencial. Equipamiento de: comercio,científico, culto, cultura, deporte, educación, salud, servicios, social, infraestructura transportes. Espacio público y áreas verdes. Más detalle revisar Ordenanza.",
+      "usos_prohibidos": "Todos los no mencionados como permitidos.",
+      "decreto": ""
+    },
+    {
+      "zona": "V10/RU-3",
+      "nombre": "V10/RU-3",
+      "usos_permitidos": "Residencial. Equipamiento de: comercio,científico, culto, cultura, deporte, educación, salud, servicios, social, infraestructura transportes. Espacio público y áreas verdes. Más detalle revisar Ordenanza.",
+      "usos_prohibidos": "Todos los no mencionados como permitidos.",
+      "decreto": ""
+    },
+    {
+      "zona": "V11-A",
+      "nombre": "V11-A",
+      "usos_permitidos": "Residencial, Equipamiento, Espacio Público, mayor detalle en Ordenanza",
+      "usos_prohibidos": "Todos los no mencionados como permitidos y en especial equipamientos como Supermercados,Centro de Servicio automotor,etc, mayor detalle en Ordenanza",
+      "decreto": ""
+    },
+    {
+      "zona": "V11-B",
+      "nombre": "V11-B",
+      "usos_permitidos": "Residencial, Equipamiento, Espacio Público, mayor detalle en Ordenanza",
+      "usos_prohibidos": "Todos los no mencionados como permitidos y en especial equipamientos como Supermercados,Centro de Servicio automotor,etc, mayor detalle en Ordenanza",
+      "decreto": ""
+    },
+    {
+      "zona": "V11-C",
+      "nombre": "V11-C",
+      "usos_permitidos": "Residencial, Equipamiento, Espacio Público, mayor detalle en Ordenanza",
+      "usos_prohibidos": "Todos los no mencionados como permitidos y en especial equipamientos como Supermercados,Centro de Servicio automotor,etc, mayor detalle en Ordenanza",
+      "decreto": ""
+    },
+    {
+      "zona": "V2",
+      "nombre": "V2",
+      "usos_permitidos": "Residencial (sólo vivienda). Equipamiento de: culto, cultura, educación, salud, seguridad, social. Espacio público y áreas verdes. Más detalle revisar Ordenanza.",
+      "usos_prohibidos": "Todos los mencionados como permitidos y expresamente el hospedaje en todas sus formas servicios artesanales y servicos profesionales.",
+      "decreto": ""
+    },
+    {
+      "zona": "V4",
+      "nombre": "V4",
+      "usos_permitidos": "Residencial. Equipamiento de: comercio, culto, cultura, deporte, educación, salud, seguridad, servicios, social. Espacio público y áreas verdes. Más detalle revisar Ordenanza.",
+      "usos_prohibidos": "Todos los no mencionados como permitidos.",
+      "decreto": ""
+    },
+    {
+      "zona": "V4a",
+      "nombre": "V4a",
+      "usos_permitidos": "Residencial. Equipamiento de: comercio, culto, cultura, deporte, educación, esparcimiento, salud, seguridad, servicios, social. Espacio público y áreas verdes. Más detalle revisar Ordenanza.",
+      "usos_prohibidos": "Todos los no mencionados como permitidos.",
+      "decreto": ""
+    },
+    {
+      "zona": "V6a",
+      "nombre": "V6a",
+      "usos_permitidos": "Residencial. Equipamiento de comercio, culto, cultura, deporte, educación, esparcimiento, salud, seguridad, servicios, social. Espacio público y áreas verdes. Más detalle revisar Ordenanza.",
+      "usos_prohibidos": "Todos los no mencionados como permitidos, más detalle ver en ordenanza",
+      "decreto": ""
+    },
+    {
+      "zona": "V7",
+      "nombre": "V7",
+      "usos_permitidos": "Residencial. Equipamiento de: comercio, culto, cultura, deporte, educación, esparcimiento, salud, seguridad, servicios, salud. Actividades productivas inofensivas. Infraestructura, espacio público y áreas verdes. Más detalle en Ordenanza.",
+      "usos_prohibidos": "Todos los no mencionados como permitidos.",
+      "decreto": ""
+    },
+    {
+      "zona": "VE",
+      "nombre": "VE",
+      "usos_permitidos": "Vivienda, comercio, piscinas, equipamiento de esparcimiento y turismo comunal, áreas verdes y vialidad.",
+      "usos_prohibidos": "Todo otro uso no indicado previamente.",
+      "decreto": ""
+    },
+    {
+      "zona": "VE1",
+      "nombre": "VE1",
+      "usos_permitidos": "Vivienda, comercio, equipamiento de esparcimiento y turismo comunal, áreas verdes y vialidad.",
+      "usos_prohibidos": "Todo otro uso no indicado previamente.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZE",
+      "nombre": "ZE",
+      "usos_permitidos": "Sector destinado preferentemente a residencia y equipamiento vecinal.",
+      "usos_prohibidos": "Todos los no mencionados como permitidos.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZEQI",
+      "nombre": "ZEQI",
+      "usos_permitidos": "Equipamiento Intercomunal",
+      "usos_prohibidos": "Todos los no mencionados como permitidos.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZR",
+      "nombre": "ZR",
+      "usos_permitidos": "Áreas verdes, equipamiento deportivo comunal.",
+      "usos_prohibidos": "Todo otro uso no indicado previamente.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZR1",
+      "nombre": "ZR1",
+      "usos_permitidos": "Áreas verdes, equipamiento deportivo comunal.",
+      "usos_prohibidos": "Todo otro uso no indicado previamente.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZR2",
+      "nombre": "ZR2",
+      "usos_permitidos": "Sin información",
+      "usos_prohibidos": "Sin información",
+      "decreto": ""
+    },
+    {
+      "zona": "ZRV",
+      "nombre": "ZRV",
+      "usos_permitidos": "Vialidad paso bajo nivel.",
+      "usos_prohibidos": "Todos los no mencionados como permitidos.",
+      "decreto": ""
+    }
+  ]
+}

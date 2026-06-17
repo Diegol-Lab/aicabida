@@ -1,0 +1,441 @@
+{
+  "comuna": "Coquimbo",
+  "key": "Coquimbo",
+  "fuente": "PRC_Coquimbo/FeatureServer/3",
+  "zonas": [
+    {
+      "zona": "AVN",
+      "nombre": "AVN",
+      "usos_permitidos": "Área verde; Espacio público",
+      "usos_prohibidos": "Todos los no mencionados como permitidos ",
+      "decreto": ""
+    },
+    {
+      "zona": "AVP1",
+      "nombre": "AVP1",
+      "usos_permitidos": "Residencial: hospedaje y hogares de acogida; Equipamiento: científico, comercio, excepto los prohibidos. Culto y cultura. Deporte, educación, esparcimiento, salud y seguridad, excepto los prohibidos: Servicios y social; Áreas verdes; Espacio público.",
+      "usos_prohibidos": "Residencial: Moteles; Equipamientos: estaciones o centros de servicio automotor, supermercados, grandes tiendas, clubes nocturnos, pubs y discotecas; estadios y multicanchas; centros de orientación o rehabilitación conductual. Eqip. localizado en AR2. parques de entretenciones, zoológicos, camping y picnic. Hospitales, cementerios, cementerios‑parque y crematorios. Cárceles o centros de detención; Actividad productiva:  industria y bodegaje; Infraestructura: transporte, sanitaria y energética; y todo uso no expresamente permitido",
+      "decreto": ""
+    },
+    {
+      "zona": "AVP2",
+      "nombre": "AVP2",
+      "usos_permitidos": "Residencial: hospedaje, excepto los prohibidos. Hogares acogida; Equipamiento: científico, comercio, excepto los prohibidos. Culto y cultura, deporte, educación, esparcimiento, salud y seguridad, excepto los prohibidos. Servicios y social; Áeas verdes; Espacio público. Detalles de actividades prohibidas revisar Ordenanza Local",
+      "usos_prohibidos": "Equipamiento: Camping, comercio y servicios de alto impacto, estadios, centros de orientación o rehabilitación conductual, parques de entretenciones y zoológicos, equipamientos localizados en AR2, cementerios, cementerios‑parque y crematorios, cárceles o centros de detención; Actividad productiva: Industria, almacenamiento y bodegaje; Infraestructura: transporte, sanitaria y energética; y todo uso no expresamente permitido",
+      "decreto": ""
+    },
+    {
+      "zona": "AVP2-A",
+      "nombre": "AVP2-A",
+      "usos_permitidos": "Revisar Zona AVP 2",
+      "usos_prohibidos": "Equipamiento: Deporte, gimnasios y piscinas, salud, hospitales; Áreas verdes en todos sus destinos; además de los usos prohibidos establecidos para la AVP2",
+      "decreto": ""
+    },
+    {
+      "zona": "AVP3",
+      "nombre": "AVP3",
+      "usos_permitidos": "Área verde al interior de la Zona Típica del Pueblo de Guayacán; destinos complementarios asociados conforme a lo establecido en el artículo 2.1.31 de la OGUC",
+      "usos_prohibidos": "Todos los no mencionados como permitidos ",
+      "decreto": ""
+    },
+    {
+      "zona": "BNUP",
+      "nombre": "BNUP",
+      "usos_permitidos": "Revisar Ordenanza",
+      "usos_prohibidos": "Revisar Ordenanza",
+      "decreto": ""
+    },
+    {
+      "zona": "ZAV",
+      "nombre": "ZAV",
+      "usos_permitidos": "De acuerdo con las disposiciones establecidas en el Art. 2.1.31 de la OGUC",
+      "usos_prohibidos": "De acuerdo con las disposiciones establecidas en el Art. 2.1.31 de la OGUC",
+      "decreto": ""
+    },
+    {
+      "zona": "ZAVPC",
+      "nombre": "ZAVPC",
+      "usos_permitidos": "Zona de Área Verde Parque Comunal",
+      "usos_prohibidos": "Todos los no mencionados como permitidos",
+      "decreto": ""
+    },
+    {
+      "zona": "ZAVPC-A",
+      "nombre": "ZAVPC-A",
+      "usos_permitidos": "Equipamiento: Cultura, Áreas Verdes, Esparcimiento, Funicular y Teleférico, siempre que no generen una degradación del medio ambiente natural, ni hagan perder al parque su calidad de área verde ni su valor paisajístico. Equipamiento Comercial: restaurant y cafetería",
+      "usos_prohibidos": "Todos los no mencionados como permitidos",
+      "decreto": ""
+    },
+    {
+      "zona": "ZCH-2",
+      "nombre": "ZCH-2",
+      "usos_permitidos": "",
+      "usos_prohibidos": "",
+      "decreto": ""
+    },
+    {
+      "zona": "ZCH-5A",
+      "nombre": "ZCH-5A",
+      "usos_permitidos": "",
+      "usos_prohibidos": "",
+      "decreto": ""
+    },
+    {
+      "zona": "ZCH1",
+      "nombre": "ZCH1",
+      "usos_permitidos": "",
+      "usos_prohibidos": "",
+      "decreto": ""
+    },
+    {
+      "zona": "ZCH1A",
+      "nombre": "ZCH1A",
+      "usos_permitidos": "",
+      "usos_prohibidos": "",
+      "decreto": ""
+    },
+    {
+      "zona": "ZCH3",
+      "nombre": "ZCH3",
+      "usos_permitidos": "",
+      "usos_prohibidos": "",
+      "decreto": ""
+    },
+    {
+      "zona": "ZCH4",
+      "nombre": "ZCH4",
+      "usos_permitidos": "",
+      "usos_prohibidos": "",
+      "decreto": ""
+    },
+    {
+      "zona": "ZCH5",
+      "nombre": "ZCH5",
+      "usos_permitidos": "",
+      "usos_prohibidos": "",
+      "decreto": ""
+    },
+    {
+      "zona": "ZE1",
+      "nombre": "ZE1",
+      "usos_permitidos": "Equipamiento de Salud de tipo Cementerios",
+      "usos_prohibidos": "Todos los no mencionados como permitidos",
+      "decreto": ""
+    },
+    {
+      "zona": "ZE2",
+      "nombre": "ZE2",
+      "usos_permitidos": "Residencial: Hospedaje; Equipamiento: científico, comercio, culto y cultura, deporte, educación, excepto los prohibidos. Esparcimiento, salud y seguridad, excepto los prohibidos. Servicios y social; Infraestructura: transporte, sanitaria y energética, excepto los señalados como prohibidos; Áreas verdes; Espacio público. Detalles de actividades prohibidas revisar Ordenanza Local",
+      "usos_prohibidos": "Vivienda, salvo aquella destinada a complementar la actividad permitida conforme a  OGUC; hogares de acogida; Equipamiento: educación básica, media y superior en AR2; equipamiento de salud y de seguridad en AR2; Actividades Productivas: industria y bodegaje; rellenos sanitarios; plantas de generación energética; y todo uso no expresamente permitido",
+      "decreto": ""
+    },
+    {
+      "zona": "ZE2-A",
+      "nombre": "ZE2-A",
+      "usos_permitidos": "Revisar zona ZE2",
+      "usos_prohibidos": "Revisar zona ZE2",
+      "decreto": ""
+    },
+    {
+      "zona": "ZE2-B",
+      "nombre": "ZE2-B",
+      "usos_permitidos": "Equipamiento: comercio, asociado a la actividad deportiva. Restaurantes, cafeterías, centro comercial de mediana escala (strip center). Detalles de actividades prohibidas revisar Ordenanza Local",
+      "usos_prohibidos": "Mismos que Zona ZE2. Excepto la norma de Usos: Residencial - Vivienda:Todos, Equipamiento – Esparcimiento: Todos; Equipamiento – Comercio: Todos los no señalados como permitidos.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZE3",
+      "nombre": "ZE3",
+      "usos_permitidos": "Residencial: Hospedaje; Equipamiento: científico, comercio, culto y cultura, deporte, educación, excepto los prohibidos. Esparcimiento, excepto los prohibidos. Salud y seguridad, excepto los prohibidos. Servicios y social; Infraestructura: transporte, sanitaria y energética, excepto los prohibidos; Áreas verdes; Espacio público. Detalles de actividades prohibidas revisar Ordenanza Local",
+      "usos_prohibidos": "Vivienda, salvo que complementen la actividad permitida según OGUC; hogares de acogida; Equipamiento de educación básica, media y superior localizado en AR2; parques de entretenciones y zoológicos; cementerios, cementerios‑parque y crematorios; cárceles o centros de detención; equipamiento de salud y de seguridad localizado en  AR2; Actividad Productiva: industria y bodegaje; rellenos sanitarios; plantas de generación energética; y todo uso no expresamente permitido",
+      "decreto": ""
+    },
+    {
+      "zona": "ZE3-A",
+      "nombre": "ZE3-A",
+      "usos_permitidos": "Mismas que zona ZE3",
+      "usos_prohibidos": "Mismas que zona ZE3",
+      "decreto": ""
+    },
+    {
+      "zona": "ZE4",
+      "nombre": "ZE4",
+      "usos_permitidos": "Residencial: hospedaje y hogares de acogida; Equipamiento: científico, comercio, culto y cultura, deporte, educación, esparcimiento, salud y seguridad, excepto los prohibidos. Servicios y social; Infraestructura: transporte; Áreas verdes; Espacio público. Detalles de actividades prohibidas revisar Ordenanza Local",
+      "usos_prohibidos": "Equipamiento: Estadios en AR2,. Educación básica, media y superior en AR2. Zoológicos. Cementerios, cementerios‑parque y crematorios. Cárceles o centros de detención. Ssalud y de seguridad en AR2; Actividad Productiva: industria y bodegaje; Infraestructura: sanitaria y energética; y todo uso no expresamente permitido",
+      "decreto": ""
+    },
+    {
+      "zona": "ZE4-A",
+      "nombre": "ZE4-A",
+      "usos_permitidos": "Residencial: hospedaje y hogares de acogida; Equipamiento: científico, comercio, culto y cultura, deporte, educación, esparcimiento, salud y seguridad, excepto los prohibidos. Servicios y social; Infraestructura: transporte; Áreas verdes; Espacio público. Detalles de actividades prohibidas revisar Ordenanza Local",
+      "usos_prohibidos": "Equipamiento: Estadios en AR2,. Educación básica, media y superior localizado en AR2. Zoológicos. Cementerios, cementerios‑parque y crematorios. Cárceles o centros de detención. Salud y de seguridad localizado en AR2; Actividad Productiva: industria y bodegaje; Infraestructura: sanitaria y energética; y todo uso no expresamente permitido",
+      "decreto": ""
+    },
+    {
+      "zona": "ZEBC1",
+      "nombre": "ZEBC1",
+      "usos_permitidos": "Equipamiento: comercio, locales comerciales, restaurantes, cafeterías, bares; Espacio Público",
+      "usos_prohibidos": "Todos los no mencionados como permitidos",
+      "decreto": ""
+    },
+    {
+      "zona": "ZEBC2",
+      "nombre": "ZEBC2",
+      "usos_permitidos": "Equipamiento: Comercio, locales comerciales, restaurantes, cafeterías, bares. Estacionamientos. Seguridad no localizado en Área de Riesgo AR2; Espacio público",
+      "usos_prohibidos": "Todos los no mencionados como permitidos",
+      "decreto": ""
+    },
+    {
+      "zona": "ZI1",
+      "nombre": "ZI1",
+      "usos_permitidos": "Infraestructura: Transporte de tipo terminales de transporte público y de carga; Actividades Productivas: almacenamiento y Bodegaje de calificación inofensiva y molesta. Detalles de actividades prohibidas revisar Ordenanza Local",
+      "usos_prohibidos": "Todos los no mencionados como permitidos",
+      "decreto": ""
+    },
+    {
+      "zona": "ZI2",
+      "nombre": "ZI2",
+      "usos_permitidos": "Infraestructura sanitaria",
+      "usos_prohibidos": "Todos los no mencionados como permitidos ",
+      "decreto": ""
+    },
+    {
+      "zona": "ZI3",
+      "nombre": "ZI3",
+      "usos_permitidos": "Infraestructura: Energética",
+      "usos_prohibidos": "Todos los no mencionados como permitidos",
+      "decreto": ""
+    },
+    {
+      "zona": "ZI4",
+      "nombre": "ZI4",
+      "usos_permitidos": "Infraestructura: Tansporte; Actividades Productivas: almacenamiento y bodegaje de calificación inofensiva y molesta; Equipamiento: Comercio, Servicios y Seguridad.",
+      "usos_prohibidos": "Todos los no mencionados como permitidos",
+      "decreto": ""
+    },
+    {
+      "zona": "ZP1",
+      "nombre": "ZP1",
+      "usos_permitidos": "Residencial; Equipamiento: científico, comercio, culto y cultura, deporte, educación, esparcimiento, salud y seguridad, excepto los prohibidos. Servicios y social; Actividad Productiva: industria, almacenamiento y bodegaje inofensivo; Infraestructura; transporte y sanitaria; Áreas verdes; Espacio público. Detalles de actividades prohibidas revisar Ordenanza Local",
+      "usos_prohibidos": "Equipamiento: Estadios localizados en AR2; equipamiento de educación, salud y seguridad en AR2; parques de entretenciones y zoológicos; cementerios y crematorios; cárceles o centros de detención; Actividad productiva: distintas de la industria y almacenamiento inofensivos. Infraestructura energética; y todo uso no expresamente permitido",
+      "decreto": ""
+    },
+    {
+      "zona": "ZP2",
+      "nombre": "ZP2",
+      "usos_permitidos": "Equipamiento: científico, comercio, culto y cultura, deporte, jardín infantil y sala cuna, seguridad, excepto los prohibidos. Servicios y social; Actividad Productiva: industria, almacenamiento y bodegaje inofensivo y molesto; Infraestructura: sanitaria y energética, excepto los usos expresamente prohibidos; Áreas verdes; Espacio público. Detalles de actividades prohibidas revisar Ordenanza Local",
+      "usos_prohibidos": "Residencial y hogares de acogida; hospedaje; Equipamiento de seguridad localizado en  AR2; todo equipamiento educacional distinto de jardín infantil y sala cuna; esparcimiento y salud; Actividad Productiva no señaladas como permitidas; rellenos sanitarios; plantas de generación energética; y todo uso no expresamente permitido",
+      "decreto": ""
+    },
+    {
+      "zona": "ZP2-A",
+      "nombre": "ZP2-A",
+      "usos_permitidos": "Mismos usos que Zona ZP2",
+      "usos_prohibidos": "Mismos usos que Zona ZP2",
+      "decreto": ""
+    },
+    {
+      "zona": "ZP3",
+      "nombre": "ZP3",
+      "usos_permitidos": "Equipamiento: científico. Culto y cultura; Actividad Productiva: Industria inofensiva y molesta; Áreas verdes, Espacio público",
+      "usos_prohibidos": "Residencial, hospedaje y hogares de acogida; Equipamiento: comercio, deporte, educación, esparcimiento, salud, seguridad, servicios, actividades sociales; Actividad Productiva: almacenamiento y bodegaje; Infraestructura: transporte, sanitaria y energética; y todo uso no expresamente permitido",
+      "decreto": ""
+    },
+    {
+      "zona": "ZPBC",
+      "nombre": "ZPBC",
+      "usos_permitidos": "Residencial: camping para sectores concesionados en Tongoy; Espacio público; Área verde",
+      "usos_prohibidos": "Todos los no mencionados como permitidos",
+      "decreto": ""
+    },
+    {
+      "zona": "ZPI",
+      "nombre": "ZPI",
+      "usos_permitidos": "Áreas verdes; Espacio público",
+      "usos_prohibidos": "Todos los no mencionados como permitidos",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU10",
+      "nombre": "ZU10",
+      "usos_permitidos": "Residencial; Equipamiento: científico. comercio, culto y cultura, deporte, educación, esparcimiento, salud y seguridad, excepto los prohibidos. Servicios y social; Áreas verdes; Espacio público. Detalles de actividades prohibidas revisar Ordenanza Local",
+      "usos_prohibidos": "Centros de reparación automotor y discotecas; estadios; equipamiento de educación, salud y seguridad localizado en AR2; parques de entretenciones y zoológicos; Actividad productiva: Industria y bodegaje; infraestructura: transporte, sanitaria y energética; y todo uso no expresamente permitido",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU11",
+      "nombre": "ZU11",
+      "usos_permitidos": "Residencial; Equipamiento: científico y comercio, culto y cultura, deporte, educación, esparcimiento, salud y seguridad, excepto los prohibidos. Servicios y social; Infraestructura: sanitaria y terminales de transporte público; Áreas verdes y Espacio público. Detalles de actividades prohibidas revisar Ordenanza Local",
+      "usos_prohibidos": "Equipamiento: Estadios; centros de rehabilitación conductual; zoológicos; equipamientos de salud y de seguridad localizados en AR2; cárceles o centros de detención. Actividades productiva: industria y bodegaje. Infraestructura energética; todo uso de transporte no señalado como permitido; y todo uso no expresamente permitido",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU12",
+      "nombre": "ZU12",
+      "usos_permitidos": "Residencial; Equipamiento: científico, comercio, culto y cultura, deporte, educación, esparcimiento, salud y seguridad, excepto los prohibidos; servicios y social; infraestructura de transporte; áreas verdes y espacio público. Detalles de actividades prohibidas revisar Ordenanza Local",
+      "usos_prohibidos": "Centros de reparación automotor y discotecas; estadios; equipamiento de educación, salud y seguridad localizado en AR2; parques de entretenciones y zoológicos; Actividad productiva: industria y bodegaje; infraestructura: transporte, sanitaria y energética; y todo uso no expresamente permitido",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU13",
+      "nombre": "ZU13",
+      "usos_permitidos": "Residencial; Equipamiento: científico, comercio, culto y cultura. Deporte, educación, esparcimiento, salud y seguridad, excepto los señalados como prohibidos. Servicios y social; Áreas verdes; Espacio público. Detalles de actividades prohibidas revisar Ordenanza Local",
+      "usos_prohibidos": "Equipamiento: Discotecas, fuentes de soda, grandes tiendas y centros comerciales cerrados; estadios; centros de orientación o rehabilitación conductual; equipamiento en AR2; parques de entretenciones, zoológicos, camping y picnic; cementerios y crematorios; cárceles o centros de detención; Actividad productiva: industria y bodegaje. Infraestructura: transporte, sanitaria y energética; y todo uso no expresamente permitido",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU13-A",
+      "nombre": "ZU13-A",
+      "usos_permitidos": "Mismos que Zona ZU13",
+      "usos_prohibidos": "Mismos que Zona ZU13",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU14",
+      "nombre": "ZU14",
+      "usos_permitidos": "Residencial; Equipamiento: científico. Comercio, culto y cultura; deporte, educación, esparcimiento, salud y seguridad, excepto los prohibidos. Servicios y social; Áreas verdes; Espacio público. Detalles de actividades prohibidas revisar Ordenanza Local",
+      "usos_prohibidos": "Equipamiento: Centros de reparación automotor, talleres mecánicos y centros comerciales cerrados; estadios; centros de rehabilitación conductual; equipamiento en AR2; parques de entretenciones y zoológicos; cementerios y crematorios; cárceles o centros de detención. Actividad productiva: industria y bodegaje; Infraestructura: transporte, sanitaria y energética; y todo uso no expresamente permitidol",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU15",
+      "nombre": "ZU15",
+      "usos_permitidos": "Residencial; equipamiento: científico. Comercio, culto y cultura. Deporte, educación, esparcimiento, salud y seguridad, excepto los prohibidos. Servicios y social; infraestructura: transporte público; Áreas verdes; Espacio público. Detalles de actividades prohibidas revisar Ordenanza Local",
+      "usos_prohibidos": "Centros de reparación automotor, talleres mecánicos, bares, fuentes de soda, discotecas, clubes nocturnos y centros comerciales cerrados; estadios; centros de orientación o rehabilitación conductual; equipamiento en AR2; parques de entretenciones, zoológicos, casinos y juegos electrónicos o mecánicos; cementerios y crematorios; cárceles o centros de detención; actividades productivas, industria y bodegaje; infraestructura sanitaria y energética; todo uso de transporte no señalado como permitido; y todo uso no expresamente permitido",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU16",
+      "nombre": "ZU16",
+      "usos_permitidos": "Residencial; Equipamiento: científico. Comercio, culto y cultura. Deporte, educación, esparcimiento, salud y seguridad, excepto los prohibidos. Servicios y social; Actividad Productiva: Industria inofensiva y talleres mecánicos. Almacenamiento y bodegaje inofensivo; Areas verdes;  Espacio público. Detalles de actividades prohibidas revisar Ordenanza Local",
+      "usos_prohibidos": "Equipamiento: Áreas de camping; discotecas, clubes nocturnos y fuentes de soda; estadios; equipamiento de educación, salud y seguridad localizado en AR2; parques de entretenciones, zoológicos y picnic. Actividad productiva: no considerada inofensiva. Infraestructura:  transporte, sanitaria y energética; y todo uso no expresamente permitido",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU16-A",
+      "nombre": "ZU16-A",
+      "usos_permitidos": "Mismo usos que zona ZU16",
+      "usos_prohibidos": "Mismo usos que zona ZU16",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU17",
+      "nombre": "ZU17",
+      "usos_permitidos": "Residencial; Equipamiento: científico. Comercio, culto y cultura. Deporte, educación, esparcimiento, salud y seguridad, excepto los prohibidos. servicios y social; Áreas verdes; Espacio público. Detalles de actividades prohibidas revisar Ordenanza Local",
+      "usos_prohibidos": "Residencial; Equipamiento: científico. Comercio, culto y cultura. Deporte, educación, esparcimiento, salud y seguridad, excepto los prohibidos. servicios y social; Áreas verdes; Espacio público. Detalles de actividades prohibidas revisar Ordenanza Local",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU3",
+      "nombre": "ZU3",
+      "usos_permitidos": "Residencial; Equipamiento: científico (todos), comercio, culto y cultura (todos), deporte, educación, esparcimiento, salud y seguridad, servicios y social (Todos); Áreas Verdes; Espacio público. Detalles de actividades prohibidas revisar Ordenanza Local",
+      "usos_prohibidos": "Equipamentos:  Bares y discotecas; estadios; centros de orientación o rehabilitación conductual; parques de entretenciones, zoológicos y áreas de camping o picnic; cementerios, cementerios‑parque y crematorios; equipamiento de salud l en AR2; cárceles o centros de detención y equipamiento de seguridad en AR2; Actividad Productiva: industria, almacenamiento y bodegaje; Infraestructura: transporte, sanitaria y energética; y todo uso no expresamente permitido",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU3-A",
+      "nombre": "ZU3-A",
+      "usos_permitidos": "Mismos usos que Zona ZU3",
+      "usos_prohibidos": "Mismos usos que Zona ZU3",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU4",
+      "nombre": "ZU4",
+      "usos_permitidos": "Residencial; Equipamiento: científico, comercio, excepto los prohibidos; culto y cultura; deporte, educación, esparcimiento, salud y seguridad, excepto los prohibidos. Servicios y social; Actividad Productiva: industria, almacenamiento y bodegaje inofensivo; Infraestructura: terminales de transporte público, sanitaria; Áreas verdes, Espacio público. Detalles de actividades prohibidas revisar Ordenanza Local",
+      "usos_prohibidos": "",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU5",
+      "nombre": "ZU5",
+      "usos_permitidos": "Residencial; Equipamiento: científico, comercio, culto y cultura. Deporte; educación, esparcimiento, salud, seguridad, servicios y social. Excepto los prohibidos; Áreas Verdes: Espacio Público; terminales de transporte. Detalles de actividades prohibidas revisar Ordenanza Local",
+      "usos_prohibidos": "Equipamiento: Bares y discotecas, centros de orientación o rehabilitación conductual, parques de entretenciones, zoológicos, camping y picnic, cementerios y crematorios; equipamiento en AR2, cárceles o centros de detención; Actividades Productivas: industria y bodegaje; Infraestructura: sanitaria y energética; y todo uso no expresamente permitidol",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU5-A",
+      "nombre": "ZU5-A",
+      "usos_permitidos": "Mismos uso que ZU5",
+      "usos_prohibidos": "Mismos uso que ZU5",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU5-B",
+      "nombre": "ZU5-B",
+      "usos_permitidos": "Residencial; Equipamiento: científico, comercio; culto y cultura; educación, excepto los prohibidos. Salud, excepto los señalados como prohibidos. Social; Áreas Verdes; Espacio Público. Detalles de actividades prohibidas revisar Ordenanza Local",
+      "usos_prohibidos": "Equipamiento: Estaciones o centros de servicio automotor y centros comerciales cerrados. Deporte y esparcimiento. Centros de orientación o rehabilitación conductual. Cementerios, hospitales y crematorios. Seguridad. Servicios conforme al art. 2.1.26 de la OGUC; Actividad Productiva: industria y bodegaje; Infraestructura: transporte, sanitaria y energética; y todo uso no expresamente permitido",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU5-C",
+      "nombre": "ZU5-C",
+      "usos_permitidos": "Residencial; Equipamiento: científico, comercio, excepto los señalados como prohibidos,culto y cultura, educación, excepto los señalados como prohibidos. Salud, excepto los señalados como prohibidos. Social; Áreas Verdes y Espacio Público. Detalles de actividades prohibidas revisar Ordenanza Local",
+      "usos_prohibidos": "Equipamiento: estaciones o centros de servicio automotor y centros comerciales cerrados. Deporte. Esparcimiento; Centros de orientación o rehabilitación conductual. Cementerios, cementerios‑parque, crematorios y hospitales. Seguridad. Servicios conforme al art. 2.1.26 de la OGUC ; Actividades Productivas: industria, almacenamiento y bodegaje; Infraestructura: transporte, sanitaria y energética; y todo uso no expresamente permitido",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU5-D",
+      "nombre": "ZU5-D",
+      "usos_permitidos": "Residencial; equipamiento científico; comercio, deporte, educación, esparcimiento, salud, seguridad y servicios, excepto los usos expresamente prohibidos.Culto y cultura. Social; Áreas Verdes; Espacio Público. Detalles de actividades prohibidas revisar Ordenanza Local",
+      "usos_prohibidos": "Residencial: Moteles; Equipamiento: estaciones o centros de servicio automotor; clubes nocturnos, cantinas y fuentes de soda. Centros comerciales cerrados. Estadios. Centros de orientación o rehabilitación conductual. Parques entretenciones, zoológicos, áreas de camping o picnic. Cementerios, cementerios‑parque, crematorios y hospitales. Cárceles o centros de detención; Actividad Productiva: industria, almacenamiento y bodegaje; Infraestructura: transporte, sanitaria y energética; y todo uso no expresamente permitido",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU6",
+      "nombre": "ZU6",
+      "usos_permitidos": "Residencial; Equipamiento: científico, comercio, culto y cultura, deporte, educación, esparcimiento, salud y seguridad, y todos excepto los usos expresamente prohibidos. Servicios, social; Infraestructura: sanitaria; Áreas Verdes y Espacio Público. Detalles de actividades prohibidas revisar Ordenanza Local",
+      "usos_prohibidos": "Equipamiento: Camping, mercados, discotecas y malls. Centros de rehabilitación conductual. Parques de entretenciones, zoológicos y picnic. Cementerios y crematorios; equipamiento en AR. Cárceles o centros de detención; Actividad Productiva: industria, bodegaje; Infraestructura: transporte y energética; y todo uso no permitido",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU6-A",
+      "nombre": "ZU6-A",
+      "usos_permitidos": "Residencial; Equipamiento: científico, comercio, culto y cultura, deporte, educación, esparcimiento, salud y seguridad, excepto losprohibidos; servicios y social; Infraestructura: transporte y sanitaria; Áreas verdes; Espacio público. Detalles de actividades prohibidas revisar Ordenanza Local",
+      "usos_prohibidos": "Equipamiento: Camping salvo en Coquimbo y Tongoy. Centros de reparación automotor y discotecas. Centros de rehabilitación conductual. Equipamiento localizado en  AR2. Parques de entretenciones, zoológicos y picnic salvo en Coquimbo y Tongoy; cementerios y crematorios. Cárceles o centros de detención; Actividad Productiva: industria y bodegaje; Infraestructura energética; y todo uso no permitido",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU7",
+      "nombre": "ZU7",
+      "usos_permitidos": "Residencial; Equipamiento: científico, comercio, culto y cultura, deporte, educación, esparcimiento, salud y seguridad, excepto los prohibidos. Servicios y social; Infraestructura: sanitaria; Áreas verdes; Espacio público. Detalles de actividades prohibidas revisar Ordenanza Local",
+      "usos_prohibidos": "Equipamiento: Camping salvo en Coquimbo y Tongoy; mercados, centros de reparación automotor, talleres mecánicos, discotecas y centros comerciales cerrados; estadios; centros de rehabilitación conductual; equipamiento en AR2; parques de entretenciones, zoológicos y picnic salvo en Coquimbo y Tongoy; cementerios y crematorios; cárceles o centros de detención. Actividad Productiva: industria y bodegaje. Infraestructura: transporte y energética; y todo uso no permitido",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU7-A",
+      "nombre": "ZU7-A",
+      "usos_permitidos": "Residencial; Equipamiento: científico. Comercio, culto y cultura, deporte, educación, esparcimiento, salud y seguridad, excepto los prohibidos. Servicios y social; Infraestructura: sanitaria; Áreas verdes, Espacio público. Detalles de actividades prohibidas revisar Ordenanza Local",
+      "usos_prohibidos": "Equipamiento: Camping salvo en Coquimbo y Tongoy; mercados, centros de reparación automotor, talleres mecánicos, discotecas y centros comerciales cerrados; estadios; centros de rehabilitación conductual; equipamiento en AR2; parques de entretenciones, zoológicos y picnic salvo en Coquimbo y Tongoy; cementerios y crematorios; cárceles o centros de detención. Actividad productiva: industria y bodegaje; Infraestructura: transporte y energética; y todo uso no permitido",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU8",
+      "nombre": "ZU8",
+      "usos_permitidos": "Residencial; Equipamiento: científico. Comercio, culto y cultura, deporte, educación, esparcimiento, salud y seguridad, excepto los prohibidos. Servicios y social; Áreas verdes; Espacio público. Detalles de actividades prohibidas revisar Ordenanza Local.",
+      "usos_prohibidos": "Equipamiento: Camping; centros comerciales cerrados, centros de reparación automotor, talleres mecánicos y locales con venta de materiales de construcción; estadios; equipamiento de educación, salud y seguridad en AR2; zoológicos. Actividad productiva: Industria y bodegaje. Infraestructura: transporte, sanitaria y energética; y todo uso no permitido",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU9",
+      "nombre": "ZU9",
+      "usos_permitidos": "Residencial; Equipamiento: científico, comercio, culto y cultura, deporte, educación, esparcimiento, salud y seguridad, excepto los prohibidos. Servicios y social; Infraestructura: sanitaria y terminales de transporte público; Áreas verdes; Espacio público. Detalles de actividades prohibidas revisar Ordenanza Loca",
+      "usos_prohibidos": "Equipamiento: Discotecas, clubes nocturnos, centros de servicio automotor, talleres mecánicos, bares, fuentes de soda, grandes tiendas y centros comerciales cerrados; centros de orientación o rehabilitación conductual; equipamiento en AR2; parques de entretenciones, zoológicos, camping y picnic; cementerios y crematorios; cárceles o centros de detención. Actividad productiva: industria y bodegaje; Infraestructura energética; todo uso de transporte no señalado como permitido; y todo uso no expresamente permitido",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU9-A",
+      "nombre": "ZU9-A",
+      "usos_permitidos": "Residencial; Equipamiento: científico. Comercio, culto y cultura, deporte, educación, esparcimiento, salud y seguridad, excepto los prohibidos. Servicios y social; Infraestructura: sanitaria y terminales de transporte público; Áreas verdes; Espacio público. Detalles de actividades prohibidas revisar Ordenanza Local",
+      "usos_prohibidos": "Equipamiento: Discotecas, clubes nocturnos, centros de servicio automotor, talleres mecánicos, bares, fuentes de soda, grandes tiendas y centros comerciales cerrados; centros de orientación o rehabilitación conductual; equipamiento en AR2; parques de entretenciones, zoológicos, camping y picnic; cementerios y crematorios; cárceles o centros de detención. Actividad productiva: industria y bodegaje. Infraestructura energética; todo uso de transporte no señalado como permitido; y todo uso no expresamente permitido",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU9-B",
+      "nombre": "ZU9-B",
+      "usos_permitidos": "Residencial; Equipamiento: científico. Comercio, culto y cultura, deporte, educación, esparcimiento, salud y seguridad, excepto los prohibidos. Servicios y social; Infraestructura: sanitaria y terminales de transporte público; Áreas verdes; Espacio público. Detalles de actividades prohibidas revisar Ordenanza Local",
+      "usos_prohibidos": "Equipamiento: Discotecas, clubes nocturnos, centros de servicio automotor, talleres mecánicos, bares, fuentes de soda, grandes tiendas y centros comerciales cerrados; centros de orientación o rehabilitación conductual; equipamiento en AR2; parques de entretenciones, zoológicos, camping y picnic; cementerios y crematorios; cárceles o centros de detención. Actividad productiva: industria y bodegaje; Infraestructura energética; todo uso de transporte no señalado como permitido; y todo uso no expresamente permitido",
+      "decreto": ""
+    }
+  ]
+}

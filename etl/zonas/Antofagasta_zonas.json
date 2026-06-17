@@ -1,0 +1,574 @@
+{
+  "comuna": "Antofagasta",
+  "key": "Antofagasta",
+  "fuente": "PRC_Antofagasta/FeatureServer/4",
+  "zonas": [
+    {
+      "zona": "AV",
+      "nombre": "AV Área Verde Vecinal",
+      "usos_permitidos": "Corresponde a zonas de plazas y avenidas parques. Se permiten usos de equipamiento complementarios a las áreas verdes y espacios públicos.",
+      "usos_prohibidos": "Aquellos señalados en el art. 21 de la Ordenanza Local, además se prohibe todo tipo de vivienda, equipamiento, actividades productivas, edificaciones de infraestructura energética, sanitaria y de transporte.",
+      "decreto": ""
+    },
+    {
+      "zona": "AV-PU",
+      "nombre": "AV-PU Área Verde Utilidad Pública Destinada a Parque Comunal",
+      "usos_permitidos": "Se permiten usos de equipamiento complementarios a las áreas verdes y espacios públicos, de tipo deportivo, de esparcimiento al aire libre y comercio.",
+      "usos_prohibidos": "Aquellos señalados en el art. 21 de la Ordenanza Local, además se prohibe todo tipo de vivienda, equipamiento, actividades productivas, edificaciones de infraestructura energética, sanitaria y de transporte.",
+      "decreto": ""
+    },
+    {
+      "zona": "C-1Ba",
+      "nombre": "C-1Ba ZUDC ferrocarril mixto alta densidad",
+      "usos_permitidos": "Vivienda, Equipamiento",
+      "usos_prohibidos": "Todos los no indicados",
+      "decreto": ""
+    },
+    {
+      "zona": "C-1Bb",
+      "nombre": "C-1Bb ZUDC puerto residencial alta densidad",
+      "usos_permitidos": "Vivienda sólo desde el tercer piso inclusive. Equipamiento",
+      "usos_prohibidos": "Todos los no indicados",
+      "decreto": ""
+    },
+    {
+      "zona": "C-1Bc",
+      "nombre": "C-1Bc ZUDC puerto mixto alta densidad",
+      "usos_permitidos": "Equipamiento",
+      "usos_prohibidos": "Todos los no indicados",
+      "decreto": ""
+    },
+    {
+      "zona": "C-1Bd",
+      "nombre": "C-1Bd ZUDC puerto mixto alta densidad",
+      "usos_permitidos": "Vivienda sólo desde el tercer piso inclusive. Equipamiento. Edificios de estacionamientos",
+      "usos_prohibidos": "Todos los no indicados",
+      "decreto": ""
+    },
+    {
+      "zona": "C-1a",
+      "nombre": "C-1a Centro Institucional y Comercial",
+      "usos_permitidos": "Vivienda, equipamiento: salud, educación, seguridad, culto, cultura, social, áreas verdes, deporte, esparcimiento y turismo, comercio, servicios públicos y servicios profesionales; Talleres y servicios artesanales",
+      "usos_prohibidos": "Aquellos señalados en el art. 21 de la Ordenanza Local, además se prohibe todo tipo de vivienda, equipamiento, actividades productivas, edificaciones de infraestructura energética, sanitaria y de transporte.",
+      "decreto": ""
+    },
+    {
+      "zona": "C-1b",
+      "nombre": "C-1b Sub Centro Urbano",
+      "usos_permitidos": "Vivienda, equipamiento: salud, educación, seguridad, culto, cultura, social, áreas verdes, deporte, esparcimiento y turismo, comercio, servicios públicos y servicios profesionales; Talleres y servicios artesanales.",
+      "usos_prohibidos": "Todos los no indicados.",
+      "decreto": ""
+    },
+    {
+      "zona": "C-1c",
+      "nombre": "C-1c Sub Centro Equipamiento Regional",
+      "usos_permitidos": "Equipamiento: salud, educación, seguridad, culto, cultura, social, áreas verdes, deporte, esparcimiento y turismo, comercio, servicios públicos y servicios profesionales",
+      "usos_prohibidos": "Todos los no indicados",
+      "decreto": ""
+    },
+    {
+      "zona": "C-1d",
+      "nombre": "C-1d Sub Centro Turístico Comunal",
+      "usos_permitidos": "Vivienda, equipamiento: salud, educación, seguridad, culto, cultura, social, áreas verdes, deporte, esparcimiento y turismo, comercio, servicios públicos y servicios profesionales; Talleres y servicios artesanales",
+      "usos_prohibidos": "Todos los no indicados",
+      "decreto": ""
+    },
+    {
+      "zona": "C-2",
+      "nombre": "C-2 Barrios Costeros de Alta Densidad",
+      "usos_permitidos": "Vivienda, equipamiento: salud, educación, seguridad, culto, cultura, social, áreas verdes, deporte, esparcimiento y turismo, comercio, servicios públicos y servicios profesionales; servicios artesanales",
+      "usos_prohibidos": "Todos los no indicados. Se prohibe expresamente el otorgamiento de patentes para establecimientos donde se expendan, proporcionen o distribuyan bebidas alcohólicas",
+      "decreto": ""
+    },
+    {
+      "zona": "C-2a",
+      "nombre": "C-2a ZUDC ferrocarril residencial alta densidad",
+      "usos_permitidos": "Vivienda, equipamiento y Servicios artesanales",
+      "usos_prohibidos": "Todos los no indicados",
+      "decreto": ""
+    },
+    {
+      "zona": "C-3",
+      "nombre": "C-3 Barrios Costeros de Densidad Media",
+      "usos_permitidos": "Vivienda, equipamiento: salud, educación, seguridad, culto, cultura, social, áreas verdes, deporte, esparcimiento y turismo, comercio, servicios públicos y servicios profesionales; servicios artesanales",
+      "usos_prohibidos": "Todos los no indicados. Se prohibe expresamente el otorgamiento de patentes para establecimientos donde se expendan, proporcionen o distribuyan bebidas alcohólicas",
+      "decreto": ""
+    },
+    {
+      "zona": "C-3a",
+      "nombre": "C-3a ZUDC ferrocarril residencial densidad media",
+      "usos_permitidos": "Vivienda, equipamiento y Servicios artesanales",
+      "usos_prohibidos": "Todos los no indicados",
+      "decreto": ""
+    },
+    {
+      "zona": "C-4",
+      "nombre": "C-4 Habitacional",
+      "usos_permitidos": "Vivienda, equipamiento: salud, educación, seguridad, culto, cultura, social, áreas verdes, deporte, esparcimiento y turismo, comercio, servicios públicos y servicios profesionales; servicios artesanales",
+      "usos_prohibidos": "Todos los no indicados. Se prohibe expresamente el otorgamiento de patentes para establecimientos donde se expendan, proporcionen o distribuyan bebidas alcohólicas",
+      "decreto": ""
+    },
+    {
+      "zona": "C-4a",
+      "nombre": "C-4a Residencial densidad media",
+      "usos_permitidos": "Vivienda, equipamiento: salud, educación, seguridad, culto, cultura, social, áreas verdes, deporte, esparcimiento y turismo, comercio, servicios públicos y servicios profesionales; servicios artesanales",
+      "usos_prohibidos": "Todos los no indicados",
+      "decreto": ""
+    },
+    {
+      "zona": "C-5",
+      "nombre": "C-5 Habitacional",
+      "usos_permitidos": "Vivienda, equipamiento: salud, educación, seguridad, culto, cultura, social, áreas verdes, deporte, esparcimiento y turismo, comercio, servicios públicos y servicios profesionales; servicios artesanales",
+      "usos_prohibidos": "Todos los no indicados. Se prohibe expresamente el otorgamiento de patentes para establecimientos donde se expendan, proporcionen o distribuyan bebidas alcohólicas",
+      "decreto": ""
+    },
+    {
+      "zona": "C-6",
+      "nombre": "C-6 Habitacional",
+      "usos_permitidos": "Vivienda, equipamiento: salud, educación, seguridad, culto, cultura, social, áreas verdes, deporte, esparcimiento y turismo, comercio, servicios públicos y servicios profesionales; servicios artesanales",
+      "usos_prohibidos": "Todos los no indicados. Se prohibe expresamente el otorgamiento de patentes para establecimientos donde se expendan, proporcionen o distribuyan bebidas alcohólicas",
+      "decreto": ""
+    },
+    {
+      "zona": "C-7",
+      "nombre": "C-7 Industrial",
+      "usos_permitidos": "Industria, talleres, Almacenamiento, Establecimiento de impacto similar, Servicio artesanales; equipamiento",
+      "usos_prohibidos": "Todos los no indicados. Se excluye expresamente aquellos usos calificados como peligrosos, insalubres y contaminantes",
+      "decreto": ""
+    },
+    {
+      "zona": "C-7a",
+      "nombre": "C-7a Mixta",
+      "usos_permitidos": "Vivienda, Almacenamiento, Establecimiento de impacto similar, Servicio artesanales; equipamiento",
+      "usos_prohibidos": "Todos los no indicados. Se excluye expresamente aquellos usos calificados como peligrosos, insalubres, contaminantes y molestos",
+      "decreto": ""
+    },
+    {
+      "zona": "C-8",
+      "nombre": "C-8 Habitacional",
+      "usos_permitidos": "Vivienda, equipamiento: salud, educación, seguridad, culto, cultura, social, áreas verdes, deporte, esparcimiento y turismo, comercio, servicios públicos y servicios profesionales; servicios artesanales",
+      "usos_prohibidos": "Todos los no indicados. Se prohibe expresamente el otorgamiento de patentes para establecimientos donde se expendan, proporcionen o distribuyan bebidas alcohólicas",
+      "decreto": ""
+    },
+    {
+      "zona": "C-9",
+      "nombre": "C-9 Habitacional",
+      "usos_permitidos": "Vivienda y Equipamiento",
+      "usos_prohibidos": "Todos los no indicados.Se prohibe expresamente el otorgamiento de patentes para establecimientos donde se expendan, proporcionen o distribuyan bebidas alcohólicas",
+      "decreto": ""
+    },
+    {
+      "zona": "CC",
+      "nombre": "CC Zona Centro Cívico",
+      "usos_permitidos": "Conservación",
+      "usos_prohibidos": "Todos lo no indicados.Expresamente edificios de Estacionamiento.",
+      "decreto": ""
+    },
+    {
+      "zona": "E-10",
+      "nombre": "E-10 Áreas no Edificables",
+      "usos_permitidos": "Áreas verdes.",
+      "usos_prohibidos": "Asentamiento humano.",
+      "decreto": ""
+    },
+    {
+      "zona": "E-12",
+      "nombre": "E-12 Zona de Protección Aeropuerto Morro Moreno",
+      "usos_permitidos": "Área de seguridad del aeropuerto",
+      "usos_prohibidos": "Todos los no indicados",
+      "decreto": ""
+    },
+    {
+      "zona": "E-14",
+      "nombre": "E-14 Sector Costero El Líder - Edelnor",
+      "usos_permitidos": "Los únicos usos permitidos en ella serán aquellos que contribuyan al desarrollo recreacional del borde costero, entendiéndose por tales equipamientos de cultura, áreas verdes, deportes, comercio y esparcimiento y turismo",
+      "usos_prohibidos": "Todos los no indicados",
+      "decreto": ""
+    },
+    {
+      "zona": "E-16",
+      "nombre": "E-16 Patio ferroviario norte FCAB",
+      "usos_permitidos": "estará reservados para el uso de terminal rodoviario, una vez que sea aceptado dicho cambio",
+      "usos_prohibidos": "Todos los no indicados",
+      "decreto": ""
+    },
+    {
+      "zona": "E-2",
+      "nombre": "E-2 Cementerios",
+      "usos_permitidos": "Corresponde a áreas destinadas a cementerios. En ellas queda prohibido cualquier otro uso del suelo",
+      "usos_prohibidos": "Todos los no indicados",
+      "decreto": ""
+    },
+    {
+      "zona": "E-3a",
+      "nombre": "E-3a Equipamiento Comunitario",
+      "usos_permitidos": "Corresponde a zonas exclusivas de equipamiento comunitario, destinados a los sectores de salud, educación, seguridad, culto, cultura, social, áreas verdes y deportes",
+      "usos_prohibidos": "Todos los no indicados",
+      "decreto": ""
+    },
+    {
+      "zona": "E-3b",
+      "nombre": "E-3b Áreas Verdes",
+      "usos_permitidos": "Corresponde a zonas exclusivas destinadas a áreas verdes. En zonas superiores a 1 Há. se permitirá incorporar equipamientos de deporte, cultura, esparcimiento y turismo, no debiendo exceder el 10% de la superficie total del parque",
+      "usos_prohibidos": "Todos los no indicados",
+      "decreto": ""
+    },
+    {
+      "zona": "E-4a",
+      "nombre": "E-4a Resguardo de Playas",
+      "usos_permitidos": "Protección del borde costero.",
+      "usos_prohibidos": "Todos los no indicados",
+      "decreto": ""
+    },
+    {
+      "zona": "E-4b",
+      "nombre": "E-4b Turística Hotelera",
+      "usos_permitidos": "Equipamiento",
+      "usos_prohibidos": "Todos los no indicados",
+      "decreto": ""
+    },
+    {
+      "zona": "E-4c",
+      "nombre": "E-4c Turística Recreativa",
+      "usos_permitidos": "Equipamiento",
+      "usos_prohibidos": "Todos los no indicados",
+      "decreto": ""
+    },
+    {
+      "zona": "E-4d",
+      "nombre": "E-4d Turística de Camping",
+      "usos_permitidos": "Equipamiento",
+      "usos_prohibidos": "Todos los no indicados",
+      "decreto": ""
+    },
+    {
+      "zona": "E-5",
+      "nombre": "E-5 Almacenamiento de Combustibles",
+      "usos_permitidos": "Corresponde a recintos de almacenamiento de combustibles. Esta área se asimila a los usos y condiciones de edificación estipulados para la zona C-1b.",
+      "usos_prohibidos": "Todos los no indicados",
+      "decreto": ""
+    },
+    {
+      "zona": "E-6",
+      "nombre": "E-6 Servicios Sanitarios",
+      "usos_permitidos": "Corresponde a zonas de protección de recintos de empresas de servicios sanitarios",
+      "usos_prohibidos": "Todos los no indicados",
+      "decreto": ""
+    },
+    {
+      "zona": "E-7",
+      "nombre": "E-7 Usos Especiales Conservados",
+      "usos_permitidos": "Corresponde a áreas de equipamiento especial.",
+      "usos_prohibidos": "Todos los no indicados",
+      "decreto": ""
+    },
+    {
+      "zona": "E-8",
+      "nombre": "E-8 Ruinas de Huanchaca",
+      "usos_permitidos": "Corresponde al área de preservación del patrimonio cultural representado por el Monumento Nacional de Huanchaca",
+      "usos_prohibidos": "Todos los no indicados",
+      "decreto": ""
+    },
+    {
+      "zona": "E-9",
+      "nombre": "E-9 Puerto",
+      "usos_permitidos": "Corresponde al área de preservación del patrimonio cultural representado por el Monumento Nacional de Huanchaca",
+      "usos_prohibidos": "Todos los no indicados",
+      "decreto": ""
+    },
+    {
+      "zona": "PCJL",
+      "nombre": "PCJL Parque Comunal Juán López",
+      "usos_permitidos": "Corresponde a los usos de equipamiento de tipo deportivo, de esparcimiento al aire libre y comercio complementarios a las áreas verdes y espacios públicos.",
+      "usos_prohibidos": "Aquellos señalados en el art. 21 de la Ordenanza Local, además se prohibe todo tipo de vivienda, actividades productivas, edificaciones de infraestructura energética, sanitaria y de transporte; otros del D.O.publicado el 14-07-2012, Cuerpo I -23.",
+      "decreto": ""
+    },
+    {
+      "zona": "PU-LCH",
+      "nombre": "PU-LCH Parque Urbano La Chimba",
+      "usos_permitidos": "Se permiten usos de equipamiento complementarios a las áreas verdes y espacios públicos, de tipo deportivo, de esparcimiento al aire libre y comercio.",
+      "usos_prohibidos": "Aquellos señalados en el art. 21 de la Ordenanza Local, además se prohibe todo tipo de vivienda, actividades productivas, edificaciones de infraestructura energética, sanitaria y de transporte; otros del D.O.publicado el 14-07-2012, Cuerpo I -24.",
+      "decreto": ""
+    },
+    {
+      "zona": "U-2",
+      "nombre": "U-2 Habitacional Densidad Predial Mixta",
+      "usos_permitidos": "Se asimilará a las normas establecidas en el “Plan Seccional La Chimba, Antofagasta” aprobado mediante Resolución N°08 del GORE del 09 de Marzo 2001.",
+      "usos_prohibidos": "Todos los no indicados",
+      "decreto": ""
+    },
+    {
+      "zona": "U-3",
+      "nombre": "U-3 Habitacional Densidad Predial Media",
+      "usos_permitidos": "Se asimilará en sus usos de suelo permitidos y en las condiciones de edificación a la zona consolidada C8",
+      "usos_prohibidos": "Todos los no indicados",
+      "decreto": ""
+    },
+    {
+      "zona": "Z-AC",
+      "nombre": "Z-AC Zona de Alcantarillado (ZP-A)",
+      "usos_permitidos": "Corresponde a áreas verdes y espacios públicos, vialidad, paseos peatonales y similares; deportes y comercio.",
+      "usos_prohibidos": "Aquellos señalados en el art. 21 de la Ordenanza Local, además se prohibe todo tipo de vivienda residencial, equipamiento y otros indicados en la modificación del PRC sector norte, publicado en el D.O. el 14-07-2012, Cuerpo I -21.",
+      "decreto": ""
+    },
+    {
+      "zona": "Z-CM",
+      "nombre": "Z-CM Zona de Cordón Montañoso",
+      "usos_permitidos": "Corresponde a una zona de características montañosas relacionada con la Cordillera de la Costa, localizada en el sector de pie de monte de la Portada Alto.",
+      "usos_prohibidos": "No se permite ningún tipo de uso de suelo y edificaciones, salvo las complementarias al entorno natural, tales como miradores y senderos turísticos.",
+      "decreto": ""
+    },
+    {
+      "zona": "Z-QLCH",
+      "nombre": "Z-QLCH Zona Quebrada la Chimba",
+      "usos_permitidos": "Corresponde al sector de pie de monte. Sólo se permitiránactividades al área libre, espacios públicos y áreas verdes, conformando el accesolibre con la reserva quebrada la Chimba y el parque Comunal la Chimba",
+      "usos_prohibidos": "Aquellos señalados en el art. 21 de la Ordenanza Local, además se prohibe todo tipo de vivienda, actividades productivas, edificaciones de infraestructura energética, sanitaria y de transporte; otros del D.O.publicado el 14-07-2012, Cuerpo I -21.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZAV",
+      "nombre": "ZAV Áreas Verdes Locales",
+      "usos_permitidos": "Área verde; Espacio Público",
+      "usos_prohibidos": "Todos los no indicados. Detalles en Ordenanza",
+      "decreto": ""
+    },
+    {
+      "zona": "ZE-1",
+      "nombre": "ZE-1 Zona de Equipamiento Exclusivo 1",
+      "usos_permitidos": "Equipamiento de comercio, culto y cultura, deporte, educación, salud, seguridad, servicios, social; Infraetsructura sanitaria y energética; Áreas verdes; Espacios público. Mayor detalle en Ordenanza",
+      "usos_prohibidos": "Todos los no indicados. Detalles en Ordenanza",
+      "decreto": ""
+    },
+    {
+      "zona": "ZE-2",
+      "nombre": "ZE-2 Zona Especial de Cementerio",
+      "usos_permitidos": "Cementerios y crematorios, culto y cultura.",
+      "usos_prohibidos": "Aquellos señalados en el art. 21 de la Ordenanza Local, además se prohiben lo indicado en la modificación del PRC sector norte, publicado en el D.O. el 14-07-2012, Cuerpo I -21.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZE-BC",
+      "nombre": "ZE-BC Zona de Equipamiento Exclusivo Borde Costero",
+      "usos_permitidos": "Equipamiento de comercio, culto y cultura, deporte; Áreas verdes; Espacios público. Mayor detalle en Ordenanza",
+      "usos_prohibidos": "Todos los no indicados. Detalles en Ordenanza",
+      "decreto": ""
+    },
+    {
+      "zona": "ZEAP",
+      "nombre": "ZEAP Zona Especial de Actividades Productivas",
+      "usos_permitidos": "Equipamiento: deporte; actividades productivas: industria, talleres, bodegas inofensivas y asociadas a la agroindustria; áreas verdes y espacio público.",
+      "usos_prohibidos": "Aquellos señalados en el art. 21 de la Ordenanza Local, además se prohibe todo tipo de vivienda residencial, equipamiento y otros indicados en la modificación del PRC sector norte, publicado en el D.O. el 14-07-2012, Cuerpo I -21.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZEC-1",
+      "nombre": "ZEC-1 Zona Centro Transversal Mayor",
+      "usos_permitidos": "Residencial; equipamiento:científico, comercio,culto y cultura, educación, esparcimiento, salud, servicios  y social; áreas verdes y espacio público.",
+      "usos_prohibidos": "Aquellos señalados en el art. 21 de la Ordenanza Local, además se prohiben lo indicado en la modificación del PRC sector norte, publicado en el D.O. el 14-07-2012, Cuerpo I -16.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZEC-2",
+      "nombre": "ZEC-2 Zona Subcentro Transversal",
+      "usos_permitidos": "Residencial; equipamiento: científico, comercio,culto y cultura, deporte, educación, esparcimiento,salud, servicios, seguridad y social; áreas verdes y espacio público.",
+      "usos_prohibidos": "Aquellos señalados en el art. 21 de la Ordenanza Local, además se prohiben lo indicado en la modificación del PRC sector norte, publicado en el D.O. el 14-07-2012, Cuerpo I -16.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZEC-3",
+      "nombre": "ZEC-3 Zona de Equipamiento Sector/Barrio",
+      "usos_permitidos": "Residencial; equipamiento: comercio,culto y cultura, deporte, educación,esparcimiento, salud, servicios  y social; Talleres y bodegajes inofensivos, áreas verdes y espacio público.",
+      "usos_prohibidos": "Aquellos señalados en el art. 21 de la Ordenanza Local, además se prohiben lo indicado en la modificación del PRC sector norte, publicado en el D.O. el 14-07-2012, Cuerpo I -16.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZED",
+      "nombre": "ZED Zona de Equipamiento Deportivo",
+      "usos_permitidos": "Equipamiento: deporte (autódromos y recintos destinados al deporte oactividad física en general) e instalaciones complementarias y comercio; áreas verdes y espacio público.",
+      "usos_prohibidos": "Aquellos señalados en el art. 21 de la Ordenanza Local, además se prohibe todo tipo de vivienda, actividades productivas, edificaciones de infraestructura energética, sanitaria y de transporte; otros del D.O.publicado el 14-07-2012, Cuerpo I -20.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZEP-1",
+      "nombre": "ZEP-1 Zona Especial 1 (Borde Costero 1)",
+      "usos_permitidos": "Área verde; Espacio público",
+      "usos_prohibidos": "Todos los no indicados. Detalles en Ordenanza",
+      "decreto": ""
+    },
+    {
+      "zona": "ZEP-2",
+      "nombre": "ZEP-2 Zona Especial 1 (Borde Costero 2)",
+      "usos_permitidos": "Equipamiento de deporte y seguridad; Área verde; Espacio público",
+      "usos_prohibidos": "Todos los no indicados",
+      "decreto": ""
+    },
+    {
+      "zona": "ZEP-3",
+      "nombre": "ZEP-3 Zona Especial 3 (Acantilado)",
+      "usos_permitidos": "Áreas verdes; Espacios público",
+      "usos_prohibidos": "Todos los no indicados. Detalles en Ordenanza",
+      "decreto": ""
+    },
+    {
+      "zona": "ZEPM",
+      "nombre": "ZEPM Zona de Equipamiento Pie de Monte",
+      "usos_permitidos": "Equipamiento: científico, culto y cultura, educación, esparcimiento; áreas verdes y espacio público.",
+      "usos_prohibidos": "Aquellos señalados en el art. 21 de la Ordenanza Local, además se prohibe todo tipo de vivienda residencial, comercio, actividades productivas y otros indicados en la modificación del PRC sector norte, publicado en el D.O. el 14-07-2012, Cuerpo I -20.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZES",
+      "nombre": "ZED Zona de Equipamiento y Servicios",
+      "usos_permitidos": "Equipamiento: científico, comercio, culto y cultura, deporte, educación, esparcimiento, seguridad, servicios; actividades productivas: industria, talleres y bodegaje de tipo inofensivo; áreas verdes y espacio público.",
+      "usos_prohibidos": "Aquellos señalados en el art. 21 de la Ordenanza Local, además se prohibe todo tipo de vivienda residencial y otros indicados en la modificación del PRC sector norte, publicado en el D.O. el 14-07-2012, Cuerpo I -20.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZET-1",
+      "nombre": "ZET-1 Zona Turística Borde Alcantarillado",
+      "usos_permitidos": "Equipamiento: deporte, esparcimiento, seguridad y comercio; áreas verdes y espacio público.",
+      "usos_prohibidos": "Aquellos señalados en el art. 21 de la Ordenanza Local, además se prohibe todo tipo de vivienda residencial y otros indicados en la modificación del PRC sector norte, publicado en el D.O. el 14-07-2012, Cuerpo I -19.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZET-2",
+      "nombre": "ZET-2 Zona Turística de Equipamiento",
+      "usos_permitidos": "Equipamiento: científico, comercio, culto y cultura, deporte, esparcimiento y seguridad; áreas verdes y espacio público.",
+      "usos_prohibidos": "Aquellos señalados en el art. 21 de la Ordenanza Local, además se prohibe todo tipo de vivienda residencial y otros indicados en la modificación del PRC sector norte, publicado en el D.O. el 14-07-2012, Cuerpo I -19.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZET-3",
+      "nombre": "ZET-3 Zona Turística Mixta",
+      "usos_permitidos": "Residencial; equipamiento: científico, comercio, culto y cultura, deporte, educación, esparcimiento, salud, seguridad, servicios y social.; áreas verdes y espacio público.",
+      "usos_prohibidos": "Aquellos señalados en el art. 21 de la Ordenanza Local, además se prohiben lo indicado en la modificación del PRC sector norte, publicado en el D.O. el 14-07-2012, Cuerpo I -20, referidos al comercio, industria, talleres y otros.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZH-1",
+      "nombre": "ZH-1 Zona Preferentemente Residencial de Alta Densidad",
+      "usos_permitidos": "Residencial; equipamiento: comercio, culto y cultura, deporte, educación, salud, actividades productivas; taller y bodegaje de tipo inofensivo; áreas verdes y espacio público.\r\nSeguridad, Servicios y Social.",
+      "usos_prohibidos": "Aquellos señalados en el art. 21 de la Ordenanza Local, además se prohiben lo indicado en la modificación del PRC sector norte, publicado en el D.O. el 14-07-2012, Cuerpo I -17.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZH-2",
+      "nombre": "ZH-2 Zona Preferentemente Residencial de Media Densidad",
+      "usos_permitidos": "Residencial; equipamiento: comercio, culto y cultura, deporte, educación, salud, seguridad; áreas verdes y espacio público",
+      "usos_prohibidos": "Aquellos señalados en el art. 21 de la Ordenanza Local, además se prohiben lo indicado en la modificación del PRC sector norte, publicado en el D.O. el 14-07-2012",
+      "decreto": ""
+    },
+    {
+      "zona": "ZH-3",
+      "nombre": "ZH-3 Zona Preferentemente Residencial de Baja Densidad",
+      "usos_permitidos": "Residencial; equipamiento: comercio,culto y cultura, deporte, educación, salud, seguridad, servicios  y social, áreas verdes y espacio público.",
+      "usos_prohibidos": "Aquellos señalados en el art. 21 de la Ordenanza Local, además se prohiben lo indicado en la modificación del PRC sector norte, publicado en el D.O. el 14-07-2012",
+      "decreto": ""
+    },
+    {
+      "zona": "ZH-4",
+      "nombre": "ZH-4 Zona Preferentemente Residencial 4",
+      "usos_permitidos": "Residencial; Equipamiento de comercio, culto y cultura, deporte, educación, salud, seguridad, servicios, social; Áreas verdes; Espacios público. Mayor detalle en Ordenanza",
+      "usos_prohibidos": "Todos los no indicados. Detalles en Ordenanza",
+      "decreto": ""
+    },
+    {
+      "zona": "ZH-5",
+      "nombre": "ZH-5 Zona Prefrentemente Residencial 5",
+      "usos_permitidos": "Residencial; Equipamiento de comercio, culto y cultura, deporte, educación, salud, seguridad, servicios, social; Áreas verdes; Espacios público. Mayor detalle en Ordenanza",
+      "usos_prohibidos": "Todos los no indicados. Detalles en Ordenanza",
+      "decreto": ""
+    },
+    {
+      "zona": "ZM-1",
+      "nombre": "ZM-1 Zonas Mixta Residencial y Servicios",
+      "usos_permitidos": "Residencial; equipamiento: científico, comercio,culto y cultura, deporte, educación, salud, seguridad, servicios  y social; áreas verdes y espacio público.",
+      "usos_prohibidos": "Aquellos señalados en el art. 21 de la Ordenanza Local, además se prohiben fuente de soda y bares, y otros indicados en la modificación del PRC sector norte, publicado en el D.O. el 14-07-2012, Cuerpo I -18.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZM-2",
+      "nombre": "ZM-2 Zona Mixta Residencial y de Actividades Productiva (Tipo PYME)",
+      "usos_permitidos": "Residencial; equipamiento:científico, comercio,culto y cultura, educación, esparcimiento, salud, servicios  y social; actividades productivas: Talleres y bodegaje inofensivo; áreas verdes y espacio público.",
+      "usos_prohibidos": "Aquellos señalados en el art. 21 de la Ordenanza Local, además se prohiben fuente de soda y bares, y otros indicados en la modificación del PRC sector norte, publicado en el D.O. el 14-07-2012, Cuerpo I -18.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZM-3",
+      "nombre": "ZM-3 Zona Mixta Residencial y Equipamiento",
+      "usos_permitidos": "Residencial; equipamiento: científico, comercio,culto y cultura, deporte, educación, salud, seguridad, servicios  y social; áreas verdes y espacio público.",
+      "usos_prohibidos": "Aquellos señalados en el art. 21 de la Ordenanza Local, además se prohiben fuente de soda y bares, y otros indicados en la modificación del PRC sector norte, publicado en el D.O. el 14-07-2012, Cuerpo I -19.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZM-4",
+      "nombre": "ZM-4 Zona Mixta 4 (Corredor Transversal Sur)",
+      "usos_permitidos": "Residencial; Equipamiento de comercio, culto y cultura, deporte, educación, salud, seguridad, servicios, social; Talleres inofensivos; Áreas verdes; Espacios público. Mayor detalle en Ordenanza",
+      "usos_prohibidos": "Todos los no indicados. Detalles en Ordenanza",
+      "decreto": ""
+    },
+    {
+      "zona": "ZM-5",
+      "nombre": "ZM-5 Zona Mixta (Corredor Transvesal Norte)",
+      "usos_permitidos": "Residencial; Equipamiento de comercio, culto y cultura, deporte, educación, salud, seguridad, servicios, social;  Áreas verdes; Espacios público. Mayor detalle en Ordenanza",
+      "usos_prohibidos": "Todos los no indicados. Detalles en Ordenanza",
+      "decreto": ""
+    },
+    {
+      "zona": "ZM-6",
+      "nombre": "ZM-6 Zona Mista (Ruta 1)",
+      "usos_permitidos": "Residencial; Equipamiento de comercio, culto y cultura, deporte, educación, salud, seguridad, servicios, social; Talleres y almacenamientos inofensivos; Áreas verdes; Espacios público. Mayor detalle en Ordenanza",
+      "usos_prohibidos": "Todos los no indicados. Detalles en Ordenanza",
+      "decreto": ""
+    },
+    {
+      "zona": "ZM-7",
+      "nombre": "ZM-7 Zona Mixta 7 (Frente Costero Sector Acantilado)",
+      "usos_permitidos": "Residencial; Equipamiento de comercio, culto y cultura, deporte, educación, salud, seguridad, servicios, social; Áreas verdes; Espacios público. Mayor detalle en Ordenanza",
+      "usos_prohibidos": "Todos los no indicados. Detalles en Ordenanza",
+      "decreto": ""
+    },
+    {
+      "zona": "ZP-MNLP",
+      "nombre": "ZP-MNLP Área de Protección Monumento Natural La Portada",
+      "usos_permitidos": "Corresponde al terreno definido como Monumento Natural La Portada por el Decreto Supremo Nº 51 de abril de 1990 del Ministerio de Agricultura.",
+      "usos_prohibidos": "Aquellos señalados en el art. 21 de la Ordenanza Local, además se prohiben otros indicados en la modificación del PRC sector norte, publicado en el D.O. el 14-07-2012, Cuerpo I -22.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZUDC-01",
+      "nombre": "ZUDC-01 Recintos Portuarios Prescindibles",
+      "usos_permitidos": "En ellos se permitirá todo uso que asegure su funcionamiento y evite riesgos a las personas.",
+      "usos_prohibidos": "Todos los no indicados",
+      "decreto": ""
+    },
+    {
+      "zona": "ZUDC-02",
+      "nombre": "ZUDC-02 Recintos Ferroviarios",
+      "usos_permitidos": "Corresponde a áreas de protección de instalaciones ferroviarias, quedando excluidas de ellas cualquier otro uso alternativo del suelo",
+      "usos_prohibidos": "Todos los no indicados",
+      "decreto": ""
+    },
+    {
+      "zona": "ZUDC-03",
+      "nombre": "ZUDC-03 Recintos Ferroviarios",
+      "usos_permitidos": "Corresponde a áreas de protección de instalaciones ferroviarias, quedando excluidas de ellas cualquier otro uso alternativo del suelo",
+      "usos_prohibidos": "Todos los no indicados",
+      "decreto": ""
+    },
+    {
+      "zona": "ZUDC-05",
+      "nombre": "ZUDC-05 Zona de Reserva Natural y Turística",
+      "usos_permitidos": "Zona de resguardo de valores de paisaje, de hábitats naturales relevantes de gran valor ecológico y natural, cuya destrucción significaría una pérdida irreparable para el equilibrio natural y la calidad del medio ambiente",
+      "usos_prohibidos": "Todos los no indicados",
+      "decreto": ""
+    },
+    {
+      "zona": "ZUDC-09",
+      "nombre": "ZUDC-09 Zona de Reserva Industrial",
+      "usos_permitidos": "Zona de reserva para uso exclusivamente industrial de densidad predial media y baja.",
+      "usos_prohibidos": "Todos los no indicados",
+      "decreto": ""
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "_meta": {
+    "descripcion": "Catálogo maestro de comunas de AiCabida. Fuente de verdad para geometría (ArcGIS MINVU), SII y selector.",
+    "fuente_geometria": "https://geoide.minvu.cl/server/rest/services/IPT",
+    "estados": ["pendiente", "geometria", "normas_revision", "completa"],
+    "actualizado": "2026-06-16"
+  },
+  "comunas": [
+    { "nombre": "Antofagasta", "key": "Antofagasta", "region_minvu": 2,
+      "arcgis": { "service": "PRC_Antofagasta", "tipo": "FeatureServer", "layer_id": 4, "layer_riesgo": 3 },
+      "codigo_sii": null, "centro": [-23.6509, -70.3975], "zoom": 12.5, "estado": "pendiente" },
+
+    { "nombre": "La Serena", "key": "LaSerena", "region_minvu": 4,
+      "arcgis": { "service": "PRC_Coquimbo", "tipo": "FeatureServer", "layer_id": 22, "layer_riesgo": null },
+      "codigo_sii": null, "centro": [-29.9027, -71.2519], "zoom": 13, "estado": "pendiente" },
+
+    { "nombre": "Coquimbo", "key": "Coquimbo", "region_minvu": 4,
+      "arcgis": { "service": "PRC_Coquimbo", "tipo": "FeatureServer", "layer_id": 3, "layer_riesgo": 30 },
+      "codigo_sii": null, "centro": [-29.9533, -71.3436], "zoom": 12.5, "estado": "pendiente" },
+
+    { "nombre": "Viña del Mar", "key": "VinaDelMar", "region_minvu": 5,
+      "arcgis": { "service": "PRC_Valparaíso", "tipo": "FeatureServer", "layer_id": 46, "layer_riesgo": null },
+      "codigo_sii": null, "centro": [-33.0245, -71.5518], "zoom": 13, "estado": "pendiente" },
+
+    { "nombre": "Concón", "key": "Concon", "region_minvu": 5,
+      "arcgis": { "service": "PRC_Valparaíso", "tipo": "FeatureServer", "layer_id": 9, "layer_riesgo": null },
+      "codigo_sii": null, "centro": [-32.9280, -71.5300], "zoom": 13, "estado": "pendiente" },
+
+    { "nombre": "Concepción", "key": "Concepcion", "region_minvu": 8,
+      "arcgis": { "service": "PRC_Biobio", "tipo": "FeatureServer", "layer_id": 12, "layer_riesgo": null },
+      "codigo_sii": null, "centro": [-36.8270, -73.0503], "zoom": 12.5, "estado": "pendiente" },
+
+    { "nombre": "San Pedro de la Paz", "key": "SanPedroDeLaPaz", "region_minvu": 8,
+      "arcgis": { "service": "PRC_Biobio", "tipo": "FeatureServer", "layer_id": 42, "layer_riesgo": null },
+      "codigo_sii": null, "centro": [-36.8420, -73.1080], "zoom": 13, "estado": "pendiente" },
+
+    { "nombre": "Ñuñoa", "key": "Nunoa", "region_minvu": 13,
+      "arcgis": { "service": "PRC_RM_Norte", "tipo": "MapServer", "layer_id": 17, "layer_riesgo": null },
+      "codigo_sii": null, "centro": [-33.4569, -70.5980], "zoom": 13.5, "estado": "pendiente" },
+
+    { "nombre": "La Florida", "key": "LaFlorida", "region_minvu": 13,
+      "arcgis": { "service": "PRC_RM_Sur", "tipo": "MapServer", "layer_id": 5, "layer_riesgo": null },
+      "codigo_sii": null, "centro": [-33.5230, -70.5990], "zoom": 12.5, "estado": "pendiente" },
+
+    { "nombre": "Vitacura", "key": "Vitacura", "region_minvu": 13,
+      "arcgis": { "service": "PRC_RM_Norte", "tipo": "MapServer", "layer_id": 32, "layer_riesgo": 30 },
+      "codigo_sii": null, "centro": [-33.3900, -70.5800], "zoom": 13.5, "estado": "pendiente" },
+
+    { "nombre": "Las Condes", "key": "LasCondes", "region_minvu": 13,
+      "arcgis": { "service": "PRC_RM_Norte", "tipo": "MapServer", "layer_id": 11, "layer_riesgo": null },
+      "codigo_sii": null, "centro": [-33.4080, -70.5680], "zoom": 12.5, "estado": "pendiente" },
+
+    { "nombre": "San Joaquín", "key": "SanJoaquin", "region_minvu": 13,
+      "arcgis": { "service": "PRC_RM_Sur", "tipo": "MapServer", "layer_id": 26, "layer_riesgo": null },
+      "codigo_sii": null, "centro": [-33.4950, -70.6280], "zoom": 14, "estado": "pendiente" },
+
+    { "nombre": "La Cisterna", "key": "LaCisterna", "region_minvu": 13,
+      "arcgis": { "service": "PRC_RM_Sur", "tipo": "MapServer", "layer_id": 4, "layer_riesgo": null },
+      "codigo_sii": null, "centro": [-33.5370, -70.6620], "zoom": 14, "estado": "pendiente" },
+
+    { "nombre": "Macul", "key": "Macul", "region_minvu": 13,
+      "arcgis": { "service": "PRC_RM_Sur", "tipo": "MapServer", "layer_id": 9, "layer_riesgo": null },
+      "codigo_sii": 15151, "centro": [-33.4900, -70.5990], "zoom": 14, "estado": "completa" },
+
+    { "nombre": "Lo Barnechea", "key": "LoBarnechea", "region_minvu": 13,
+      "arcgis": { "service": "PRC_RM_Norte", "tipo": "MapServer", "layer_id": 13, "layer_riesgo": 12 },
+      "codigo_sii": 15161, "centro": [-33.3520, -70.5170], "zoom": 12.5, "estado": "completa" },
+
+    { "nombre": "Curanilahue", "key": "Curanilahue", "region_minvu": 8,
+      "arcgis": { "service": "PRC_Biobio", "tipo": "FeatureServer", "layer_id": 18, "layer_riesgo": 17 },
+      "codigo_sii": 8302, "centro": [-37.4735, -73.3450], "zoom": 13.5, "estado": "completa" },
+
+    { "nombre": "Lebu", "key": "Lebu", "region_minvu": 8,
+      "arcgis": null, "codigo_sii": 8303, "centro": [-37.6080, -73.6520], "zoom": 13.5, "estado": "completa" },
+
+    { "nombre": "Penco", "key": "Penco", "region_minvu": 8,
+      "arcgis": null, "codigo_sii": 8202, "centro": [-36.7400, -72.9970], "zoom": 13.5, "estado": "completa" },
+
+    { "nombre": "Tomé", "key": "Tome", "region_minvu": 8,
+      "arcgis": null, "codigo_sii": 8205, "centro": [-36.6170, -72.9560], "zoom": 13.5, "estado": "completa" },
+
+    { "nombre": "Laja", "key": "Laja", "region_minvu": 8,
+      "arcgis": null, "codigo_sii": 8403, "centro": [-37.2800, -72.7100], "zoom": 13.5, "estado": "completa" },
+
+    { "nombre": "Bulnes", "key": "Bulnes", "region_minvu": 16,
+      "arcgis": null, "codigo_sii": 8113, "centro": [-36.7420, -72.2980], "zoom": 13, "estado": "completa" },
+
+    { "nombre": "El Carmen", "key": "ElCarmen", "region_minvu": 16,
+      "arcgis": null, "codigo_sii": 8118, "centro": [-36.8980, -72.0260], "zoom": 13.5, "estado": "completa" },
+
+    { "nombre": "Yumbel", "key": "Yumbel", "region_minvu": 8,
+      "arcgis": null, "codigo_sii": 8409, "centro": [-37.0980, -72.5600], "zoom": 13.5, "estado": "completa" },
+
+    { "nombre": "Yungay", "key": "Yungay", "region_minvu": 16,
+      "arcgis": null, "codigo_sii": 8116, "centro": [-37.1200, -72.0150], "zoom": 13.5, "estado": "completa" }
+  ]
+}

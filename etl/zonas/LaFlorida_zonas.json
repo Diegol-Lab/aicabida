@@ -1,0 +1,280 @@
+{
+  "comuna": "La Florida",
+  "key": "LaFlorida",
+  "fuente": "PRC_RM_Sur/MapServer/5",
+  "zonas": [
+    {
+      "zona": "AV1.1",
+      "nombre": "AV1.1",
+      "usos_permitidos": "Equipamiento de culto, deporte, científico y turismo; espacio público y áreas verdes.",
+      "usos_prohibidos": "Residencial; equipamiento de comercio, educación, salud, seguridad, servicios, social, oficina y cementerio; actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "AV1.2",
+      "nombre": "AV1.2",
+      "usos_permitidos": "Equipamiento de culto, deporte, científico y turismo; espacio público y áreas verdes.",
+      "usos_prohibidos": "Residencial; equipamiento de comercio, educación, salud, seguridad, servicios, social, oficina y cementerio; actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "AV1.3",
+      "nombre": "AV1.3",
+      "usos_permitidos": "Equipamiento deculto, deporte, esparcimiento y turismo; espacio público y áreas verdes.",
+      "usos_prohibidos": "Residencial; equipamiento de comercio, educación, salud, seguridad, servicios, social, oficina, científico y cementerio; actividad productiva; infraestructura.",
+      "decreto": ""
+    },
+    {
+      "zona": "AV2",
+      "nombre": "AV2",
+      "usos_permitidos": "Equipamiento de culto, deporte, científico y turismo; espacio público y áreas verdes.",
+      "usos_prohibidos": "Residencial; equipamiento de comercio, educación, salud, seguridad, servicios, social, oficina y cementerio; actividad productiva; infraestructura.",
+      "decreto": ""
+    },
+    {
+      "zona": "AV4",
+      "nombre": "AV4",
+      "usos_permitidos": "Equipamiento de deporte, esparcimiento y turismo; espacio público y áreas verdes.",
+      "usos_prohibidos": "Residencial; equipamiento de comercio, culto, educación, salud, seguridad, servicios, social, oficina, científico y cementerio; actividad productiva; infraestructura.",
+      "decreto": ""
+    },
+    {
+      "zona": "ED-1",
+      "nombre": "ED-1",
+      "usos_permitidos": "Equipamiento de comercio y deporte; espacio público y áreas verdes.",
+      "usos_prohibidos": "Residencial; equipamiento; actividad productiva; infraestructura.",
+      "decreto": ""
+    },
+    {
+      "zona": "ED-11",
+      "nombre": "ED-11",
+      "usos_permitidos": "Equipamiento de comercio y deporte; espacio público y áreas verdes.",
+      "usos_prohibidos": "Residencial; equipamiento; actividad productiva; infraestructura.",
+      "decreto": ""
+    },
+    {
+      "zona": "ED-2",
+      "nombre": "ED-2",
+      "usos_permitidos": "Equipamiento de comercio y deporte; espacio público y áreas verdes.",
+      "usos_prohibidos": "Residencial; equipamiento; actividad productiva; infraestructura.",
+      "decreto": ""
+    },
+    {
+      "zona": "ED-3",
+      "nombre": "ED-3",
+      "usos_permitidos": "Equipamiento de comercio y deporte; espacio público y áreas verdes.",
+      "usos_prohibidos": "Residencial; equipamiento; actividad productiva; infraestructura.",
+      "decreto": ""
+    },
+    {
+      "zona": "ED-4",
+      "nombre": "ED-4",
+      "usos_permitidos": "Equipamiento de comercio y deporte; espacio público y áreas verdes.",
+      "usos_prohibidos": "Residencial; equipamiento; actividad productiva; infraestructura.",
+      "decreto": ""
+    },
+    {
+      "zona": "ED-6",
+      "nombre": "ED-6",
+      "usos_permitidos": "Equipamiento de comercio y deporte; espacio público y áreas verdes.",
+      "usos_prohibidos": "Residencial; equipamiento; actividad productiva; infraestructura.",
+      "decreto": ""
+    },
+    {
+      "zona": "ED-8",
+      "nombre": "ED-8",
+      "usos_permitidos": "Equipamiento de comercio y deporte; espacio público y áreas verdes.",
+      "usos_prohibidos": "Residencial; equipamiento; actividad productiva; infraestructura.",
+      "decreto": ""
+    },
+    {
+      "zona": "ED-9",
+      "nombre": "ED-9",
+      "usos_permitidos": "Equipamiento de comercio y deporte; espacio público y áreas verdes.",
+      "usos_prohibidos": "Residencial; equipamiento; actividad productiva; infraestructura.",
+      "decreto": ""
+    },
+    {
+      "zona": "ESP-2",
+      "nombre": "ESP-2",
+      "usos_permitidos": "Equipamiento de salud.",
+      "usos_prohibidos": "Residencial; equipamiento de comercio, culto, deporte, educación, esparcimiento, seguridad, servicios, social, oficina, turismo, científico y cementerio; actividad productiva; infraestructura; espacio público y áreas ve*",
+      "decreto": ""
+    },
+    {
+      "zona": "ESP-3",
+      "nombre": "ESP-3",
+      "usos_permitidos": "Equipamiento de culto y educación; espacio público y áreas verdes.",
+      "usos_prohibidos": "Residencial; equipamiento de comercio, deporte, esparcimiento, salud, seguridad, servicios, social, oficina, turismo, científico y cementerio; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "ESP-4",
+      "nombre": "ESP-4",
+      "usos_permitidos": "Equipamieno de comerrcio, culto y cultura, deporte, esparcimiento y pareas verdes. Mayor detalle en ordenanza",
+      "usos_prohibidos": "Todo uso no mencionado como permitido.",
+      "decreto": ""
+    },
+    {
+      "zona": "PEDC-3",
+      "nombre": "PEDC-3",
+      "usos_permitidos": "Zona de protección ecológica, según PRMS.",
+      "usos_prohibidos": "Zona de protección ecológica, según PRMS.",
+      "decreto": ""
+    },
+    {
+      "zona": "PL",
+      "nombre": "PL",
+      "usos_permitidos": "Espacio público y áreas verdes.",
+      "usos_prohibidos": "Todo uso no mencionado como permitido.",
+      "decreto": ""
+    },
+    {
+      "zona": "R-1/AV3",
+      "nombre": "R-1/AV3",
+      "usos_permitidos": "Zona de restricción, según PRMS.",
+      "usos_prohibidos": "Zona de restricción, según PRMS.",
+      "decreto": ""
+    },
+    {
+      "zona": "R-2/AV4",
+      "nombre": "R-2/AV4",
+      "usos_permitidos": "Zona de restricción, según PRMS.",
+      "usos_prohibidos": "Zona de restricción, según PRMS.",
+      "decreto": ""
+    },
+    {
+      "zona": "R-3/AV5",
+      "nombre": "R-3/AV5",
+      "usos_permitidos": "Zona de riesgo, según PRMS.",
+      "usos_prohibidos": "Zona de riesgo, según PRMS.",
+      "decreto": ""
+    },
+    {
+      "zona": "R-4",
+      "nombre": "R-4",
+      "usos_permitidos": "Zona de riesgo, según PRMS.",
+      "usos_prohibidos": "Zona de riesgo, según PRMS.",
+      "decreto": ""
+    },
+    {
+      "zona": "R-5/AV6",
+      "nombre": "R-5/AV6",
+      "usos_permitidos": "Zona de riesgo, según PRMS.",
+      "usos_prohibidos": "Zona de riesgo, según PRMS.",
+      "decreto": ""
+    },
+    {
+      "zona": "RI",
+      "nombre": "RI",
+      "usos_permitidos": "Equipamiento de comercio, esparcimiento y servicios; infraestructura.",
+      "usos_prohibidos": "Residencial; equipamiento; actividad productiva.",
+      "decreto": ""
+    },
+    {
+      "zona": "RI-1",
+      "nombre": "RI-1",
+      "usos_permitidos": "Equipamiento de comercio, esparcimiento y servicios; infraestructura.",
+      "usos_prohibidos": "Residencial; equipamiento; actividad productiva.",
+      "decreto": ""
+    },
+    {
+      "zona": "RI-2",
+      "nombre": "RI-2",
+      "usos_permitidos": "Equipamiento de comercio, esparcimiento y servicios; infraestructura.",
+      "usos_prohibidos": "Residencial; equipamiento; actividad productiva.",
+      "decreto": ""
+    },
+    {
+      "zona": "U-EC1",
+      "nombre": "U-EC1",
+      "usos_permitidos": "Residencial; equip. de comercio, culto, deporte, educación, esparcimiento, salud, seguridad, servicios, social, oficina y turismo; act. productiva peligrosa, contaminante y molesta; infr. de transporte; espacio público y áreas verdes.",
+      "usos_prohibidos": "Todo uso no mencionado como permitido.",
+      "decreto": ""
+    },
+    {
+      "zona": "U-EC3",
+      "nombre": "U-EC3",
+      "usos_permitidos": "Residencial; equipamiento de culto, deporte, educación, esparcimiento, salud, seguridad, servicios, social y científico; infraestructura de transporte y de energía; espacio público y áreas verdes.",
+      "usos_prohibidos": "Todo uso no mencionado como permitido.",
+      "decreto": ""
+    },
+    {
+      "zona": "U-EC4",
+      "nombre": "U-EC4",
+      "usos_permitidos": "Residencial; equipamiento de comercio, culto, deporte, educación, esparcimiento, salud, seguridad, servicios y social; actividad productiva inofensiva; infraestructura de transporte, sanitaria y de energía; espacio público y áreas verdes.",
+      "usos_prohibidos": "Todo uso no mencionado como permitido.",
+      "decreto": ""
+    },
+    {
+      "zona": "U-VEV1",
+      "nombre": "U-VEV1",
+      "usos_permitidos": "Residencial; equipamiento científico, comercio, culto y cultura, deporte, educación, esparcimiento, salud, seguridad, servicios, social y turismo; infraestructura de transporte; espacio público y áreas verdes. Mayor detalle en Ordenanza",
+      "usos_prohibidos": "Todo uso no mencionado como permitido.",
+      "decreto": ""
+    },
+    {
+      "zona": "U-VEV2",
+      "nombre": "U-VEV2",
+      "usos_permitidos": "Residencial; equipamiento comercio, culto y cultura, deporte, educación, esparcimiento, salud, seguridad, servicios, social; infraestructura de transporte; espacio público y áreas verdes. Mayor detalle en Ordenanza",
+      "usos_prohibidos": "Todo uso no mencionado como permitido.",
+      "decreto": ""
+    },
+    {
+      "zona": "U-VEV3",
+      "nombre": "U-VEV3",
+      "usos_permitidos": "Residencial; equipamiento de comercio, culto, deporte, educación, esparcimiento, salud, seguridad, servicios, social, oficina, turismo; espacio público y áreas verdes.",
+      "usos_prohibidos": "Todo uso no mencionado como permitido.",
+      "decreto": ""
+    },
+    {
+      "zona": "U-VEV4",
+      "nombre": "U-VEV4",
+      "usos_permitidos": "Residencial; equip. de comercio, culto, deporte, educación, esparcimiento, salud, seguridad, servicios, social, oficina y turismo; act. productiva peligrosa, contaminante y molesta; infr. de transporte; espacio público y áreas verdes.",
+      "usos_prohibidos": "Todo uso no mencionado como permitido.",
+      "decreto": ""
+    },
+    {
+      "zona": "Z-AA+CB/CM",
+      "nombre": "Z-AA+CB/CM",
+      "usos_permitidos": "Todos los usos no señalados como prohibidos en el artículo 41, numeral 9, letra B).",
+      "usos_prohibidos": "Todos los usos señalados como prohibidos en el artículo 41, numeral 9, letra B), específicamente terminales de transporte terrestre, locales de compra-venta y exhibición de automóviles, camiones y similares que se desar*",
+      "decreto": ""
+    },
+    {
+      "zona": "Z-AA+CM",
+      "nombre": "Z-AA+CM",
+      "usos_permitidos": "Todos los usos no señalados como prohibidos en el artículo 41, numeral 9, letra B).",
+      "usos_prohibidos": "Todos los usos señalados como prohibidos en el artículo 41, numeral 9, letra B), específicamente terminales de transporte terrestre, locales de compra-venta y exhibición de automóviles, camiones y similares que se desar*",
+      "decreto": ""
+    },
+    {
+      "zona": "Z-AA1",
+      "nombre": "Z-AA1",
+      "usos_permitidos": "Todos los usos no señalados como prohibidos en el artículo 41, numeral 9, letra B).",
+      "usos_prohibidos": "Todos los usos señalados como prohibidos en el artículo 41, numeral 9, letra B), específicamente terminales de transporte terrestre, locales de compra-venta y exhibición de automóviles, camiones y similares que se desar*",
+      "decreto": ""
+    },
+    {
+      "zona": "Z-AA2",
+      "nombre": "Z-AA2",
+      "usos_permitidos": "Todos los usos no señalados como prohibidos en el artículo 41, numeral 9, letra B).",
+      "usos_prohibidos": "Todos los usos señalados como prohibidos en el artículo 41, numeral 9, letra B), específicamente terminales de transporte terrestre, locales de compra-venta y exhibición de automóviles, camiones y similares que se desar*",
+      "decreto": ""
+    },
+    {
+      "zona": "Z-AM",
+      "nombre": "Z-AM",
+      "usos_permitidos": "Todos los usos no señalados como prohibidos en el artículo 41, numeral 9, letra B).",
+      "usos_prohibidos": "Todos los usos señalados como prohibidos en el artículo 41, numeral 9, letra B), específicamente terminales de transporte terrestre, locales de compra-venta y exhibición de automóviles, camiones y similares que se desar*",
+      "decreto": ""
+    },
+    {
+      "zona": "ZRM-DT",
+      "nombre": "ZRM-DT",
+      "usos_permitidos": "Residencial: Vivienda, hogares de acogida y hospedaje; Equipamiento: Científico, comercio, culto y cultura, deporte, educación, esparcimiento, salud, seguridad, servicio y social; Espacio público; Áreas verdes.",
+      "usos_prohibidos": "Todos los usos no indicados como permitidos, además de estadios, cementerios y crematorios, cárcel y centros de detención, casinos y juegos electrónicos o mecánicos.",
+      "decreto": ""
+    }
+  ]
+}

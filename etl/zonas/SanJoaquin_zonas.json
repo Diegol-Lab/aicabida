@@ -1,0 +1,126 @@
+{
+  "comuna": "San Joaquín",
+  "key": "SanJoaquin",
+  "fuente": "PRC_RM_Sur/MapServer/26",
+  "zonas": [
+    {
+      "zona": "AV",
+      "nombre": "AV",
+      "usos_permitidos": "Corresponden a plazas, parques y áreas verdes públicas, en su calidad de bienes nacionales de uso público existentes, las que se rigen por lo dispuesto en la OGUC para el tipo de uso Espacio Público",
+      "usos_prohibidos": "",
+      "decreto": ""
+    },
+    {
+      "zona": "AVI (1)",
+      "nombre": "AVI (1)",
+      "usos_permitidos": "Corresponden a las áreas planificadas por el Plan Regulador Metropolitano de Santiago según lo señalado en su ordenanza, destinadas a áreas verdes de uso público, y regidas en conformidad a lo dispuesto en el artículo 59 de la Ley General de Urbanismo y Construcciones",
+      "usos_prohibidos": "",
+      "decreto": ""
+    },
+    {
+      "zona": "AVI (2)",
+      "nombre": "AVI (2)",
+      "usos_permitidos": "Corresponden a las áreas planificadas por el Plan Regulador Metropolitano de Santiago según lo señalado en su ordenanza, destinadas a áreas verdes, que fueron incorporadas al Sistema Metropolitano de Áreas Verdes y Recreación, de acuerdo al artículo 5.2.3.5 del PRMS",
+      "usos_prohibidos": "",
+      "decreto": ""
+    },
+    {
+      "zona": "AVP",
+      "nombre": "AVP",
+      "usos_permitidos": "Corresponden a los terrenos destinados a plazas y parques consultados en el Plan Regulador Comunal, que son declarados de utilidad pública de conformidad con lo establecido en el artículo 59 de la Ley General de Urbanismo y Construcciones.",
+      "usos_prohibidos": "",
+      "decreto": ""
+    },
+    {
+      "zona": "ZAPP",
+      "nombre": "ZAPP",
+      "usos_permitidos": "Equipamiento: científico, comercio, culto y cultura, deporte, educación, esparcimiento, salud, seguridad, servicios; Actividades Productivas: industria, talleres, almacenamiento y bodegaje calificados como inofensivas; Infraestructura: transporte; Espacio Público; Área Verde. El detalle de las actividades permitidas se encuentran en la Ordenanza",
+      "usos_prohibidos": "Residencial: vivienda (excepto la vivienda necesaria para complementar actividades permitidas conforme a la OGUC, hospedaje, hogares de acogida; Equipamiento: educación (algunas actividades), salud (algunas actividades), seguridad (algunas actividades) y social; Actividades Productivas: industrias, talleres, almacenamiento y bodegaje calificados como molestas, contaminantes o insalubres y peligro*",
+      "decreto": ""
+    },
+    {
+      "zona": "ZAPR",
+      "nombre": "ZAPR",
+      "usos_permitidos": "Residencial: vivienda, hospedaje, hogares de acogida; Equipamiento: científico, comercio, culto y cultura, deporte, educación, esparcimiento, salud, seguridad, servicios; Actividades Productivas; industria, talleres, almacenaje y bodegaje calificados como inofensivas; Infraestructura: transporte; Espacio Público; Área Verde. El detalle de las actividades permitidas se encuentran en la Ordenanza",
+      "usos_prohibidos": "Equipamiento: educación (algunas actividades), esparcimiento (algunas actividades), salud (algunas actividades), seguridad (algunas actividades) y social; Actividades Productivas: industrias, talleres, almacenamiento y bodegaje calificados como molestas, contaminantes o insalubres y peligrosas; Infraestructura: sanitaria y energética. El detalle de las actividades permitidas se encuentran en la O*",
+      "decreto": ""
+    },
+    {
+      "zona": "ZAV",
+      "nombre": "ZAV",
+      "usos_permitidos": "Corresponden a las áreas planificadas, destinadas al uso de suelo de área verde, y regidas en conformidad a lo establecido la OGUC para el tipo de uso Área Verde",
+      "usos_prohibidos": "",
+      "decreto": ""
+    },
+    {
+      "zona": "ZE",
+      "nombre": "ZE",
+      "usos_permitidos": "Equipamiento: científico, educación, salud, esparcimiento, culto y cultura, social y seguridad; Áreas Verdes; Espacio Público",
+      "usos_prohibidos": "Todos los mencionados como permitidos",
+      "decreto": ""
+    },
+    {
+      "zona": "ZED",
+      "nombre": "ZED",
+      "usos_permitidos": "Equipamiento: deporte; Áreas Verdes; Espacio Público",
+      "usos_prohibidos": "Todos los mencionados como permitidos",
+      "decreto": ""
+    },
+    {
+      "zona": "ZI",
+      "nombre": "ZI",
+      "usos_permitidos": "Infraestructura: energética",
+      "usos_prohibidos": "Todos los mencionados como permitidos",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU12",
+      "nombre": "ZU12",
+      "usos_permitidos": "Residencial: vivienda, hospedaje, hogares de acogida; Equipamiento: científico, comercio, culto y cultura, deporte, educación, esparcimiento, salud, seguridad, servicios, social; Actividades Productivas; industria, talleres, almacenaje y bodegaje calificados como inofensivas; Espacio Público; Área Verde. El detalle de las actividades permitidas se encuentran en la Ordenanza",
+      "usos_prohibidos": "Residencial: hospedaje (algunas actividades); Equipamiento: comercio, deporte (algunas actividades), educación (algunas actividades), esparcimiento (algunas actividades), salud (algunas actividades), seguridad (algunas actividades); Actividades Productivas: industrias, talleres, almacenamiento y bodegaje calificados como molestas, contaminantes o insalubres y peligrosas; Infraestructura. El detal*",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU2a",
+      "nombre": "ZU2a",
+      "usos_permitidos": "Residencial: vivienda, hospedaje, hogares de acogida; Equipamiento: científico, comercio, culto y cultura, deporte, educación, esparcimiento, salud, seguridad, servicios, social; Actividades Productivas; talleres, almacenaje y bodegaje calificados como inofensivos; Espacio Público; Área Verde. El detalle de las actividades permitidas se encuentran en la Ordenanza",
+      "usos_prohibidos": "Equipamiento: comercio (algunas actividades), culto y cultura (algunas actividades), deporte (algunas actividades), educación (algunas actividades), esparcimiento (algunas actividades), salud (algunas actividades), seguridad (algunas actividades); Actividades Productivas: industrias, talleres, almacenamiento y bodegaje (molestas, contaminantes o insalubres y peligrosas); Infraestructura. El detal*",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU2b",
+      "nombre": "ZU2b",
+      "usos_permitidos": "Residencial: vivienda, hospedaje, hogares de acogida; Equipamiento: científico, comercio, culto y cultura, deporte, educación, esparcimiento, salud, seguridad, servicios, social; Actividades Productivas; almacenaje y bodegaje calificados como inofensivos; Espacio Público; Área Verde. El detalle de las actividades permitidas se encuentran en la Ordenanza",
+      "usos_prohibidos": "Equipamiento: comercio (algunas actividades), culto y cultura (algunas actividades), deporte (algunas actividades), educación (algunas actividades), esparcimiento (algunas actividades), salud (algunas actividades), seguridad (algunas actividades); Actividades Productivas: industrias y talleres, almacenamiento y bodegaje (molestas, contaminantes o insalubres y peligrosas); Infraestructura. El deta*",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU4",
+      "nombre": "ZU4",
+      "usos_permitidos": "Residencial: vivienda, hospedaje, hogares de acogida; Equipamiento: científico, comercio, culto y cultura, deporte, educación, esparcimiento, salud, seguridad, servicios, social; Actividades Productivas; industria, talleres, almacenaje y bodegaje calificados como inofensivas; Espacio Público; Área Verde. El detalle de las actividades permitidas se encuentran en la Ordenanza",
+      "usos_prohibidos": "Equipamiento: comercio (algunas actividades), deporte (algunas actividades), esparcimiento (algunas actividades), salud (algunas actividades), seguridad (algunas actividades); Actividades Productivas: industrias, talleres, almacenamiento y bodegaje calificados como molestas, contaminantes o insalubres y peligrosas; Infraestructura. El detalle de las actividades permitidas se encuentran en la Orde*",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU5",
+      "nombre": "ZU5",
+      "usos_permitidos": "Residencial: vivienda, hospedaje, hogares de acogida; Equipamiento: científico, comercio, culto y cultura, deporte, educación, esparcimiento, salud, seguridad, servicios, social; Actividades Productivas; industria, talleres, almacenaje y bodegaje calificados como inofensivas; Espacio Público; Área Verde. El detalle de las actividades permitidas se encuentran en la Ordenanza",
+      "usos_prohibidos": "Equipamiento: comercio (algunas actividades), deporte (algunas actividades), esparcimiento (algunas actividades), salud (algunas actividades), seguridad (algunas actividades); Actividades Productivas: industrias, talleres, almacenamiento y bodegaje calificados como molestas, contaminantes o insalubres y peligrosas; Infraestructura. El detalle de las actividades permitidas se encuentran en la Orde*",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU6",
+      "nombre": "ZU6",
+      "usos_permitidos": "Residencial: vivienda, hospedaje, hogares de acogida; Equipamiento: científico, comercio, culto y cultura, deporte, educación, esparcimiento, salud, seguridad, servicios, social; Actividades Productivas; industria, talleres, almacenaje y bodegaje calificados como inofensivas; Espacio Público; Área Verde. El detalle de las actividades permitidas se encuentran en la Ordenanza",
+      "usos_prohibidos": "Residencial: hospedaje (algunas actividades); Equipamiento: comercio (algunas actividades), deporte (algunas actividades), esparcimiento (algunas actividades), salud (algunas actividades), seguridad (algunas actividades); Actividades Productivas: industrias, talleres, almacenamiento y bodegaje calificados como molestas, contaminantes o insalubres y peligrosas; Infraestructura. El detalle de las a*",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU8",
+      "nombre": "ZU8",
+      "usos_permitidos": "Residencial: vivienda, hospedaje, hogares de acogida; Equipamiento: científico, comercio, culto y cultura, deporte, educación, esparcimiento, salud, seguridad, servicios, social; Actividades Productivas; industria, talleres, almacenaje y bodegaje calificados como inofensivas; Espacio Público; Área Verde. El detalle de las actividades permitidas se encuentran en la Ordenanza",
+      "usos_prohibidos": "Residencial: hospedaje (algunas actividades); Equipamiento: comercio (algunas actividades), deporte (algunas actividades), esparcimiento (algunas actividades), salud (algunas actividades), seguridad (algunas actividades); Actividades Productivas: industrias, talleres, almacenamiento y bodegaje calificados como molestas, contaminantes o insalubres y peligrosas; Infraestructura. El detalle de las a*",
+      "decreto": ""
+    }
+  ]
+}

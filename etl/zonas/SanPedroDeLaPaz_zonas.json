@@ -1,0 +1,245 @@
+{
+  "comuna": "San Pedro de la Paz",
+  "key": "SanPedroDeLaPaz",
+  "fuente": "PRC_Biobio/FeatureServer/42",
+  "zonas": [
+    {
+      "zona": "AV",
+      "nombre": "AV Area verde",
+      "usos_permitidos": "Area verde.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos.",
+      "decreto": "Publicacion PRC San Pedro de la Paz. Decreto Alc. N°310. Fecha de promulgacion 10.03.2011. Fecha de publicacion D.O. 24.03.2011."
+    },
+    {
+      "zona": "ZE-1",
+      "nombre": "ZE-1 Zona de equipamiento mixto",
+      "usos_permitidos": "Equipamiento: cientifico, comercio, culto y cultura, deporte, educacion, esparcimiento, salud, seguridad, servicios, social.",
+      "usos_prohibidos": "Residencial, excepto hospedaje. Todos los usos de suelo no mencionados como permitidos.",
+      "decreto": "Publicacion PRC San Pedro de la Paz. Decreto Alc. N°310. Fecha de promulgacion 10.03.2011. Fecha de publicacion D.O. 24.03.2011."
+    },
+    {
+      "zona": "ZE-2",
+      "nombre": "ZE-2 Zona de equipamiento de esparcimiento",
+      "usos_permitidos": "Equipamiento: comercio, deporte, excepto estadios, esparcimiento.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos.",
+      "decreto": "Publicacion PRC San Pedro de la Paz. Decreto Alc. N°310. Fecha de promulgacion 10.03.2011. Fecha de publicacion D.O. 24.03.2011."
+    },
+    {
+      "zona": "ZE-3",
+      "nombre": "ZE-3 Zona de equipamiento de esparcimiento",
+      "usos_permitidos": "Equipamiento: deporte, esparcimiento.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos.",
+      "decreto": "Publicacion PRC San Pedro de la Paz. Decreto Alc. N°310. Fecha de promulgacion 10.03.2011. Fecha de publicacion D.O. 24.03.2011."
+    },
+    {
+      "zona": "ZE-4",
+      "nombre": "ZE-4 Zona de equipamiento de cementerio",
+      "usos_permitidos": "Equipamiento: culto y cultura, salud.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos.",
+      "decreto": "Publicacion PRC San Pedro de la Paz. Decreto Alc. N°310. Fecha de promulgacion 10.03.2011. Fecha de publicacion D.O. 24.03.2011."
+    },
+    {
+      "zona": "ZH-1",
+      "nombre": "ZH-1 Zona residencial",
+      "usos_permitidos": "Residencial. Equipamiento: cientifico, comercio, excepto discotecas, culto y cultura, deporte, educacion, esparcimiento, salud, seguridad, servicios, social.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos.",
+      "decreto": "Publicacion PRC San Pedro de la Paz. Decreto Alc. N°310. Fecha de promulgacion 10.03.2011. Fecha de publicacion D.O. 24.03.2011."
+    },
+    {
+      "zona": "ZH-10",
+      "nombre": "ZH-10 Zona residencial",
+      "usos_permitidos": "Residencial. Equipamiento: cientifico, comercio, culto y cultura, deporte, educacion, esparcimiento, salud, seguridad, servicios, social.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos.",
+      "decreto": "Publicacion PRC San Pedro de la Paz. Decreto Alc. N°310. Fecha de promulgacion 10.03.2011. Fecha de publicacion D.O. 24.03.2011."
+    },
+    {
+      "zona": "ZH-11",
+      "nombre": "ZH-11 Zona residencial",
+      "usos_permitidos": "Residencial. Equipamiento: cientifico, comercio, culto y cultura, deporte, educacion, esparcimiento, salud, seguridad, servicios, social.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos.",
+      "decreto": "Publicacion PRC San Pedro de la Paz. Decreto Alc. N°310. Fecha de promulgacion 10.03.2011. Fecha de publicacion D.O. 24.03.2011."
+    },
+    {
+      "zona": "ZH-12",
+      "nombre": "ZH-12 Zona residencial",
+      "usos_permitidos": "Residencial. Equipamiento: cientifico, comercio, culto y cultura, deporte, educacion, esparcimiento, salud, seguridad, servicios, social.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos.",
+      "decreto": "Publicacion PRC San Pedro de la Paz. Decreto Alc. N°310. Fecha de promulgacion 10.03.2011. Fecha de publicacion D.O. 24.03.2011."
+    },
+    {
+      "zona": "ZH-13",
+      "nombre": "ZH-13 Zona residencial",
+      "usos_permitidos": "Residencial. Equipamiento: cientifico, comercio, culto y cultura, deporte, educacion, esparcimiento, salud, seguridad, servicios, social.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos.",
+      "decreto": "Publicacion PRC San Pedro de la Paz. Decreto Alc. N°310. Fecha de promulgacion 10.03.2011. Fecha de publicacion D.O. 24.03.2011."
+    },
+    {
+      "zona": "ZH-14",
+      "nombre": "ZH-14 Zona residencial",
+      "usos_permitidos": "Residencial. Equipamiento: cientifico, comercio, culto y cultura, deporte, educacion, esparcimiento, salud, seguridad, servicios, social.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos.",
+      "decreto": "Publicacion PRC San Pedro de la Paz. Decreto Alc. N°310. Fecha de promulgacion 10.03.2011. Fecha de publicacion D.O. 24.03.2011."
+    },
+    {
+      "zona": "ZH-15",
+      "nombre": "ZH-15 Zona residencial",
+      "usos_permitidos": "Residencial. Equipamiento: cientifico, comercio, culto y cultura, deporte, educacion, esparcimiento, salud, seguridad, servicios, social.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos.",
+      "decreto": "Publicacion PRC San Pedro de la Paz. Decreto Alc. N°310. Fecha de promulgacion 10.03.2011. Fecha de publicacion D.O. 24.03.2011."
+    },
+    {
+      "zona": "ZH-16",
+      "nombre": "ZH-16 Zona residencial",
+      "usos_permitidos": "Residencial. Equipamiento: cientifico, comercio, culto y cultura, deporte, educacion, esparcimiento, salud, seguridad, servicios, social.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos.",
+      "decreto": "Publicacion PRC San Pedro de la Paz. Decreto Alc. N°310. Fecha de promulgacion 10.03.2011. Fecha de publicacion D.O. 24.03.2011."
+    },
+    {
+      "zona": "ZH-2",
+      "nombre": "ZH-2 Zona residencial",
+      "usos_permitidos": "Residencial. Equipamiento: cientifico, comercio, culto y cultura, deporte, educacion, esparcimiento, salud, seguridad, servicios, social.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos.",
+      "decreto": "Publicacion PRC San Pedro de la Paz. Decreto Alc. N°310. Fecha de promulgacion 10.03.2011. Fecha de publicacion D.O. 24.03.2011."
+    },
+    {
+      "zona": "ZH-3",
+      "nombre": "ZH-3 Zona residencial",
+      "usos_permitidos": "Residencial. Equipamiento: comercio, culto y cultura, deporte, educacion, esparcimiento, salud, servicios, social.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos.",
+      "decreto": "Publicacion PRC San Pedro de la Paz. Decreto Alc. N°310. Fecha de promulgacion 10.03.2011. Fecha de publicacion D.O. 24.03.2011."
+    },
+    {
+      "zona": "ZH-4",
+      "nombre": "ZH-4 Zona residencial",
+      "usos_permitidos": "Residencial. Equipamiento: cientifico, comercio, culto y cultura, deporte, educacion, esparcimiento, salud, seguridad, servicios, social.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos.",
+      "decreto": "Publicacion PRC San Pedro de la Paz. Decreto Alc. N°310. Fecha de promulgacion 10.03.2011. Fecha de publicacion D.O. 24.03.2011."
+    },
+    {
+      "zona": "ZH-5",
+      "nombre": "ZH-5 Zona residencial",
+      "usos_permitidos": "Residencial. Equipamiento: cientifico, comercio, culto y cultura, deporte, educacion, esparcimiento, salud, seguridad, servicios, social. Actividades productivas, bodegaje y talleres inofensivos.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos.",
+      "decreto": "Publicacion PRC San Pedro de la Paz. Decreto Alc. N°310. Fecha de promulgacion 10.03.2011. Fecha de publicacion D.O. 24.03.2011."
+    },
+    {
+      "zona": "ZH-6",
+      "nombre": "ZH-6 Zona residencial",
+      "usos_permitidos": "Residencial. Equipamiento:Equipamiento: cientifico, comercio, culto y cultura, deporte, educacion, esparcimiento, seguridad, servicios, social.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos.",
+      "decreto": "Publicacion PRC San Pedro de la Paz. Decreto Alc. N°310. Fecha de promulgacion 10.03.2011. Fecha de publicacion D.O. 24.03.2011."
+    },
+    {
+      "zona": "ZH-7",
+      "nombre": "ZH-7 Zona residencial",
+      "usos_permitidos": "Residencial. Equipamiento: cientifico, comercio, culto y cultura, deporte, educacion, esparcimiento, salud, seguridad, servicios, social.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos.",
+      "decreto": "Publicacion PRC San Pedro de la Paz. Decreto Alc. N°310. Fecha de promulgacion 10.03.2011. Fecha de publicacion D.O. 24.03.2011."
+    },
+    {
+      "zona": "ZH-8",
+      "nombre": "ZH-8 Zona residencial",
+      "usos_permitidos": "Residencial. Equipamiento: cientifico, comercio, culto y cultura, deporte, educacion, esparcimiento, salud, seguridad, servicios, social.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos.",
+      "decreto": "Publicacion PRC San Pedro de la Paz. Decreto Alc. N°310. Fecha de promulgacion 10.03.2011. Fecha de publicacion D.O. 24.03.2011."
+    },
+    {
+      "zona": "ZH-9",
+      "nombre": "ZH-9 Zona residencial",
+      "usos_permitidos": "Residencial. Equipamiento: comercio, culto y cultura, deporte, esparcimiento, servicios, social.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos.",
+      "decreto": "Publicacion PRC San Pedro de la Paz. Decreto Alc. N°310. Fecha de promulgacion 10.03.2011. Fecha de publicacion D.O. 24.03.2011."
+    },
+    {
+      "zona": "ZI-1",
+      "nombre": "ZI-1 Zona productiva industrial",
+      "usos_permitidos": "Equipamiento: cientifico, comercio, deporte, esparcimiento, seguridad, servicios, social. Actividades productivas.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos.",
+      "decreto": "Publicacion PRC San Pedro de la Paz. Decreto Alc. N°310. Fecha de promulgacion 10.03.2011. Fecha de publicacion D.O. 24.03.2011."
+    },
+    {
+      "zona": "ZM-1",
+      "nombre": "ZM-1 Zona mixta",
+      "usos_permitidos": "Residencial. Equipamiento: cientifico, comercio, culto y cultura, deporte, educacion, esparcimiento, salud, seguridad, servicios, social. Actividades productivas.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos.",
+      "decreto": "Publicacion PRC San Pedro de la Paz. Decreto Alc. N°310. Fecha de promulgacion 10.03.2011. Fecha de publicacion D.O. 24.03.2011."
+    },
+    {
+      "zona": "ZM-2",
+      "nombre": "ZM-2 Zona mixta",
+      "usos_permitidos": "Residencial. Equipamiento: cientifico, comercio, culto y cultura, deporte, educacion, esparcimiento, salud, seguridad, servicios, social. Actividades productivas.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos.",
+      "decreto": "Publicacion PRC San Pedro de la Paz. Decreto Alc. N°310. Fecha de promulgacion 10.03.2011. Fecha de publicacion D.O. 24.03.2011."
+    },
+    {
+      "zona": "ZM-3",
+      "nombre": "ZM-3 Zona mixta",
+      "usos_permitidos": "Residencial. Equipamiento:cientifico, comercio, culto y cultura, deporte, educacion, esparcimiento, salud, seguridad, servicios, social. Actividades productivas.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos.",
+      "decreto": "Publicacion PRC San Pedro de la Paz. Decreto Alc. N°310. Fecha de promulgacion 10.03.2011. Fecha de publicacion D.O. 24.03.2011."
+    },
+    {
+      "zona": "ZM-4",
+      "nombre": "ZM-4 Zona mixta",
+      "usos_permitidos": "Residencial. Equipamiento: cientifico, comercio, culto y cultura, deporte, educacion, esparcimiento, salud, seguridad, servicios, social.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos.",
+      "decreto": "Publicacion PRC San Pedro de la Paz. Decreto Alc. N°310. Fecha de promulgacion 10.03.2011. Fecha de publicacion D.O. 24.03.2011."
+    },
+    {
+      "zona": "ZM-5",
+      "nombre": "ZM-5 Zona mixta",
+      "usos_permitidos": "Residencial. Equipamiento: cientifico, comercio, culto y cultura, deporte, educacion, esparcimiento, salud, seguridad, servicios, social.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos.",
+      "decreto": "Publicacion PRC San Pedro de la Paz. Decreto Alc. N°310. Fecha de promulgacion 10.03.2011. Fecha de publicacion D.O. 24.03.2011."
+    },
+    {
+      "zona": "ZPH",
+      "nombre": "ZPH Zona productiva horticola",
+      "usos_permitidos": "Residencial. Equipamiento: cientifico, comercio, deporte, educacion, seguridad, servicios, social. Actividades productivas.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos.",
+      "decreto": "Publicacion PRC San Pedro de la Paz. Decreto Alc. N°310. Fecha de promulgacion 10.03.2011. Fecha de publicacion D.O. 24.03.2011."
+    },
+    {
+      "zona": "ZPL",
+      "nombre": "ZPL Zona de playa",
+      "usos_permitidos": "BNUP denominado playa de mar, es decir, el espacio que las olas bañan entre la mas alta y mas baja marea.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos.",
+      "decreto": "Publicacion PRC San Pedro de la Paz. Decreto Alc. N°310. Fecha de promulgacion 10.03.2011. Fecha de publicacion D.O. 24.03.2011."
+    },
+    {
+      "zona": "ZRC",
+      "nombre": "ZRC Zona de riesgo costero",
+      "usos_permitidos": "Equipamiento: comercio, culto y cultura, deporte, esparcimiento.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos.",
+      "decreto": "Publicacion PRC San Pedro de la Paz. Decreto Alc. N°310. Fecha de promulgacion 10.03.2011. Fecha de publicacion D.O. 24.03.2011."
+    },
+    {
+      "zona": "ZRI-1",
+      "nombre": "ZRI-1 Zona de riesgo de inundacion",
+      "usos_permitidos": "Equipamiento: esparcimiento.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos.",
+      "decreto": "Publicacion PRC San Pedro de la Paz. Decreto Alc. N°310. Fecha de promulgacion 10.03.2011. Fecha de publicacion D.O. 24.03.2011."
+    },
+    {
+      "zona": "ZRI-2",
+      "nombre": "ZRI-2 Zona de riesgo de inundacion",
+      "usos_permitidos": "Equipamiento: deporte, esparcimiento.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos.",
+      "decreto": "Publicacion PRC San Pedro de la Paz. Decreto Alc. N°310. Fecha de promulgacion 10.03.2011. Fecha de publicacion D.O. 24.03.2011."
+    },
+    {
+      "zona": "ZRQ",
+      "nombre": "ZRQ Zona de riesgo por drenajes y quebradas",
+      "usos_permitidos": "Equipamiento: deporte, esparcimiento.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos.",
+      "decreto": "Publicacion PRC San Pedro de la Paz. Decreto Alc. N°310. Fecha de promulgacion 10.03.2011. Fecha de publicacion D.O. 24.03.2011."
+    },
+    {
+      "zona": "ZRR",
+      "nombre": "ZRR Zona de riesgo de remocion en masa",
+      "usos_permitidos": "Equipamiento: cientifico, comercio, culto y cultura, deporte, esparcimiento.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos.",
+      "decreto": "Publicacion PRC San Pedro de la Paz. Decreto Alc. N°310. Fecha de promulgacion 10.03.2011. Fecha de publicacion D.O. 24.03.2011."
+    }
+  ]
+}

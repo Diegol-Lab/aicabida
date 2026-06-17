@@ -1,0 +1,91 @@
+{
+  "comuna": "La Cisterna",
+  "key": "LaCisterna",
+  "fuente": "PRC_RM_Sur/MapServer/4",
+  "zonas": [
+    {
+      "zona": "AV",
+      "nombre": "AV",
+      "usos_permitidos": "Área verde.",
+      "usos_prohibidos": "Todo uso no mencionado como permitido.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU-1",
+      "nombre": "ZU-1",
+      "usos_permitidos": "Residencial, equipamiento comercial local, culto, deporte, educación, esparcimiento, salud, servicio, social  y científico intercomunal; espacio público y áreas verde.",
+      "usos_prohibidos": "Equipamiento de oficina, turismo y cementerio; actividad productiva peligrosa, molesta e inofensiva; infraestructura de transporte; sanitaria y energética.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU-2",
+      "nombre": "ZU-2",
+      "usos_permitidos": "Residencial, equipamiento comercial, culto, deporte, educación, esparcimiento, salud, seguridad, servicio, social  y científico intercomunal; espacio público y áreas verde.",
+      "usos_prohibidos": "Cementerio; actividad productiva peligrosa; molesta e inofensiva; infraestructura.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU-3",
+      "nombre": "ZU-3",
+      "usos_permitidos": "Residencial, equipamiento comercial, culto, deporte, educación, esparcimiento, salud, seguridad, servicio, social  y científico intercomunal; espacio público y áreas verde.",
+      "usos_prohibidos": "Cementerio; actividad productiva peligrosa; molesta e inofensiva; infraestructura.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU-4",
+      "nombre": "ZU-4",
+      "usos_permitidos": "Residencial, equipamiento comercial, culto, deporte, educación,  salud, seguridad comunal; espacio público y áreas verde.",
+      "usos_prohibidos": "Equipamiento de esparcimiento, servicios y científico; actividad productiva peligrosa, molesta e inofensiva; infraestructura de transporte, sanitaria y energética.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU-5",
+      "nombre": "ZU-5",
+      "usos_permitidos": "Residencial, equipamiento comercial, culto, deporte, educación,  salud, seguridad servicio y social intercomunal; espacio público y áreas verde.",
+      "usos_prohibidos": "Equipamiento de esparcimiento, científico y turismo; actividad productiva peligrosa, contaminantes y molesta; infraestructura de transporte, sanitaria y energética.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU-5A",
+      "nombre": "ZU-5A",
+      "usos_permitidos": "Residencial; equipamiento comercial, culto, deporte, educación,  salud y esparcimiento; espacio público y áreas verdes.",
+      "usos_prohibidos": "Equipamiento científico y cementerio; actividad productiva peligrosa, contaminante y molesta; infraestructura de transporte, sanitaria y energética.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU-6",
+      "nombre": "ZU-6",
+      "usos_permitidos": "Residencial; equipamiento comercial, deporte y seguridad comunal, y social; espacio público y áreas verde.",
+      "usos_prohibidos": "Equipamiento de culto, educación, esparcimiento, salud, servicios y social; actividad productiva peligrosa y molesta; infraestructura de transporte, sanitaria y energética.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU-7",
+      "nombre": "ZU-7",
+      "usos_permitidos": "Residencial; equipamiento comercial, culto, deporte, educación, salud, seguridad, servicio y social comunal; actividad productiva inofensiva; espacio público y áreas verde.",
+      "usos_prohibidos": "Equipamiento científico y cementerio; infraestructura de transporte, sanitaria y energética; actividad productiva molesta.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU-7A",
+      "nombre": "ZU-7A",
+      "usos_permitidos": "Residencial, equipamiento comercial, culto, deporte, educación, salud, seguridad, servicio y social comunal; actividad productiva inofensiva; espacio público y áreas verde.",
+      "usos_prohibidos": "Equipamiento científico y cementerio; infraestructura de transporte, sanitaria y energética; actividad productiva molesta.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU-8",
+      "nombre": "ZU-8",
+      "usos_permitidos": "Equipamiento comercial local y deporte intercomunal; infraestructura de transporte; espacio público y áreas verde.",
+      "usos_prohibidos": "Residencial; equipamiento no mencionado anteriormente; actividad productiva; infraestructura sanitaria, energética y pesca.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU-9",
+      "nombre": "ZU-9",
+      "usos_permitidos": "Equipamiento comercial, culto, deporte, educación,  salud, seguridad servicio, social y científico intercomunal; actividad productiva molesta; espacio público y áreas verde.",
+      "usos_prohibidos": "Infraestructura de transporte, energética y sanitaria.",
+      "decreto": ""
+    }
+  ]
+}

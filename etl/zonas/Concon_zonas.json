@@ -1,0 +1,378 @@
+{
+  "comuna": "Concón",
+  "key": "Concon",
+  "fuente": "PRC_Valparaíso/FeatureServer/9",
+  "zonas": [
+    {
+      "zona": "AP",
+      "nombre": "AP Area de Proteccion",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZAV",
+      "nombre": "ZAV Zona Area Verde",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZCS",
+      "nombre": "ZCS Zona Centro Servicio",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZCS-1",
+      "nombre": "ZCS-1 Zona Centro Servicio 1",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZCS-1 V1",
+      "nombre": "ZCS-1 Sub-Zona Centro Servicio 1 V1",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZCS-2",
+      "nombre": "ZCS-2 Zona Centro Servicio 2",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZDTR",
+      "nombre": "ZDTR Zona Densidad Turístico Residencial",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZE",
+      "nombre": "ZE Zona de Equipamiento",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZEP",
+      "nombre": "ZEP Zona Espacios Publicos",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZES",
+      "nombre": "ZES Zona Equipamiento Seguridad",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZEUPM",
+      "nombre": "ZEUPM  Zona Productiva Molesta",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZLM-1",
+      "nombre": "ZLM-1 Zona Litoral Maritimo 1",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZLM-2",
+      "nombre": "ZLM-2 Zona Litoral Maritimo 2",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZLM-2-SP",
+      "nombre": "ZLM-2SP Sub-Zona Litoral Marítimo 2 Servicio Público",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZR-1 V1",
+      "nombre": "ZR-1 V1 Zona Residencial 1 V1",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZR-1 V2",
+      "nombre": "ZR-1 V2 Zona Residencial 1 V2",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZR-1 V3",
+      "nombre": "ZR-1 V3 Zona Residencial 1 V3",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZR-2 V4",
+      "nombre": "ZR-2 V4 Zona Residencial 2 V4",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZR-3 V5",
+      "nombre": "ZR-3 V5 Zona Residencial 3 V5",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZR1-V31",
+      "nombre": "ZR1- V3.1 SubZona Residencial 1 V3.1",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZR1-V32",
+      "nombre": "ZR1- V3.2 SubZona Residencial 1 V3.2",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZRAN",
+      "nombre": "ZRAN Zona Residencial Alto Norte",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZRAS",
+      "nombre": "ZRAS Zona Residencial Alto Sur",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZRC",
+      "nombre": "ZRC Zona Residencial Centro",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZRDB",
+      "nombre": "ZRDB  Zona Residencial Densidad Baja",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZRDM",
+      "nombre": "ZRDM  Zona Residencial Densidad Media",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZRM-1",
+      "nombre": "ZRM-1 Zona Residencial Mixta 1",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZRM-2",
+      "nombre": "ZRM-2 Zona Residencial Mixta 2",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZRM-3",
+      "nombre": "ZRM-3 Zona Residencial Mixta 3",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZRP",
+      "nombre": "ZRP Zona Residencial Puntillas",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZRTL",
+      "nombre": "ZRTL Zona Residencial Turistica Local",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZSR",
+      "nombre": "ZSR Zona Servicio Ruta",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZSR-R",
+      "nombre": "ZSR-R Sub-Zona Servicio Ruta Residencial",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZTC",
+      "nombre": "ZTC Zona Turismo Centro",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZTR",
+      "nombre": "ZTR Zona Densidad Turístico Residencial",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZTR-M1",
+      "nombre": "ZTR-M1 Sub-Zona Turístico Residencial Mirador 1",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZTR-M2",
+      "nombre": "ZTR-M2 Sub-Zona Turístico Residencial Mirador 2",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZTR-M3",
+      "nombre": "ZTR-M3 Sub-Zona Turístico Residencial Mirador 3",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZTRS",
+      "nombre": "ZTRS Zona Turística Residencial Sur",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZTRS-M4",
+      "nombre": "ZTRS Zona Turística Residencial Sur Mirador 4",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZVCM-H5",
+      "nombre": "ZVCM-H5 Zona Vivienda Costa Montemar H5",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZVCM-H7",
+      "nombre": "ZVCM-H7 Zona Vivienda Costa Montemar H7",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZVLM- V10",
+      "nombre": "ZVLM-V10 Zona Vivienda Lomas Montemar  V10",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZVLM- V11",
+      "nombre": "ZVLM-V11 Zona Vivienda Lomas Montemar  V11",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZVLM- V12",
+      "nombre": "ZVLM-V12 Zona Vivienda Lomas Montemar  V12",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZVLM- V13",
+      "nombre": "ZVLM-V13 Zona Vivienda Lomas Montemar V13",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZVLM- V5",
+      "nombre": "ZVLM-V5 Zona Vivienda Lomas Montemar V5",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZVLM- V5 E",
+      "nombre": "ZVLM-V5E Zona Vivienda Lomas Montemar V5E",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZVLM- V6",
+      "nombre": "ZVLM-V6 Zona Vivienda Lomas Montemar  V6",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZVLM- V7",
+      "nombre": "ZVLM-V7 Zona Vivienda Lomas Montemar  V7",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZVLM- V9",
+      "nombre": "ZVLM-V9 Zona Vivienda Lomas Montemar  V9",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZVLM-1",
+      "nombre": "ZVLM-1 Zona Vivienda Lomas Montemar 1",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZVLM-2",
+      "nombre": "ZVLM-2 Zona Vivienda Lomas Montemar 2",
+      "usos_permitidos": "",
+      "usos_prohibidos": "Todos los no señalados como permitidos. Mayor detalle en ordenanza del Plan.",
+      "decreto": ""
+    }
+  ]
+}

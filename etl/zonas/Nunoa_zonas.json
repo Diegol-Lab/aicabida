@@ -1,0 +1,287 @@
+{
+  "comuna": "Ñuñoa",
+  "key": "Nunoa",
+  "fuente": "PRC_RM_Norte/MapServer/17",
+  "zonas": [
+    {
+      "zona": "CD",
+      "nombre": "CD",
+      "usos_permitidos": "Para mayor detalle revisar ordenanza local",
+      "usos_prohibidos": "Para mayor detalle revisar ordenanza local",
+      "decreto": ""
+    },
+    {
+      "zona": "ICH-1",
+      "nombre": "ICH-1",
+      "usos_permitidos": "Para las áreas de protección de recursos de valor patrimonial cultural, se aplicarán las normasurbanísticas específicas correspondientes a la zona o inmueble según corresponda. Revisar ordenanza local para mayor detalle",
+      "usos_prohibidos": "Revisar ordenanza local para mayor detalle",
+      "decreto": ""
+    },
+    {
+      "zona": "ICH-2",
+      "nombre": "ICH-2",
+      "usos_permitidos": "Para las áreas de protección de recursos de valor patrimonial cultural, se aplicarán las normasurbanísticas específicas correspondientes a la zona o inmueble según corresponda. Revisar ordenanza local para mayor detalle",
+      "usos_prohibidos": "Revisar ordenanza local para mayor detalle",
+      "decreto": ""
+    },
+    {
+      "zona": "ICH-3",
+      "nombre": "ICH-3",
+      "usos_permitidos": "Para las áreas de protección de recursos de valor patrimonial cultural, se aplicarán las normasurbanísticas específicas correspondientes a la zona o inmueble según corresponda. Revisar ordenanza local para mayor detalle",
+      "usos_prohibidos": "Revisar ordenanza local para mayor detalle",
+      "decreto": ""
+    },
+    {
+      "zona": "ICH-4",
+      "nombre": "ICH-4",
+      "usos_permitidos": "Para las áreas de protección de recursos de valor patrimonial cultural, se aplicarán las normasurbanísticas específicas correspondientes a la zona o inmueble según corresponda. Revisar ordenanza local para mayor detalle",
+      "usos_prohibidos": "Revisar ordenanza local para mayor detalle",
+      "decreto": ""
+    },
+    {
+      "zona": "MH- 1",
+      "nombre": "MH- 1",
+      "usos_permitidos": "Para las áreas de protección de recursos de valor patrimonial cultural, se aplicarán las normasurbanísticas específicas correspondientes a la zona o inmueble según corresponda. Revisar ordenanza local para mayor detalle",
+      "usos_prohibidos": "Revisar ordenanza local para mayor detalle",
+      "decreto": ""
+    },
+    {
+      "zona": "MH- 2",
+      "nombre": "MH- 2",
+      "usos_permitidos": "Para las áreas de protección de recursos de valor patrimonial cultural, se aplicarán las normasurbanísticas específicas correspondientes a la zona o inmueble según corresponda. Revisar ordenanza local para mayor detalle",
+      "usos_prohibidos": "Revisar ordenanza local para mayor detalle",
+      "decreto": ""
+    },
+    {
+      "zona": "MH- 3",
+      "nombre": "MH- 3",
+      "usos_permitidos": "Para las áreas de protección de recursos de valor patrimonial cultural, se aplicarán las normasurbanísticas específicas correspondientes a la zona o inmueble según corresponda. Revisar ordenanza local para mayor detalle",
+      "usos_prohibidos": "Revisar ordenanza local para mayor detalle",
+      "decreto": ""
+    },
+    {
+      "zona": "PM y AP",
+      "nombre": "PM y AP",
+      "usos_permitidos": "Revisar art. 5.2.3.1 PRMS y art. 5.2.3.4 PRMS",
+      "usos_prohibidos": "Revisar ordenanza local para mayor detalle",
+      "decreto": ""
+    },
+    {
+      "zona": "UCH",
+      "nombre": "UCH",
+      "usos_permitidos": "Revisar ordenanza local para mayor detalle",
+      "usos_prohibidos": "Revisar ordenanza local para mayor detalle",
+      "decreto": ""
+    },
+    {
+      "zona": "UMCE",
+      "nombre": "UMCE",
+      "usos_permitidos": "Revisar ordenanza local para mayor detalle",
+      "usos_prohibidos": "Revisar ordenanza local para mayor detalle",
+      "decreto": ""
+    },
+    {
+      "zona": "Z-1",
+      "nombre": "Z-1",
+      "usos_permitidos": "Residencial: todos; Área verde; Espacio Público; Equipamiento",
+      "usos_prohibidos": "Equipamiento; Esparcimiento; salud (algunas), seguridad (algunas); comercio (algunas); Actividades productivas (todas); Infraestructura",
+      "decreto": ""
+    },
+    {
+      "zona": "Z-1A",
+      "nombre": "Z-1A",
+      "usos_permitidos": "Residencial; Área verde; Espacio Público; Equipamiento",
+      "usos_prohibidos": "Equipamiento; Esparcimiento; salud (algunas), seguridad (algunas); comercio (algunas); Actividades productivas (todas); Infraestructura",
+      "decreto": ""
+    },
+    {
+      "zona": "Z-1B",
+      "nombre": "Z-1B",
+      "usos_permitidos": "Residencial; Área verde; Espacio Público; Equipamiento",
+      "usos_prohibidos": "Equipamiento; Esparcimiento; salud (algunas), seguridad (algunas); comercio (algunas); Actividades productivas (todas); Infraestructura",
+      "decreto": ""
+    },
+    {
+      "zona": "Z-1C",
+      "nombre": "Z-1C",
+      "usos_permitidos": "Residencial; Equipamiento: científico, comercio, culto y cultura, deporte, educación, salud, seguridad, social y servicios.",
+      "usos_prohibidos": "Equipamiento; Esparcimiento; salud (algunas), seguridad (algunas); comercio (algunas); Actividades productivas (todas)",
+      "decreto": ""
+    },
+    {
+      "zona": "Z-1D",
+      "nombre": "Z-1D",
+      "usos_permitidos": "Residencial: todos; Área verde; Espacio Público; Equipamiento",
+      "usos_prohibidos": "Equipamiento; Esparcimiento; salud (algunas), seguridad (algunas); comercio (algunas); Actividades productivas (todas); Infraestructura",
+      "decreto": ""
+    },
+    {
+      "zona": "Z-2",
+      "nombre": "Z-2",
+      "usos_permitidos": "área afectada por la zona de protección de helipuerto, deberán cumplir con las alturas fijadas en",
+      "usos_prohibidos": "Equipamiento; Esparcimiento; salud (algunas), seguridad (algunas); comercio (algunas); Actividades productivas (todas); Infraestructura",
+      "decreto": ""
+    },
+    {
+      "zona": "Z-3",
+      "nombre": "Z-3",
+      "usos_permitidos": "Residencial: todas; Equipamientos",
+      "usos_prohibidos": "Equipamiento; esparcimiento; salud (algunas), seguridad (algunas), deportes comercio (algunas) Actividades productivas (todas)",
+      "decreto": ""
+    },
+    {
+      "zona": "Z-3A",
+      "nombre": "Z-3A",
+      "usos_permitidos": "Residencial: todos; Área verde; Espacio Público; Equipamiento",
+      "usos_prohibidos": "Equipamiento; Esparcimiento; salud (algunas), seguridad (algunas); comercio (algunas); Actividades productivas (todas); Infraestructura",
+      "decreto": ""
+    },
+    {
+      "zona": "Z-4",
+      "nombre": "Z-4",
+      "usos_permitidos": "Aeronáutica Civil.",
+      "usos_prohibidos": "Equipamiento; Esparcimiento; salud (algunas), educación, deportes, seguridad (algunas); comercio (algunas); Actividades productivas (todas)",
+      "decreto": ""
+    },
+    {
+      "zona": "Z-4A",
+      "nombre": "Z-4A",
+      "usos_permitidos": "Residencial, Equipamientos: revisar ordenanza",
+      "usos_prohibidos": "Equipamiento; Esparcimiento; salud (algunas), educación, deportes, seguridad (algunas); comercio (algunas); Actividades productivas (todas)",
+      "decreto": ""
+    },
+    {
+      "zona": "Z-4B",
+      "nombre": "Z-4B",
+      "usos_permitidos": "Residencial, Equipamientos: revisar ordenanza",
+      "usos_prohibidos": "Equipamiento; Esparcimiento; salud (algunas), educación, deportes, seguridad (algunas); comercio (algunas); Actividades productivas (todas)",
+      "decreto": ""
+    },
+    {
+      "zona": "Z-4C",
+      "nombre": "Z-4C",
+      "usos_permitidos": "Residencial, Equipamientos: revisar ordenanza",
+      "usos_prohibidos": "Equipamiento; Esparcimiento; salud (algunas), educación, deportes, seguridad (algunas); comercio (algunas); Actividades productivas (todas)",
+      "decreto": ""
+    },
+    {
+      "zona": "Z-4C+R",
+      "nombre": "Z-4C+R",
+      "usos_permitidos": "Equipamientos: + R significa que se permite además la actividad “restaurantes” de la clase de equipamiento Comercio",
+      "usos_prohibidos": "Para mayor detalle revisar ordenanza local",
+      "decreto": ""
+    },
+    {
+      "zona": "Z-4C+RB",
+      "nombre": "Z-4C+RB",
+      "usos_permitidos": "Equipamientos: + RB significa que se permite además la actividad restaurantes  de la clase de equipamiento Comercio",
+      "usos_prohibidos": "Para mayor detalle revisar ordenanza local",
+      "decreto": ""
+    },
+    {
+      "zona": "Z-4m",
+      "nombre": "Z-4m",
+      "usos_permitidos": "Residencial, Equipamientos: revisar ordenanza",
+      "usos_prohibidos": "Equipamiento; Esparcimiento; salud (algunas), educación, deportes, seguridad (algunas); comercio (algunas); Actividades productivas (todas)",
+      "decreto": ""
+    },
+    {
+      "zona": "Z-5",
+      "nombre": "Z-5",
+      "usos_permitidos": "Residencial; Área verde; Espacio Público; Equipamiento: comercio, servicios, culto y cultura",
+      "usos_prohibidos": "Equipamiento: todas; Actividades productivas: todas; Infraestructura: todas",
+      "decreto": ""
+    },
+    {
+      "zona": "Z-5A",
+      "nombre": "Z-5A",
+      "usos_permitidos": "Residencial; Equipamientos: revisar ordenanza local",
+      "usos_prohibidos": "Equipamiento; Esparcimiento; salud (algunas), educación (algunas), deportes, seguridad (algunas); comercio (algunas), culto y cultura; Actividades productivas (todas)",
+      "decreto": ""
+    },
+    {
+      "zona": "Z-5B",
+      "nombre": "Z-5B",
+      "usos_permitidos": "Residencial; Equipamientos: revisar ordenanza local",
+      "usos_prohibidos": "Equipamiento; Esparcimiento; salud (algunas), educación (algunas), deportes, seguridad (algunas); comercio (algunas), culto y cultura; Actividades productivas (todas)",
+      "decreto": ""
+    },
+    {
+      "zona": "Z-6",
+      "nombre": "Z-6",
+      "usos_permitidos": "Área verde; Espacio Público; Equipamiento: deporte",
+      "usos_prohibidos": "Residencial: todos; Equipamientos: todos; Actividades productivas: todas; Infraestructura (algunas)",
+      "decreto": ""
+    },
+    {
+      "zona": "Z-US",
+      "nombre": "Z-US",
+      "usos_permitidos": "Subsuelo BNUP. Revisar ordenanza mayor detalle",
+      "usos_prohibidos": "Para mayor nivel de detalle revisar ordenanza local",
+      "decreto": ""
+    },
+    {
+      "zona": "ZCH- 1",
+      "nombre": "ZCH- 1",
+      "usos_permitidos": "Para las áreas de protección de recursos de valor patrimonial cultural, se aplicarán las normasurbanísticas específicas correspondientes a la zona o inmueble según corresponda. Revisar ordenanza local para mayor detalle",
+      "usos_prohibidos": "Revisar ordenanza local para mayor detalle",
+      "decreto": ""
+    },
+    {
+      "zona": "ZI-1",
+      "nombre": "ZI-1",
+      "usos_permitidos": "Actividades productivas: todas",
+      "usos_prohibidos": "Equipamiento; esparcimiento; salud (algunas), comercio (algunas)",
+      "decreto": ""
+    },
+    {
+      "zona": "ZR-1",
+      "nombre": "ZR-1",
+      "usos_permitidos": "En esta zona, solo se permiten edificaciones e instalaciones propias de la Estación, desvíos y líneas ferroviarias (actual Metro S.A.).",
+      "usos_prohibidos": "Para mayor detalle revisar ordenanza local",
+      "decreto": ""
+    },
+    {
+      "zona": "ZT-1",
+      "nombre": "ZT-1",
+      "usos_permitidos": "Para las áreas de protección de recursos de valor patrimonial cultural, se aplicarán las normasurbanísticas específicas correspondientes a la zona o inmueble según corresponda. Revisar ordenanza local para mayor detalle",
+      "usos_prohibidos": "Revisar ordenanza local para mayor detalle",
+      "decreto": ""
+    },
+    {
+      "zona": "ZT-2",
+      "nombre": "ZT-2",
+      "usos_permitidos": "Para las áreas de protección de recursos de valor patrimonial cultural, se aplicarán las normasurbanísticas específicas correspondientes a la zona o inmueble según corresponda. Revisar ordenanza local para mayor detalle",
+      "usos_prohibidos": "Revisar ordenanza local para mayor detalle",
+      "decreto": ""
+    },
+    {
+      "zona": "ZT-3",
+      "nombre": "ZT-3",
+      "usos_permitidos": "Para las áreas de protección de recursos de valor patrimonial cultural, se aplicarán las normasurbanísticas específicas correspondientes a la zona o inmueble según corresponda. Revisar ordenanza local para mayor detalle",
+      "usos_prohibidos": "Revisar ordenanza local para mayor detalle",
+      "decreto": ""
+    },
+    {
+      "zona": "ZT-4",
+      "nombre": "ZT-4",
+      "usos_permitidos": "Para las áreas de protección de recursos de valor patrimonial cultural, se aplicarán las normasurbanísticas específicas correspondientes a la zona o inmueble según corresponda. Revisar ordenanza local para mayor detalle",
+      "usos_prohibidos": "Revisar ordenanza local para mayor detalle",
+      "decreto": ""
+    },
+    {
+      "zona": "ZT-5",
+      "nombre": "ZT-5",
+      "usos_permitidos": "Para las áreas de protección de recursos de valor patrimonial cultural, se aplicarán las normasurbanísticas específicas correspondientes a la zona o inmueble según corresponda. Revisar ordenanza local para mayor detalle",
+      "usos_prohibidos": "Revisar ordenanza local para mayor detalle",
+      "decreto": ""
+    },
+    {
+      "zona": "Áreas verdes",
+      "nombre": "Áreas verdes",
+      "usos_permitidos": "Áreas verdes - espacio público",
+      "usos_prohibidos": "Para mayor detalle revisar ordenanza local",
+      "decreto": ""
+    }
+  ]
+}

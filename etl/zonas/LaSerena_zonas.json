@@ -1,0 +1,294 @@
+{
+  "comuna": "La Serena",
+  "key": "LaSerena",
+  "fuente": "PRC_Coquimbo/FeatureServer/22",
+  "zonas": [
+    {
+      "zona": "ZPT-1",
+      "nombre": "Zona Centro",
+      "usos_permitidos": "Residencial: vivienda, hospedaje, hogares de acogida; Equipamiento: científico, comercio, culto y cultura, deportes, educación, salud, seguridad, servicios, social; Espacio Público (según OGUC); Áreas Verdes (según OGUC).",
+      "usos_prohibidos": "Para mayor detalle revisar zonas típicas en la ordenanza local.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZPT-2",
+      "nombre": "Zona Terraza Superior",
+      "usos_permitidos": "Residencial: vivienda, hospedaje, hogares de acogida; Equipamiento: científico, comercio, culto y cultura, deportes, educación, seguridad, servicios, social; Espacio Público (según OGUC); Áreas Verdes (según OGUC).",
+      "usos_prohibidos": "Para mayor detalle revisar zonas típicas en la ordenanza local.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZPT-3",
+      "nombre": "Zona borde sur",
+      "usos_permitidos": "Residencial: vivienda, hospedaje, hogares de acogida; Equipamiento: científico, comercio, culto y cultura, deportes, educación, esparcimiento, salud, seguridad, servicios, social; Espacio Público (según OGUC); Áreas verdes (según OGUC).",
+      "usos_prohibidos": "Para mayor detalle revisar zonas típicas en la ordenanza local.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZPT-4",
+      "nombre": "Zona Pedro Pablo Muñoz",
+      "usos_permitidos": "Residencial: vivienda, hospedaje, hogares de acogida; Equipamiento: científico, comercio, culto y cultura, deportes, educación, servicios, social; Espacio Público (según OGUC); Áreas Verdes (según OGUC).",
+      "usos_prohibidos": "Para mayor detalle revisar zonas típicas en la ordenanza local.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZPT-5A",
+      "nombre": "Zona Entorno Iglesias",
+      "usos_permitidos": "Residencial: vivienda, hospedaje, hogares de acogida; Equipamiento: científico, comercio, culto y cultura, educación, servicios, social; Espacio Público (según OGUC); Áreas Verdes (según OGUC).",
+      "usos_prohibidos": "Para mayor detalle revisar zonas típicas en la ordenanza local.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZPT-5B",
+      "nombre": "Zona Entorno Iglesias",
+      "usos_permitidos": "Residencial: vivienda, hospedaje, hogares de acogida; Equipamiento: científico, comercio, culto y cultura, educación, servicios, social; Espacio Público (según OGUC); Áreas Verdes (según OGUC).",
+      "usos_prohibidos": "Para mayor detalle revisar zonas típicas en la ordenanza local.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZPT-5C",
+      "nombre": "Zona Entorno Iglesias",
+      "usos_permitidos": "Residencial: vivienda, hospedaje, hogares de acogida; Equipamiento: científico, comercio, culto y cultura, educación, servicios, social; Espacio Público (según OGUC); Áreas Verdes (según OGUC).",
+      "usos_prohibidos": "Para mayor detalle revisar zonas típicas en la ordenanza local.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZPT-5D",
+      "nombre": "Zona Entorno Iglesias",
+      "usos_permitidos": "Residencial: vivienda, hospedaje, hogares de acogida; Equipamiento: científico, comercio, culto y cultura, educación, servicios, social; Espacio Público (según OGUC); Áreas Verdes (según OGUC).",
+      "usos_prohibidos": "Para mayor detalle revisar zonas típicas en la ordenanza local.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZPT-5E",
+      "nombre": "Zona Entorno Iglesias",
+      "usos_permitidos": "Residencial: vivienda, hospedaje, hogares de acogida; Equipamiento: científico, comercio, culto y cultura, educación, servicios, social; Espacio Público (según OGUC); Áreas Verdes (según OGUC).",
+      "usos_prohibidos": "Para mayor detalle revisar zonas típicas en la ordenanza local.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZPT-5F",
+      "nombre": "Zona Entorno Iglesias",
+      "usos_permitidos": "Residencial: vivienda, hospedaje, hogares de acogida; Equipamiento: científico, comercio, culto y cultura, educación, servicios, social; Espacio Público (según OGUC); Áreas Verdes (según OGUC).",
+      "usos_prohibidos": "Para mayor detalle revisar zonas típicas en la ordenanza local.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZPT-6",
+      "nombre": "Zona abastos",
+      "usos_permitidos": "Residencial: vivienda, hospedaje, Equipamiento: científico, comercio, culto y cultura, deportes, educación, esparcimiento, salud, seguridad, servicios, social; Espacio Público (según OGUC); Áreas verdes (según OGUC).",
+      "usos_prohibidos": "Para mayor detalle revisar zonas típicas en la ordenanza local.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZPT-7",
+      "nombre": "Zona Conjuntos",
+      "usos_permitidos": "Residencial: vivienda, hospedaje, hogares de acogida; Equipamiento: comercio, servicios, social; Espacio Público (según OGUC); Áreas verdes (según OGUC).",
+      "usos_prohibidos": "Para mayor detalle revisar zonas típicas en la ordenanza local.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZPT-8",
+      "nombre": "Zona equipamiento exclusivo",
+      "usos_permitidos": "Equipamiento: científico, culto y cultura, salud, servicios, social; Espacio Público (según OGUC); Áreas verdes (según OGUC).",
+      "usos_prohibidos": "Para mayor detalle revisar zonas típicas en la ordenanza local.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZPT-9",
+      "nombre": "Zona equipamiento específico",
+      "usos_permitidos": "Equipamiento: científico, culto y cultura, deportes, educación; Espacio Público (según OGUC); Áreas verdes (según OGUC).",
+      "usos_prohibidos": "Para mayor detalle revisar zonas típicas en la ordenanza local.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU-10A",
+      "nombre": "Equipamiento Exclusivo (A)",
+      "usos_permitidos": "Residencial: hospedaje; Equipamiento: científico, comercio, culto y cultura, deporte, esparcimiento, salud, seguridad, servicios; Actividades Productivas: todos, excepto los señalados como prohibidos; Espacio Público: según OGUC; Área Verde: según OGUC. El detalle de las actividades permitidas se encuentran en la Ordenanza",
+      "usos_prohibidos": "Residencial: vivienda y hospedaje (algunas actividades); Equipamiento: deporte (algunas actividades), educación (algunas actividades), esparcimiento (algunas actividades), salud (algunas actividades), seguridad (algunas actividades), social; Actividades Productivas: molestas, insalubres, contaminantes y peligrosas; Infraestructura: de todo tipo. El detalle de las actividades prohibidas se encuentran en la Ordenanza",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU-10B",
+      "nombre": "Equipamiento Exclusivo (B)",
+      "usos_permitidos": "Residencial: hospedaje; Equipamiento: científico, comercio, culto y cultura, deporte, esparcimiento, salud, seguridad, servicios; Actividades Productivas: todos, excepto los señalados como prohibidos; Espacio Público: según OGUC; Área Verde: según OGUC. El detalle de las actividades permitidas se encuentran en la Ordenanza",
+      "usos_prohibidos": "Residencial: vivienda y hospedaje (algunas actividades); Equipamiento: comercio (algunas actividades), salud (algunas actividades), seguridad (algunas actividades), servicios (algunas actividades); Actividades Productivas: molestas, insalubres, contaminantes y peligrosas; Infraestructura: de todo tipo. El detalle de las actividades prohibidas se encuentran en la Ordenanza",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU-11A",
+      "nombre": "Equipamiento Cultural",
+      "usos_permitidos": "Equipamiento: culto y cultura; Espacio Público: según OGUC; Área Verde: según OGUC. El detalle de las actividades permitidas se encuentran en la Ordenanza",
+      "usos_prohibidos": "Residencial: vivienda y hospedaje; Equipamiento: científico, comercio, culto y cultura (algunas actividades), deporte, educación, esparcimiento, salud, seguridad, servicios, social; Actividades productivas; Infraestructura. El detalle de las actividades prohibidas se encuentran en la Ordenanza",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU-11B",
+      "nombre": "Equipamiento Regimiento Coquimbo",
+      "usos_permitidos": "Equipamiento: seguridad; Espacio Público: según OGUC; Área Verde: según OGUC. El detalle de las actividades permitidas se encuentran en la Ordenanza",
+      "usos_prohibidos": "Residencial: vivienda y hospedaje; Equipamiento: científico, comercio, culto y cultura, deporte, educación, esparcimiento, salud, seguridad (algunas actividades), servicios, social; Actividades productivas; Infraestructura. El detalle de las actividades prohibidas se encuentran en la Ordenanza",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU-11C",
+      "nombre": "Equipamiento Universidad de La Serena",
+      "usos_permitidos": "Equipamiento: científico, deporte, educación; Espacio Público: según OGUC; Área Verde: según OGUC. El detalle de las actividades permitidas se encuentran en la Ordenanza",
+      "usos_prohibidos": "Residencial: vivienda y hospedaje; Equipamiento: comercio, culto y cultura, esparcimiento, salud, seguridad, servicios, social; Actividades productivas; Infraestructura.",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU-12",
+      "nombre": "Equipamiento Cementerio",
+      "usos_permitidos": "Equipamiento: culto y cultura (culto), salud; Espacio Público: según OGUC; Área Verde: según OGUC. El detalle de las actividades permitidas se encuentran en la Ordenanza",
+      "usos_prohibidos": "Residencial: vivienda y hospedaje; Equipamiento: científico, comercio, culto y cultura (cultura), deporte, educación, esparcimiento, salud (algunas actividades), seguridad, servicios, social; Actividades productivas; Infraestructura. El detalle de las actividades prohibidas se encuentran en la Ordenanza",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU-13",
+      "nombre": "Equipamiento Deportivo",
+      "usos_permitidos": "Equipamiento: deporte, servicios, social; Espacio Público: según OGUC; Área Verde: según OGUC. El detalle de las actividades permitidas se encuentran en la Ordenanza",
+      "usos_prohibidos": "Residencial: vivienda y hospedaje; Equipamiento: científico, comercio, culto y cultura, educación, esparcimiento, salud, seguridad, servicios (algunas actividades); Actividades productivas; Infraestructura. El detalle de las actividades prohibidas se encuentran en la Ordenanza",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU-14",
+      "nombre": "ZU-14 Parques",
+      "usos_permitidos": "Equipamiento: científico, comercio, culto y cultura, deporte, esparcimiento, servicios; Espacio Público: según OGUC; Área Verde: según OGUC. El detalle de las actividades permitidas se encuentran en la Ordenanza",
+      "usos_prohibidos": "Residencial: vivienda y hospedaje; Equipamiento: comercio (algunas actividades), educación, salud, seguridad, servicios (algunas actividades); Actividades productivas; Infraestructura. El detalle de las actividades prohibidas se encuentran en la Ordenanza",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU-15",
+      "nombre": "Equipamiento y Talleres Ruta 41",
+      "usos_permitidos": "Residencial: hospedaje; Equipamiento: comercio, esparcimiento, seguridad, servicios, social; Actividades Productivas; Infraestructura; Espacio Público: según OGUC; Área Verde: según OGUC. El detalle de las actividades permitidas se encuentran en la Ordenanza",
+      "usos_prohibidos": "Residencial: vivienda y hospedaje (algunas actividades); Equipamiento: científico, culto y cultura, deporte, educación, esparcimiento (algunas actividades), salud, seguridad (algunas actividades), servicios (algunas actividades); Actividades productivas: molestas, insalubres, contaminantes y peligrosas; Infraestructura: energética, transporte, excepto terminales de transporte terrestre. El detalle de las actividades prohibidas se encuentran en la Ordenanza",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU-16",
+      "nombre": "Actividades Productivas",
+      "usos_permitidos": "Equipamiento: científico, comercio, culto y cultura, deporte, seguridad, servicios, social; Actividades Productivas; Infraestructura: transporte; Espacio Público: según OGUC; Área Verde: según OGUC. El detalle de las actividades permitidas se encuentran en la Ordenanza",
+      "usos_prohibidos": "Residencial: vivienda y hospedaje; Equipamiento: educación, esparcimiento, salud, seguridad (algunas actividades); Actividades productivas: molestas, insalubres, contaminantes y peligrosas; Infraestructura: energética y sanitaria. El detalle de las actividades prohibidas se encuentran en la Ordenanza",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU-17",
+      "nombre": "Actividades Productivas e Infraestructura",
+      "usos_permitidos": "Equipamiento: científico, comercio, seguridad, servicios, social; Actividades Productivas; Infraestructura: transporte y sanitaria; Espacio Público: según OGUC; Área Verde: según OGUC. El detalle de las actividades permitidas se encuentran en la Ordenanza",
+      "usos_prohibidos": "Residencial: vivienda y hospedaje; Equipamiento: culto y cultura, deporte, educación, esparcimiento, salud, seguridad (algunas actividades); Actividades productivas: insalubres, contaminantes y peligrosas; Infraestructura: energética. El detalle de las actividades prohibidas se encuentran en la Ordenanza",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU-18",
+      "nombre": "Equipamiento Corredores Vegas",
+      "usos_permitidos": "Residencial: viviendas y hospedaje; Equipamiento: científico, comercio, culto y cultura, deporte, esparcimiento, salud, seguridad, servicios; Espacio Público: según OGUC; Área Verde: según OGUC. El detalle de las actividades permitidas se encuentran en la Ordenanza",
+      "usos_prohibidos": "Equipamiento: comercio (algunas actividades), deporte (algunas actividades), esparcimiento (algunas actividades), salud (algunas actividades), seguridad (algunas actividades); Actividades productivas; Infraestructura. El detalle de las actividades prohibidas se encuentran en la Ordenanza",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU-19",
+      "nombre": "Alta Densidad Nor Oriente",
+      "usos_permitidos": "Residencial: viviendas y hospedaje; Equipamiento: comercio, culto y cultura, deporte, educación, esparcimiento, salud, seguridad, servicios, social; Espacio Público: según OGUC; Área Verde: según OGUC. El detalle de las actividades permitidas se encuentran en la Ordenanza",
+      "usos_prohibidos": "Equipamiento: científico, comercio (algunas actividades), deporte (algunas actividades), esparcimiento (algunas actividades), salud (algunas actividades), seguridad (algunas actividades), servicio (algunas actividades); Actividades productivas; Infraestructura. El detalle de las actividades prohibidas se encuentran en la Ordenanza",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU-1A",
+      "nombre": "Residencial Mixto La Serena",
+      "usos_permitidos": "Residencial: vivienda, hospedaje; Equipamiento: científico, comercio, culto y cultura, deporte, educación, esparcimiento, salud, seguridad, servicios y social; Espacio Público: según OGUC; Área Verde: según OGUC. El detalle de las actividades permitidas se encuentran en la Ordenanza",
+      "usos_prohibidos": "Residencial: hospedaje, motel; Equipamiento: comercio (algunas actividades), deporte (algunas actividades), esparcimiento (algunas actividades), salud (algunas actividades), seguridad (algunas actividades); Actividades Productivas: de todo tipo; Infraestructura: de todo tipo. El detalle de las actividades prohibidas se encuentran en la Ordenanza",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU-1B",
+      "nombre": "Residencial Mixto San Pedro",
+      "usos_permitidos": "Residencial: vivienda, hospedaje; Equipamiento: científico, comercio, culto y cultura, deporte, educación, esparcimiento, salud, seguridad, servicios y social; Espacio Público: según OGUC; Área Verde: según OGUC. El detalle de las actividades permitidas se encuentran en la Ordenanza",
+      "usos_prohibidos": "Residencial: hospedaje, motel; Equipamiento: comercio (algunas actividades), deporte (algunas actividades), esparcimiento (algunas actividades), salud (algunas actividades), seguridad (algunas actividades); Actividades Productivas: de todo tipo; Infraestructura: de todo tipo. El detalle de las actividades prohibidas se encuentran en la Ordenanza",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU-20",
+      "nombre": "Equipamiento El Santo",
+      "usos_permitidos": "Residencial: viviendas y hospedaje; Equiamiento: científico, comercio, culto y cultura, deporte, educación, esparcimiento, salud, seguridad, servicios, social; Espacio Público: según OGUC; Área Verde: según OGUC. El detalle de las actividades permitidas se encuentran en la Ordenanza",
+      "usos_prohibidos": "Residencial: hospedaje (motel); Equipamiento: comercio (algunas actividades), deporte (algunas actividades), esparcimiento (algunas actividades), salud (algunas actividades), seguridad (algunas actividades), servicio (algunas actividades); Actividades productivas; Infraestructura. El detalle de las actividades prohibidas se encuentran en la Ordenanza",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU-2A",
+      "nombre": "Residencial Mixto Borde Elqui",
+      "usos_permitidos": "Residencial: vivienda, hospedaje; Equipamiento: científico, comercio, culto y cultura, deporte, educación, esparcimiento, salud, seguridad, servicios y social; Espacio Público: según OGUC; Área Verde: según OGUC. El detalle de las actividades permitidas se encuentran en la Ordenanza",
+      "usos_prohibidos": "Residencial: hospedaje, motel; Equipamiento: comercio (algunas actividades), deporte (algunas actividades), esparcimiento (algunas actividades), salud (algunas actividades), seguridad (algunas actividades), servicios (algunas actividades); Actividades Productivas: de todo tipo; Infraestructura: de todo tipo. El detalle de las actividades prohibidas se encuentran en la Ordenanza",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU-2B",
+      "nombre": "Residencial Mixto Altura",
+      "usos_permitidos": "Residencial: vivienda, hospedaje; Equipamiento: científico, comercio, culto y cultura, deporte, educación, esparcimiento, salud, seguridad, servicios y social; Espacio Público: según OGUC; Área Verde: según OGUC. El detalle de las actividades permitidas se encuentran en la Ordenanza",
+      "usos_prohibidos": "Residencial: hospedaje, motel; Equipamiento: comercio (algunas actividades), deporte (algunas actividades), esparcimiento (algunas actividades), salud (algunas actividades), seguridad (algunas actividades), servicios (algunas actividades); Actividades Productivas: de todo tipo; Infraestructura: de todo tipo. El detalle de las actividades prohibidas se encuentran en la Ordenanza",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU-3",
+      "nombre": "Residencial Mixto Las Compañías, La Antena, La Florida",
+      "usos_permitidos": "Residencial: vivienda, hospedaje; Equipamiento: científico, comercio, culto y cultura, deporte, educación, esparcimiento, salud, seguridad, servicios y social; Infraestructura: transporte terrestre; Espacio Público: según OGUC; Área Verde: según OGUC. El detalle de las actividades permitidas se encuentran en la Ordenanza",
+      "usos_prohibidos": "Residencial: hospedaje, motel; Equipamiento: comercio (algunas actividades), deporte (algunas actividades), esparcimiento (algunas actividades), salud (algunas actividades), seguridad (algunas actividades), servicios (algunas actividades); Actividades Productivas: de todo tipo; Infraestructura: energética, sanitaria, transporte. El detalle de las actividades prohibidas se encuentran en la Ordenanza",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU-4A",
+      "nombre": "Residencial Mixto Serena Sur",
+      "usos_permitidos": "Residencial: vivienda, hospedaje; Equipamiento: científico, comercio, culto y cultura, deporte, educación, esparcimiento, salud, seguridad, servicios y social; Espacio Público: según OGUC; Área Verde: según OGUC. El detalle de las actividades permitidas se encuentran en la Ordenanza",
+      "usos_prohibidos": "Residencial: hospedaje, motel; Equipamiento: comercio (algunas actividades), deporte (algunas actividades), esparcimiento (algunas actividades), salud (algunas actividades), seguridad (algunas actividades), (servicios algunas actividades); Actividades Productivas: de todo tipo; Infraestructura: de todo tipo. El detalle de las actividades prohibidas se encuentran en la Ordenanza",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU-4B",
+      "nombre": "Residencial Mixto Ulriksen",
+      "usos_permitidos": "Residencial: vivienda, hospedaje; Equipamiento: científico, comercio, culto y cultura, deporte, educación, esparcimiento, salud, seguridad, servicios y social; Espacio Público: según OGUC; Área Verde: según OGUC. El detalle de las actividades permitidas se encuentran en la Ordenanza",
+      "usos_prohibidos": "Residencial: hospedaje, motel; Equipamiento: comercio (algunas actividades), deporte (algunas actividades), esparcimiento (algunas actividades), salud (algunas actividades), seguridad (algunas actividades), servicios (algunas actividades); Actividades Productivas: de todo tipo; Infraestructura: de todo tipo. El detalle de las actividades prohibidas se encuentran en la Ordenanza",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU-5A",
+      "nombre": "Residencial Mixto Parcelas",
+      "usos_permitidos": "Residencial: vivienda, hospedaje; Equipamiento: científico, comercio, culto y cultura, deporte, educación, esparcimiento, salud, seguridad, servicios y social; Espacio Público: según OGUC; Área Verde: según OGUC. El detalle de las actividades permitidas se encuentran en la Ordenanza",
+      "usos_prohibidos": "Equipamiento: comercio (algunas actividades), deporte (algunas actividades), esparcimiento (algunas actividades), salud (algunas actividades), seguridad (algunas actividades), servicios (algunas actividades); Actividades Productivas: de todo tipo; Infraestructura: de todo tipo. El detalle de las actividades prohibidas se encuentran en la Ordenanza",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU-5B",
+      "nombre": "Residencial Mixto Parcelas Norte, sector Juan Soldado",
+      "usos_permitidos": "Residencial: vivienda, hospedaje; Equipamiento: científico, comercio, culto y cultura, deporte, educación, esparcimiento, salud, seguridad, servicios y social; Espacio Público: según OGUC; Área Verde: según OGUC. El detalle de las actividades permitidas se encuentran en la Ordenanza",
+      "usos_prohibidos": "Equipamiento: comercio (algunas actividades), deporte (algunas actividades), esparcimiento (algunas actividades), seguridad (algunas actividades), servicios (algunas actividades); Actividades Productivas: de todo tipo; Infraestructura: de todo tipo. El detalle de las actividades prohibidas se encuentran en la Ordenanza",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU-6",
+      "nombre": "ZU-6 Vegas",
+      "usos_permitidos": "Residencial: vivienda, hospedaje; Equipamiento: comercio, culto y cultura, deporte, educación, esparcimiento, servicios y social; Infraestructura: todos, excepto los señalados como prohibidos; Espacio Público: según OGUC; Área Verde: según OGUC. El detalle de las actividades permitidas se encuentran en la Ordenanza",
+      "usos_prohibidos": "Equipamiento: científico, comercio (algunas actividades), deporte (algunas actividades), esparcimiento, salud, seguridad; Actividades Productivas: de todo tipo; Infraestructura: de transporte y energía. El detalle de las actividades prohibidas se encuentran en la Ordenanza",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU-7",
+      "nombre": "Equipamiento Turístico Borde Costero",
+      "usos_permitidos": "Residencial: vivienda, hospedaje; Equipamiento: científico, comercio, culto y cultura, deporte, esparcimiento, servicios y social; Espacio Público: según OGUC; Área Verde: según OGUC. El detalle de las actividades permitidas se encuentran en la Ordenanza",
+      "usos_prohibidos": "Residencial: hospedaje, motel; Equipamiento: comercio (algunas actividades), deporte (algunas actividades), esparcimiento (algunas actividades), educación, salud, seguridad, servicios (algunas actividades); Actividades Productivas: de todo tipo; Infraestructura: de todo tipo. El detalle de las actividades prohibidas se encuentran en la Ordenanza",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU-8",
+      "nombre": "Equipamiento Corredores",
+      "usos_permitidos": "Residencial: vivienda, hospedaje; Equipamiento: científico, comercio, culto y cultura, deporte, educación, esparcimiento, salud, servicios y social; Espacio Público: según OGUC; Área Verde: según OGUC. El detalle de las actividades permitidas se encuentran en la Ordenanza",
+      "usos_prohibidos": "Residencial: hospedaje, motel; Equipamiento: comercio (algunas actividades), deporte (algunas actividades), esparcimiento, salud (algunas actividades), seguridad, servicios (algunas actividades), social (algunas actividades); Actividades Productivas: de todo tipo; Infraestructura: de todo tipo. El detalle de las actividades prohibidas se encuentran en la Ordenanza",
+      "decreto": ""
+    },
+    {
+      "zona": "ZU-9",
+      "nombre": "Equipamiento Corredores",
+      "usos_permitidos": "Residencial: vivienda, hospedaje; Equipamiento: científico, comercio, culto y cultura, deporte, educación, esparcimiento, salud, servicios y social; Espacio Público: según OGUC; Área Verde: según OGUC. El detalle de las actividades permitidas se encuentran en la Ordenanza",
+      "usos_prohibidos": "Residencial: hospedaje, motel; Equipamiento: comercio (algunas actividades), deporte (algunas actividades), esparcimiento, salud (algunas actividades), seguridad (algunas actividades); Actividades Productivas: de todo tipo; Infraestructura: de todo tipo. El detalle de las actividades prohibidas se encuentran en la Ordenanza",
+      "decreto": ""
+    }
+  ]
+}

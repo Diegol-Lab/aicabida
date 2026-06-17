@@ -1,0 +1,469 @@
+{
+  "comuna": "Las Condes",
+  "key": "LasCondes",
+  "fuente": "PRC_RM_Norte/MapServer/11",
+  "zonas": [
+    {
+      "zona": "AV",
+      "nombre": "AV",
+      "usos_permitidos": "Área verde.",
+      "usos_prohibidos": "Todo uso no mencionado como permitido.",
+      "decreto": ""
+    },
+    {
+      "zona": "UC1/EAa+ca",
+      "nombre": "UC1/EAa+ca",
+      "usos_permitidos": "Equipamiento de comercio.",
+      "usos_prohibidos": "Residencial; equipamiento de culto, deporte, educación,  esparcimiento, salud, seguridad y servicio, actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UC1/EAb2",
+      "nombre": "UC1/EAb2",
+      "usos_permitidos": "Equipamiento de comercio.",
+      "usos_prohibidos": "Residencial; equipamiento de culto, deporte, educación,  esparcimiento, salud, seguridad y servicio, actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UC1/EAb3",
+      "nombre": "UC1/EAb3",
+      "usos_permitidos": "Equipamiento de comercio.",
+      "usos_prohibidos": "Residencial; equipamiento de culto, deporte, educación,  esparcimiento, salud, seguridad y servicio, actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UC1/EAm1",
+      "nombre": "UC1/EAm1",
+      "usos_permitidos": "Equipamiento de comercio.",
+      "usos_prohibidos": "Residencial; equipamiento de culto, deporte, educación,  esparcimiento, salud, seguridad y servicio, actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UC1/EAm1p",
+      "nombre": "UC1/EAm1p",
+      "usos_permitidos": "Equipamiento de comercio.",
+      "usos_prohibidos": "Residencial; equipamiento de culto, deporte, educación,  esparcimiento, salud, seguridad y servicio, actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UC1/EAm2",
+      "nombre": "UC1/EAm2",
+      "usos_permitidos": "Equipamiento de comercio.",
+      "usos_prohibidos": "Residencial; equipamiento de culto, deporte, educación,  esparcimiento, salud, seguridad y servicio, actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UC1/EAm4",
+      "nombre": "UC1/EAm4",
+      "usos_permitidos": "Equipamiento de comercio.",
+      "usos_prohibidos": "Residencial; equipamiento de culto, deporte, educación,  esparcimiento, salud, seguridad y servicio, actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UC2/EAa+cm",
+      "nombre": "UC2/EAa+cm",
+      "usos_permitidos": "Equipamiento de comercio.",
+      "usos_prohibidos": "Residencial; equipamiento de culto, deporte, educación,  esparcimiento, salud, seguridad y servicio, actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UC2/EAa1",
+      "nombre": "UC2/EAa1",
+      "usos_permitidos": "Equipamiento de comercio.",
+      "usos_prohibidos": "Residencial; equipamiento de culto, deporte, educación,  esparcimiento, salud, seguridad y servicio, actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UC2/EAa2",
+      "nombre": "UC2/EAa2",
+      "usos_permitidos": "Equipamiento de comercio.",
+      "usos_prohibidos": "Residencial; equipamiento de culto, deporte, educación,  esparcimiento, salud, seguridad y servicio, actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UC2/EAa3",
+      "nombre": "UC2/EAa3",
+      "usos_permitidos": "Equipamiento de comercio.",
+      "usos_prohibidos": "Residencial; equipamiento de culto, deporte, educación,  esparcimiento, salud, seguridad y servicio, actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UC2/EAa4",
+      "nombre": "UC2/EAa4",
+      "usos_permitidos": "Equipamiento de comercio.",
+      "usos_prohibidos": "Residencial; equipamiento de culto, deporte, educación,  esparcimiento, salud, seguridad y servicio, actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UC2/EAb2",
+      "nombre": "UC2/EAb2",
+      "usos_permitidos": "Equipamiento de comercio.",
+      "usos_prohibidos": "Residencial; equipamiento de culto, deporte, educación,  esparcimiento, salud, seguridad y servicio, actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UC2/EAb3",
+      "nombre": "UC2/EAb3",
+      "usos_permitidos": "Equipamiento de comercio.",
+      "usos_prohibidos": "Residencial; equipamiento de culto, deporte, educación,  esparcimiento, salud, seguridad y servicio, actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UC2/EAm1p",
+      "nombre": "UC2/EAm1p",
+      "usos_permitidos": "Equipamiento de comercio.",
+      "usos_prohibidos": "Residencial; equipamiento de culto, deporte, educación,  esparcimiento, salud, seguridad y servicio, actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UC2/EAm2",
+      "nombre": "UC2/EAm2",
+      "usos_permitidos": "Equipamiento de comercio.",
+      "usos_prohibidos": "Residencial; equipamiento de culto, deporte, educación,  esparcimiento, salud, seguridad y servicio, actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UC2/EAm4",
+      "nombre": "UC2/EAm4",
+      "usos_permitidos": "Equipamiento de comercio.",
+      "usos_prohibidos": "Residencial; equipamiento de culto, deporte, educación,  esparcimiento, salud, seguridad y servicio, actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UC3/EAb2",
+      "nombre": "UC3/EAb2",
+      "usos_permitidos": "Equipamiento de comercio.",
+      "usos_prohibidos": "Residencial; equipamiento de culto, deporte, educación,  esparcimiento, salud, seguridad y servicio, actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UC3/EAb3",
+      "nombre": "UC3/EAb3",
+      "usos_permitidos": "Equipamiento de comercio.",
+      "usos_prohibidos": "Residencial; equipamiento de culto, deporte, educación,  esparcimiento, salud, seguridad y servicio, actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UC3/EAm2",
+      "nombre": "UC3/EAm2",
+      "usos_permitidos": "Equipamiento de comercio.",
+      "usos_prohibidos": "Residencial; equipamiento de culto, deporte, educación,  esparcimiento, salud, seguridad y servicio, actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UEe1/EAa+cm",
+      "nombre": "UEe1/EAa+cm",
+      "usos_permitidos": "Equipamiento de todo tipo.",
+      "usos_prohibidos": "Residencial; actividad productiva.",
+      "decreto": ""
+    },
+    {
+      "zona": "UEe1/EAb4",
+      "nombre": "UEe1/EAb4",
+      "usos_permitidos": "Equipamiento de todo tipo.",
+      "usos_prohibidos": "Residencial; actividad productiva.",
+      "decreto": ""
+    },
+    {
+      "zona": "UEe1/Ee1",
+      "nombre": "UEe1/Ee1",
+      "usos_permitidos": "Equipamiento de todo tipo.",
+      "usos_prohibidos": "Residencial; actividad productiva.",
+      "decreto": ""
+    },
+    {
+      "zona": "UEe2/Ee2",
+      "nombre": "UEe2/Ee2",
+      "usos_permitidos": "Equipamiento de deporte.",
+      "usos_prohibidos": "Residencial; equipamiento de comercio, culto, educación,  esparcimiento, salud, seguridad y servicio, actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UEe2/Ee3",
+      "nombre": "UEe2/Ee3",
+      "usos_permitidos": "Equipamiento de deporte.",
+      "usos_prohibidos": "Residencial; equipamiento de comercio, culto, educación,  esparcimiento, salud, seguridad y servicio, actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UEe3/Ee3",
+      "nombre": "UEe3/Ee3",
+      "usos_permitidos": "Equipamiento de esparcimiento.",
+      "usos_prohibidos": "Residencial; equipamiento de comercio, culto, culto, deporte,  educación,  salud, seguridad, servicio y social; actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UEe4/Ee4",
+      "nombre": "UEe4/Ee4",
+      "usos_permitidos": "Equipamiento de esparcimiento.",
+      "usos_prohibidos": "Residencial; equipamiento de comercio, culto, culto, deporte,  educación,  salud, seguridad, servicio y social; actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UEe5/Ee5",
+      "nombre": "UEe5/Ee5",
+      "usos_permitidos": "Equipamiento de comercio, culto, deporte, educación, salud, servicios y social.",
+      "usos_prohibidos": "Residencial; actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UM/EAb2",
+      "nombre": "UM/EAb2",
+      "usos_permitidos": "Equipamiento de  comercio.",
+      "usos_prohibidos": "Residencial; equipamiento; actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UM/EAb4",
+      "nombre": "UM/EAb4",
+      "usos_permitidos": "Equipamiento de  comercio.",
+      "usos_prohibidos": "Residencial; equipamiento; actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UM/EAb4p",
+      "nombre": "UM/EAb4p",
+      "usos_permitidos": "Equipamiento de  comercio.",
+      "usos_prohibidos": "Residencial; equipamiento; actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UV/EAb1",
+      "nombre": "UV/EAb1",
+      "usos_permitidos": "Residencial.",
+      "usos_prohibidos": "Equipamiento; actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UV/EAb2",
+      "nombre": "UV/EAb2",
+      "usos_permitidos": "Residencial.",
+      "usos_prohibidos": "Equipamiento; actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UV/EAb4",
+      "nombre": "UV/EAb4",
+      "usos_permitidos": "Residencial.",
+      "usos_prohibidos": "Equipamiento; actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UV/EAb4p",
+      "nombre": "UV/EAb4p",
+      "usos_permitidos": "Residencial.",
+      "usos_prohibidos": "Equipamiento; actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UV/EAm1",
+      "nombre": "UV/EAm1",
+      "usos_permitidos": "Residencial.",
+      "usos_prohibidos": "Equipamiento; actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UV/EAm1p",
+      "nombre": "UV/EAm1p",
+      "usos_permitidos": "Residencial.",
+      "usos_prohibidos": "Equipamiento; actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UV/Ee1",
+      "nombre": "UV/Ee1",
+      "usos_permitidos": "Residencial.",
+      "usos_prohibidos": "Equipamiento; actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UV/Ee3",
+      "nombre": "UV/Ee3",
+      "usos_permitidos": "Residencial.",
+      "usos_prohibidos": "Equipamiento; actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UV1/EAa+ca",
+      "nombre": "UV1/EAa+ca",
+      "usos_permitidos": "Residencial; equipamiento.",
+      "usos_prohibidos": "Actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UV1/EAa1",
+      "nombre": "UV1/EAa1",
+      "usos_permitidos": "Residencial; equipamiento.",
+      "usos_prohibidos": "Actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UV1/EAa2",
+      "nombre": "UV1/EAa2",
+      "usos_permitidos": "Residencial; equipamiento.",
+      "usos_prohibidos": "Actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UV1/EAb1",
+      "nombre": "UV1/EAb1",
+      "usos_permitidos": "Residencial; equipamiento.",
+      "usos_prohibidos": "Actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UV1/EAb2",
+      "nombre": "UV1/EAb2",
+      "usos_permitidos": "Residencial; equipamiento.",
+      "usos_prohibidos": "Actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UV1/EAb3",
+      "nombre": "UV1/EAb3",
+      "usos_permitidos": "Residencial; equipamiento.",
+      "usos_prohibidos": "Actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UV1/EAm1",
+      "nombre": "UV1/EAm1",
+      "usos_permitidos": "Residencial; equipamiento.",
+      "usos_prohibidos": "Actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UV1/EAm1p",
+      "nombre": "UV1/EAm1p",
+      "usos_permitidos": "Residencial; equipamiento.",
+      "usos_prohibidos": "Actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UV1/EAm2",
+      "nombre": "UV1/EAm2",
+      "usos_permitidos": "Residencial; equipamiento.",
+      "usos_prohibidos": "Actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UV1/EAm4",
+      "nombre": "UV1/EAm4",
+      "usos_permitidos": "Residencial; equipamiento.",
+      "usos_prohibidos": "Actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UV2/EAa1",
+      "nombre": "UV2/EAa1",
+      "usos_permitidos": "Residencial; equipamiento.",
+      "usos_prohibidos": "Actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UV2/EAa2",
+      "nombre": "UV2/EAa2",
+      "usos_permitidos": "Residencial; equipamiento.",
+      "usos_prohibidos": "Actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UV2/EAb2",
+      "nombre": "UV2/EAb2",
+      "usos_permitidos": "Residencial; equipamiento.",
+      "usos_prohibidos": "Actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UV2/EAm1",
+      "nombre": "UV2/EAm1",
+      "usos_permitidos": "Residencial; equipamiento.",
+      "usos_prohibidos": "Actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UV2/EAm2",
+      "nombre": "UV2/EAm2",
+      "usos_permitidos": "Residencial; equipamiento.",
+      "usos_prohibidos": "Actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UV2/EAm4",
+      "nombre": "UV2/EAm4",
+      "usos_permitidos": "Residencial; equipamiento.",
+      "usos_prohibidos": "Actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UV3/EAa1",
+      "nombre": "UV3/EAa1",
+      "usos_permitidos": "Residencial; equipamiento; actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "usos_prohibidos": "Equipamiento de servicio.",
+      "decreto": ""
+    },
+    {
+      "zona": "UV3/EAb2",
+      "nombre": "UV3/EAb2",
+      "usos_permitidos": "Residencial; equipamiento; actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "usos_prohibidos": "Equipamiento de servicio.",
+      "decreto": ""
+    },
+    {
+      "zona": "UV3/EAm1",
+      "nombre": "UV3/EAm1",
+      "usos_permitidos": "Residencial; equipamiento; actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "usos_prohibidos": "Equipamiento de servicio.",
+      "decreto": ""
+    },
+    {
+      "zona": "UV3/EAm4",
+      "nombre": "UV3/EAm4",
+      "usos_permitidos": "Residencial; equipamiento; actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "usos_prohibidos": "Equipamiento de servicio.",
+      "decreto": ""
+    },
+    {
+      "zona": "UV3/Ee5",
+      "nombre": "UV3/Ee5",
+      "usos_permitidos": "Residencial; equipamiento; actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "usos_prohibidos": "Equipamiento de servicio.",
+      "decreto": ""
+    },
+    {
+      "zona": "UVO/EAa1",
+      "nombre": "UVO/EAa1",
+      "usos_permitidos": "Residencial; equipamiento.",
+      "usos_prohibidos": "Actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UVO/EAa2",
+      "nombre": "UVO/EAa2",
+      "usos_permitidos": "Residencial; equipamiento.",
+      "usos_prohibidos": "Actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UVO/EAm1p",
+      "nombre": "UVO/EAm1p",
+      "usos_permitidos": "Residencial; equipamiento.",
+      "usos_prohibidos": "Actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UVO/EAm2",
+      "nombre": "UVO/EAm2",
+      "usos_permitidos": "Residencial; equipamiento.",
+      "usos_prohibidos": "Actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    },
+    {
+      "zona": "UVO/EAm4",
+      "nombre": "UVO/EAm4",
+      "usos_permitidos": "Residencial; equipamiento.",
+      "usos_prohibidos": "Actividad productiva; infraestructura; espacio público y áreas verdes.",
+      "decreto": ""
+    }
+  ]
+}

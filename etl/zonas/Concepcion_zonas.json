@@ -1,0 +1,329 @@
+{
+  "comuna": "Concepción",
+  "key": "Concepcion",
+  "fuente": "PRC_Biobio/FeatureServer/12",
+  "zonas": [
+    {
+      "zona": "AV",
+      "nombre": "AV Área verde",
+      "usos_permitidos": "Area verde.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos",
+      "decreto": "Publicacion PRC Concepcion. Decreto Alc. N°148. Fecha promulgacion 05.06.2004. Fecha publicacion D.O. 22.04.2004."
+    },
+    {
+      "zona": "CU1",
+      "nombre": "CU1 Corredor urbano 1",
+      "usos_permitidos": "Residencial. Equipamiento: cientifico, comercio, culto y cultura, deporte, educacion, esparcimiento, salud, seguridad, servicios, social. Actividades productivas. Infraestructura: transporte.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos",
+      "decreto": "Publicacion PRC Concepcion. Decreto Alc. N°148. Fecha promulgacion 05.06.2004. Fecha publicacion D.O. 22.04.2004."
+    },
+    {
+      "zona": "CU2",
+      "nombre": "CU2 Corredor urbano 2",
+      "usos_permitidos": "Residencial. Equipamiento: cientifico, comercio, culto y cultura, deporte, educacion, esparcimiento, salud, seguridad, servicios, social. Actividades productivas. Infraestructura: transporte.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos",
+      "decreto": "Publicacion PRC Concepcion. Decreto Alc. N°148. Fecha promulgacion 05.06.2004. Fecha publicacion D.O. 22.04.2004."
+    },
+    {
+      "zona": "CU3a",
+      "nombre": "CU3a Corredor urbano 3",
+      "usos_permitidos": "Residencial. Equipamiento: cientifico, comercio, culto y cultura, deporte, educacion, esparcimiento, salud, seguridad, servicios, social. Actividades productivas. Infraestructura: transporte.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos",
+      "decreto": "Publicacion PRC Concepcion. Decreto Alc. N°148. Fecha promulgacion 05.06.2004. Fecha publicacion D.O. 22.04.2004."
+    },
+    {
+      "zona": "CU3c",
+      "nombre": "CU3c Corredor urbano 3",
+      "usos_permitidos": "Residencial. Equipamiento: cientifico, comercio, culto y cultura, deporte, educacion, esparcimiento, salud, seguridad, servicios, social. Actividades productivas. Infraestructura: transporte.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos",
+      "decreto": "Publicacion PRC Concepcion. Decreto Alc. N°148. Fecha promulgacion 05.06.2004. Fecha publicacion D.O. 22.04.2004."
+    },
+    {
+      "zona": "CU3d",
+      "nombre": "CU3d Corredor urbano 3",
+      "usos_permitidos": "Residencial. Equipamiento: cientifico, comercio, culto y cultura, deporte, educacion, esparcimiento, salud, seguridad, servicios, social. Actividades productivas. Infraestructura: transporte.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos",
+      "decreto": "Publicacion PRC Concepcion. Decreto Alc. N°148. Fecha promulgacion 05.06.2004. Fecha publicacion D.O. 22.04.2004."
+    },
+    {
+      "zona": "CU4a",
+      "nombre": "CU4a Corredor urbano 4",
+      "usos_permitidos": "Residencial. Equipamiento: cientifico, comercio, culto y cultura, deporte, educacion, esparcimiento, salud, seguridad, servicios, social. Actividades productivas. Infraestructura: transporte.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos",
+      "decreto": "Publicacion PRC Concepcion. Decreto Alc. N°148. Fecha promulgacion 05.06.2004. Fecha publicacion D.O. 22.04.2004."
+    },
+    {
+      "zona": "CU4b",
+      "nombre": "CU4b Corredor urbano 4",
+      "usos_permitidos": "Residencial. Equipamiento: cientifico, comercio, culto y cultura, deporte, educacion, esparcimiento, salud, seguridad, servicios, social. Actividades productivas. Infraestructura: transporte.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos",
+      "decreto": "Publicacion PRC Concepcion. Decreto Alc. N°148. Fecha promulgacion 05.06.2004. Fecha publicacion D.O. 22.04.2004."
+    },
+    {
+      "zona": "CU4c",
+      "nombre": "CU4c Corredor urbano 4",
+      "usos_permitidos": "Residencial. Equipamiento: cientifico, comercio, culto y cultura, deporte, educacion, esparcimiento, salud, seguridad, servicios, social. Actividades productivas. Infraestructura: transporte.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos",
+      "decreto": "Publicacion PRC Concepcion. Decreto Alc. N°148. Fecha promulgacion 05.06.2004. Fecha publicacion D.O. 22.04.2004."
+    },
+    {
+      "zona": "CU4d",
+      "nombre": "CU4d Corredor urbano 4",
+      "usos_permitidos": "Residencial. Equipamiento: cientifico, comercio, culto y cultura, deporte, educacion, esparcimiento, salud, seguridad, servicios, social. Actividades productivas. Infraestructura: transporte.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos",
+      "decreto": "Publicacion PRC Concepcion. Decreto Alc. N°148. Fecha promulgacion 05.06.2004. Fecha publicacion D.O. 22.04.2004."
+    },
+    {
+      "zona": "E1",
+      "nombre": "E1 Zona de equipamiento y áreas verdes",
+      "usos_permitidos": "Residencial. Equipamiento: cientifico, comercio, culto y cultura, deporte, educacion, esparcimiento, salud, seguridad, servicios, social. Infraestructura: transporte.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos",
+      "decreto": "Publicacion PRC Concepcion. Decreto Alc. N°148. Fecha promulgacion 05.06.2004. Fecha publicacion D.O. 22.04.2004."
+    },
+    {
+      "zona": "E2",
+      "nombre": "E2 Zona de equipamiento y áreas verdes",
+      "usos_permitidos": "Residencial. Equipamiento: cientifico, comercio, culto y cultura, deporte, educacion, esparcimiento, salud, seguridad, servicios, social. Infraestructura: transporte.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos",
+      "decreto": "Publicacion PRC Concepcion. Decreto Alc. N°148. Fecha promulgacion 05.06.2004. Fecha publicacion D.O. 22.04.2004."
+    },
+    {
+      "zona": "E3",
+      "nombre": "E3 Zona de equipamiento y áreas verdes",
+      "usos_permitidos": "Equipamiento: cientifico, comercio, culto y cultura, deporte, educacion, esparcimiento, salud, seguridad, servicios, social. Actividades productivas.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos",
+      "decreto": "Publicacion PRC Concepcion. Decreto Alc. N°148. Fecha promulgacion 05.06.2004. Fecha publicacion D.O. 22.04.2004."
+    },
+    {
+      "zona": "E4",
+      "nombre": "E4 Zona de equipamiento y áreas verdes",
+      "usos_permitidos": "Equipamiento: culto y cultura, deporte, esparcimiento, salud. Actividades productivas.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos",
+      "decreto": "Publicacion PRC Concepcion. Decreto Alc. N°148. Fecha promulgacion 05.06.2004. Fecha publicacion D.O. 22.04.2004."
+    },
+    {
+      "zona": "H1",
+      "nombre": "H1 Zona habitacional consolidada",
+      "usos_permitidos": "Residencial. Equipamiento: cientifico, comercio, culto y cultura, deporte, educacion, esparcimiento, salud, seguridad, servicios, social.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos",
+      "decreto": "Publicacion PRC Concepcion. Decreto Alc. N°148. Fecha promulgacion 05.06.2004. Fecha publicacion D.O. 22.04.2004."
+    },
+    {
+      "zona": "H2",
+      "nombre": "H2 Zona habitacional consolidada",
+      "usos_permitidos": "Residencial. Equipamiento: cientifico, comercio, culto y cultura, deporte, educacion, esparcimiento, salud, seguridad, servicios, social. Infraestructura: transporte.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos",
+      "decreto": "Publicacion PRC Concepcion. Decreto Alc. N°148. Fecha promulgacion 05.06.2004. Fecha publicacion D.O. 22.04.2004."
+    },
+    {
+      "zona": "H3",
+      "nombre": "H3 Zona habitacional consolidada",
+      "usos_permitidos": "Residencial. Equipamiento: cientifico, comercio, culto y cultura, deporte, educacion, esparcimiento, salud, seguridad, servicios, social. Actividades productivas. Infraestructura: transporte.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos",
+      "decreto": "Publicacion PRC Concepcion. Decreto Alc. N°148. Fecha promulgacion 05.06.2004. Fecha publicacion D.O. 22.04.2004."
+    },
+    {
+      "zona": "H4",
+      "nombre": "H4 Zona habitacional consolidada",
+      "usos_permitidos": "Residencial. Equipamiento: cientifico, comercio, culto y cultura, deporte, educacion, esparcimiento, salud, seguridad, servicios, social. Actividades productivas. Infraestructura: transporte.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos",
+      "decreto": "Publicacion PRC Concepcion. Decreto Alc. N°148. Fecha promulgacion 05.06.2004. Fecha publicacion D.O. 22.04.2004."
+    },
+    {
+      "zona": "H5",
+      "nombre": "H5 Zona habitacional consolidada",
+      "usos_permitidos": "Residencial. Equipamiento: cientifico, comercio, culto y cultura, deporte, educacion, esparcimiento, salud, seguridad, servicios, social. Actividades productivas. Infraestructura: transporte.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos",
+      "decreto": "Publicacion PRC Concepcion. Decreto Alc. N°148. Fecha promulgacion 05.06.2004. Fecha publicacion D.O. 22.04.2004."
+    },
+    {
+      "zona": "HE1",
+      "nombre": "HE1 Zona habitacional de expansión",
+      "usos_permitidos": "Residencial. Equipamiento: comercio, culto y cultura, deporte, educacion, esparcimiento, salud, seguridad, servicios, social.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos",
+      "decreto": "Publicacion PRC Concepcion. Decreto Alc. N°148. Fecha promulgacion 05.06.2004. Fecha publicacion D.O. 22.04.2004."
+    },
+    {
+      "zona": "HE2",
+      "nombre": "HE2 Zona habitacional de expansión",
+      "usos_permitidos": "Residencial. Equipamiento: cientifico, comercio, culto y cultura, deporte, educacion, esparcimiento, salud, seguridad, servicios, social. Infraestructura: transporte.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos",
+      "decreto": "Interpretacion de limites de zona, plano N°2 sector Vilumanque. Segun Art. 4° 14.09.2007."
+    },
+    {
+      "zona": "HE3",
+      "nombre": "HE3 Zona habitacional de expansión",
+      "usos_permitidos": "Residencial. Equipamiento: cientifico, comercio, culto y cultura, deporte, educacion, esparcimiento, salud, seguridad, servicios, social. Actividades productivas. Infraestructura: transporte.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos",
+      "decreto": "Publicacion PRC Concepcion. Decreto Alc. N°148. Fecha promulgacion 05.06.2004. Fecha publicacion D.O. 22.04.2004."
+    },
+    {
+      "zona": "HR2",
+      "nombre": "HR2 Zona habitacional de renovación",
+      "usos_permitidos": "Residencial. Equipamiento: cientifico, comercio, culto y cultura, deporte, educacion, esparcimiento, salud, seguridad, servicios, social. Actividades productivas.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos",
+      "decreto": "Publicacion PRC Concepcion. Decreto Alc. N°148. Fecha promulgacion 05.06.2004. Fecha publicacion D.O. 22.04.2004."
+    },
+    {
+      "zona": "HR3",
+      "nombre": "HR3 Zona habitacional de renovación",
+      "usos_permitidos": "Residencial. Equipamiento: cientifico, comercio, culto y cultura, deporte, educacion, esparcimiento, salud, seguridad, servicios, social. Actividades productivas.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos",
+      "decreto": "Publicacion PRC Concepcion. Decreto Alc. N°148. Fecha promulgacion 05.06.2004. Fecha publicacion D.O. 22.04.2004."
+    },
+    {
+      "zona": "Humedal",
+      "nombre": "Humedal Paicavi",
+      "usos_permitidos": "Sin informacion.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos",
+      "decreto": "Publicacion PRC Concepcion. Decreto Alc. N°148. Fecha promulgacion 05.06.2004. Fecha publicacion D.O. 22.04.2004."
+    },
+    {
+      "zona": "Laguna",
+      "nombre": "Laguna La escondida",
+      "usos_permitidos": "Sin informacion.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos",
+      "decreto": "Publicacion PRC Concepcion. Decreto Alc. N°148. Fecha promulgacion 05.06.2004. Fecha publicacion D.O. 22.04.2004."
+    },
+    {
+      "zona": "MC",
+      "nombre": "MC Microcentro",
+      "usos_permitidos": "Equipamiento: culto y cultura, educacion, salud, seguridad, servicios, social. Area verde.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos",
+      "decreto": "Publicacion PRC Concepcion. Decreto Alc. N°148. Fecha promulgacion 05.06.2004. Fecha publicacion D.O. 22.04.2004."
+    },
+    {
+      "zona": "MC-AV",
+      "nombre": "MC-AV Zona microcentro y áreas verdes",
+      "usos_permitidos": "Equipamiento: culto y cultura, educacion, salud, seguridad, servicios, social. Area verde.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos",
+      "decreto": "Publicacion PRC Concepcion. Decreto Alc. N°148. Fecha promulgacion 05.06.2004. Fecha publicacion D.O. 22.04.2004."
+    },
+    {
+      "zona": "P",
+      "nombre": "P Zona productiva y de infraestructura",
+      "usos_permitidos": "Equipamiento: cientifico, comercio, culto y cultura, deporte, educacion, esparcimiento, salud, seguridad, servicios, social. Actividades productivas. Infraestrucura: transporte.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos",
+      "decreto": "Publicacion PRC Concepcion. Decreto Alc. N°148. Fecha promulgacion 05.06.2004. Fecha publicacion D.O. 22.04.2004."
+    },
+    {
+      "zona": "PE",
+      "nombre": "PE Zona de protección",
+      "usos_permitidos": "Equipamiento: comercio, culto y cultura, deporte, esparcimiento.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos",
+      "decreto": "Interpretacion de limites de zona, plano N°2 sector Vilumanque. Segun Art. 4° 14.09.2007."
+    },
+    {
+      "zona": "PI",
+      "nombre": "PI Zona productiva y de infraestructura",
+      "usos_permitidos": "Equipamiento: cientifico, comercio, culto y cultura, deporte, educacion, esparcimiento, salud, seguridad, servicios, social. Actividades prodcutivas.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos",
+      "decreto": "Publicacion PRC Concepcion. Decreto Alc. N°148. Fecha promulgacion 05.06.2004. Fecha publicacion D.O. 22.04.2004."
+    },
+    {
+      "zona": "PP",
+      "nombre": "PP Zona de protección",
+      "usos_permitidos": "Residencial. Equipamiento: cientifico, comercio, culto y cultura, deporte, educacion, esparcimiento, salud, seguridad, servicios, social.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos",
+      "decreto": "Publicacion PRC Concepcion. Decreto Alc. N°148. Fecha promulgacion 05.06.2004. Fecha publicacion D.O. 22.04.2004."
+    },
+    {
+      "zona": "Puente",
+      "nombre": "Puente Juan pablo II",
+      "usos_permitidos": "Sin informacion.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos",
+      "decreto": "Publicacion PRC Concepcion. Decreto Alc. N°148. Fecha promulgacion 05.06.2004. Fecha publicacion D.O. 22.04.2004."
+    },
+    {
+      "zona": "Z-1.1",
+      "nombre": "Z-1.1 Pieza de ensanche",
+      "usos_permitidos": "Equipamiento: comercio, culto y cultura, servicios. Area verde",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos",
+      "decreto": "Publicacion plan seccional ribera norte. Res. Gore N°144. Fecha promulgacion 17.10.2000. Fecha publicacion D.O. 09.07.2001."
+    },
+    {
+      "zona": "Z-1.2",
+      "nombre": "Z-1.2 Pieza de ensanche",
+      "usos_permitidos": "Residencial. Equipamiento: comercio, culto y cultura, educacion, esparcimiento, salud, servicios. Area verde.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos",
+      "decreto": "Publicacion plan seccional ribera norte. Res. Gore N°144. Fecha promulgacion 17.10.2000. Fecha publicacion D.O. 09.07.2001."
+    },
+    {
+      "zona": "Z-1.3",
+      "nombre": "Z-1.3 Pieza de ensanche",
+      "usos_permitidos": "Equipamiento: comercio, culto y cultura, servicios. Area verde.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos",
+      "decreto": "Publicacion plan seccional ribera norte. Res. Gore N°144. Fecha promulgacion 17.10.2000. Fecha publicacion D.O. 09.07.2001."
+    },
+    {
+      "zona": "Z-1.4",
+      "nombre": "Z-1.4 Pieza de ensanche",
+      "usos_permitidos": "Destinada preferentemente a parque y areas verdes con fines netamiente paisajisticos (recreativos), y no se permite edificacion de ningun tipo, excepto mobiliario urbano, obras de interes cultural u otras instalaciones similares.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos",
+      "decreto": "Publicacion plan seccional ribera norte. Res. Gore N°144. Fecha promulgacion 17.10.2000. Fecha publicacion D.O. 09.07.2001."
+    },
+    {
+      "zona": "Z-2.1",
+      "nombre": "Z-2.1 Pieza borde río",
+      "usos_permitidos": "Equipamiento: servicios. Area verde.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos",
+      "decreto": "Publicacion plan seccional ribera norte. Res. Gore N°144. Fecha promulgacion 17.10.2000. Fecha publicacion D.O. 09.07.2001."
+    },
+    {
+      "zona": "Z-2.2",
+      "nombre": "Z-2.2 Pieza borde río",
+      "usos_permitidos": "Residencial. Equipamiento: esparcimiento. Area verde.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos",
+      "decreto": "Publicacion plan seccional ribera norte. Res. Gore N°144. Fecha promulgacion 17.10.2000. Fecha publicacion D.O. 09.07.2001."
+    },
+    {
+      "zona": "Z-3.1",
+      "nombre": "Z-3.1 Pieza de tejido intermedio",
+      "usos_permitidos": "Residencial. Equipamiento: comercio, culto y cultura, educacion, salud, servicios. Area verde.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos",
+      "decreto": "Publicacion plan seccional ribera norte. Res. Gore N°144. Fecha promulgacion 17.10.2000. Fecha publicacion D.O. 09.07.2001."
+    },
+    {
+      "zona": "Z-4.1",
+      "nombre": "Z-4.1 Pieza de tejido intermedio",
+      "usos_permitidos": "Residencial. Equipamiento: servicios. Area verde.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos",
+      "decreto": "Publicacion plan seccional ribera norte. Res. Gore N°144. Fecha promulgacion 17.10.2000. Fecha publicacion D.O. 09.07.2001."
+    },
+    {
+      "zona": "Z-5.1",
+      "nombre": "Z-5.1 Pieza de parques",
+      "usos_permitidos": "Equipamiento: culto y cultura. Area verde.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos",
+      "decreto": "Publicacion plan seccional ribera norte. Res. Gore N°144. Fecha promulgacion 17.10.2000. Fecha publicacion D.O. 09.07.2001."
+    },
+    {
+      "zona": "Z-5.2a",
+      "nombre": "Z-5.2a Pieza de parques",
+      "usos_permitidos": "Area verde.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos",
+      "decreto": "Publicacion plan seccional ribera norte. Res. Gore N°144. Fecha promulgacion 17.10.2000. Fecha publicacion D.O. 09.07.2001."
+    },
+    {
+      "zona": "Z-5.2b",
+      "nombre": "Z-5.2b Pieza de parques",
+      "usos_permitidos": "Area verde.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos",
+      "decreto": "Publicacion plan seccional ribera norte. Res. Gore N°144. Fecha promulgacion 17.10.2000. Fecha publicacion D.O. 09.07.2001."
+    },
+    {
+      "zona": "Z-6.1",
+      "nombre": "Z-6.1 Pieza de vivienda de radicación",
+      "usos_permitidos": "Residencial. Equipamiento: comercio, culto y cultura, deporte, esparcimiento, salud, servicios, social. Area verde.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos",
+      "decreto": "Publicacion plan seccional ribera norte. Res. Gore N°144. Fecha promulgacion 17.10.2000. Fecha publicacion D.O. 09.07.2001."
+    },
+    {
+      "zona": "Z-7.1",
+      "nombre": "Z-7.1 Pieza barrio consolidado",
+      "usos_permitidos": "Residencial. Equipamiento: comercio, culto y cultura, deporte, educacion, salud, seguridad, servicios, social. Area verde.",
+      "usos_prohibidos": "Todos los usos de suelo no mencionados como permitidos",
+      "decreto": "Publicacion plan seccional ribera norte. Res. Gore N°144. Fecha promulgacion 17.10.2000. Fecha publicacion D.O. 09.07.2001."
+    }
+  ]
+}
