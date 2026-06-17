@@ -1,0 +1,1083 @@
+{
+  "SanPedroDeLaPaz": [
+    {
+      "comuna": "San Pedro de la Paz",
+      "zona": "ZM-1",
+      "zona_code": "ZM-1",
+      "nombre": "ZM-1 Zona mixta",
+      "usos_permitidos": [
+        "Residencial. Equipamiento: cientifico",
+        "comercio",
+        "culto y cultura",
+        "deporte",
+        "educacion",
+        "esparcimiento",
+        "salud",
+        "seguridad",
+        "servicios",
+        "social. Actividades productivas."
+      ],
+      "usos_prohibidos": [
+        "Todos los usos de suelo no mencionados como permitidos."
+      ],
+      "prc_decreto": "PRC San Pedro de la Paz (ordenanza municipal, texto refundido).",
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": 2.5,
+        "coeficiente_ocupacion_suelo": 1,
+        "altura_maxima_pisos": null,
+        "altura_maxima_metros": 45,
+        "densidad_maxima_habha": null,
+        "superficie_predial_minima_m2": 1000,
+        "subdivision_minima_m2": 1000,
+        "antejardín_minimo_m": 3,
+        "agrupamiento": "Aislado, Pareado y Continuo",
+        "adosamiento": true,
+        "notas": "OCUPACIÓN DE SUELO 1 para vivienda en extensión | CONSTRUCTIBILIDAD 2,5 para vivienda en extensión y otros usos"
+      }
+    },
+    {
+      "comuna": "San Pedro de la Paz",
+      "zona": "ZM-2",
+      "zona_code": "ZM-2",
+      "nombre": "ZM-2 Zona mixta",
+      "usos_permitidos": [
+        "Residencial. Equipamiento: cientifico",
+        "comercio",
+        "culto y cultura",
+        "deporte",
+        "educacion",
+        "esparcimiento",
+        "salud",
+        "seguridad",
+        "servicios",
+        "social. Actividades productivas."
+      ],
+      "usos_prohibidos": [
+        "Todos los usos de suelo no mencionados como permitidos."
+      ],
+      "prc_decreto": "PRC San Pedro de la Paz (ordenanza municipal, texto refundido).",
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": 12,
+        "coeficiente_ocupacion_suelo": 0.5,
+        "altura_maxima_pisos": null,
+        "altura_maxima_metros": null,
+        "densidad_maxima_habha": null,
+        "superficie_predial_minima_m2": 2000,
+        "subdivision_minima_m2": 2000,
+        "antejardín_minimo_m": 3,
+        "agrupamiento": "Aislado",
+        "adosamiento": false,
+        "notas": ""
+      }
+    },
+    {
+      "comuna": "San Pedro de la Paz",
+      "zona": "ZM-3",
+      "zona_code": "ZM-3",
+      "nombre": "ZM-3 Zona mixta",
+      "usos_permitidos": [
+        "Residencial. Equipamiento:cientifico",
+        "comercio",
+        "culto y cultura",
+        "deporte",
+        "educacion",
+        "esparcimiento",
+        "salud",
+        "seguridad",
+        "servicios",
+        "social. Actividades productivas."
+      ],
+      "usos_prohibidos": [
+        "Todos los usos de suelo no mencionados como permitidos."
+      ],
+      "prc_decreto": "PRC San Pedro de la Paz (ordenanza municipal, texto refundido).",
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": 10,
+        "coeficiente_ocupacion_suelo": 0.5,
+        "altura_maxima_pisos": null,
+        "altura_maxima_metros": null,
+        "densidad_maxima_habha": null,
+        "superficie_predial_minima_m2": 1000,
+        "subdivision_minima_m2": 1000,
+        "antejardín_minimo_m": 5,
+        "agrupamiento": "Aislado",
+        "adosamiento": false,
+        "notas": ""
+      }
+    },
+    {
+      "comuna": "San Pedro de la Paz",
+      "zona": "ZM-4",
+      "zona_code": "ZM-4",
+      "nombre": "ZM-4 Zona mixta",
+      "usos_permitidos": [
+        "Residencial. Equipamiento: cientifico",
+        "comercio",
+        "culto y cultura",
+        "deporte",
+        "educacion",
+        "esparcimiento",
+        "salud",
+        "seguridad",
+        "servicios",
+        "social."
+      ],
+      "usos_prohibidos": [
+        "Todos los usos de suelo no mencionados como permitidos."
+      ],
+      "prc_decreto": "PRC San Pedro de la Paz (ordenanza municipal, texto refundido).",
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": 2,
+        "coeficiente_ocupacion_suelo": 0.7,
+        "altura_maxima_pisos": null,
+        "altura_maxima_metros": 15,
+        "densidad_maxima_habha": 80,
+        "superficie_predial_minima_m2": 400,
+        "subdivision_minima_m2": 400,
+        "antejardín_minimo_m": null,
+        "agrupamiento": "Aislado, pareado y continuo",
+        "adosamiento": true,
+        "notas": "OCUPACIÓN DE SUELO 0.7 para vivienda en extensión | CONSTRUCTIBILIDAD 2 para vivienda en extensión y otros usos | DENSIDAD HABITACIONAL MÁXIMA BRUTA 80 hab/ha para vivienda en extensión"
+      }
+    },
+    {
+      "comuna": "San Pedro de la Paz",
+      "zona": "ZM-5",
+      "zona_code": "ZM-5",
+      "nombre": "ZM-5 Zona mixta",
+      "usos_permitidos": [
+        "Residencial. Equipamiento: cientifico",
+        "comercio",
+        "culto y cultura",
+        "deporte",
+        "educacion",
+        "esparcimiento",
+        "salud",
+        "seguridad",
+        "servicios",
+        "social."
+      ],
+      "usos_prohibidos": [
+        "Todos los usos de suelo no mencionados como permitidos."
+      ],
+      "prc_decreto": "PRC San Pedro de la Paz (ordenanza municipal, texto refundido).",
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": 1,
+        "coeficiente_ocupacion_suelo": 0.4,
+        "altura_maxima_pisos": null,
+        "altura_maxima_metros": 7.5,
+        "densidad_maxima_habha": 1000,
+        "superficie_predial_minima_m2": 1200,
+        "subdivision_minima_m2": 1200,
+        "antejardín_minimo_m": 3,
+        "agrupamiento": "Aislado",
+        "adosamiento": false,
+        "notas": "CONSTRUCTIBILIDAD 1 para otros usos | ALTURA MÁXIMA DE EDIFICACIÓN 7,5 m para otros usos"
+      }
+    },
+    {
+      "comuna": "San Pedro de la Paz",
+      "zona": "ZH-1",
+      "zona_code": "ZH-1",
+      "nombre": "ZH-1 Zona residencial",
+      "usos_permitidos": [
+        "Residencial. Equipamiento: cientifico",
+        "comercio",
+        "excepto discotecas",
+        "culto y cultura",
+        "deporte",
+        "educacion",
+        "esparcimiento",
+        "salud",
+        "seguridad",
+        "servicios",
+        "social."
+      ],
+      "usos_prohibidos": [
+        "Todos los usos de suelo no mencionados como permitidos."
+      ],
+      "prc_decreto": "PRC San Pedro de la Paz (ordenanza municipal, texto refundido).",
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": 1.2,
+        "coeficiente_ocupacion_suelo": 0.4,
+        "altura_maxima_pisos": null,
+        "altura_maxima_metros": 7.5,
+        "densidad_maxima_habha": 60,
+        "superficie_predial_minima_m2": 500,
+        "subdivision_minima_m2": 500,
+        "antejardín_minimo_m": 3,
+        "agrupamiento": "Aislado",
+        "adosamiento": false,
+        "notas": ""
+      }
+    },
+    {
+      "comuna": "San Pedro de la Paz",
+      "zona": "ZH-2",
+      "zona_code": "ZH-2",
+      "nombre": "ZH-2 Zona residencial",
+      "usos_permitidos": [
+        "Residencial. Equipamiento: cientifico",
+        "comercio",
+        "culto y cultura",
+        "deporte",
+        "educacion",
+        "esparcimiento",
+        "salud",
+        "seguridad",
+        "servicios",
+        "social."
+      ],
+      "usos_prohibidos": [
+        "Todos los usos de suelo no mencionados como permitidos."
+      ],
+      "prc_decreto": "PRC San Pedro de la Paz (ordenanza municipal, texto refundido).",
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": 1.6,
+        "coeficiente_ocupacion_suelo": 0.5,
+        "altura_maxima_pisos": null,
+        "altura_maxima_metros": 12.5,
+        "densidad_maxima_habha": 100,
+        "superficie_predial_minima_m2": 300,
+        "subdivision_minima_m2": 300,
+        "antejardín_minimo_m": 3,
+        "agrupamiento": "Aislado y pareado",
+        "adosamiento": true,
+        "notas": "OCUPACIÓN DE SUELO 0.5 para vivienda en extensión. | DENSIDAD HABITACIONAL MÁXIMA BRUTA 100 hab/ ha para vivienda en extensión"
+      }
+    },
+    {
+      "comuna": "San Pedro de la Paz",
+      "zona": "ZH-3",
+      "zona_code": "ZH-3",
+      "nombre": "ZH-3 Zona residencial",
+      "usos_permitidos": [
+        "Residencial. Equipamiento: comercio",
+        "culto y cultura",
+        "deporte",
+        "educacion",
+        "esparcimiento",
+        "salud",
+        "servicios",
+        "social."
+      ],
+      "usos_prohibidos": [
+        "Todos los usos de suelo no mencionados como permitidos."
+      ],
+      "prc_decreto": "PRC San Pedro de la Paz (ordenanza municipal, texto refundido).",
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": 1,
+        "coeficiente_ocupacion_suelo": 0.4,
+        "altura_maxima_pisos": null,
+        "altura_maxima_metros": 7.5,
+        "densidad_maxima_habha": 50,
+        "superficie_predial_minima_m2": 700,
+        "subdivision_minima_m2": 700,
+        "antejardín_minimo_m": 3,
+        "agrupamiento": "Aislado",
+        "adosamiento": false,
+        "notas": ""
+      }
+    },
+    {
+      "comuna": "San Pedro de la Paz",
+      "zona": "ZH-4",
+      "zona_code": "ZH-4",
+      "nombre": "ZH-4 Zona residencial",
+      "usos_permitidos": [
+        "Residencial. Equipamiento: cientifico",
+        "comercio",
+        "culto y cultura",
+        "deporte",
+        "educacion",
+        "esparcimiento",
+        "salud",
+        "seguridad",
+        "servicios",
+        "social."
+      ],
+      "usos_prohibidos": [
+        "Todos los usos de suelo no mencionados como permitidos."
+      ],
+      "prc_decreto": "PRC San Pedro de la Paz (ordenanza municipal, texto refundido).",
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": 1.6,
+        "coeficiente_ocupacion_suelo": 0.5,
+        "altura_maxima_pisos": null,
+        "altura_maxima_metros": 12.5,
+        "densidad_maxima_habha": 140,
+        "superficie_predial_minima_m2": 300,
+        "subdivision_minima_m2": 300,
+        "antejardín_minimo_m": 3,
+        "agrupamiento": "Aislado y Pareado",
+        "adosamiento": true,
+        "notas": "OCUPACIÓN DE SUELO 0.5 para vivienda en extensión y otros usos | DENSIDAD HABITACIONAL MÁXIMA BRUTA 140 hab/ ha para vivienda en extensión"
+      }
+    },
+    {
+      "comuna": "San Pedro de la Paz",
+      "zona": "ZH-5",
+      "zona_code": "ZH-5",
+      "nombre": "ZH-5 Zona residencial",
+      "usos_permitidos": [
+        "Residencial. Equipamiento: cientifico",
+        "comercio",
+        "culto y cultura",
+        "deporte",
+        "educacion",
+        "esparcimiento",
+        "salud",
+        "seguridad",
+        "servicios",
+        "social. Actividades productivas",
+        "bodegaje y talleres inofensivos."
+      ],
+      "usos_prohibidos": [
+        "Todos los usos de suelo no mencionados como permitidos."
+      ],
+      "prc_decreto": "PRC San Pedro de la Paz (ordenanza municipal, texto refundido).",
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": 1,
+        "coeficiente_ocupacion_suelo": 0.8,
+        "altura_maxima_pisos": null,
+        "altura_maxima_metros": 12.5,
+        "densidad_maxima_habha": 200,
+        "superficie_predial_minima_m2": 160,
+        "subdivision_minima_m2": 160,
+        "antejardín_minimo_m": 3,
+        "agrupamiento": "Aislado, Pareado y Continuo para vivienda en exten",
+        "adosamiento": true,
+        "notas": "OCUPACIÓN DE SUELO 0.8 para vivienda en extensión y otros usos | CONSTRUCTIBILIDAD 1 para vivienda en extensión y otros usos. | DENSIDAD HABITACIONAL MÁXIMA BRUTA 200 hab/ ha para vivienda en extensión"
+      }
+    },
+    {
+      "comuna": "San Pedro de la Paz",
+      "zona": "ZH-6",
+      "zona_code": "ZH-6",
+      "nombre": "ZH-6 Zona residencial",
+      "usos_permitidos": [
+        "Residencial. Equipamiento:Equipamiento: cientifico",
+        "comercio",
+        "culto y cultura",
+        "deporte",
+        "educacion",
+        "esparcimiento",
+        "seguridad",
+        "servicios",
+        "social."
+      ],
+      "usos_prohibidos": [
+        "Todos los usos de suelo no mencionados como permitidos."
+      ],
+      "prc_decreto": "PRC San Pedro de la Paz (ordenanza municipal, texto refundido).",
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": 1.8,
+        "coeficiente_ocupacion_suelo": 0.6,
+        "altura_maxima_pisos": null,
+        "altura_maxima_metros": 7.5,
+        "densidad_maxima_habha": 200,
+        "superficie_predial_minima_m2": 150,
+        "subdivision_minima_m2": 150,
+        "antejardín_minimo_m": 3,
+        "agrupamiento": "Aislado y Pareado.",
+        "adosamiento": true,
+        "notas": ""
+      }
+    },
+    {
+      "comuna": "San Pedro de la Paz",
+      "zona": "ZH-7",
+      "zona_code": "ZH-7",
+      "nombre": "ZH-7 Zona residencial",
+      "usos_permitidos": [
+        "Residencial. Equipamiento: cientifico",
+        "comercio",
+        "culto y cultura",
+        "deporte",
+        "educacion",
+        "esparcimiento",
+        "salud",
+        "seguridad",
+        "servicios",
+        "social."
+      ],
+      "usos_prohibidos": [
+        "Todos los usos de suelo no mencionados como permitidos."
+      ],
+      "prc_decreto": "PRC San Pedro de la Paz (ordenanza municipal, texto refundido).",
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": 1.8,
+        "coeficiente_ocupacion_suelo": 0.6,
+        "altura_maxima_pisos": null,
+        "altura_maxima_metros": 12.5,
+        "densidad_maxima_habha": 140,
+        "superficie_predial_minima_m2": 200,
+        "subdivision_minima_m2": 200,
+        "antejardín_minimo_m": 3,
+        "agrupamiento": "Aislado para vivienda en altura.",
+        "adosamiento": true,
+        "notas": "OCUPACIÓN DE SUELO 0.6 para vivienda en extensión y otros usos | CONSTRUCTIBILIDAD 1,8 para vivienda en extensión y otros usos | DENSIDAD HABITACIONAL MÁXIMA BRUTA 140 hab/ ha para vivienda en extensión"
+      }
+    },
+    {
+      "comuna": "San Pedro de la Paz",
+      "zona": "ZH-8",
+      "zona_code": "ZH-8",
+      "nombre": "ZH-8 Zona residencial",
+      "usos_permitidos": [
+        "Residencial. Equipamiento: cientifico",
+        "comercio",
+        "culto y cultura",
+        "deporte",
+        "educacion",
+        "esparcimiento",
+        "salud",
+        "seguridad",
+        "servicios",
+        "social."
+      ],
+      "usos_prohibidos": [
+        "Todos los usos de suelo no mencionados como permitidos."
+      ],
+      "prc_decreto": "PRC San Pedro de la Paz (ordenanza municipal, texto refundido).",
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": 1.5,
+        "coeficiente_ocupacion_suelo": 0.6,
+        "altura_maxima_pisos": null,
+        "altura_maxima_metros": 21,
+        "densidad_maxima_habha": 140,
+        "superficie_predial_minima_m2": 450,
+        "subdivision_minima_m2": 450,
+        "antejardín_minimo_m": 3,
+        "agrupamiento": "Aislado.",
+        "adosamiento": true,
+        "notas": "OCUPACIÓN DE SUELO 0.6 para vivienda en extensión y otros usos | DENSIDAD HABITACIONAL MÁXIMA BRUTA 140 hab/ ha para vivienda en extensión"
+      }
+    },
+    {
+      "comuna": "San Pedro de la Paz",
+      "zona": "ZH-9",
+      "zona_code": "ZH-9",
+      "nombre": "ZH-9 Zona residencial",
+      "usos_permitidos": [
+        "Residencial. Equipamiento: comercio",
+        "culto y cultura",
+        "deporte",
+        "esparcimiento",
+        "servicios",
+        "social."
+      ],
+      "usos_prohibidos": [
+        "Todos los usos de suelo no mencionados como permitidos."
+      ],
+      "prc_decreto": "PRC San Pedro de la Paz (ordenanza municipal, texto refundido).",
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": 1,
+        "coeficiente_ocupacion_suelo": 0.4,
+        "altura_maxima_pisos": null,
+        "altura_maxima_metros": 7.5,
+        "densidad_maxima_habha": 50,
+        "superficie_predial_minima_m2": 750,
+        "subdivision_minima_m2": 750,
+        "antejardín_minimo_m": 3,
+        "agrupamiento": "Aislado",
+        "adosamiento": false,
+        "notas": ""
+      }
+    },
+    {
+      "comuna": "San Pedro de la Paz",
+      "zona": "ZH-10",
+      "zona_code": "ZH-10",
+      "nombre": "ZH-10 Zona residencial",
+      "usos_permitidos": [
+        "Residencial. Equipamiento: cientifico",
+        "comercio",
+        "culto y cultura",
+        "deporte",
+        "educacion",
+        "esparcimiento",
+        "salud",
+        "seguridad",
+        "servicios",
+        "social."
+      ],
+      "usos_prohibidos": [
+        "Todos los usos de suelo no mencionados como permitidos."
+      ],
+      "prc_decreto": "PRC San Pedro de la Paz (ordenanza municipal, texto refundido).",
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": 2,
+        "coeficiente_ocupacion_suelo": 0.6,
+        "altura_maxima_pisos": null,
+        "altura_maxima_metros": 30,
+        "densidad_maxima_habha": 140,
+        "superficie_predial_minima_m2": 450,
+        "subdivision_minima_m2": 450,
+        "antejardín_minimo_m": 3,
+        "agrupamiento": "Aislado",
+        "adosamiento": false,
+        "notas": "OCUPACIÓN DE SUELO 0.6 para vivienda en extensión y otros usos | DENSIDAD HABITACIONAL MÁXIMA BRUTA 140 hab/ha para vivienda en extensión"
+      }
+    },
+    {
+      "comuna": "San Pedro de la Paz",
+      "zona": "ZH-11",
+      "zona_code": "ZH-11",
+      "nombre": "ZH-11 Zona residencial",
+      "usos_permitidos": [
+        "Residencial. Equipamiento: cientifico",
+        "comercio",
+        "culto y cultura",
+        "deporte",
+        "educacion",
+        "esparcimiento",
+        "salud",
+        "seguridad",
+        "servicios",
+        "social."
+      ],
+      "usos_prohibidos": [
+        "Todos los usos de suelo no mencionados como permitidos."
+      ],
+      "prc_decreto": "PRC San Pedro de la Paz (ordenanza municipal, texto refundido).",
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": 1,
+        "coeficiente_ocupacion_suelo": 0.6,
+        "altura_maxima_pisos": null,
+        "altura_maxima_metros": 10.5,
+        "densidad_maxima_habha": 100,
+        "superficie_predial_minima_m2": 400,
+        "subdivision_minima_m2": 400,
+        "antejardín_minimo_m": 3,
+        "agrupamiento": "Aislado",
+        "adosamiento": true,
+        "notas": ""
+      }
+    },
+    {
+      "comuna": "San Pedro de la Paz",
+      "zona": "ZH-12",
+      "zona_code": "ZH-12",
+      "nombre": "ZH-12 Zona residencial",
+      "usos_permitidos": [
+        "Residencial. Equipamiento: cientifico",
+        "comercio",
+        "culto y cultura",
+        "deporte",
+        "educacion",
+        "esparcimiento",
+        "salud",
+        "seguridad",
+        "servicios",
+        "social."
+      ],
+      "usos_prohibidos": [
+        "Todos los usos de suelo no mencionados como permitidos."
+      ],
+      "prc_decreto": "PRC San Pedro de la Paz (ordenanza municipal, texto refundido).",
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": 1,
+        "coeficiente_ocupacion_suelo": 0.4,
+        "altura_maxima_pisos": null,
+        "altura_maxima_metros": 21,
+        "densidad_maxima_habha": 500,
+        "superficie_predial_minima_m2": 500,
+        "subdivision_minima_m2": 500,
+        "antejardín_minimo_m": 3,
+        "agrupamiento": "Aislado",
+        "adosamiento": false,
+        "notas": "OCUPACIÓN DE SUELO 0.4 para vivienda en extensión y otros usos | CONSTRUCTIBILIDAD 1 para vivienda en extensión y otros usos | ANTEJARDÍN MÍNIMO 3 m para vivienda en extensión"
+      }
+    },
+    {
+      "comuna": "San Pedro de la Paz",
+      "zona": "ZH-13",
+      "zona_code": "ZH-13",
+      "nombre": "ZH-13 Zona residencial",
+      "usos_permitidos": [
+        "Residencial. Equipamiento: cientifico",
+        "comercio",
+        "culto y cultura",
+        "deporte",
+        "educacion",
+        "esparcimiento",
+        "salud",
+        "seguridad",
+        "servicios",
+        "social."
+      ],
+      "usos_prohibidos": [
+        "Todos los usos de suelo no mencionados como permitidos."
+      ],
+      "prc_decreto": "PRC San Pedro de la Paz (ordenanza municipal, texto refundido).",
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": 1,
+        "coeficiente_ocupacion_suelo": 0.6,
+        "altura_maxima_pisos": null,
+        "altura_maxima_metros": 30,
+        "densidad_maxima_habha": 130,
+        "superficie_predial_minima_m2": 500,
+        "subdivision_minima_m2": 500,
+        "antejardín_minimo_m": 3,
+        "agrupamiento": "Aislado",
+        "adosamiento": true,
+        "notas": "OCUPACIÓN DE SUELO 0.6 para vivienda en extensión y otros usos | CONSTRUCTIBILIDAD 1 para vivienda en extensión y otros usos | DENSIDAD HABITACIONAL MÁXIMA BRUTA 130 hab/ha para vivienda en extensión | ANTEJARDÍN MÍNIMO 3 m. para vivienda en extensión y 5 m para vivienda en altura"
+      }
+    },
+    {
+      "comuna": "San Pedro de la Paz",
+      "zona": "ZH-14",
+      "zona_code": "ZH-14",
+      "nombre": "ZH-14 Zona residencial",
+      "usos_permitidos": [
+        "Residencial. Equipamiento: cientifico",
+        "comercio",
+        "culto y cultura",
+        "deporte",
+        "educacion",
+        "esparcimiento",
+        "salud",
+        "seguridad",
+        "servicios",
+        "social."
+      ],
+      "usos_prohibidos": [
+        "Todos los usos de suelo no mencionados como permitidos."
+      ],
+      "prc_decreto": "PRC San Pedro de la Paz (ordenanza municipal, texto refundido).",
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": 1,
+        "coeficiente_ocupacion_suelo": 0.6,
+        "altura_maxima_pisos": null,
+        "altura_maxima_metros": 7.5,
+        "densidad_maxima_habha": 60,
+        "superficie_predial_minima_m2": 300,
+        "subdivision_minima_m2": 300,
+        "antejardín_minimo_m": 3,
+        "agrupamiento": "Aislado y pareado",
+        "adosamiento": true,
+        "notas": "OCUPACIÓN DE SUELO 0.6 para vivienda en extensión y otros usos | CONSTRUCTIBILIDAD 1 para vivienda en extensión y otros usos | ANTEJARDÍN MÍNIMO 3 m para vivienda en extensión"
+      }
+    },
+    {
+      "comuna": "San Pedro de la Paz",
+      "zona": "ZH-15",
+      "zona_code": "ZH-15",
+      "nombre": "ZH-15 Zona residencial",
+      "usos_permitidos": [
+        "Residencial. Equipamiento: cientifico",
+        "comercio",
+        "culto y cultura",
+        "deporte",
+        "educacion",
+        "esparcimiento",
+        "salud",
+        "seguridad",
+        "servicios",
+        "social."
+      ],
+      "usos_prohibidos": [
+        "Todos los usos de suelo no mencionados como permitidos."
+      ],
+      "prc_decreto": "PRC San Pedro de la Paz (ordenanza municipal, texto refundido).",
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": 1.2,
+        "coeficiente_ocupacion_suelo": 0.6,
+        "altura_maxima_pisos": null,
+        "altura_maxima_metros": 15,
+        "densidad_maxima_habha": 160,
+        "superficie_predial_minima_m2": 200,
+        "subdivision_minima_m2": 200,
+        "antejardín_minimo_m": 3,
+        "agrupamiento": "Aislado y Pareado",
+        "adosamiento": true,
+        "notas": "OCUPACIÓN DE SUELO 0.6 para vivienda en extensión | CONSTRUCTIBILIDAD 1,2 para vivienda en extensión y otros usos | DENSIDAD HABITACIONAL MÁXIMA BRUTA 160 hab/ ha para vivienda en extensión"
+      }
+    },
+    {
+      "comuna": "San Pedro de la Paz",
+      "zona": "ZH-16",
+      "zona_code": "ZH-16",
+      "nombre": "ZH-16 Zona residencial",
+      "usos_permitidos": [
+        "Residencial. Equipamiento: cientifico",
+        "comercio",
+        "culto y cultura",
+        "deporte",
+        "educacion",
+        "esparcimiento",
+        "salud",
+        "seguridad",
+        "servicios",
+        "social."
+      ],
+      "usos_prohibidos": [
+        "Todos los usos de suelo no mencionados como permitidos."
+      ],
+      "prc_decreto": "PRC San Pedro de la Paz (ordenanza municipal, texto refundido).",
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": 0.5,
+        "coeficiente_ocupacion_suelo": 0.1,
+        "altura_maxima_pisos": null,
+        "altura_maxima_metros": 15,
+        "densidad_maxima_habha": 40,
+        "superficie_predial_minima_m2": 10000,
+        "subdivision_minima_m2": 10000,
+        "antejardín_minimo_m": 3,
+        "agrupamiento": "Aislado",
+        "adosamiento": false,
+        "notas": "CONSTRUCTIBILIDAD 0,5 para vivienda | DENSIDAD HABITACIONAL MÁXIMA BRUTA 40 hab/ha para vivienda en extensión | ANTEJARDÍN MÍNIMO 3 m. para vivienda en extensión"
+      }
+    },
+    {
+      "comuna": "San Pedro de la Paz",
+      "zona": "ZI-1",
+      "zona_code": "ZI-1",
+      "nombre": "ZI-1 Zona productiva industrial",
+      "usos_permitidos": [
+        "Equipamiento: cientifico",
+        "comercio",
+        "deporte",
+        "esparcimiento",
+        "seguridad",
+        "servicios",
+        "social. Actividades productivas."
+      ],
+      "usos_prohibidos": [
+        "Todos los usos de suelo no mencionados como permitidos."
+      ],
+      "prc_decreto": "PRC San Pedro de la Paz (ordenanza municipal, texto refundido).",
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": 1.8,
+        "coeficiente_ocupacion_suelo": 0.6,
+        "altura_maxima_pisos": null,
+        "altura_maxima_metros": null,
+        "densidad_maxima_habha": null,
+        "superficie_predial_minima_m2": 2500,
+        "subdivision_minima_m2": 2500,
+        "antejardín_minimo_m": 5,
+        "agrupamiento": "Aislado",
+        "adosamiento": true,
+        "notas": ""
+      }
+    },
+    {
+      "comuna": "San Pedro de la Paz",
+      "zona": "ZPH",
+      "zona_code": "ZPH",
+      "nombre": "ZPH Zona productiva horticola",
+      "usos_permitidos": [
+        "Residencial. Equipamiento: cientifico",
+        "comercio",
+        "deporte",
+        "educacion",
+        "seguridad",
+        "servicios",
+        "social. Actividades productivas."
+      ],
+      "usos_prohibidos": [
+        "Todos los usos de suelo no mencionados como permitidos."
+      ],
+      "prc_decreto": "PRC San Pedro de la Paz (ordenanza municipal, texto refundido).",
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": 0.4,
+        "coeficiente_ocupacion_suelo": 0.2,
+        "altura_maxima_pisos": null,
+        "altura_maxima_metros": 7.5,
+        "densidad_maxima_habha": 4,
+        "superficie_predial_minima_m2": 2500,
+        "subdivision_minima_m2": 2500,
+        "antejardín_minimo_m": 5,
+        "agrupamiento": "Aislado",
+        "adosamiento": false,
+        "notas": ""
+      }
+    },
+    {
+      "comuna": "San Pedro de la Paz",
+      "zona": "ZE-1",
+      "zona_code": "ZE-1",
+      "nombre": "ZE-1 Zona de equipamiento mixto",
+      "usos_permitidos": [
+        "Equipamiento: cientifico",
+        "comercio",
+        "culto y cultura",
+        "deporte",
+        "educacion",
+        "esparcimiento",
+        "salud",
+        "seguridad",
+        "servicios",
+        "social."
+      ],
+      "usos_prohibidos": [
+        "Residencial, excepto hospedaje. Todos los usos de suelo no mencionados como permitidos."
+      ],
+      "prc_decreto": "PRC San Pedro de la Paz (ordenanza municipal, texto refundido).",
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": 2,
+        "coeficiente_ocupacion_suelo": 0.8,
+        "altura_maxima_pisos": null,
+        "altura_maxima_metros": null,
+        "densidad_maxima_habha": null,
+        "superficie_predial_minima_m2": 500,
+        "subdivision_minima_m2": 500,
+        "antejardín_minimo_m": 3,
+        "agrupamiento": "Aislado, pareado, continuo",
+        "adosamiento": true,
+        "notas": ""
+      }
+    },
+    {
+      "comuna": "San Pedro de la Paz",
+      "zona": "ZE-2",
+      "zona_code": "ZE-2",
+      "nombre": "ZE-2 Zona de equipamiento de esparcimiento",
+      "usos_permitidos": [
+        "Equipamiento: comercio",
+        "deporte",
+        "excepto estadios",
+        "esparcimiento."
+      ],
+      "usos_prohibidos": [
+        "Todos los usos de suelo no mencionados como permitidos."
+      ],
+      "prc_decreto": "PRC San Pedro de la Paz (ordenanza municipal, texto refundido).",
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": 0.4,
+        "coeficiente_ocupacion_suelo": 0.2,
+        "altura_maxima_pisos": null,
+        "altura_maxima_metros": 15,
+        "densidad_maxima_habha": null,
+        "superficie_predial_minima_m2": 2500,
+        "subdivision_minima_m2": 2500,
+        "antejardín_minimo_m": 5,
+        "agrupamiento": "Aislado",
+        "adosamiento": false,
+        "notas": ""
+      }
+    },
+    {
+      "comuna": "San Pedro de la Paz",
+      "zona": "ZE-3",
+      "zona_code": "ZE-3",
+      "nombre": "ZE-3 Zona de equipamiento de esparcimiento",
+      "usos_permitidos": [
+        "Equipamiento: deporte",
+        "esparcimiento."
+      ],
+      "usos_prohibidos": [
+        "Todos los usos de suelo no mencionados como permitidos."
+      ],
+      "prc_decreto": "PRC San Pedro de la Paz (ordenanza municipal, texto refundido).",
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": 0.1,
+        "coeficiente_ocupacion_suelo": 0.1,
+        "altura_maxima_pisos": null,
+        "altura_maxima_metros": 7.5,
+        "densidad_maxima_habha": null,
+        "superficie_predial_minima_m2": 2500,
+        "subdivision_minima_m2": 2500,
+        "antejardín_minimo_m": 5,
+        "agrupamiento": "Aislado",
+        "adosamiento": false,
+        "notas": ""
+      }
+    },
+    {
+      "comuna": "San Pedro de la Paz",
+      "zona": "ZE-4",
+      "zona_code": "ZE-4",
+      "nombre": "ZE-4 Zona de equipamiento de cementerio",
+      "usos_permitidos": [
+        "Equipamiento: culto y cultura",
+        "salud."
+      ],
+      "usos_prohibidos": [
+        "Todos los usos de suelo no mencionados como permitidos."
+      ],
+      "prc_decreto": "PRC San Pedro de la Paz (ordenanza municipal, texto refundido).",
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": null,
+        "coeficiente_ocupacion_suelo": null,
+        "altura_maxima_pisos": null,
+        "altura_maxima_metros": null,
+        "densidad_maxima_habha": null,
+        "superficie_predial_minima_m2": 2500,
+        "subdivision_minima_m2": 2500,
+        "antejardín_minimo_m": null,
+        "agrupamiento": "Según Código Sanitario",
+        "adosamiento": false,
+        "notas": ""
+      }
+    },
+    {
+      "comuna": "San Pedro de la Paz",
+      "zona": "ZPL",
+      "zona_code": "ZPL",
+      "nombre": "ZPL Zona de playa",
+      "usos_permitidos": [
+        "BNUP denominado playa de mar",
+        "es decir",
+        "el espacio que las olas bañan entre la mas alta y mas baja marea."
+      ],
+      "usos_prohibidos": [
+        "Todos los usos de suelo no mencionados como permitidos."
+      ],
+      "prc_decreto": "PRC San Pedro de la Paz (ordenanza municipal, texto refundido).",
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": null,
+        "coeficiente_ocupacion_suelo": null,
+        "altura_maxima_pisos": null,
+        "altura_maxima_metros": null,
+        "densidad_maxima_habha": null,
+        "superficie_predial_minima_m2": null,
+        "subdivision_minima_m2": null,
+        "antejardín_minimo_m": null,
+        "agrupamiento": null,
+        "adosamiento": false,
+        "notas": ""
+      }
+    },
+    {
+      "comuna": "San Pedro de la Paz",
+      "zona": "ZRQ",
+      "zona_code": "ZRQ",
+      "nombre": "ZRQ Zona de riesgo por drenajes y quebradas",
+      "usos_permitidos": [
+        "Equipamiento: deporte",
+        "esparcimiento."
+      ],
+      "usos_prohibidos": [
+        "Todos los usos de suelo no mencionados como permitidos."
+      ],
+      "prc_decreto": "PRC San Pedro de la Paz (ordenanza municipal, texto refundido).",
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": 0.1,
+        "coeficiente_ocupacion_suelo": 0.05,
+        "altura_maxima_pisos": null,
+        "altura_maxima_metros": 7,
+        "densidad_maxima_habha": null,
+        "superficie_predial_minima_m2": 1500,
+        "subdivision_minima_m2": 1500,
+        "antejardín_minimo_m": 5,
+        "agrupamiento": "Aislado",
+        "adosamiento": false,
+        "notas": ""
+      }
+    },
+    {
+      "comuna": "San Pedro de la Paz",
+      "zona": "ZRC",
+      "zona_code": "ZRC",
+      "nombre": "ZRC Zona de riesgo costero",
+      "usos_permitidos": [
+        "Equipamiento: comercio",
+        "culto y cultura",
+        "deporte",
+        "esparcimiento."
+      ],
+      "usos_prohibidos": [
+        "Todos los usos de suelo no mencionados como permitidos."
+      ],
+      "prc_decreto": "PRC San Pedro de la Paz (ordenanza municipal, texto refundido).",
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": 0.2,
+        "coeficiente_ocupacion_suelo": 0.05,
+        "altura_maxima_pisos": null,
+        "altura_maxima_metros": null,
+        "densidad_maxima_habha": null,
+        "superficie_predial_minima_m2": 10000,
+        "subdivision_minima_m2": 10000,
+        "antejardín_minimo_m": 5,
+        "agrupamiento": "Aislado",
+        "adosamiento": false,
+        "notas": ""
+      }
+    },
+    {
+      "comuna": "San Pedro de la Paz",
+      "zona": "ZRR",
+      "zona_code": "ZRR",
+      "nombre": "ZRR Zona de riesgo de remocion en masa",
+      "usos_permitidos": [
+        "Equipamiento: cientifico",
+        "comercio",
+        "culto y cultura",
+        "deporte",
+        "esparcimiento."
+      ],
+      "usos_prohibidos": [
+        "Todos los usos de suelo no mencionados como permitidos."
+      ],
+      "prc_decreto": "PRC San Pedro de la Paz (ordenanza municipal, texto refundido).",
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": 0.1,
+        "coeficiente_ocupacion_suelo": 0.05,
+        "altura_maxima_pisos": null,
+        "altura_maxima_metros": 7.5,
+        "densidad_maxima_habha": null,
+        "superficie_predial_minima_m2": 1500,
+        "subdivision_minima_m2": 1500,
+        "antejardín_minimo_m": 5,
+        "agrupamiento": "Aislado",
+        "adosamiento": false,
+        "notas": ""
+      }
+    },
+    {
+      "comuna": "San Pedro de la Paz",
+      "zona": "ZRI-1",
+      "zona_code": "ZRI-1",
+      "nombre": "ZRI-1 Zona de riesgo de inundacion",
+      "usos_permitidos": [
+        "Equipamiento: esparcimiento."
+      ],
+      "usos_prohibidos": [
+        "Todos los usos de suelo no mencionados como permitidos."
+      ],
+      "prc_decreto": "PRC San Pedro de la Paz (ordenanza municipal, texto refundido).",
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": 0.01,
+        "coeficiente_ocupacion_suelo": 0.01,
+        "altura_maxima_pisos": null,
+        "altura_maxima_metros": 7.5,
+        "densidad_maxima_habha": null,
+        "superficie_predial_minima_m2": 10000,
+        "subdivision_minima_m2": 10000,
+        "antejardín_minimo_m": 0,
+        "agrupamiento": "No se permite",
+        "adosamiento": false,
+        "notas": ""
+      }
+    },
+    {
+      "comuna": "San Pedro de la Paz",
+      "zona": "ZRI-2",
+      "zona_code": "ZRI-2",
+      "nombre": "ZRI-2 Zona de riesgo de inundacion",
+      "usos_permitidos": [
+        "Equipamiento: deporte",
+        "esparcimiento."
+      ],
+      "usos_prohibidos": [
+        "Todos los usos de suelo no mencionados como permitidos."
+      ],
+      "prc_decreto": "PRC San Pedro de la Paz (ordenanza municipal, texto refundido).",
+      "normas_urbanisticas": {
+        "coeficiente_constructibilidad": 0.02,
+        "coeficiente_ocupacion_suelo": 0.02,
+        "altura_maxima_pisos": null,
+        "altura_maxima_metros": 7.5,
+        "densidad_maxima_habha": 8,
+        "superficie_predial_minima_m2": 5000,
+        "subdivision_minima_m2": 5000,
+        "antejardín_minimo_m": 5,
+        "agrupamiento": "Aislado",
+        "adosamiento": false,
+        "notas": ""
+      }
+    }
+  ]
+}
