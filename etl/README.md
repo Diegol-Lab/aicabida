@@ -53,8 +53,18 @@ botella y NO es confiablemente automatizable.** Casos reales encontrados:
 - El sitio municipal bloquea scraping (403); el portal MINVU RM filtra por JS.
 
 → Por eso el **`idNorma_bcn` (o URL de la ordenanza) debe guardarse VERIFICADO
-por comuna en el catálogo**. Es el paso humano-en-el-loop del sistema. El
-script `verificar()` chequea menciones de la comuna y zonas como cordura.
+por comuna en el catálogo**. Es el paso humano-en-el-loop del sistema.
+
+**Lección 2 (La Cisterna): el documento "vigente" del portal puede ser el
+ORIGINAL, con una zonificación distinta a la actual.** La Cisterna 1983 usa
+zonas C/E/D/M/I/H/R, pero el ArcGIS vigente usa ZU-1…ZU-9 (fue re-zonificada).
+Las normas del original NO corresponden a las zonas actuales.
+
+→ **Compuerta automática implementada**: `extraer_tablas_bcn.py … --key <key>`
+cruza las zonas del documento contra las del ArcGIS (`<key>_zonas.json`). Si
+la coincidencia es <30% **aborta** (no extrae). Verificado como control
+negativo: idNorma de otra comuna → 0% → abortado. Umbral: ≥70% coherente,
+30-70% parcial (modificación/OCR), <30% documento equivocado.
 
 ### Etapa 3 — Normas (asistida + revisión humana)  ⏳ pendiente
 Leer las tablas (vision/OCR) → poblar `data/normas_prc.json` por zona, usando
